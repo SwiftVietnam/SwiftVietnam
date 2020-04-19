@@ -3,7 +3,7 @@ import Publish
 import Plot
 
 // This type acts as the configuration for your website.
-struct Swiftvietnam: Website {
+struct SwiftVietnam: Website {
     enum SectionID: String, WebsiteSectionID {
         // Add the sections that you want your website to contain here:
         case posts
@@ -15,11 +15,11 @@ struct Swiftvietnam: Website {
 
     // Update these properties to configure your website:
     var url = URL(string: "https://your-website-url.com")!
-    var name = "Swiftvietnam"
-    var description = "A description of Swiftvietnam"
+    var name = "SwiftVietnam"
+    var description = "A description of SwiftVietnam"
     var language: Language { .english }
     var imagePath: Path? { nil }
 }
 
 // This will generate your website using the built-in Foundation theme:
-try Swiftvietnam().publish(withTheme: .foundation)
+try SwiftVietnam().publish(withTheme: .foundation)
