@@ -4,7 +4,7 @@
 swift build
 
 ## Add custom domain CNAME
-echo "antran.app" > Output/CNAME
+echo "swiftvietnam.com" > Output/CNAME
 
 ## Add files to git
 git add .
