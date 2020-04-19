@@ -16,7 +16,7 @@ struct SwiftVietnam: Website {
     // Update these properties to configure your website:
     var url = URL(string: "https://swiftvietnam.com")!
     var name = "SwiftVietnam"
-    var description = "A description of SwiftVietnam"
+    var description = "A community for Vietnamese Swift enthusiasts."
     var language: Language { .english }
     var imagePath: Path? { nil }
 }
