@@ -1,6 +1,7 @@
 import Foundation
 import Publish
 import Plot
+import SplashPublishPlugin
 
 // This type acts as the configuration for your website.
 struct SwiftVietnam: Website {
@@ -15,11 +16,16 @@ struct SwiftVietnam: Website {
 
     // Update these properties to configure your website:
     var url = URL(string: "https://swiftvietnam.com")!
-    var name = "SwiftVietnam"
+    var name = "Swift Vietnam Community"
     var description = "A community for Vietnamese Swift enthusiasts."
     var language: Language { .english }
     var imagePath: Path? { nil }
 }
 
 // This will generate your website using the built-in Foundation theme:
-try SwiftVietnam().publish(withTheme: .foundation)
+try SwiftVietnam().publish(
+    withTheme: .swiftvietnam,
+    plugins: [
+         .splash(withClassPrefix: "s-")
+    ]
+)
