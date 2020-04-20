@@ -44,9 +44,9 @@ code .
   <span class="s-string">"version"</span>: <span class="s-string">"2.0.0"</span>,
   <span class="s-string">"tasks"</span>: [
     {
-      <span class="s-string">"label"</span>: <span class="s-string">"swift-build"</span>, <span class="s-comment">// 1</span>
-      <span class="s-string">"type"</span>: <span class="s-string">"shell"</span>, <span class="s-comment">// 2</span>
-      <span class="s-string">"command"</span>: <span class="s-string">"swift build"</span> <span class="s-comment">// 3</span>
+      <span class="s-string">"label"</span>: <span class="s-string">"swift-build"</span>, 
+      <span class="s-string">"type"</span>: <span class="s-string">"shell"</span>, 
+      <span class="s-string">"command"</span>: <span class="s-string">"swift build"</span> 
     }
   ]
 }
@@ -54,13 +54,13 @@ code .
   <span class="s-string">version": "0</span>.<span class="s-number">2</span>.<span class="s-string">0",
   configurations": [</span>
     {
-      <span class="s-string">"type"</span>: <span class="s-string">"lldb"</span>, <span class="s-comment">// 1</span>
+      <span class="s-string">"type"</span>: <span class="s-string">"lldb"</span>, 
       <span class="s-string">"request"</span>: <span class="s-string">"launch"</span>,
       <span class="s-string">"name"</span>: <span class="s-string">"Debug"</span>,
-      <span class="s-string">"program"</span>: <span class="s-string">"${workspaceFolder}/.build/debug/SwiftVietnam"</span>, <span class="s-comment">// 2</span>
+      <span class="s-string">"program"</span>: <span class="s-string">"${workspaceFolder}/.build/debug/SwiftVietnam"</span>, 
       <span class="s-string">"args"</span>: [],
       <span class="s-string">"cwd"</span>: <span class="s-string">"${workspaceFolder}"</span>,
-      <span class="s-string">"preLaunchTask"</span>: <span class="s-string">"swift-build"</span> <span class="s-comment">// 3</span>
+      <span class="s-string">"preLaunchTask"</span>: <span class="s-string">"swift-build"</span> 
     }
   ]
 }

@@ -203,9 +203,9 @@ With this, we will be able to see class references for our Swift code:
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "swift-build", // 1
-      "type": "shell", // 2
-      "command": "swift build" // 3
+      "label": "swift-build", 
+      "type": "shell", 
+      "command": "swift build" 
     }
   ]
 }
@@ -221,13 +221,13 @@ We can also configure the debugger for our Swift project by installing `CodeLLDB
   version": "0.2.0",
   configurations": [
     {
-      "type": "lldb", // 1
+      "type": "lldb", 
       "request": "launch",
       "name": "Debug",
-      "program": "${workspaceFolder}/.build/debug/SwiftVietnam", // 2
+      "program": "${workspaceFolder}/.build/debug/SwiftVietnam", 
       "args": [],
       "cwd": "${workspaceFolder}",
-      "preLaunchTask": "swift-build" // 3
+      "preLaunchTask": "swift-build" 
     }
   ]
 }
