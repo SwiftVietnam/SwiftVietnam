@@ -52,31 +52,47 @@ and deploy existing ones.
 publish new
 </code></pre><p>Open the newly created folder in Visual Studio Code:</p><pre><code>code .
 </code></pre><p>To connect to the Swift Toolchain and SourceKit-LSP with Visual Studio Code, we need to create some some setting files under <code>.vscode</code> in our workspace.</p><p><strong>settings.json</strong>: set the path to the swift tool chain</p><pre><code>{
-    <span class="s-string">"sourcekit-lsp.toolchainPath"</span>: <span class="s-string">"$HOME/bin/swift-5.2.2-RELEASE-ubuntu18.04/usr/bin"</span>
+  <span class="s-string">"sourcekit-lsp.toolchainPath"</span>: <span class="s-string">"$HOME/bin/swift-5.2.2-RELEASE-ubuntu18.04/usr/bin"</span>
 }
 </code></pre><p><strong>tasks.json</strong>: set the configuration so that we can run the project directly from VSCode by pressing <code>F5</code></p><pre><code>{
-    <span class="s-string">"version"</span>: <span class="s-string">"2.0.0"</span>,
-    <span class="s-string">"tasks"</span>: [
-      {
-        <span class="s-string">"label"</span>: <span class="s-string">"swift-build"</span>, <span class="s-comment">// 1</span>
-        <span class="s-string">"type"</span>: <span class="s-string">"shell"</span>, <span class="s-comment">// 2</span>
-        <span class="s-string">"command"</span>: <span class="s-string">"swift build"</span> <span class="s-comment">// 3</span>
-      }
-    ]
+  <span class="s-string">"version"</span>: <span class="s-string">"2.0.0"</span>,
+  <span class="s-string">"tasks"</span>: [
+    {
+      <span class="s-string">"label"</span>: <span class="s-string">"swift-build"</span>, <span class="s-comment">// 1</span>
+      <span class="s-string">"type"</span>: <span class="s-string">"shell"</span>, <span class="s-comment">// 2</span>
+      <span class="s-string">"command"</span>: <span class="s-string">"swift build"</span> <span class="s-comment">// 3</span>
+    }
+  ]
 }
 </code></pre><p>We can also configure the debugger for our Swift project by installing <code>CodeLLDB</code> extension and creating <code>launch.json</code> in <code>.vscode</code> folder:</p><p><strong>launch.json</strong>:</p><pre><code>{
-	<span class="s-string">"version"</span>: <span class="s-string">"0.2.0"</span>,
-	<span class="s-string">"configurations"</span>: [
-	  {
-	    <span class="s-string">"type"</span>: <span class="s-string">"lldb"</span>, <span class="s-comment">// 1</span>
-	    <span class="s-string">"request"</span>: <span class="s-string">"launch"</span>,
-	    <span class="s-string">"name"</span>: <span class="s-string">"Debug"</span>,
-	    <span class="s-string">"program"</span>: <span class="s-string">"${workspaceFolder}/.build/debug/SwiftVietnam"</span>, <span class="s-comment">// 2</span>
-	    <span class="s-string">"args"</span>: [],
-	    <span class="s-string">"cwd"</span>: <span class="s-string">"${workspaceFolder}"</span>,
-	    <span class="s-string">"preLaunchTask"</span>: <span class="s-string">"swift-build"</span> <span class="s-comment">// 3</span>
-	  }
-	]
+  <span class="s-string">version": "0</span>.<span class="s-number">2</span>.<span class="s-string">0",
+  configurations": [</span>
+    {
+      <span class="s-string">"type"</span>: <span class="s-string">"lldb"</span>, <span class="s-comment">// 1</span>
+      <span class="s-string">"request"</span>: <span class="s-string">"launch"</span>,
+      <span class="s-string">"name"</span>: <span class="s-string">"Debug"</span>,
+      <span class="s-string">"program"</span>: <span class="s-string">"${workspaceFolder}/.build/debug/SwiftVietnam"</span>, <span class="s-comment">// 2</span>
+      <span class="s-string">"args"</span>: [],
+      <span class="s-string">"cwd"</span>: <span class="s-string">"${workspaceFolder}"</span>,
+      <span class="s-string">"preLaunchTask"</span>: <span class="s-string">"swift-build"</span> <span class="s-comment">// 3</span>
+    }
+  ]
 }
 </code></pre><h2>5. Test locally and publish to Github Pages using a custom domain</h2><h3>Step 1: Testing locally</h3><p>To test the site locally, we can run:</p><pre><code>publish run
-</code></pre><p>The generated website will be created in the <code>Output</code> folder. And a local server will be started at <code>http://localhost:8000</code>. We can now just open that address in our browser to review the site.</p><h3>Step 2: Setting up custom domain</h3><p>If you want to use a custom domain with your Github Pages, please follow the <a href="https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site">official instruction</a> from Github to customize the domain name.</p><h3>Step 3: Push <code>Output</code> folder to remote</h3><p><code>Publish</code> has an extensible <code>DeploymentMethod</code> API which can be used to implement different deployment methods. Unfortunately, deployment to Github Pages is not a built-in feature. At the time of writting, there is a pull request which implements GithubPages Deploymentmethod, but it is still being developed.</p><p>Since publishing to github pages is quite easy, we can alternatively write some shell scripts to push code from <code>Output</code> folder to</p><h2>6. Conclusion:</h2><p>In this tutorial, we have created a foundation for our static-generated website by finishing many configuration tasks:</p><ul><li>Created a complte swift development environment on Ubuntu 18.04 LTS with Visual Studio Code and SourceKit-LSP</li><li>Installed <code>Publish</code> tool to create and publish our website</li><li>Tested and published a first version of our website to Github Pages, running on a custom domain.</li></ul><p>In future post, we will investigate how to use <a href="https://github.com/JohnSundell/Plot">Plot</a> to change the UI, to use <a href="https://github.com/JohnSundell/Splash">Splash</a> for syntax highlighting for Swift and to create different sections for our website.</p><p>Further in-dept resources and explanations can be found in the following links:</p><ul><li><a href="https://swift.org/download/#using-downloads">Swift installation instruction</a></li><li><a href="https://github.com/apple/sourcekit-lsp">SourceKit-LSP</a></li><li><a href="//www.raywenderlich.com/8325890-a-complete-guide-to-swift-development-on-linux">A Complete Guide to Swift Development on Linux: https</a></li></ul></div><span>Tagged with: </span><ul class="tag-list"><li><a href="/tags/tutorial">tutorial</a></li><li><a href="/tags/linux">linux</a></li><li><a href="/tags/publish">publish</a></li></ul></article></div><footer><p>Generated using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="/feed.rss">RSS feed</a></p></footer></body></html>
+</code></pre><p>The generated website will be created in the <code>Output</code> folder. And a local server will be started at <code>http://localhost:8000</code>. We can now just open that address in our browser to review the site.</p><h3>Step 2: Setting up custom domain</h3><p>If you want to use a custom domain with your Github Pages, please follow the <a href="https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site">official instruction</a> from Github to customize the domain name.</p><h3>Step 3: Push <code>Output</code> folder to remote</h3><p><code>Publish</code> has an extensible <code>DeploymentMethod</code> API which can be used to implement different deployment methods. Unfortunately, deployment to Github Pages is not a built-in feature. At the time of writting, there is a pull request which implements GithubPages Deploymentmethod, but it is still being developed.</p><p>Since publishing to github pages is quite easy, we can alternatively write some shell scripts to push code from <code>Output</code> folder to the <code>gh-pages</code> branch of our repository and configure the repository to serve our static website from the <code>gh-pages</code> branch.</p><p>The <code>deploy.sh</code> script looks like following:</p><pre><code>#!/bin/sh
+
+## <span class="s-type">Rebuild</span> the website
+publish generate
+
+## <span class="s-type">Add</span> custom domain <span class="s-type">CNAME</span>
+echo <span class="s-string">"swiftvietnam.com"</span> &gt; <span class="s-type">Output</span>/<span class="s-type">CNAME</span>
+
+## <span class="s-type">Add</span> files to git
+git add .
+git commit -m <span class="s-string">"Update production"</span>
+git push origin master
+
+## <span class="s-type">Deploy</span> to gh-pages
+echo <span class="s-string">"--&gt; Deploy to live server --&gt;"</span>
+git subtree push --prefix <span class="s-type">Output</span> origin gh-pages
+</code></pre><h2>6. Conclusion:</h2><p>In this tutorial, we have created a foundation for our static-generated website by finishing many configuration tasks:</p><ul><li>Created a complte swift development environment on Ubuntu 18.04 LTS with Visual Studio Code and SourceKit-LSP</li><li>Installed <code>Publish</code> tool to create and publish our website</li><li>Tested and published a first version of our website to Github Pages, running on a custom domain.</li></ul><p>In future post, we will investigate how to use <a href="https://github.com/JohnSundell/Plot">Plot</a> to change the UI, to use <a href="https://github.com/JohnSundell/Splash">Splash</a> for syntax highlighting for Swift and to create different sections for our website.</p><p>Further in-dept resources and explanations can be found in the following links:</p><ul><li><a href="https://www.swiftbysundell.com/videos/static-site-generation-in-swift/">Static site generation in Swift</a></li><li><a href="https://github.com/JohnSundell/Publish">Publish github repository</a></li><li><a href="https://swift.org/download/#using-downloads">Swift installation instruction</a></li><li><a href="https://github.com/apple/sourcekit-lsp">SourceKit-LSP</a></li><li><a href="//www.raywenderlich.com/8325890-a-complete-guide-to-swift-development-on-linux">A Complete Guide to Swift Development on Linux</a></li></ul></div><span>Tagged with: </span><ul class="tag-list"><li><a href="/tags/tutorial">tutorial</a></li><li><a href="/tags/linux">linux</a></li><li><a href="/tags/publish">publish</a></li></ul></article></div><footer><p>Generated using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="/feed.rss">RSS feed</a></p></footer></body></html>
