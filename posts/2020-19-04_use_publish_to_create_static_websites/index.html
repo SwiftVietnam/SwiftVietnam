@@ -33,27 +33,14 @@ make
 install: cannot create regular file '/usr/local/bin/publish': <span class="s-type">Permission</span> denied
 <span class="s-type">Makefile</span>:<span class="s-number">2</span>: recipe <span class="s-keyword">for</span> target 'install' failed
 </code></pre><p>You should run <code>install</code> command with <code>sudo</code> instead:</p><pre><code>sudo install .<span class="s-dotAccess">build</span>/release/publish-cli /usr/local/bin/publish
-</code></pre><p>Now if you run <code>publish</code> from the command line. You will see something like this:</p><pre><code><span class="s-type">Publish Command Line Interface</span>
-------------------------------
-<span class="s-type">Interact</span> with the <span class="s-type">Publish</span> <span class="s-keyword">static</span> site generator from
-the command line, to create new websites, or to generate
-and deploy existing ones.
-
-<span class="s-type">Available</span> commands:
-
-- new: <span class="s-type">Set</span> up a new website <span class="s-keyword">in</span> the current folder.
-- generate: <span class="s-type">Generate</span> the website <span class="s-keyword">in</span> the current folder.
-- run: <span class="s-type">Generate</span> and run a localhost server on <span class="s-keyword">default</span> port <span class="s-number">8000</span>
-       <span class="s-keyword">for</span> the website <span class="s-keyword">in</span> the current folder. <span class="s-type">Use</span> the <span class="s-string">"-p"</span>
-       or <span class="s-string">"--port"</span> option <span class="s-keyword">for</span> customizing the <span class="s-keyword">default</span> port.
-- deploy: <span class="s-type">Generate</span> and deploy the website <span class="s-keyword">in</span> the current folder, according to its deployment method.
-</code></pre><h2>4. Create a new website</h2><p>Now we can use <code>publish</code> command to create a new website:</p><pre><code>mkdir <span class="s-type">SwiftVietnam</span>
+</code></pre><p>Now if you run <code>publish</code> from the command line. You will see something like this:</p><img src="../../Images/1/publish_installed_successfully.png" alt="preview"/><h2>4. Create a new website</h2><h3>Step 1: Create a new project</h3><p>Now we can use <code>publish</code> command to create a new website:</p><pre><code>mkdir <span class="s-type">SwiftVietnam</span>
 publish new
-</code></pre><p>Open the newly created folder in Visual Studio Code:</p><pre><code>code .
-</code></pre><p>To connect to the Swift Toolchain and SourceKit-LSP with Visual Studio Code, we need to create some setting files under <code>.vscode</code> in our workspace.</p><p><strong>settings.json</strong>: set the path to the swift tool chain</p><pre><code>{
+</code></pre><p>Open the newly created folder in Visual Studio Code:</p><pre><code>cd <span class="s-type">SwiftVietnam</span>
+code .
+</code></pre><p>To connect to the Swift Toolchain and SourceKit-LSP with Visual Studio Code, we need to create some setting files under <code>.vscode</code> in our workspace:</p><ul><li><strong>settings.json</strong>: set the path to the swift tool chain</li></ul><pre><code>{
   <span class="s-string">"sourcekit-lsp.toolchainPath"</span>: <span class="s-string">"$HOME/bin/swift-5.2.2-RELEASE-ubuntu18.04/usr/bin"</span>
 }
-</code></pre><p><strong>tasks.json</strong>: set the configuration so that we can run the project directly from VSCode by pressing <code>F5</code></p><pre><code>{
+</code></pre><p>With this, we will be able to see class references for our Swift code:</p><img src="../../Images/1/publish_vscode.png" alt="preview"/><ul><li><strong>tasks.json</strong>: set the configuration so that we can run the project directly from VSCode by pressing <code>F5</code></li></ul><pre><code>{
   <span class="s-string">"version"</span>: <span class="s-string">"2.0.0"</span>,
   <span class="s-string">"tasks"</span>: [
     {
@@ -63,7 +50,7 @@ publish new
     }
   ]
 }
-</code></pre><p>We can also configure the debugger for our Swift project by installing <code>CodeLLDB</code> extension and creating <code>launch.json</code> in <code>.vscode</code> folder:</p><p><strong>launch.json</strong>:</p><pre><code>{
+</code></pre><p>We can also configure the debugger for our Swift project by installing <code>CodeLLDB</code> extension and creating <code>launch.json</code> in <code>.vscode</code> folder:</p><ul><li><strong>launch.json</strong>:</li></ul><pre><code>{
   <span class="s-string">version": "0</span>.<span class="s-number">2</span>.<span class="s-string">0",
   configurations": [</span>
     {
@@ -77,8 +64,8 @@ publish new
     }
   ]
 }
-</code></pre><h2>5. Test locally and publish to Github Pages with a custom domain</h2><h3>Step 1: Testing locally</h3><p>To test the site locally, we can run:</p><pre><code>publish run
-</code></pre><p>The generated website will be created in the <code>Output</code> folder. And a local server will be started at <code>http://localhost:8000</code>. We can now just open that address in our browser to review the site.</p><h3>Step 2: Setting up a custom domain</h3><p>If you want to use a custom domain with your Github Pages, please follow the <a href="https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site">official instruction</a> from Github to customize the domain name.</p><h3>Step 3: Push <code>Output</code> folder to remote</h3><p><code>Publish</code> has an extensible <code>DeploymentMethod</code> API which can be used to implement different deployment methods. Unfortunately, deployment to Github Pages is not a built-in feature. At the time of writing, there is a pull request which implements GithubPages Deploymentmethod, but it is still being developed.</p><p>Since publishing to GitHub pages is quite easy, we can alternatively write some shell scripts to push code from the <code>Output</code> folder to the <code>gh-pages</code> branch of our repository and configure the repository to serve our static website from the <code>gh-pages</code> branch.</p><p>The <code>deploy.sh</code> script looks like following:</p><pre><code>#!/bin/sh
+</code></pre><p>Now we can use running and debugging capabilities of VSCode for our project: <img src="../../Images/1/publish_debug.png" alt="debugging"/></p><h2>5. Test locally and publish to Github Pages with a custom domain</h2><h3>Step 1: Testing locally</h3><p>To test the site locally, we can run:</p><pre><code>publish run
+</code></pre><p>The generated website will be created in the <code>Output</code> folder. And a local server will be started at <code>http://localhost:8000</code>. We can now just open that address in our browser to review the site.</p><img src="../../Images/1/publish_new.png" alt="preview"/><h3>Step 2: Setting up a custom domain</h3><p>If you want to use a custom domain with your Github Pages, please follow the <a href="https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site">official instruction</a> from Github to customize the domain name.</p><h3>Step 3: Push <code>Output</code> folder to remote</h3><p><code>Publish</code> has an extensible <code>DeploymentMethod</code> API which can be used to implement different deployment methods. Unfortunately, deployment to Github Pages is not a built-in feature. At the time of writing, there is a pull request which implements GithubPages Deploymentmethod, but it is still being developed.</p><p>Since publishing to GitHub pages is quite easy, we can alternatively write some shell scripts to push code from the <code>Output</code> folder to the <code>gh-pages</code> branch of our repository and configure the repository to serve our static website from the <code>gh-pages</code> branch.</p><p>The <code>deploy.sh</code> script looks like following:</p><pre><code>#!/bin/sh
 
 ## <span class="s-type">Rebuild</span> the website
 publish generate
