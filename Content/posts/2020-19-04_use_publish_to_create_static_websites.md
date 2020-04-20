@@ -292,8 +292,9 @@ In future posts, we will investigate how to use [Plot](https://github.com/JohnSu
 
 Further in-depth resources and explanations can be found in the following links:
 
-- [Static site generation in Swift](https://www.swiftbysundell.com/videos/static-site-generation-in-swift/)
-- [Publish github repository](https://github.com/JohnSundell/Publish)
+- [SwiftVietnam's Github repository](https://github.com/antranapp/swiftvietnam)
+- [(Video) Static site generation in Swift](https://www.swiftbysundell.com/videos/static-site-generation-in-swift/)
+- [Publish's Github repository](https://github.com/JohnSundell/Publish)
 - [Swift installation instruction](https://swift.org/download/#using-downloads)
 - [SourceKit-LSP](https://github.com/apple/sourcekit-lsp)
 - [A Complete Guide to Swift Development on Linux](//www.raywenderlich.com/8325890-a-complete-guide-to-swift-development-on-linux)
