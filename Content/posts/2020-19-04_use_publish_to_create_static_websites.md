@@ -162,24 +162,11 @@ sudo install .build/release/publish-cli /usr/local/bin/publish
 
 Now if you run `publish` from the command line. You will see something like this:
 
-```
-Publish Command Line Interface
-------------------------------
-Interact with the Publish static site generator from
-the command line, to create new websites, or to generate
-and deploy existing ones.
-
-Available commands:
-
-- new: Set up a new website in the current folder.
-- generate: Generate the website in the current folder.
-- run: Generate and run a localhost server on default port 8000
-       for the website in the current folder. Use the "-p"
-       or "--port" option for customizing the default port.
-- deploy: Generate and deploy the website in the current folder, according to its deployment method.
-```
+![preview](../../Images/1/publish_installed_successfully.png)
 
 ## 4. Create a new website
+
+### Step 1: Create a new project
 
 Now we can use `publish` command to create a new website:
 
@@ -191,19 +178,26 @@ publish new
 Open the newly created folder in Visual Studio Code:
 
 ```
+cd SwiftVietnam
 code .
 ```
 
-To connect to the Swift Toolchain and SourceKit-LSP with Visual Studio Code, we need to create some setting files under `.vscode` in our workspace. 
+To connect to the Swift Toolchain and SourceKit-LSP with Visual Studio Code, we need to create some setting files under `.vscode` in our workspace: 
 
-**settings.json**: set the path to the swift tool chain
+- **settings.json**: set the path to the swift tool chain
+
 ```
 {
   "sourcekit-lsp.toolchainPath": "$HOME/bin/swift-5.2.2-RELEASE-ubuntu18.04/usr/bin"
 }
 ```
 
-**tasks.json**: set the configuration so that we can run the project directly from VSCode by pressing `F5`
+With this, we will be able to see class references for our Swift code:
+
+![preview](../../Images/1/publish_vscode.png)
+
+- **tasks.json**: set the configuration so that we can run the project directly from VSCode by pressing `F5`
+
 ```
 {
   "version": "2.0.0",
@@ -217,9 +211,11 @@ To connect to the Swift Toolchain and SourceKit-LSP with Visual Studio Code, we 
 }
 ```
 
+
 We can also configure the debugger for our Swift project by installing `CodeLLDB` extension and creating `launch.json` in `.vscode` folder:
 
-**launch.json**: 
+- **launch.json**: 
+
 ```
 {
   version": "0.2.0",
@@ -237,17 +233,21 @@ We can also configure the debugger for our Swift project by installing `CodeLLDB
 }
 ```
 
+Now we can use running and debugging capabilities of VSCode for our project: ![debugging](../../Images/1/publish_debug.png)
 
 ## 5. Test locally and publish to Github Pages with a custom domain
 
 ### Step 1: Testing locally
 
 To test the site locally, we can run:
+
 ```
 publish run
 ```
 
 The generated website will be created in the `Output` folder. And a local server will be started at `http://localhost:8000`. We can now just open that address in our browser to review the site.
+
+![preview](../../Images/1/publish_new.png)
 
 ### Step 2: Setting up a custom domain
 

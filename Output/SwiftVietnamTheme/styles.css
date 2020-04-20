@@ -199,6 +199,11 @@ code {
     border-radius: 5px;
 }
 
+.content img {
+    max-width: 100%;
+    height: auto;
+}
+
 /** Splash **/
 
 
