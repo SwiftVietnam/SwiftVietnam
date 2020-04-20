@@ -1,7 +1,7 @@
 #!/bin/sh
 
-## Rebuild build_production
-swift build
+## Rebuild the website
+publish generate
 
 ## Add custom domain CNAME
 echo "swiftvietnam.com" > Output/CNAME

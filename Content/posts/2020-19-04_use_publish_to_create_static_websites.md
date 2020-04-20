@@ -199,21 +199,21 @@ To connect to the Swift Toolchain and SourceKit-LSP with Visual Studio Code, we 
 **settings.json**: set the path to the swift tool chain
 ```
 {
-    "sourcekit-lsp.toolchainPath": "$HOME/bin/swift-5.2.2-RELEASE-ubuntu18.04/usr/bin"
+  "sourcekit-lsp.toolchainPath": "$HOME/bin/swift-5.2.2-RELEASE-ubuntu18.04/usr/bin"
 }
 ```
 
 **tasks.json**: set the configuration so that we can run the project directly from VSCode by pressing `F5`
 ```
 {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "swift-build", // 1
-        "type": "shell", // 2
-        "command": "swift build" // 3
-      }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "swift-build", // 1
+      "type": "shell", // 2
+      "command": "swift build" // 3
+    }
+  ]
 }
 ```
 
@@ -222,18 +222,18 @@ We can also configure the debugger for our Swift project by installing `CodeLLDB
 **launch.json**: 
 ```
 {
-	"version": "0.2.0",
-	"configurations": [
-	  {
-	    "type": "lldb", // 1
-	    "request": "launch",
-	    "name": "Debug",
-	    "program": "${workspaceFolder}/.build/debug/SwiftVietnam", // 2
-	    "args": [],
-	    "cwd": "${workspaceFolder}",
-	    "preLaunchTask": "swift-build" // 3
-	  }
-	]
+  version": "0.2.0",
+  configurations": [
+    {
+      "type": "lldb", // 1
+      "request": "launch",
+      "name": "Debug",
+      "program": "${workspaceFolder}/.build/debug/SwiftVietnam", // 2
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "swift-build" // 3
+    }
+  ]
 }
 ```
 
@@ -258,7 +258,28 @@ If you want to use a custom domain with your Github Pages, please follow the [of
 
 `Publish` has an extensible `DeploymentMethod` API which can be used to implement different deployment methods. Unfortunately, deployment to Github Pages is not a built-in feature. At the time of writting, there is a pull request which implements GithubPages Deploymentmethod, but it is still being developed.
 
-Since publishing to github pages is quite easy, we can alternatively write some shell scripts to push code from `Output` folder to
+Since publishing to github pages is quite easy, we can alternatively write some shell scripts to push code from `Output` folder to the `gh-pages` branch of our repository and configure the repository to serve our static website from the `gh-pages` branch.
+
+The `deploy.sh` script looks like following:
+
+```
+#!/bin/sh
+
+## Rebuild the website
+publish generate
+
+## Add custom domain CNAME
+echo "swiftvietnam.com" > Output/CNAME
+
+## Add files to git
+git add .
+git commit -m "Update production"
+git push origin master
+
+## Deploy to gh-pages
+echo "--> Deploy to live server -->"
+git subtree push --prefix Output origin gh-pages
+```
 
 ## 6. Conclusion:
 
@@ -272,6 +293,8 @@ In future post, we will investigate how to use [Plot](https://github.com/JohnSun
 
 Further in-dept resources and explanations can be found in the following links:
 
+- [Static site generation in Swift](https://www.swiftbysundell.com/videos/static-site-generation-in-swift/)
+- [Publish github repository](https://github.com/JohnSundell/Publish)
 - [Swift installation instruction](https://swift.org/download/#using-downloads)
 - [SourceKit-LSP](https://github.com/apple/sourcekit-lsp)
 - [A Complete Guide to Swift Development on Linux](//www.raywenderlich.com/8325890-a-complete-guide-to-swift-development-on-linux)
