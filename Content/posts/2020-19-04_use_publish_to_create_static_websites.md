@@ -109,6 +109,7 @@ sudo mv .build/x86_64-unknown-linux-gnu/debug/sourcekit-lsp /usr/local/bin
 ```
 
 ***Note:***
+
 - You need to use the correct path to your `swift` binary in the command. I used mine here for easy understanding.
 - You might need to install additional dependencies depending on what packages are available on your machines.
 
@@ -247,7 +248,6 @@ publish run
 ```
 
 The generated website will be created in the `Output` folder. And a local server will be started at `http://localhost:8000`. We can now just open that address in our browser to review the site.
-
 
 ### Step 2: Setting up a custom domain
 
