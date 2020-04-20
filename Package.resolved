@@ -29,6 +29,15 @@
         }
       },
       {
+        "package": "LoggerKit",
+        "repositoryURL": "https://github.com/pvieito/LoggerKit.git",
+        "state": {
+          "branch": "master",
+          "revision": "34762d10fc7a638142549e369a68e02d647e03e5",
+          "version": null
+        }
+      },
+      {
         "package": "Plot",
         "repositoryURL": "https://github.com/johnsundell/plot.git",
         "state": {
@@ -47,6 +56,24 @@
         }
       },
       {
+        "package": "PythonKit",
+        "repositoryURL": "https://github.com/pvieito/PythonKit.git",
+        "state": {
+          "branch": "master",
+          "revision": "18cbc3588fb11ced63192472a8f7e6b60e5e7f5d",
+          "version": null
+        }
+      },
+      {
+        "package": "Rainbow",
+        "repositoryURL": "https://github.com/onevcat/Rainbow",
+        "state": {
+          "branch": null,
+          "revision": "9c52c1952e9b2305d4507cf473392ac2d7c9b155",
+          "version": "3.1.5"
+        }
+      },
+      {
         "package": "ShellOut",
         "repositoryURL": "https://github.com/johnsundell/shellout.git",
         "state": {
@@ -56,30 +83,39 @@
         }
       },
       {
-        "package": "Splash",
-        "repositoryURL": "https://github.com/johnsundell/splash.git",
-        "state": {
-          "branch": null,
-          "revision": "03ea9bdcbb21354b66499d3d826a140a5119bc65",
-          "version": "0.12.0"
-        }
-      },
-      {
-        "package": "SplashPublishPlugin",
-        "repositoryURL": "https://github.com/johnsundell/splashpublishplugin",
-        "state": {
-          "branch": null,
-          "revision": "34bb50bd83b2a40c63afc35f090c76619dc149ce",
-          "version": "0.1.0"
-        }
-      },
-      {
         "package": "Sweep",
         "repositoryURL": "https://github.com/johnsundell/sweep.git",
         "state": {
           "branch": null,
           "revision": "801c2878e4c6c5baf32fe132e1f3f3af6f9fd1b0",
           "version": "0.4.0"
+        }
+      },
+      {
+        "package": "swift-argument-parser",
+        "repositoryURL": "https://github.com/apple/swift-argument-parser",
+        "state": {
+          "branch": null,
+          "revision": "9f04d1ff1afbccd02279338a2c91e5f27c45e93a",
+          "version": "0.0.5"
+        }
+      },
+      {
+        "package": "SwiftPygments",
+        "repositoryURL": "https://github.com/Ze0nC/SwiftPygments",
+        "state": {
+          "branch": "master",
+          "revision": "c22bcfcc5931db56c971c1d2722de856a8bfaf39",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftPygmentsPublishPlugin",
+        "repositoryURL": "https://github.com/Ze0nC/SwiftPygmentsPublishPlugin",
+        "state": {
+          "branch": "master",
+          "revision": "9280f5d55a4a7600cef2e08078ec456ab345904c",
+          "version": null
         }
       }
     ]

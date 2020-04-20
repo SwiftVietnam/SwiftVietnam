@@ -9,12 +9,15 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/johnsundell/publish.git", from: "0.3.0"),
-        .package(url: "https://github.com/johnsundell/splashpublishplugin", from: "0.1.0")
+        .package(url: "https://github.com/Ze0nC/SwiftPygmentsPublishPlugin", .branch("master"))
     ],
     targets: [
         .target(
             name: "SwiftVietnam",
-            dependencies: ["Publish", "SplashPublishPlugin"]
+            dependencies: [
+                "Publish", 
+                "SwiftPygmentsPublishPlugin"
+            ]
         )
     ]
 )

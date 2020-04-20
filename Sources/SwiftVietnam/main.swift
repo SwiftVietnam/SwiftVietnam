@@ -1,7 +1,8 @@
 import Foundation
 import Publish
 import Plot
-import SplashPublishPlugin
+
+import SwiftPygmentsPublishPlugin
 
 // This type acts as the configuration for your website.
 struct SwiftVietnam: Website {
@@ -26,6 +27,6 @@ struct SwiftVietnam: Website {
 try SwiftVietnam().publish(
     withTheme: .swiftvietnam,
     plugins: [
-         .splash(withClassPrefix: "s-")
+        .pygments()
     ]
 )

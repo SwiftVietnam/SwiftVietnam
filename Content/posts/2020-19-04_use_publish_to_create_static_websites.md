@@ -24,17 +24,17 @@ The following steps show how to install the currently latest version of Swift 5.
 
 We can install those dependencies by running the following code:
 
-```
+```bash
 sudo apt install clang libicu-dev
 ```
 
-### Step 2: Download the released binary from [Swift website](https://swift.org/download)
+### Step 2: Download the Swift binary
 
-Apple releases many pre-compiled binary builds for Swift on the official Swift website. 
+Apple releases many pre-compiled binary builds for Swift on the official [Swift website](https://swift.org/download). 
 
 We are going to download the build for Ubuntu 18.04 LTS using the following commands and unpack it into `swift` folder:
 
-```
+```bash
 mkdir ~/swift
 cd ~/swift
 wget https://swift.org/builds/swift-5.2.2-release/ubuntu1804/swift-5.2.2-RELEASE/swift-5.2.2-RELEASE-ubuntu18.04.tar.gz
@@ -47,14 +47,14 @@ To execute `swift` command from anywhere, we need to add the path to the `swift`
 
 We can find the path to the swift binary using `pwd` command:
 
-```
+```bash
 cd ~/swift/swift-5.2.2-RELEASE-ubuntu18.04/usr/bin
 pwd
 ```
 
 Copy the output of the above command and add it into our `PATH`, ideally in `.bashrc` file to keep the change permanently.
 
-```
+```bash
 export PATH=$PATH:$HOME/bin/swift-5.2.2-RELEASE-ubuntu18.04/usr/bin
 ```
 
@@ -64,13 +64,13 @@ Remember to restart the session or run `source ~/.bashrc` before continue.
 
 Now you test if you can call `swift` command.
 
-```
+```bash
 swift -v
 ```
 
 The output should be something like:
 
-```
+```bash
 Swift version 5.2.2 (swift-5.2.2-RELEASE)
 Target: x86_64-unknown-linux-gnu
 ```
@@ -95,16 +95,11 @@ Apple announced the SourceKit-LSP in August 2018 and released the open-source pr
 
 We are going to build `SourceKit-LSP` from its source, and copy the built binary to `/usr/local/bin`
 
-```
-
+```bash
 git clone https://github.com/apple/sourcekit-lsp.git
-
 cd sourcekit-lsp
-
 sudo apt install libsqlite3-dev libncurses5-dev
-
 swift build -Xcxx -I${HOME}/bin/swift-5.2.2-RELEASE-ubuntu18.04/usr/lib/swift -Xcxx -I${HOME}/bin/swift-5.2.2-RELEASE-ubuntu18.04/usr/lib/swift/Block
-
 sudo mv .build/x86_64-unknown-linux-gnu/debug/sourcekit-lsp /usr/local/bin
 ```
 
@@ -117,20 +112,20 @@ sudo mv .build/x86_64-unknown-linux-gnu/debug/sourcekit-lsp /usr/local/bin
 
 If you don't have Visual Studio Code installed yet, please follow [this instruction](https://code.visualstudio.com/docs/setup/linux) to install it. The most simple way is to use `snap`
 
-```
+```bash
 sudo snap install --classic code
 ```
 
 We also need `node` and `npm` to build our custom Visual Studio Code extension. The installation instruction for Ubuntu can be found [here](https://github.com/nodesource/distributions/blob/master/README.md#debinstall)
 
-```
+```bash
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
 Now, inside the `sourcekit-lsp` folder, run the following commands to create and install the extension for Visual Studio Code.
 
-```
+```bash
 cd Editors/vscode
 npm run createDevPackage 
 code --install-extension out/sourcekit-lsp-vscode-dev.vsix
@@ -140,7 +135,7 @@ code --install-extension out/sourcekit-lsp-vscode-dev.vsix
 
 We will now install `Publish` from its [source code](https://github.com/JohnSundell/Publish):
 
-```
+```bash
 git clone https://github.com/JohnSundell/Publish.git
 cd Publish
 make
@@ -148,7 +143,7 @@ make
 
 If you get permission errors like this:
 
-```
+```bash
 install .build/release/publish-cli /usr/local/bin/publish
 install: cannot create regular file '/usr/local/bin/publish': Permission denied
 Makefile:2: recipe for target 'install' failed
@@ -156,7 +151,7 @@ Makefile:2: recipe for target 'install' failed
 
 You should run `install` command with `sudo` instead:
 
-```
+```bash
 sudo install .build/release/publish-cli /usr/local/bin/publish
 ```
 
@@ -170,14 +165,14 @@ Now if you run `publish` from the command line. You will see something like this
 
 Now we can use `publish` command to create a new website:
 
-```
+```bash
 mkdir SwiftVietnam
 publish new
 ```
 
 Open the newly created folder in Visual Studio Code:
 
-```
+```bash
 cd SwiftVietnam
 code .
 ```
@@ -186,7 +181,7 @@ To connect to the Swift Toolchain and SourceKit-LSP with Visual Studio Code, we 
 
 - **settings.json**: set the path to the swift tool chain
 
-```
+```json
 {
   "sourcekit-lsp.toolchainPath": "$HOME/bin/swift-5.2.2-RELEASE-ubuntu18.04/usr/bin"
 }
@@ -198,7 +193,7 @@ With this, we will be able to see class references for our Swift code:
 
 - **tasks.json**: set the configuration so that we can run the project directly from VSCode by pressing `F5`
 
-```
+```json
 {
   "version": "2.0.0",
   "tasks": [
@@ -216,10 +211,10 @@ We can also configure the debugger for our Swift project by installing `CodeLLDB
 
 - **launch.json**: 
 
-```
+```json
 {
-  version": "0.2.0",
-  configurations": [
+  "version": "0.2.0",
+  "configurations": [
     {
       "type": "lldb", 
       "request": "launch",
@@ -235,13 +230,13 @@ We can also configure the debugger for our Swift project by installing `CodeLLDB
 
 Now we can use running and debugging capabilities of VSCode for our project: ![debugging](../../Images/1/publish_debug.png)
 
-## 5. Test locally and publish to Github Pages with a custom domain
+## 5. Test and publish to Github Pages
 
 ### Step 1: Testing locally
 
 To test the site locally, we can run:
 
-```
+```bash
 publish run
 ```
 
@@ -261,7 +256,7 @@ Since publishing to GitHub pages is quite easy, we can alternatively write some 
 
 The `deploy.sh` script looks like following:
 
-```
+```bash
 #!/bin/sh
 
 ## Rebuild the website
