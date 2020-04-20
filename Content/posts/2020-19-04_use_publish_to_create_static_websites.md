@@ -274,4 +274,4 @@ Further in-dept resources and explanations can be found in the following links:
 
 - [Swift installation instruction](https://swift.org/download/#using-downloads)
 - [SourceKit-LSP](https://github.com/apple/sourcekit-lsp)
-- [A Complete Guide to Swift Development on Linux: https](//www.raywenderlich.com/8325890-a-complete-guide-to-swift-development-on-linux)
+- [A Complete Guide to Swift Development on Linux](//www.raywenderlich.com/8325890-a-complete-guide-to-swift-development-on-linux)
