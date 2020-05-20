@@ -22,7 +22,7 @@ Các bạn có thẻ truy cập trang web chính của **"Bản tin Swift"** t�
 
 ## Swift 5.3 có gì mới?
 
-Anh bạn [Paul Hudson](https://www.hackingwithswift.com/) có tổng hợp những Swift Evolution đã được implemented trong phiên bản Swift 5.3. Các bạn có thể xem [tại đây](https://www.whatsnewinswift.com/?from=5.2&to=5.3) để biết thêm chi tiết. Các bạn cũng có thể tải playground này xuống để xem trực tiếp [code](https://www.whatsnewinswift.com/files/playground-5-2-to-5-3.playground.zip)
+Anh bạn [Paul Hudson](https://twitter.com/twostraws) có tổng hợp những Swift Evolution đã được implemented trong phiên bản Swift 5.3. Các bạn có thể xem [tại đây](https://www.whatsnewinswift.com/?from=5.2&to=5.3) để biết thêm chi tiết. Các bạn cũng có thể tải playground này xuống để xem trực tiếp [code](https://www.whatsnewinswift.com/files/playground-5-2-to-5-3.playground.zip)
 
 Mình tóm lược các Swift Evolution đã được cập nhật trong Swift 5.3:
 
@@ -43,7 +43,7 @@ Mình tóm lược các Swift Evolution đã được cập nhật trong Swift 5
 
 ## Propagating user-facing errors in Swift
 
-Anh bạn John Sundell thảo luận về việc propagate lỗi trong các tâng thấp lên tầng trên trong cấu trúc ứng dụng. John cũng giới thiệu kỹ thuật dung `enum` để group các lỗi cùng loại cho dễ xử lỹ.
+Anh bạn [John Sundell](https://twitter.com/johnsundell) thảo luận về việc propagate lỗi trong các tâng thấp lên tầng trên trong cấu trúc ứng dụng. John cũng giới thiệu kỹ thuật dung `enum` để group các lỗi cùng loại cho dễ xử lỹ.
 
 Các bạn có thể đọc thêm chi tết [tại đây](https://www.swiftbysundell.com/articles/propagating-user-facing-errors-in-swift/)
 
@@ -110,6 +110,8 @@ Các bạn có biết chữ `NS` (ví dụ trong `NSObject`) viết tắt cho c�
 
 Puh, viết một bài tổng hợp cũng không phải đơn giản. Bây giờ là hơn 1h đêm rồi mà mình vẫn không biết bài viết có đủ thông tin hay ho cho mọi người không. Nhưng giờ thì mệt quá rồi nên mình xin ngừng ~~bút~~ phím ở đây. Hy vọng "Bản Tin Swift" số #1 mang lại cho các bạn một số thông tin hữu ích về cộng đồng Swift thế giới.
 
-Mình rất muốn tìm và chia sẻ các thông tin về iOS/Apple/Swift với các bạn lập trình viên Việt Nam. Nếu bạn có ý kiến, ý tưởng, chỉ trích hay đóng góp gì cho bài viết, các bạn có thể liên lạc với mình trên [Twitter](https://twitter.com/antranapp) hoặc [Github](https://github.com/antranapp). Rất mong nhận được ý kiến đóng góp của các ban.
+Mình rất muốn tìm và chia sẻ các thông tin về iOS/Apple/Swift với các bạn lập trình viên Việt Nam. Nếu bạn có ý kiến, ý tưởng, chỉ trích hay đóng góp gì cho bài viết, các bạn có thể liên lạc với mình trên [Twitter](https://twitter.com/antranapp) hoặc [Github](https://github.com/antranapp). Rất mong nhận được ý kiến đóng góp của các bạn.
+
+Các bạn cũng nhớ theo dõi trang [Facebook Swift Việt Nam](https://www.facebook.com/Swift-Vi%E1%BB%87t-Nam-396835394265318) để được cập nhật các thông tin mới nhất về ~~Taylor~~ Swift nhé 😋.
 
 Chào thân ái.
