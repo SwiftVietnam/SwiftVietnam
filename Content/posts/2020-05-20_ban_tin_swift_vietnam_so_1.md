@@ -43,7 +43,7 @@ Mình tóm lược các Swift Evolution đã được cập nhật trong Swift 5
 
 ## Lan truyền lỗi giữa các tầng trong cấu trúc của ứng dụng bằng Swift
 
-Anh bạn [John Sundell](https://twitter.com/johnsundell) thảo luận về việc propagate lỗi trong các tầng thấp lên tầng trên trong cấu trúc ứng dụng. John cũng giới thiệu kỹ thuật dung `enum` để group các lỗi cùng loại cho dễ xử lỹ.
+Anh bạn [John Sundell](https://twitter.com/johnsundell) thảo luận về việc propagate lỗi trong các tầng thấp lên tầng trên trong cấu trúc ứng dụng. John cũng giới thiệu kỹ thuật dùng `enum` để group các lỗi cùng loại cho dễ xử lỹ.
 
 Các bạn có thể đọc thêm chi tết [tại đây](https://www.swiftbysundell.com/articles/propagating-user-facing-errors-in-swift/)
 
