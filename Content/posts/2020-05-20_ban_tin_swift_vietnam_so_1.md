@@ -9,6 +9,7 @@ tags: swiftvietnam, news
 Xin chào mừng các bạn đến số đầu tiên của **"Bản tin Swift"**. Tự giới thiệu mình tên là An, hiện đang làm iOS Engineer ở Đức. Tại **"Bản tin Swift"** mình sẽ cố gắng tổng hợp các thông tin mới nhất liên quan đến ngôn ngữ lập trình Swift, về Apple ecosystem và về các vấn đề liên quan đến phát triển ứng dụng cho Apple platform. 
 
 Có nhiều lý do tại sao mình lại bắt đầu **"Bản tin Swift"**:
+
 - Mình viết Swift hàng ngày, cả ở công việc lẫn hobby :)
 - Mình thích Swift và thường xuyên đọc nhiều thông tin về Swift.
 - Mình thích viết app cho Apple platform.
@@ -80,7 +81,7 @@ Trên [Pointfree.co](https://www.pointfree.co/) các bạn có thể theo dõi 3
 
 Đặc biệt nếu bạn muốn học thêm về Functional Programming và xem các video (mất tiền) bổ ích khác trên Pointfree.co, đặc biệt là các bạn ở Việt Nam, các bạn có thể xem mình có được [áp dụng giảm giá](https://www.pointfree.co/subscribe/personal?useRegionalDiscount=true) không nhé. Điều kiện là bạn trả tiền bằng thẻ tín dụng issued ở Việt Nam.
 
-## 
+## ACHNBrowserUI
 
 Mình không chơi Animal Crossing nhưng thấy rất nhiều người đang điên cuồng vì trò chơi này. Nếu bạn đang chơi trò này và muốn học SwiftUI, Combine thì bạn có thể tham khảo cái App [ACHNBrowserUI](https://github.com/Dimillian/ACHNBrowserUI) này nhé. Mã mở hoàn toàn. App được viết bởi anh chàng [Thomas Ricouard](https://github.com/Dimillian), người đã gây bão trong cộng đồng Swift vì là một trong những người viết [ứng dụng bằng SwiftUI đầu tiên](https://github.com/Dimillian/MovieSwiftUI)
 
