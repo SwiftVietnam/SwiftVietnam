@@ -16,7 +16,7 @@ Có nhiều lý do tại sao mình lại bắt đầu **"Bản tin Swift"**:
 - Mình muốn chia sẻ kiến thức và thông tin mình cập nhật được với nhiều người.
 - Minh muốn kết nối cộng đồng lập trình viên iOS Việt Nam để chúng ta có thể chia sẻ thông tin, cơ hội làm việc cũng như cùng nhau phát triển.
 
-Các bạn có thẻ truy cập trang web chính của **"Bản tin Swift"** tại: [https://swiftvietnam.com](https://swiftvietnam.com)
+Các bạn có thể truy cập trang web chính của **"Bản tin Swift"** tại: [https://swiftvietnam.com](https://swiftvietnam.com)
 
 # Tin tức
 
