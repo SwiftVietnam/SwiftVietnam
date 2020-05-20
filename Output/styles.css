@@ -13,9 +13,10 @@
 body {
     background: #fff;
     color: #000;
-    font-family: Helvetica, Arial;
+    font-family: "BlinkMacSystemFont","Helvetica Neue", "Lucida Grande",sans-serif;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.7;
+    font-size: 20px;
 }
 
 .wrapper {
@@ -74,7 +75,9 @@ p {
 }
 
 a {
-    color: inherit;
+    color: #DA251D;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .description {
