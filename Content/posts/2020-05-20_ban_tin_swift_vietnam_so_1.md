@@ -1,7 +1,7 @@
 ---
 date: 2020-05-20 01:28
 description: Bản tin Swift Việt Nam #1
-tags: swiftvietnam, news
+tags: news
 ---
 
 # Bản tin Swift #1
