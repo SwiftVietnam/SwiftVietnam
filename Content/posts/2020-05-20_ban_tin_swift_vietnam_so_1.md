@@ -6,13 +6,13 @@ tags: news
 
 # Bản tin Swift #1
 
-Xin chào mừng các bạn đến số đầu tiên của **"Bản tin Swift"**. Tự giới thiệu mình tên là An, hiện đang làm iOS Engineer ở Đức. Tại **"Bản tin Swift"** mình sẽ cố gắng tổng hợp các thông tin mới nhất liên quan đến ngôn ngữ lập trình Swift, về Apple ecosystem và về các vấn đề liên quan đến phát triển ứng dụng cho Apple platform. 
+Xin chào mừng các bạn đến số đầu tiên của **"Bản tin Swift"**. Tự giới thiệu mình tên là An, hiện đang làm iOS Engineer ở Đức. Tại **"Bản tin Swift"** mình sẽ tổng hợp các thông tin mới nhất liên quan đến ngôn ngữ lập trình Swift, về Apple ecosystem và về các vấn đề liên quan đến phát triển ứng dụng cho Apple platforms. 
 
 Có nhiều lý do tại sao mình lại bắt đầu **"Bản tin Swift"**:
 
 - Mình viết Swift hàng ngày, cả ở công việc lẫn hobby :)
 - Mình thích Swift và thường xuyên đọc nhiều thông tin về Swift.
-- Mình thích viết app cho Apple platform.
+- Mình thích viết app cho Apple platforms.
 - Mình muốn chia sẻ kiến thức và thông tin mình cập nhật được với nhiều người.
 - Minh muốn kết nối cộng đồng lập trình viên iOS Việt Nam để chúng ta có thể chia sẻ thông tin, cơ hội làm việc cũng như cùng nhau phát triển.
 
@@ -22,24 +22,24 @@ Các bạn có thẻ truy cập trang web chính của **"Bản tin Swift"** t�
 
 ## Swift 5.3 có gì mới?
 
-Anh bạn [Paul Hudson](https://twitter.com/twostraws) có tổng hợp những Swift Evolution đã được implemented trong phiên bản Swift 5.3. Các bạn có thể xem [tại đây](https://www.whatsnewinswift.com/?from=5.2&to=5.3) để biết thêm chi tiết. Các bạn cũng có thể tải playground này xuống để xem trực tiếp [code](https://www.whatsnewinswift.com/files/playground-5-2-to-5-3.playground.zip)
+Anh bạn [Paul Hudson](https://twitter.com/twostraws) có tổng hợp những Swift Evolution đã được implemented trong phiên bản [Swift 5.3](https://swift.org/blog/5-3-release-process/). Các bạn có thể xem [tại đây](https://www.whatsnewinswift.com/?from=5.2&to=5.3) để biết thêm chi tiết. Các bạn cũng có thể tải [playground](https://www.whatsnewinswift.com/files/playground-5-2-to-5-3.playground.zip) này xuống để xem trực tiếp code
 
 Mình tóm lược các Swift Evolution đã được cập nhật trong Swift 5.3:
 
 - [SE-0276](https://github.com/apple/swift-evolution/blob/master/proposals/0276-multi-pattern-catch-clauses.md) Multi-pattern catch clauses: bắt nhiều exceptions trong cùng một lúc.
 - [SE-0279](https://github.com/apple/swift-evolution/blob/master/proposals/0279-multiple-trailing-closures.md) Multiple trailing closures: cái SE này bị cộng đồng chỉ trích khá nhiều vì chẳng có ích mấy mà còn làm code khó đọc hơn. Nhưng mình dự đoán là Apple sẽ giới thiệu 1 cái gì đó ở WWDC mà cái SE sẽ makes sense.
 - [SE-0266](https://github.com/apple/swift-evolution/blob/master/proposals/0266-synthesized-comparable-for-enumerations.md) Synthesized Comparable conformance for enums: so sánh các case trong một enum nếu enum conform to `Comparable`
-- [SE-0269](https://github.com/apple/swift-evolution/blob/master/proposals/0269-implicit-self-explicit-capture.md) `self` is no longer required in many places: bớt phải viết `self` nếu Compiler có thể đảm bảo là không thể có reference cycle. Đặc biệt hữu dụng khi dùng `SwiftUI` hay `Combine``
+- [SE-0269](https://github.com/apple/swift-evolution/blob/master/proposals/0269-implicit-self-explicit-capture.md) `self` is no longer required in many places: bớt phải viết `self` nếu Compiler có thể đảm bảo là không thể có reference cycle. Đặc biệt hữu dụng khi dùng `SwiftUI` hay `Combine`
 - [SE-0281](https://github.com/apple/swift-evolution/blob/master/proposals/0281-main-attribute.md) Type-Based Program Entry Points
 - [SE-0267](https://github.com/apple/swift-evolution/blob/master/proposals/0267-where-on-contextually-generic.md) `where` clauses on contextually generic declarations
 - [SE-0270](https://github.com/apple/swift-evolution/blob/master/proposals/0270-rangeset-and-collection-operations.md) New collection methods on noncontiguous elements
 - [SE-0268](https://github.com/apple/swift-evolution/blob/master/proposals/0268-didset-semantics.md) Refined didSet Semantics
 - [SE-0277](https://github.com/apple/swift-evolution/blob/master/proposals/0277-float16.md) A new Float16 type
-- [SE-0271](https://github.com/apple/swift-evolution/blob/master/proposals/0271-package-manager-resources.md) Swift Package Manager gains binary dependencies, resources, and more: Cái này rất hay vì chúng ta sẽ có thể sử dụng được SPM cho các packge có chưa ảnh, âm thanh, JSON, plist hay bất cứ resource nào khác. Trước đây SPM chỉ hỗ trợ package chứa code thôi
+- [SE-0271](https://github.com/apple/swift-evolution/blob/master/proposals/0271-package-manager-resources.md) Swift Package Manager gains binary dependencies, resources, and more: Cái này rất hay vì chúng ta sẽ có thể sử dụng được SPM cho các packge có chứa ảnh, âm thanh, JSON, plist hay bất cứ resource nào khác. Trước đây SPM chỉ hỗ trợ package chứa code thôi
 - [SE-0272](https://github.com/apple/swift-evolution/blob/master/proposals/0272-swiftpm-binary-dependencies.md) Package Manager Binary Dependencies : yay, Google có thể sử dụng SPM để package Firebase được rồi.
 - [SE-0273](https://github.com/apple/swift-evolution/blob/master/proposals/0273-swiftpm-conditional-target-dependencies.md) Package Manager Conditional Target Dependencies: sử dụng các package khác nhau phụ thuộc vào platform.
 
-Đặc biệt là Swift 5.3 sẽ chính thức hỗ trợ Windows và một số distro Linux khác (hiện chỉ hỗ trợ chính thức Ubuntu). Mình đã dùng Swift 5.2 để tạo  [SwiftVietnam](https://swiftvietnam.com) trên Linux Ubuntu. Mình có viết về trải nghiệm của mình [tại đây](https://swiftvietnam.com/posts/2020-19-04_use_publish_to_create_static_websites/)
+Đặc biệt là Swift 5.3 sẽ chính thức hỗ trợ Windows và một số [distro Linux khác](https://swift.org/blog/additional-linux-distros/) (hiện chỉ hỗ trợ chính thức Ubuntu). Mình đã dùng Swift 5.2 để tạo  [SwiftVietnam](https://swiftvietnam.com) trên Linux Ubuntu. Mình có viết về trải nghiệm của mình [tại đây](https://swiftvietnam.com/posts/2020-19-04_use_publish_to_create_static_websites/)
 
 ## Propagating user-facing errors in Swift
 
