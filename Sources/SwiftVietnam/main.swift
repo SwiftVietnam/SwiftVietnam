@@ -27,6 +27,6 @@ struct SwiftVietnam: Website {
 try SwiftVietnam().publish(
     withTheme: .swiftvietnam,
     plugins: [
-        //.pygments()
+        .pygments()
     ]
 )

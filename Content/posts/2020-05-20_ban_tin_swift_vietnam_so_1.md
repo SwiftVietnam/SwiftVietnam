@@ -23,7 +23,8 @@ Các bạn có thẻ truy cập trang web chính của **"Bản tin Swift"** t�
 
 Anh bạn [Paul Hudson](https://www.hackingwithswift.com/) có tổng hợp những Swift Evolution đã được implemented trong phiên bản Swift 5.3. Các bạn có thể xem [tại đây](https://www.whatsnewinswift.com/?from=5.2&to=5.3) để biết thêm chi tiết. Các bạn cũng có thể tải playground này xuống để xem trực tiếp [code](https://www.whatsnewinswift.com/files/playground-5-2-to-5-3.playground.zip)
 
-Mình tóm lược các Swift Evolution đã được cập nhật trong Swift 5.3
+Mình tóm lược các Swift Evolution đã được cập nhật trong Swift 5.3:
+
 - [SE-0276](https://github.com/apple/swift-evolution/blob/master/proposals/0276-multi-pattern-catch-clauses.md) Multi-pattern catch clauses: bắt nhiều exceptions trong cùng một lúc.
 - [SE-0279](https://github.com/apple/swift-evolution/blob/master/proposals/0279-multiple-trailing-closures.md) Multiple trailing closures: cái SE này bị cộng đồng chỉ trích khá nhiều vì chẳng có ích mấy mà còn làm code khó đọc hơn. Nhưng mình dự đoán là Apple sẽ giới thiệu 1 cái gì đó ở WWDC mà cái SE sẽ makes sense.
 - [SE-0266](https://github.com/apple/swift-evolution/blob/master/proposals/0266-synthesized-comparable-for-enumerations.md) Synthesized Comparable conformance for enums: so sánh các case trong một enum nếu enum conform to `Comparable`
