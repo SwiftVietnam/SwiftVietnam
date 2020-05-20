@@ -39,11 +39,11 @@ Mình tóm lược các Swift Evolution đã được cập nhật trong Swift 5
 - [SE-0272](https://github.com/apple/swift-evolution/blob/master/proposals/0272-swiftpm-binary-dependencies.md) Package Manager Binary Dependencies : yay, Google có thể sử dụng SPM để package Firebase được rồi.
 - [SE-0273](https://github.com/apple/swift-evolution/blob/master/proposals/0273-swiftpm-conditional-target-dependencies.md) Package Manager Conditional Target Dependencies: sử dụng các package khác nhau phụ thuộc vào platform.
 
-Đặc biệt là Swift 5.3 sẽ chính thức hỗ trợ Windows và một số [distro Linux khác](https://swift.org/blog/additional-linux-distros/) (hiện chỉ hỗ trợ chính thức Ubuntu). Mình đã dùng Swift 5.2 để tạo  [SwiftVietnam](https://swiftvietnam.com) trên Linux Ubuntu. Mình có viết về trải nghiệm của mình [tại đây](https://swiftvietnam.com/posts/2020-19-04_use_publish_to_create_static_websites/)
+Đặc biệt là Swift 5.3 sẽ chính thức hỗ trợ Windows và một số [distro Linux khác](https://swift.org/blog/additional-linux-distros/) (hiện chỉ hỗ trợ chính thức Ubuntu). Mình đã dùng Swift 5.2 để tạo  [SwiftVietnam](https://swiftvietnam.com) trên Linux Ubuntu. Mình có viết về trải nghiệm của mình [tại đây](https://swiftvietnam.com/posts/2020-19-04_use_publish_to_create_static_websites/).
 
-## Propagating user-facing errors in Swift
+## Lan truyền lỗi giữa các tầng trong cấu trúc của ứng dụng bằng Swift
 
-Anh bạn [John Sundell](https://twitter.com/johnsundell) thảo luận về việc propagate lỗi trong các tâng thấp lên tầng trên trong cấu trúc ứng dụng. John cũng giới thiệu kỹ thuật dung `enum` để group các lỗi cùng loại cho dễ xử lỹ.
+Anh bạn [John Sundell](https://twitter.com/johnsundell) thảo luận về việc propagate lỗi trong các tầng thấp lên tầng trên trong cấu trúc ứng dụng. John cũng giới thiệu kỹ thuật dung `enum` để group các lỗi cùng loại cho dễ xử lỹ.
 
 Các bạn có thể đọc thêm chi tết [tại đây](https://www.swiftbysundell.com/articles/propagating-user-facing-errors-in-swift/)
 
@@ -51,7 +51,7 @@ Các bạn có thể đọc thêm chi tết [tại đây](https://www.swiftbysun
 
 ## CS193p - Developing Apps for iOS
 
-Khoá học phát triển ứng dụng iOS nổi tiếng của trường đại học Standford hiện đang được làm mới và sử dụng SwiftUI 100%. Khoá học này hoàn toàn miễn phí, chỉ tiếc là không có chứng chỉ cho những ai không phải là sinh viên của Standford 😔
+Khoá học phát triển ứng dụng iOS nổi tiếng của trường đại học Standford hiện đang được làm mới và sử dụng SwiftUI 100%. Khoá học này hoàn toàn miễn phí, chỉ tiếc là không có chứng chỉ cho những ai không phải là sinh viên của Standford 😔.
 
 Các bạn có thể xem video của khoá học trên Youtube. Link được cập nhật tại đây: [https://cs193p.sites.stanford.edu/](https://cs193p.sites.stanford.edu/)
 
@@ -83,13 +83,13 @@ Trên [Pointfree.co](https://www.pointfree.co/) các bạn có thể theo dõi 3
 
 ## ACHNBrowserUI
 
-Mình không chơi Animal Crossing nhưng thấy rất nhiều người đang điên cuồng vì trò chơi này. Nếu bạn đang chơi trò này và muốn học SwiftUI, Combine thì bạn có thể tham khảo cái App [ACHNBrowserUI](https://github.com/Dimillian/ACHNBrowserUI) này nhé. Mã mở hoàn toàn. App được viết bởi anh chàng [Thomas Ricouard](https://github.com/Dimillian), người đã gây bão trong cộng đồng Swift vì là một trong những người viết [ứng dụng bằng SwiftUI đầu tiên](https://github.com/Dimillian/MovieSwiftUI)
+Mình không chơi Animal Crossing nhưng thấy rất nhiều người đang điên cuồng vì trò chơi này. Nếu bạn đang chơi trò này và muốn học SwiftUI, Combine thì bạn có thể tham khảo cái App [ACHNBrowserUI](https://github.com/Dimillian/ACHNBrowserUI) này nhé. Mã mở hoàn toàn. App được viết bởi anh chàng [Thomas Ricouard](https://github.com/Dimillian), người đã gây bão trong cộng đồng Swift vì là một trong những người viết [ứng dụng bằng SwiftUI đầu tiên](https://github.com/Dimillian/MovieSwiftUI).
 
 # Tools:
 
 ## Concurrent Carthage
 
-Chắc mọi người đã biết và dùng Carthage để quản lý thử viện bên thứ ba cho ứng dụng của mình. Nếu bạn để ý thì Carthage khá là chậm nếu bạn có nhiều dependency. [Concurrent Carthage](https://github.com/unchartedworks/ConcurrentCarthage) là một công cụ mới dùng để giúp Carthage sử dụng tối đang các core trên máy tính để tăng tốc.
+Chắc mọi người đã biết và dùng `Carthage` để quản lý thử viện bên thứ ba cho ứng dụng của mình. Nếu bạn để ý thì `Carthage` khá là chậm nếu bạn có nhiều dependency. [Concurrent Carthage](https://github.com/unchartedworks/ConcurrentCarthage) là một công cụ mới dùng để giúp `Carthage` sử dụng tối đang các core trên máy tính để tăng tốc.
 
 # Apple
 
