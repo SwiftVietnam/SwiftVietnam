@@ -110,6 +110,8 @@ Các bạn có biết chữ `NS` (ví dụ trong `NSObject`) viết tắt cho c�
 
 Puh, viết một bài tổng hợp cũng không phải đơn giản. Bây giờ là hơn 1h đêm rồi mà mình vẫn không biết bài viết có đủ thông tin hay ho cho mọi người không. Nhưng giờ thì mệt quá rồi nên mình xin ngừng ~~bút~~ phím ở đây. Hy vọng "Bản Tin Swift" số #1 mang lại cho các bạn một số thông tin hữu ích về cộng đồng Swift thế giới.
 
+Mục đích chính của SwiftVietnam là community-driven 🤝. Chỉ có vậy chúng ta mới có thể cùng nhau phát triển được. Nếu mọi người muốn đóng góp chia sẻ thông tin cho **"Bản tin Swift #2"** thì mời các bạn vào thảo luận [tại đây](https://github.com/SwiftVietnam/SwiftVietnam/issues/1) nhé 💪.
+
 Mình rất muốn tìm và chia sẻ các thông tin về iOS/Apple/Swift với các bạn lập trình viên Việt Nam. Nếu bạn có ý kiến, ý tưởng, chỉ trích hay đóng góp gì cho bài viết, các bạn có thể liên lạc với mình trên [Twitter](https://twitter.com/antranapp) hoặc [Github](https://github.com/antranapp). Rất mong nhận được ý kiến đóng góp của các bạn.
 
 Các bạn cũng nhớ theo dõi trang [Facebook Swift Việt Nam](https://www.facebook.com/Swift-Vi%E1%BB%87t-Nam-396835394265318) để được cập nhật các thông tin mới nhất về ~~Taylor~~ Swift nhé 😋.
