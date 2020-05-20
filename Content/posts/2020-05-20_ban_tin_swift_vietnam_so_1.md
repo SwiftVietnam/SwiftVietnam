@@ -21,7 +21,7 @@ Các bạn có thẻ truy cập trang web chính của **"Bản tin Swift"** t�
 
 ## Swift 5.3 có gì mới?
 
-Anh bạn [Paul Hudson](https://www.hackingwithswift.com/) có tổng hợp những Swift Evolution đã được implemented trong phiên bản Swift 5.3. Các bạn có thể xem [tại đây](https://www.whatsnewinswift.com/?from=5.2&to=5.3) để biết thêm chi tiết. Các bạn cũng có thể tải playground này xuống để xem trực tiếp [code](https://www.whatsnewinswift.com/files/playground-5-2-to-5-3.playground.zip)
+Anh [Paul Hudson](https://www.hackingwithswift.com/) có tổng hợp những Swift Evolution đã được implemented trong phiên bản Swift 5.3. Các bạn có thể xem [tại đây](https://www.whatsnewinswift.com/?from=5.2&to=5.3) để biết thêm chi tiết. Các bạn cũng có thể tải playground này xuống để xem trực tiếp [code](https://www.whatsnewinswift.com/files/playground-5-2-to-5-3.playground.zip)
 
 Mình tóm lược các Swift Evolution đã được cập nhật trong Swift 5.3:
 
