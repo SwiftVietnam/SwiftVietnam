@@ -35,7 +35,7 @@ Mình tóm lược các Swift Evolution đã được cập nhật trong Swift 5
 - [SE-0270](https://github.com/apple/swift-evolution/blob/master/proposals/0270-rangeset-and-collection-operations.md) New collection methods on noncontiguous elements
 - [SE-0268](https://github.com/apple/swift-evolution/blob/master/proposals/0268-didset-semantics.md) Refined didSet Semantics
 - [SE-0277](https://github.com/apple/swift-evolution/blob/master/proposals/0277-float16.md) A new Float16 type
-- [SE-0271](https://github.com/apple/swift-evolution/blob/master/proposals/0271-package-manager-resources.md) Swift Package Manager gains binary dependencies, resources, and more: Cái này rất hay vì chúng ta sẽ có thể sử dụng được SPM cho các packge có chứa ảnh, âm thanh, JSON, plist hay bất cứ resource nào khác. Trước đây SPM chỉ hỗ trợ package chứa code thôi
+- [SE-0271](https://github.com/apple/swift-evolution/blob/master/proposals/0271-package-manager-resources.md) Swift Package Manager gains binary dependencies, resources, and more: Cái này rất hay vì chúng ta sẽ có thể sử dụng được SPM cho các packge có chứa ảnh, âm thanh, JSON, plist hay bất cứ resource nào khác. Trước đây SPM chỉ hỗ trợ package chứa code thôi.
 - [SE-0272](https://github.com/apple/swift-evolution/blob/master/proposals/0272-swiftpm-binary-dependencies.md) Package Manager Binary Dependencies : yay, Google có thể sử dụng SPM để package Firebase được rồi.
 - [SE-0273](https://github.com/apple/swift-evolution/blob/master/proposals/0273-swiftpm-conditional-target-dependencies.md) Package Manager Conditional Target Dependencies: sử dụng các package khác nhau phụ thuộc vào platform.
 
@@ -67,7 +67,7 @@ Trong podcast gần đây, John Sundell có phỏng vấn Dave Abrahams, một t
 
 Nếu bạn chưa biết **Dave Abrahams** là ai hay không biết "Protocol-Oriented Programming" là gì, mình recommend các bạn xem lại video [Protocol-Oriented Programming in Swift](https://developer.apple.com/videos/play/wwdc2015/408/) từ WWDC 2015
 
-Quay lại Podcast của giữ John và Dave, họ thảo luận khá nhiều về tại sao Swift lại không đi theo hướng đối tượng, C++ có ảnh hưởng thế nào đến Swift, Generic Programming là gì và đặc biệt là tại sao Dave không còn làm việc ở Apple nữa.
+Quay lại Podcast của giữ John và Dave, họ thảo luận khá nhiều về tại sao Swift lại nhấn mạnh hướng đối tượng, C++ có ảnh hưởng thế nào đến Swift, Generic Programming là gì và đặc biệt là tại sao Dave không còn làm việc ở Apple nữa.
 
 Các bạn có thể nghe podcast [tại đây](https://www.swiftbysundell.com/podcast/71/)
 
@@ -75,11 +75,11 @@ Các bạn có thể nghe podcast [tại đây](https://www.swiftbysundell.com/p
 
 ## The Composable Architecture:
 
-Nếu các bạn muốn phát triên ứng dụng scalable và maintainable, chắc chắc các bạn sẽ nghĩ đến việc chia nhỏ ứng dụng của mình thành các thành phần bé hơn. Các anh bạn ở Pointfree.co mới phát hành một cấu trúc có tên là [The Compossable Architecture](https://github.com/pointfreeco/swift-composable-architecture) (TCA) một vài tuần trước giúp các bạn có thể xây dựng ứng dung (SwiftUI và UIKit) theo cách lắp ghép các thành phần nhỏ lại với nhau. 
+Nếu các bạn muốn phát triển ứng dụng scalable và maintainable, chắc chắc các bạn sẽ nghĩ đến việc chia nhỏ ứng dụng của mình thành các thành phần nhỏ hơn. Các anh bạn ở [pointfree.co](https://pointfree.co) mới phát hành một cấu trúc có tên là [The Compossable Architecture](https://github.com/pointfreeco/swift-composable-architecture) (TCA) một vài tuần trước giúp các bạn có thể xây dựng ứng dung (SwiftUI và UIKit) theo cách lắp ghép các thành phần nhỏ lại với nhau. 
 
-Trên [Pointfree.co](https://www.pointfree.co/) các bạn có thể theo dõi 3 videos gần nhất để xem họ giới thiệu về TCA nhé.
+Trên [pointfree.co](https://www.pointfree.co/) các bạn có thể theo dõi 3 videos gần nhất để xem họ giới thiệu về TCA nhé.
 
-Đặc biệt nếu bạn muốn học thêm về Functional Programming và xem các video (mất tiền) bổ ích khác trên Pointfree.co, đặc biệt là các bạn ở Việt Nam, các bạn có thể xem mình có được [áp dụng giảm giá](https://www.pointfree.co/subscribe/personal?useRegionalDiscount=true) không nhé. Điều kiện là bạn trả tiền bằng thẻ tín dụng issued ở Việt Nam.
+Đặc biệt nếu bạn muốn học thêm về Functional Programming và xem các video (mất tiền) bổ ích khác trên [pointfree.co](https://www.pointfree.co/), đặc biệt là các bạn ở Việt Nam, các bạn có thể xem mình có được [áp dụng giảm giá](https://www.pointfree.co/subscribe/personal?useRegionalDiscount=true) không nhé. Điều kiện là bạn trả tiền bằng thẻ tín dụng issued ở Việt Nam.
 
 ## ACHNBrowserUI
 
@@ -96,7 +96,7 @@ Chắc mọi người đã biết và dùng `Carthage` để quản lý thử vi
 ## Apple Glass
 
 Anh chàng John Prosser, một leaker về các sản phẩm của Apple khá nổi tiếng, vừa phát hành một video lean về Apple Glass trên [Youtube](https://www.youtube.com/watch?v=SfjSy6T4iE4)
-Apple đầu tư khá nhiều vào AR mấy năm gần đây. Mình sống ở Munich , Đức và là nơi Apple đã [mua một công ty AR](https://techcrunch.com/2015/05/28/apple-metaio/), khởi nguồn cho ARKit và các công nghệ AR của Apple. Mình có dùng một số AR apps trên điện thoại, thực ra cũng không thấy hay lắm. Cái Apple Glass chắc chắn thích hợp cho việc sử dụng app AR hơn là điện thoại.
+Apple đầu tư khá nhiều vào AR mấy năm gần đây. Mình sống ở Munich, Đức và là nơi Apple đã [mua một công ty AR](https://techcrunch.com/2015/05/28/apple-metaio/), khởi nguồn cho ARKit và các công nghệ AR của Apple. Mình có dùng một số AR apps trên điện thoại, thực ra cũng không thấy hay lắm. Cái Apple Glass chắc chắn thích hợp cho việc sử dụng app AR hơn là điện thoại.
 
 Tiện nói về AR, mình có xem [cái demo này](https://arcopypaste.app/) rất cool 😉.
 
