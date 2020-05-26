@@ -4,7 +4,7 @@ description: Bản tin Swift Việt Nam #1
 tags: news
 ---
 
-# Bản tin Swift #1
+# Bản tin Swift Việt Nam #1
 
 Xin chào mừng các bạn đến số đầu tiên của **"Bản tin Swift"**. Tự giới thiệu mình tên là An, hiện đang làm iOS Engineer ở Đức. Tại **"Bản tin Swift"** mình sẽ tổng hợp các thông tin mới nhất liên quan đến ngôn ngữ lập trình Swift, về Apple ecosystem và về các vấn đề liên quan đến phát triển ứng dụng cho Apple platforms. 
 
