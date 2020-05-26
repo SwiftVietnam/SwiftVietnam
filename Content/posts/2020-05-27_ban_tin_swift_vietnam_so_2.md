@@ -120,5 +120,6 @@ Chỉ còn vài tuần nữa là WWDC20 sẽ diễn ra với rất nhiều thôn
 Các bạn cũng nhớ theo dõi trang [Facebook Swift Việt Nam](https://www.facebook.com/Swift-Vi%E1%BB%87t-Nam-396835394265318) để được cập nhật các thông tin mới nhất về Swift và cộng đồng lập trình viên Swift Việt Nam nhé.
 
 Links:
+
 - Mã nguồn bài viết: [https://github.com/SwiftVietnam/SwiftVietnam/blob/master/Content/posts/2020-05-27_ban_tin_swift_vietnam_so_2.md](https://github.com/SwiftVietnam/SwiftVietnam/blob/master/Content/posts/2020-05-27_ban_tin_swift_vietnam_so_2.md)
 - Tổng hợp thông tin có bài số #3: [https://github.com/SwiftVietnam/SwiftVietnam/issues/2](https://github.com/SwiftVietnam/SwiftVietnam/issues/2)
