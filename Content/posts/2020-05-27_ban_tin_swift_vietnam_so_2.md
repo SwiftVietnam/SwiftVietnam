@@ -83,7 +83,7 @@ Nếu các bạn làm việc ở các công ty lớn một chút, họ sẽ có 
 
 ## iOS 13.5
 
-Tuần vừa rồi Apple đã phát hành phiên bản iOS 13.5, nhận diện khẩu trang, nhưng quan trọng nhất là Exposure Notification Framework dành cho các app contact tracing phòng chống Covid-19. 
+Tuần vừa rồi Apple đã phát hành phiên bản iOS 13.5, nhận diện khẩu trang, nhưng quan trọng nhất là [Exposure Notification Framework](https://developer.apple.com/documentation/exposurenotification) dành cho các app contact tracing phòng chống Covid-19. Apple thậm chí còn phát hành [mã nguồn](https://developer.apple.com/documentation/exposurenotification/building_an_app_to_notify_users_of_covid-19_exposure) một ứng dụng mẫu sử dụng ENF.
 
 Về mặt kỹ thuật, nguyên tắc ENF hoạt động tương đối giống các app contract tracing phát hanh trước dây như tracetogether của Singapore hoặc bluezone của Việt Nam: trao đổi anonymized IDs qua giao thức bluetooth giữa các máy tiếp xúc gần nhau. Nhưng với việc ENF được tích hợp trực tiếp vào hệ thống, các app sử dụng không phải luôn luôn mở ở foreground nữa mà có thể hoạt động ở background. Ngoải ra ENF cũng tương thích với một framework tương tự bên Android. Mình thấy việc Apple và Google bắt tay nhau phát triển ENF là một điều tuyệt vời, giúp giảm thiểu việc có quá nhiều protocols được phát triển độc lập không tương thích với nhau. Với việc là official framework của iOS và Android, người dùng cũng sẽ tin tưởng hơn và sẽ sử dụng các apps contract tracing nhiều hơn, dẫn đến nâng cao hiệu quả của việc chống dịch.
 
