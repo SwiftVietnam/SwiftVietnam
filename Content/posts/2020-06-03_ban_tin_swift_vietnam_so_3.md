@@ -6,6 +6,8 @@ tags: news
 
 # Bản tin Swift Việt Nam #3
 
+![3](swiftvietnam_3.png)
+
 Vậy là chúng ta đã bước sang tháng 6, tháng của WWDC. Lần đầu tiên WWDC được tổ chức online, vẫn chưa biết Apple sẽ tổ chức WWDC như thế nào. Rất nhiều sự kiện tổ chức thường niên song song với WWDC cũng đã được [chuyển lên online](https://twitter.com/subdigital/status/1265724374642024448).
 
 Với việc WWDC20 đang tiến đến rất gần, có 1 điều chắc chắn là Apple sẽ mang đến nhiều cải tiến cho các framework như SwiftUI và Combine. Các project mới sẽ bắt đầu sử dụng các công nghệ này nhiều hơn. Nếu các bạn vẫn còn đang chần chừ trong việc tìm hiểu SwiftUI và Combine thì bây giờ là lúc nên bắt đầu. Bài viết này cũng sẽ tập trung cung cấp cho các bạn nhiều thông tin về SwiftUI và Combine nhằm giúp các bạn chuẩn bị tốt nhất cho WWDC20.
