@@ -47,7 +47,7 @@ Apple vừa có một lỗi khá nghiêm trọng với chức năng "Sign in wit
 
 ## SwiftUI DSL hoạt động như thế nào?
 
-Bạn [Harshil Shah] có [bài viết](https://harshil.net/blog/swiftui-dsl-function-builders) giải thích cách hoạt động của SwiftUI DSL (domain specific language). Nếu các bạn nhìn thấy code SwiftUI khi vừa học Swift thì các bạn sẽ thấy rất lạ lẫm vì syntax trông không giốngs Swift lắm. Bài viết sẽ giải thích DSL của SwiftUI, tại sao chúng ta lại viết được SwiftUI như cách đó, Swift Evolution nào được Apple cập nhật để hỗ trợ cho việc viết SwiftUI. Theo cá nhân mình, việc hiểu về DSL của SwiftUI không phải là điều bắt buộc phải biết khi bạn học SwiftUI, nhưng biết về nó sẽ giúp bạn học SwiftUI nhanh hơn.
+Bạn Harshil Shah có [bài viết](https://harshil.net/blog/swiftui-dsl-function-builders) giải thích cách hoạt động của SwiftUI DSL (domain specific language). Nếu các bạn nhìn thấy code SwiftUI khi vừa học Swift thì các bạn sẽ thấy rất lạ lẫm vì syntax trông không giốngs Swift lắm. Bài viết sẽ giải thích DSL của SwiftUI, tại sao chúng ta lại viết được SwiftUI như cách đó, Swift Evolution nào được Apple cập nhật để hỗ trợ cho việc viết SwiftUI. Theo cá nhân mình, việc hiểu về DSL của SwiftUI không phải là điều bắt buộc phải biết khi bạn học SwiftUI, nhưng biết về nó sẽ giúp bạn học SwiftUI nhanh hơn.
 
 ## MVI, MVP, MVVM và SwiftUI
 
