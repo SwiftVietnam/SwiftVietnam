@@ -6,7 +6,7 @@ tags: news
 
 # Bản tin Swift Việt Nam #3
 
-![3](swiftvietnam_3.png)
+![3](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/swiftvietnam_3.png)
 
 Vậy là chúng ta đã bước sang tháng 6, tháng của WWDC. Lần đầu tiên WWDC được tổ chức online, vẫn chưa biết Apple sẽ tổ chức WWDC như thế nào. Rất nhiều sự kiện tổ chức thường niên song song với WWDC cũng đã được [chuyển lên online](https://twitter.com/subdigital/status/1265724374642024448).
 
@@ -18,12 +18,12 @@ Tuần này có thêm 1 sự kiện nữa là nhiều người làm công nghệ
 
 ## Swift AWS Lambda Runtime
 
-Thông tin đáng chú ý nhất về Swift trong tuần vừa rồi là việc Amazon AWS đã chính thức hỗ trợ sử dụng Swift cho dịch vụ AWS Lambda.
+Thông tin đáng chú ý nhất về Swift trong tuần vừa rồi là việc Amazon AWS đã chính thức hỗ trợ sử dụng [Swift cho dịch vụ AWS Lambda](https://github.com/swift-server/swift-aws-lambda-runtime/).
 
 AWS Lamda là dịch vụ serverless của AWS. Bạn có thể viết một function làm một công việc nhất định trong một thời gian ngắn mà không phải lo việc maintain cả 1 server. AWS Lamda sẽ lo phần infrastructure hết cho ban.  
 Bạn có thể xem ví dụ Hello World trong hình. 
 
-![aws](awslambda.png)
+![aws](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/awslambda.png)
 
 Chi tiết xem thêm tại [blog](https://swift.org/blog/aws-lambda-runtime/) nhé.
 
@@ -45,11 +45,11 @@ Apple vừa có một lỗi khá nghiêm trọng với chức năng "Sign in wit
 
 # Bài viết
 
-## SwiftUI DSL hoạt động như thế nào.
+## SwiftUI DSL hoạt động như thế nào?
 
 Bạn [Harshil Shah] có [bài viết](https://harshil.net/blog/swiftui-dsl-function-builders) giải thích cách hoạt động của SwiftUI DSL (domain specific language). Nếu các bạn nhìn thấy code SwiftUI khi vừa học Swift thì các bạn sẽ thấy rất lạ lẫm vì syntax trông không giốngs Swift lắm. Bài viết sẽ giải thích DSL của SwiftUI, tại sao chúng ta lại viết được SwiftUI như cách đó, Swift Evolution nào được Apple cập nhật để hỗ trợ cho việc viết SwiftUI. Theo cá nhân mình, việc hiểu về DSL của SwiftUI không phải là điều bắt buộc phải biết khi bạn học SwiftUI, nhưng biết về nó sẽ giúp bạn học SwiftUI nhanh hơn.
 
-## MVI, MVP và SwiftUI
+## MVI, MVP, MVVM và SwiftUI
 
 MVI (Model-View-Intent) là một kiến trúc khá phổ biến bên Android, nhưng tương đối xa lại bên iOS. MVP (Model-View-Presenter) thì có phổ biến hơn, được dùng nhiều trong các app sử dung UIKit. Tuần vừa rồi mình có đọc[ một bài viết phân tích việc sử dụng MVI](https://medium.com/better-programming/mvi-architecture-for-swiftui-apps-cff44428394) và [một bài viết khác sử dụng MVP](https://lascorbe.com/posts/2020-04-27-MVPCoordinators-SwiftUI-part1/) cho ứng dụng viết bằng SwiftUI. Nếu các bạn còn nhớ trong [bản tin số 1](https://swiftvietnam.com/posts/2020-05-20_ban_tin_swift_vietnam_so_1/) và [bản tin số 2](https://swiftvietnam.com/posts/2020-05-27_ban_tin_swift_vietnam_so_2/) mình có giới thiệu 2 kiến trúc [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture) và [Bow-Arch](https://arch.bow-swift.io/) dựa trên kiến trúc unidirectional. Tất nhiên nếu bạn đã quen với MVVM cho app sử dụng UIKit, bạn có thể tiếp tục sử dụng kiến trúc này với [SwiftUI và Combine](https://medium.com/flawless-app-stories/mvvm-in-swiftui-8a2e9cc2964a). Mình có làm một ứng dụng mẫu để trình diễn MVVM cho SwiftUI [tại đây](https://github.com/antranapp/PixabaySwiftUICombine). Bạn có thể tham khảo những bài viết này để tìm ra kiến trúc thích hợp cho ứng dụng của mình nhé.
 
@@ -63,15 +63,15 @@ MVI (Model-View-Intent) là một kiến trúc khá phổ biến bên Android, n
 
 Nếu các bạn là người tò mò và muốn đọc nhiều bài viết về iOS development, các bạn có thể truy cập trang [iOS Dev Search](https://iosdevsearch.com/). Trang web này tổng hợp link từ hơn 550 blogs liên quan đến iOS development. Danh sách các blog này các bạn có thể xem trên [iOS Dev Directory](https://iosdevdirectory.com/). Happy reading :)
 
-## wwdc.io
+## WWDC cho MacOS
 
 Nếu các bạn muốn xem lại các videos của các kỳ WWDC trước offline trên máy Mac của mình thì app [WWDC for MacOS](https://wwdc.io/) là công cụ không thể thiếu. Videos được phân loại theo năm và chủ đề. Tuần này, bạn [Rambo](https://rambo.codes/) đã cập nhật công cụ này lên phiên bản 7 và có thê chức năng community để chia sẻ tin tức của cộng đồng. 
 
-![wwdcio](wwdcio.png)
+![wwdcio](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/wwdcio.png)
 
 Tranh thủ quảng cáo một tí, mình cũng có làm một app có tên là [SwiftCommunity](https://swiftcommunity.app/), [mã nguồn mở](https://github.com/superarcswift/SwiftCommunity). 
 
-![wwdcio](swiftcommunity.png)
+![swiftcommunity](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/swiftcommunity.png)
 
 # Vui
 
