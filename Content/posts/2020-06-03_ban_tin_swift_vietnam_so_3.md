@@ -80,3 +80,5 @@ Bạn nào sử dụng Windows bây giờ thì [không còn lý do gì](https://
 # Lời cuối
 
 Thực ra tuần này mình khá bận với công việc, nhưng mình vẫn cố gắng viết cho xong bài này để đăng kịp vào thứ 4. Vấn đề là mình không có gì để viết mà là mình thấy viết bài kỹ thuật bằng tiếng Việt quả thật không phải đơn giản. Thế nên các bạn thông cảm nếu mình sử dụng nhiều từ tiếng Anh nhé vì mình khá lười dịch nó sang tiếng Việt :D.
+
+Các bạn cũng nhớ theo dõi trang [Facebook Swift Việt Nam](https://www.facebook.com/Swift-Vi%E1%BB%87t-Nam-396835394265318) để được cập nhật các thông tin mới nhất về Swift và cộng đồng lập trình viên Swift Việt Nam nhé.
