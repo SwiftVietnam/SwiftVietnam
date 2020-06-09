@@ -61,7 +61,7 @@ Các bạn có thể xem thêm chi tiết [tại đây](https://github.com/Rimes
 
 Tuần vừa rồi mình có tình cờ đọc được trên twitter cái [thread này](https://twitter.com/stroughtonsmith/status/1266058437374476293). Trong thread này, các bạn developers khắp thế giới có giới thiệu về apps của họ đang làm trong thời gian qua. Có rất nhiều app hay và đáng chú ý. Thế là mình nảy ra ý tưởng viết một cái app để mọi người có thể tự giới thiệu các projects của mình tương tự như trên.
 
-Indie Apps Showcases là sản phẩm mấy ngày làm việc của mình. Ứng dụng viết bằng SwiftUI và Combine, sử dụng kiến trúc The Composable Architecture, và sử dụng git repository làm backend. Ứng dụng và nội dung của app hoàn toàn mở và có trên GitHub.
+**Indie Apps Showcases** là sản phẩm mấy ngày làm việc của mình. Ứng dụng viết bằng **SwiftUI** và **Combine**, sử dụng kiến trúc [**The Composable Architecture**](https://github.com/pointfreeco/swift-composable-architecture), và sử dụng git repository làm backend. Ứng dụng và nội dung của app hoàn toàn mở và có trên GitHub.
 
 Ứng dụng này rất thích hợp cho bạn nào đang muốn bắt đầu học SwiftUI + Combine. 
 
@@ -79,7 +79,7 @@ Các bạn bên raywenderlich.com đang cho xem sách iOS Apperentice miễn ph�
 
 # Lời kết
 
-Mình rất vui vì có cơ hội giới thiệu về loạt vài viết tiếng Việt của bạn Duy trong bản tìn lần này. Vẫn biết là resources để học iOS bằng tiếng Anh có rất nhiều trên mạng, và việc đọc hiểu tiếng Anh là một kỹ năng bắt buộc của bất cứ lập trình viên nào, thế nhưng các bài viết tiếng Việt như của bạn Duy sẽ rất hữu ích cho các bạn mới bước đầu vào học lập trình cũng như các bạn chưa có kỹ năng đọc tài liệu tiếng anh tốt.
+Mình rất vui vì có cơ hội giới thiệu về loạt vài viết tiếng Việt của bạn [Duy](https://duybui297.site123.me/) trong bản tìn lần này. Vẫn biết là resources để học iOS bằng tiếng Anh có rất nhiều trên mạng, và việc đọc hiểu tiếng Anh là một kỹ năng bắt buộc của bất cứ lập trình viên nào, thế nhưng các bài viết tiếng Việt như của bạn Duy sẽ rất hữu ích cho các bạn mới bước đầu vào học lập trình cũng như các bạn chưa có kỹ năng đọc tài liệu tiếng anh tốt.
 
 Mình rất mong muốn lại có cơ hội giới thiệu trong các bản tin tiếp theo các bài viết chuyên sâu về Swift bằng tiếng Việt. Nếu các bạn có các bài viết liên quan đến Swift và muốn chia sẻ với cộng động thì các bạn [kết nối với mình](https://www.facebook.com/tran.binhan) để thảo luộn thêm nhé.
 
