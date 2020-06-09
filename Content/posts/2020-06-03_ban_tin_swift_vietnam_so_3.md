@@ -1,5 +1,5 @@
 ---
-date: 2020-06-23 23:21
+date: 2020-06-03 23:21
 description: Bản tin Swift Việt Nam #3
 tags: news
 ---
