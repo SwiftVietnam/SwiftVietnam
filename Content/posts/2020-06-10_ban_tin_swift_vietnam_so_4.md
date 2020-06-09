@@ -12,6 +12,16 @@ Chỉ còn 2 tuần nữa là WWDC20 sẽ khai mạc. Các thông tin về sản
 
 # Swift
 
+## Function Builder
+
+[Function Builder](https://github.com/apple/swift-evolution/blob/9992cf3c11c2d5e0ea20bee98657d93902d5b174/proposals/XXXX-function-builders.md) là một feature được giới thiệu trong Swift 5.1, được biết đến chủ yếu qua tính năng @ViewBuilder được sử dụng trong SwiftUI. Sử dụng Function Builder, chúng ta có thể dễ dàng xây dựng được một Domain Specific Language riêng.
+
+Hôm nay mình xin giới thiệu một số resources để các bạn học thêm về Function builder nhé:
+
+- [Swift Evolution Proposal](https://github.com/apple/swift-evolution/blob/9992cf3c11c2d5e0ea20bee98657d93902d5b174/proposals/XXXX-function-builders.md)
+- [Function Builders in Swift and SwiftUI](https://www.vadimbulavin.com/swift-function-builders-swiftui-view-builder/)
+- [Swift Function Builders deep dive for Swift 5.3 - Following Swift Evolution 5.3](https://www.youtube.com/watch?v=LKFVcc_uC60)
+- [awesome-function-builders](https://github.com/carson-katri/awesome-function-builders)
 # Apple
 
 ## iOS/iPadOS 13.6 Beta, Xcode 11.6 Beta
@@ -34,10 +44,10 @@ Thông tin thêm về vấn đề này các bạn có thể đọc [ở đây](h
 
 ## RxSwift và MVVM
 
-RxSwift là một reactive programming framework rất phổ biến và Model-View-ViewModel(MVVM) là một kiến trúc cũng rất quen thuộc. Đây là hai thành phần được dùng rất thường xuyên để xây dựng ứng dụng cho iOS. Tài liệu về RxSwift và MVVM trên mạng có rất nhiều. Nhưng hôm nay mình xin giới thiệu với các bạn serie bài viết bằng tiếng Việt của bạn [Bùi Khánh Duy](https://duybui297.site123.me/). 
+**RxSwift** là một reactive programming framework rất phổ biến và **Model-View-ViewModel(MVVM)** là một kiến trúc cũng rất quen thuộc. Đây là hai thành phần được dùng rất thường xuyên để xây dựng ứng dụng cho iOS. Tài liệu về **RxSwift** và **MVVM** trên mạng có rất nhiều. Nhưng hôm nay mình xin giới thiệu với các bạn serie bài viết bằng tiếng Việt của bạn [Bùi Khánh Duy](https://duybui297.site123.me/). 
 Bạn Duy trong tuần có liên lạc với mình và ngỏ ý muốn tham gia đóng góp bài viết cho SwiftVietnam và mình hoàn toàn ủng hộ. 
 
-Trong loạt bài viết của mình, bạn Duy có tạo một ứng dụng cơ bản và ứng dụng các kỹ thuật của RxSwift để xây dựng kiến trúc MVVM cho ứng dụng này. Các bạn xem loạt bài của bạn Duy [tại đây](https://duybui297.site123.me/rxswift-k%E1%BA%BFt-h%E1%BB%A3p-mvvm) nhé.
+Trong loạt bài viết của mình, bạn Duy có tạo một ứng dụng cơ bản và ứng dụng các kỹ thuật của **RxSwift** để xây dựng kiến trúc **MVVM** cho ứng dụng này. Các bạn xem loạt bài của bạn Duy [tại đây](https://duybui297.site123.me/rxswift-k%E1%BA%BFt-h%E1%BB%A3p-mvvm) nhé.
 
 ## Độ lớn của ứng dụng rất quan trọng
 
@@ -81,6 +91,6 @@ Các bạn bên raywenderlich.com đang cho xem sách iOS Apperentice miễn ph�
 
 Mình rất vui vì có cơ hội giới thiệu về loạt vài viết tiếng Việt của bạn [Duy](https://duybui297.site123.me/) trong bản tìn lần này. Vẫn biết là resources để học iOS bằng tiếng Anh có rất nhiều trên mạng, và việc đọc hiểu tiếng Anh là một kỹ năng bắt buộc của bất cứ lập trình viên nào, thế nhưng các bài viết tiếng Việt như của bạn Duy sẽ rất hữu ích cho các bạn mới bước đầu vào học lập trình cũng như các bạn chưa có kỹ năng đọc tài liệu tiếng anh tốt.
 
-Mình rất mong muốn lại có cơ hội giới thiệu trong các bản tin tiếp theo các bài viết chuyên sâu về Swift bằng tiếng Việt. Nếu các bạn có các bài viết liên quan đến Swift và muốn chia sẻ với cộng động thì các bạn [kết nối với mình](https://www.facebook.com/tran.binhan) để thảo luộn thêm nhé.
+Mình rất mong muốn lại có cơ hội giới thiệu trong các bản tin tiếp theo các bài viết chuyên sâu về Swift bằng tiếng Việt. Nếu các bạn có các bài viết liên quan đến Swift và muốn chia sẻ với cộng động thì các bạn [kết nối với mình](https://www.facebook.com/tran.binhan) để thảo luận thêm nhé.
 
 Các bạn cũng nhớ theo dõi trang [Facebook Swift Việt Nam](https://www.facebook.com/Swift-Vi%E1%BB%87t-Nam-396835394265318) để được cập nhật các thông tin mới nhất về Swift và cộng đồng lập trình viên Swift Việt Nam nhé.
