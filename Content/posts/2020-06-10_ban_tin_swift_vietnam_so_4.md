@@ -22,6 +22,7 @@ Hôm nay mình xin giới thiệu một số resources để các bạn học th
 - [Function Builders in Swift and SwiftUI](https://www.vadimbulavin.com/swift-function-builders-swiftui-view-builder/)
 - [Swift Function Builders deep dive for Swift 5.3 - Following Swift Evolution 5.3](https://www.youtube.com/watch?v=LKFVcc_uC60)
 - [awesome-function-builders](https://github.com/carson-katri/awesome-function-builders)
+
 # Apple
 
 ## iOS/iPadOS 13.6 Beta, Xcode 11.6 Beta
