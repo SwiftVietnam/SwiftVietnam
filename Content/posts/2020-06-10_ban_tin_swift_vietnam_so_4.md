@@ -35,7 +35,7 @@ Liên quan đến lập trình viên chúng ta, Xcode 11.6 Beta cũng được p
 
 ## Máy Mac sử dụng chip Arm
 
-Máy ngày này thông tin Apple sẽ giới thiệu máy Mac sử dụng chip Arm xuất hiện khắp các mặt báo. Đối với anh em iOS thì chắc không bị ảnh hưởng nhiều. Nhưng ai đang làm ứng dụng cho Mac sẽ phải chuẩn bị vì họ rất có thể sẽ phải biên dịch lại app của mình để chạy được trên máy Mac mới.
+Mấy ngày này thông tin Apple sẽ giới thiệu máy Mac sử dụng chip Arm xuất hiện khắp các mặt báo. Đối với anh em iOS thì chắc không bị ảnh hưởng nhiều. Nhưng ai đang làm ứng dụng cho Mac sẽ phải chuẩn bị vì họ rất có thể sẽ phải biên dịch lại app của mình để chạy được trên máy Mac mới.
 
 Tuy nhiên tất cả mới chỉ là tin đồn, chúng ta hãy chờ cụ thể xem trong WWDC20 tới.
 
@@ -90,7 +90,7 @@ Các bạn bên raywenderlich.com đang cho xem sách iOS Apperentice miễn ph�
 
 # Lời kết
 
-Mình rất vui vì có cơ hội giới thiệu về loạt vài viết tiếng Việt của bạn [Duy](https://duybui297.site123.me/) trong bản tìn lần này. Vẫn biết là resources để học iOS bằng tiếng Anh có rất nhiều trên mạng, và việc đọc hiểu tiếng Anh là một kỹ năng bắt buộc của bất cứ lập trình viên nào, thế nhưng các bài viết tiếng Việt như của bạn Duy sẽ rất hữu ích cho các bạn mới bước đầu vào học lập trình cũng như các bạn chưa có kỹ năng đọc tài liệu tiếng anh tốt.
+Mình rất vui vì có cơ hội giới thiệu về loạt vài viết tiếng Việt của bạn [Duy](https://duybui297.site123.me/) trong bản tin lần này. Vẫn biết là resources để học iOS bằng tiếng Anh có rất nhiều trên mạng, và việc đọc hiểu tiếng Anh là một kỹ năng bắt buộc của bất cứ lập trình viên nào, thế nhưng các bài viết tiếng Việt như của bạn Duy sẽ rất hữu ích cho các bạn mới bước đầu vào học lập trình cũng như các bạn chưa có kỹ năng đọc tài liệu tiếng Anh tốt.
 
 Mình rất mong muốn lại có cơ hội giới thiệu trong các bản tin tiếp theo các bài viết chuyên sâu về Swift bằng tiếng Việt. Nếu các bạn có các bài viết liên quan đến Swift và muốn chia sẻ với cộng động thì các bạn [kết nối với mình](https://www.facebook.com/tran.binhan) để thảo luận thêm nhé.
 
