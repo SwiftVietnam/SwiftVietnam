@@ -39,6 +39,14 @@ Cá nhân mình vẫn recommend app https://wwdc.io hơn vì  diện đẹp hơn
 
 # Bài viết
 
+# Design Patterns trong Swift
+
+Mình tình cờ tìm thấy trang web của bạn [Sao Vũ](https://www.swiftyvn.com/). Bạn có viết rất nhiều bài chuyên sâu về Design Patterns trong Swift, rất dễ hiểu và có cả code mẫu để theo dõi. Design patterns rất quan trong khi bạn muốn thiết kế ứng dụng hiệu quả và dễ maintained. Đặc biệt design patterns cũng rất hay được hỏi khi phỏng vấn xin việc.
+
+Các bạn có thể đọc thêm các bài viết về design patterns tại trang web của bạn [Sao Vũ](https://www.swiftyvn.com/) nhé.
+
+Các bạn cũng có thể tham khảo thêm về design patterns [tại đây](https://github.com/ochococo/Design-Patterns-In-Swift).
+
 # Chuẩn bị cho WWDC
 
 Nếu bạn muốn có trải nghiệm WWDC tốt nhất, bạn nên có những bước chuẩn bị trược khi WWDC bắt đầu. Bạn Antoine có viết một bài viết khá ngắn gọn [7 bước](https://www.avanderlee.com/optimization/wwdc-2020-tips/) để các bạn chuẩn bị cho WWDC 2020
@@ -80,6 +88,7 @@ WWDC Community được hosted [tại đây](https://github.com/twostraws/wwdc).
 Anh bạn John Sundell cũng thông báo trên Twitter là trang web cho WWDC By Sundell đã sẵn sàng. Lần này John sẽ không làm một mình mà hợp tác cùng một số blogger khác để cập nhật các thông tin mới nhất về WWDC cũng như các APIs mới sẽ được giới thiệu. Mình là một big fan của John vì nội dung John viết rất dễ hiểu và các kỹ thuật John giới thiệu chúng ta có thể áp dụng được ngày vào ứng dụng của mình.
 
 Các bạn có thể bookmark WWDC by Sundell [tại đây](https://wwdcbysundell.com/).
+
 # Sự kiện
 
 ## Pre-WWDC Virtual Trivia!
@@ -97,4 +106,8 @@ Năm nay lần đầu tiên WWDC được tổ chức trực tuyến nên sẽ c
 
 # Lời kết
 
-Tuần tới là một tuần đặc biệt cho các lập trình viên iOS. Chúng ta sẽ được biết các công nghệ và API mới để sử dụng cho các ứng dụng của mình trong năm tiếp theo. 
+Tuần tới là một tuần đặc biệt cho các lập trình viên iOS. Chúng ta sẽ được biết các công nghệ và API mới để sử dụng cho các ứng dụng của mình trong năm tiếp theo. Mình sẽ cố gắng cập nhật các thông tin và dịch lại các bài tổng hợp để đưa thông tin về WWDC 2020 đến các bạn nhanh nhất. 
+
+Nếu các bạn có các bài viết liên quan đến Swift, WWDC và muốn chia sẻ với cộng động thì các bạn [kết nối với mình](https://www.facebook.com/tran.binhan) để thảo luận thêm nhé.
+
+Các bạn cũng nhớ theo dõi trang [Facebook Swift Việt Nam](https://www.facebook.com/Swift-Vi%E1%BB%87t-Nam-396835394265318) để được cập nhật các thông tin mới nhất về Swift và cộng đồng lập trình viên Swift Việt Nam nhé.
