@@ -97,7 +97,9 @@ Cuối tuần vui vẻ trước khi bắt đầu WWDC. Tham gia trả lời các
 
 ## wwdcwatch.party
 
-Năm nay lần đầu tiên WWDC được tổ chức trực tuyến nên sẽ có nhiều sự kiện được tổ chức để mọi người cùng xem trực tiếp và bàn luận về WWDC. [WWDC 2020 Watch Party](https://wwdcwatch.party/) là một trong những sự kiện lớn nhất trong số đó. Ngoài việc 
+Năm nay lần đầu tiên WWDC được tổ chức trực tuyến nên sẽ có nhiều sự kiện được tổ chức để mọi người cùng xem trực tiếp và bàn luận về WWDC. [WWDC 2020 Watch Party](https://wwdcwatch.party/) là một trong những sự kiện lớn nhất trong số đó. Ngoài việc cùng nhau xem WWDC, hằng ngày các bạn cũng có thể xem các bài phát biểu về các chủ đề khác nhau liên quan đến iOS development.
+
+Thông tin chi tiết các bạn xem [tại đây](https://wwdcwatch.party/).
 
 # Vui
 
