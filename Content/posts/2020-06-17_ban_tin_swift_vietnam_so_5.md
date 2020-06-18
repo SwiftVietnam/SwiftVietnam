@@ -101,6 +101,12 @@ Năm nay lần đầu tiên WWDC được tổ chức trực tuyến nên sẽ c
 
 Thông tin chi tiết các bạn xem [tại đây](https://wwdcwatch.party/).
 
+## wwdctogether
+
+Thêm một trang web nữa để anh em tụ tập xem WWDC cùng nhau: [WWDCTogether](https://wwdctogether.com/) 
+
+Viết bởi 1 bạn tên là [Khoa](https://twitter.com/onmyway133) 🙂 
+
 # Vui
 
 - Twitter có một [emoji riêng](https://twitter.com/twostraws/status/1272939434930065411?s=20) cho WWDC20 🤯
