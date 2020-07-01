@@ -74,7 +74,7 @@ Hướng dẫn cụ thể từng bước có [tại đây](https://www.revenueca
 
 ## App Clips
 
-App Clips có thể coi là một phiên bản rút gọn của apps. Bằng cách quyét QRCode hoặc dùng NFC, người dùng có thể cài đặt các App Clips (dung lượng dưới 10MB) nhanh và chạy ngay để dùng được một tính năng nhất định mà không phải cài đặt toàn bộ cả app. Cái này có lẽ giống Instant App trên Android.
+App Clips có thể coi là một phiên bản rút gọn của apps. Bằng cách quét QRCode hoặc dùng NFC, người dùng có thể cài đặt các App Clips (dung lượng dưới 10MB) nhanh và chạy ngay để dùng được một tính năng nhất định mà không phải cài đặt toàn bộ cả app. Cái này có lẽ giống Instant App trên Android.
 
 Chi tiết về App Clips có [tại đây](https://developer.apple.com/videos/play/wwdc2020/10174/).
 
@@ -92,7 +92,7 @@ Thông tin thêm về các tính năng bảo về quyền riêng tư từ Apple 
 
 # Lời kết:
 
-Trên đây chỉ là một số thông tin ngắn gọn về WWDC mình tổng hợp lại trong hơn 1 tuần vừa rồi. Toàn bộ videos của WWDC20 có [tại đây](https://developer.apple.com/videos/all-videos/). Chúng ta có hẳn 1 năm để nghiền ngẫm trược khi WWDC21 bắt đầu 😋.
+Trên đây chỉ là một số thông tin ngắn gọn về WWDC mình tổng hợp lại trong hơn 1 tuần vừa rồi. Toàn bộ videos của WWDC20 có [tại đây](https://developer.apple.com/videos/all-videos/). Chúng ta có hẳn 1 năm để nghiền ngẫm trước khi WWDC21 bắt đầu 😋.
 
 Mình cũng xin giới thiệu một số tài nguyên khác liên quan đến WWDC để mọi người tiện tham khảo: 
 
