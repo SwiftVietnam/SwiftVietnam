@@ -43,6 +43,8 @@ Với SwiftUI mới, chúng ta đã có thể viết tất cả các app, widget
 
 Các thông tin ngắn gọn về những tính năng mới của SwiftUI các bạn có thể xem [tại đây](https://wwdcnotes.com/notes/wwdc20/10041/). Một số phân tích chi tiết hơn [ở đây](https://swiftwithmajid.com/2020/06/23/what-is-new-in-swiftui/)
 
+Một Youtube video tổng hợp của anh Paul Hudson về những tính năng mới của SwiftUI có [tại đây](https://www.hackingwithswift.com/articles/221/whats-new-in-swiftui-for-ios-14).
+
 ## UICollectionView + UICollectionLayoutListConfiguration
 
 Tất nhiên Apple cũng vẫn bổ sung các tính năng mới cho UIKit, đặc biệt là với UICollectionView. Nếu như trong WWDC2019, 
