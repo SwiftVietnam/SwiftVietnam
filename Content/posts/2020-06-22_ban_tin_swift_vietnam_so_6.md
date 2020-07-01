@@ -35,7 +35,7 @@ Các tính năng mới trong Swift 5.3 chúng ta đều biết trước hết r�
 
 ![language_features](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/6/language_features.png)
 
-## SwiftUI:
+## SwiftUI
 
 Có thể nói trong WWDC20, Apple đã giới thiệu SwiftUI 2.0 với rất nhiều tính năng mới. Đặc biệt chúng ta có thể thấy nỗ lực của Apple khi đảm bảo backward compability, hỗ trợ tất cả các app được viết bằng SwiftUI 1.0. 
 
@@ -48,7 +48,7 @@ Các thông tin ngắn gọn về những tính năng mới của SwiftUI các b
 Tất nhiên Apple cũng vẫn bổ sung các tính năng mới cho UIKit, đặc biệt là với UICollectionView. Nếu như trong WWDC2019, 
 UICollectionView được bổ sung DiffableDataSource và các layout mới để để tối ưu việc hiển thị dữ liệu trên nhiều resolutions khác nhau, thì trong WWDC20 lần này, Apple giới thiệu `UICollectionLayoutListConfiguration`để giúp chúng ta có thể sử dụng `UICollectionView` như một `UITableView`. Thông tin ngắn gọn về `UICollectionLayoutListConfiguration` các bạn có thể xem [tại đây](https://wwdcnotes.com/notes/wwdc20/10026/)
 
-##  Swift Package Manager:
+##  Swift Package Manager
 
 Điểm mới đáng chú ý nhất là SPM sẽ hỗ trợ resources (ảnh, phim vân vân...) bằng cách sử dụng assets catalog (.xcasset) trong Xcode 12/Swift 5.3. 
 
@@ -64,19 +64,19 @@ Chúng ta có thể tạo Widget bằng framework WidgetKit. Điểm đặc bi�
 
 Thông tin ngắn gọn về WidgetKit có [tại đây](https://wwdcnotes.com/notes/wwdc20/10028/).
 
-## StoreKit Testing in Xcode:
+## StoreKit Testing in Xcode
 
 Việc phát triển In-App-Purchase thường rất phức tạp vì chúng ta phải chuyển qua lại giữa Sandbox và Production để test. Trong Xcode 12, Apple đã tích hợp chức năng kiểm thử In-App-Purchase trực tiếp vào Xcode, giúp chúng ta kiểm tra được IAP có hoạt động hay không dễ dang hơn rất nhiều. Chi tiết các bạn xem [ở đây](https://developer.apple.com/videos/play/wwdc2020/10659/).
 
 Hướng dẫn cụ thể từng bước có [tại đây](https://www.revenuecat.com/blog/storekit-testing-in-xcode)
 
-## App Clips:
+## App Clips
 
 App Clips có thể coi là một phiên bản rút gọn của apps. Bằng cách quyét QRCode hoặc dùng NFC, người dùng có thể cài đặt các App Clips (dung lượng dưới 10MB) nhanh và chạy ngay để dùng được một tính năng nhất định mà không phải cài đặt toàn bộ cả app. Cái này có lẽ giống Instant App trên Android.
 
 Chi tiết về App Clips có [tại đây](https://developer.apple.com/videos/play/wwdc2020/10174/).
 
-## Machine Learning:
+## CoreML - Machine Learning:
 
 Năm nay Apple không giới thiệu nhiều tính năng mới cho mảng máy học. Một điểm đáng chú ý nhất có lẽ là tính năng [mã hoá model](https://developer.apple.com/documentation/coreml/core_ml_api/encrypting_a_model_in_your_app) để không ai có thể đánh cắp model của bạn và dùng trên app khác. Ngoài ra các Frameworks như Vision cũng được bổ sung một số tính năng như nhận diện tay và cơ thể.
 
