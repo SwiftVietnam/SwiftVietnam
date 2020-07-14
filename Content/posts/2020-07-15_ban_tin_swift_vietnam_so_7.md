@@ -30,7 +30,7 @@ Apple đã đầu tư rất nhiều cho SwiftUI nhưng UIKit vẫn là thành ph
 
 SwiftUI 2.0 có giới thiệu một hiệu ứng animation mới tên là `MatchedGeometryEffect' rất hay. Giải thích đơn giản là bạn có thể tạo ra hiệu ứng chuyển động như trong hình chỉ bằng vài dòng code trong SwiftUI.
 
-![7](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/7/difference.png)
+![7](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/7/small-loop-1.gif)
 
 Bạn có thể đọc hướng dẫn chi tiết cách sử dụng Effect này tại đây: [phần 1](https://swiftui-lab.com/matchedgeometryeffect-part1/), [phần 2](https://swiftui-lab.com/matchedgeometryeffect-part2/)
 
@@ -49,6 +49,8 @@ Trong bản tin Swift Việt Nam số #6, mình có giới thiệu một số AP
 Các bạn xem chi tiết về SwiftUI-Kit [tại đây](https://github.com/jordansinger/SwiftUI-Kit)
 
 ## RedditOS
+
+![7](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/7/redditos.png)
 
 Những ai đã theo dõi SwiftUI từ năm ngoái chắc hẳn không lạ gì anh bạn [Thomas Ricouard](https://github.com/Dimillian) với ứng dụng mã nguồn mở [MovieSwiftUI](https://github.com/Dimillian/MovieSwiftUI). Ứng dụng này là một trong những ứng dụng phức tạp được viết bằng SwiftUI đầu tiên, và nó được [Swift team sử dụng](https://twitter.com/Dimillian/status/1276069357550960641) benchmark SwiftUI phiên bản 2. Anh bạn này sau đấy còn phát hành một app open source nữa viết bằng SwiftUI [dành cho fan của game Animal Crossing](https://github.com/Dimillian/ACHNBrowserUI). Và trong tuần này, anh bạn Thomas lại đã giới thiệu thêm một ứng dụng mã nguồn mở khác có tên là [RedditOS](https://github.com/Dimillian/RedditOS). Theo mình các ứng dụng này là resources rất tốt để học về SwiftUI.
 
