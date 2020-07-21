@@ -1,5 +1,5 @@
 ---
-date: 2020-07-15 08:21
+date: 2020-07-22 08:21
 description: Bản tin Swift Việt Nam #8
 tags: news
 ---
@@ -18,7 +18,7 @@ Apple mới giới thiệu một Framework mới dành cho Server-Side Swift có
 
 # Bài viết:
 
-## Phỏng vấn cho iOS developers:
+## Mẹo phỏng vấn việc làm cho iOS developers:
 
 ![8](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/8/interview.png)
 
