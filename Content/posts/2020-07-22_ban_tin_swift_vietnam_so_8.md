@@ -24,6 +24,8 @@ Apple mới giới thiệu một Framework mới dành cho Server-Side Swift có
 
 Là iOS devs, chắc hẳn anh em chúng ta đều có ít nhiều kinh nghiệm tham gia các cuộc phỏng vấn việc làm. Tuỳ quy mô công ty, start-up hay công ty lớn, cấu trúc của các cuộc phỏng vấn, thời gian phỏng vấn cũng như số vòng phỏng vấn sẽ khác nhau. Mình không có kinh nghiệm về phỏng vấn iOS Devs ở Việt Nam, nhưng mình cũng tham gia nhiều vòng phỏng vấn ở Đức, Sing, Mỹ nên mình recommend các bạn bài [Navigating the iOS Interview](https://www.raywenderlich.com/10625296-navigating-the-ios-interview) để tham khảo. Bài viết mô tả khá chi tiết các thành phần của một process phỏng vấn cho vị trí iOS, cũng như những kinh nghiệm và cách thức học, chuẩn bị cho những vòng phỏng vấn này.
 
+Một resource khác cũng khá hay liên quan đến việc phỏng vấn việc làm cho developers là [github repo này](https://github.com/jwasham/coding-interview-university).
+
 ## GridView trong SwiftUI
 
 ![8](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/8/gridview.png)
