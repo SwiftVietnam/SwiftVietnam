@@ -16,17 +16,17 @@ Tuần vừa rồi Apple đã phát hành Beta 3 cho Xcode 12, iOS và iPadOS v�
 
 Ai viết C# hoặc Javascript chắc quen với keyword async, await rồi. Với async, await, các code concurrency sẽ dễ viết hơn và logic sẽ dễ hiểu hơn.
 👉 Trên Github của Swift vừa có [một PR](https://github.com/apple/swift/pull/33147) để giới thiệu keyword async cho Swift
-👉 Anh Lattner cũng đã từng có bài Swift Concurrency Manifesto  từ 3 năm trước, trong đó nhắc đến async và await [tại đây](https://gist.github.com/lattner/31ed37682ef1576b16bca1432ea9f782) 
+👉 Anh Lattner cũng đã từng có bài Swift Concurrency Manifesto từ 3 năm trước, trong đó nhắc đến async và await [tại đây](https://gist.github.com/lattner/31ed37682ef1576b16bca1432ea9f782) 
 
 ## Mã nguồn mở Exposure Notification Framework
 
-Apple đã cung cấp [mã nguồn](https://developer.apple.com/exposure-notification/) của [Exposure Notification Framework](https://developer.apple.com/documentation/exposurenotification) để mọi người tham khảo. Điểm đặc biệt là ,ã nguồn được viết bằng Objective-C 😃.
+Apple đã cung cấp [mã nguồn](https://developer.apple.com/exposure-notification/) của [Exposure Notification Framework](https://developer.apple.com/documentation/exposurenotification) để mọi người tham khảo. Điểm đặc biệt là mã nguồn được viết bằng Objective-C 😃.
 
 # Bài viết:
 
 ## Sử dụng OSLog
 
-Với dev, việc có logging data từ các app chúng ta viết là việc cực kỳ quan trong, không chỉ giúp ích cho việc tìm bugs mà còn giúp cho chúng ta hiểu được hành vi của người dùng. Với việc Apple thắt chặc các quyền riêng tư trên iOS 14, việc sử dụng các frameworks như Firebáe Craslytics/Firebase Analytics/Sentry sẽ khó khăn hơn. Một giải pháp cho việc này là sử dụng các thành phần có sẵn của hệ điều hành như OSLog hay MetricKit. Trang [SwiftLee](https://www.avanderlee.com/debugging/oslog-unified-logging/) có giới thiệu về cách sử dụng OSLog [tại đây](https://www.avanderlee.com/debugging/oslog-unified-logging/). Thông tin về [MetricKit](https://developer.apple.com/documentation/metrickit), các bạn có thể xem trực tiếp từ [WWDC video này](https://developer.apple.com/videos/play/wwdc2020/10081/).
+Với lập trình viên chúng ta, việc có logging data từ các app chúng ta viết là việc cực kỳ quan trong, không chỉ giúp ích cho việc tìm bugs mà còn giúp cho chúng ta hiểu được hành vi của người dùng. Với việc Apple [thắt chặt các quyền riêng tư trên iOS 14](https://developer.apple.com/app-store/user-privacy-and-data-use/), việc sử dụng các frameworks như Firebase Craslytics/Firebase Analytics/Sentry sẽ khó khăn hơn. Một giải pháp cho việc này là sử dụng các thành phần có sẵn của hệ điều hành như [OSLog](https://developer.apple.com/documentation/os/oslog) hay [MetricKit](https://developer.apple.com/documentation/metrickit). Trang [SwiftLee](https://www.avanderlee.com/debugging/oslog-unified-logging/) có giới thiệu về cách sử dụng OSLog [tại đây](https://www.avanderlee.com/debugging/oslog-unified-logging/). Thông tin về [MetricKit](https://developer.apple.com/documentation/metrickit), các bạn có thể xem trực tiếp từ [WWDC video này](https://developer.apple.com/videos/play/wwdc2020/10081/).
 
 ## Sử dụng CoreData với SwiftUI trong Xcode 12
 
