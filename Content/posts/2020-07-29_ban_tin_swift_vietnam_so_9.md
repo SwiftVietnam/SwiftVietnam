@@ -12,7 +12,7 @@ Tuần vừa rồi Apple đã phát hành Beta 3 cho Xcode 12, iOS và iPadOS v�
 
 # Swift:
 
-## New `async` keyword
+## `async` keyword
 
 Ai viết C# hoặc Javascript chắc quen với keyword async, await rồi. Với async, await, các code concurrency sẽ dễ viết hơn và logic sẽ dễ hiểu hơn.
 👉 Trên Github của Swift vừa có [một PR](https://github.com/apple/swift/pull/33147) để giới thiệu keyword async cho Swift
@@ -44,7 +44,7 @@ Từ Xcode 11, chúng ta có thể sử dụng Swift Package Manager, nhưng nó
 
 [NetNewsWire](https://github.com/Ranchero-Software/NetNewsWire) là một ứng dụng RSS Reader mã nguồn mở dành cho tất cả các Apple platforms. Một điều thú vị là các maintainer của ứng dụng đã quyết định chuyển sang dùng SwiftUI. Đây là cơ hội tuyệt vời để các bạn học SwiftUI được mang những kỹ năng của mình ứng dụng vào thự tế, và vừa đóng góp được cho một úng dụng nguồn mở hay. Chi tiết về việc học SwiftUI với ứng dụng NetNewsWire [tại đây](https://blog.rizwan.dev/blog/learning-swiftui-with-netnewswire).
 
-## Virutalization Framework
+## Virtualization Framework
 
 ![9](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/9/simplevm.png)
 
@@ -61,7 +61,6 @@ Một UX design pattern khá phổ biến hiện nay là bottom drawer. Chúng t
 ![9](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/9/spotify.png)
 
 Spotify tuần vừa rồi cũng giới thiệu một network library mà họ dùng trong app của họ, có tên là [SPTDataLoader](https://github.com/spotify/SPTDataLoader). Library này xây dựng dựa trên NSURLSession và hỗ trợ authentication + back-off policy. Các bạn tham khảo mã nguồn trên [Github](https://github.com/spotify/SPTDataLoader) nhé
-
 
 # Lời kết:
 
