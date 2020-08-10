@@ -37,7 +37,7 @@ Nếu các bạn theo dõi Swift on Server thì chắc đã biết là IBM đã 
 
 # Bài viết:
 
-## Verify your app’s integrity with the new App Attest API
+## Kiểm tra tính xác thực của App bằng DeviceCheck và Attest API
 
 Nếu bạn phát triển các ứng dụng thương mại, hoặc có In-App-Purchase và hoặc muốn chống lại các hình thức hack để truy cập vào những tính năng premium của app, hoặc ngăn chặn app chạy trên các thiết bị bị jailbroken, các bạn có thể sử dụng [framework DeviceCheck](https://developer.apple.com/documentation/devicecheck) miễn phí của Apple để kiểm tra tính xác thực của app của mình trên device của users. Việc kiểm tra này đảm bảo là phiên bản app của bạn trên thiết bị của user không bị chỉnh sửa hay decompile. Trong iOS 14, Apple đã cập nhật framework DeviceCheck này, [bổ xung thêm Attest API](https://developer.apple.com/news/?id=2sngpulc) để tăng tính bảo mật cho việc kiểm tra tính xác thực của ứng dụng.
 
@@ -65,7 +65,7 @@ Anh bạn [Majid](https://swiftwithmajid.com/) cũng có một series bài viế
 
 ## Self-Sizing UITableView Cells with SwiftUI
 
-Bài viết của bạn Noah Gilmore khá thú vị khi bạn đó đã tìm hiểu cách tích hợp một `SwiftUI View`` vào làm content cho một `UITableViewCell`. Thách thức ở đây là làm sao chúng ta có thể kết hợp SwiftUI và UITableViewCell để hiển thị dữ liệu động, các cell không có chiều cao cố định. Các bạn tham khảo bài [phân tích tại đây nhé](https://noahgilmore.com/blog/swiftui-self-sizing-cells/).
+Bài viết của bạn Noah Gilmore khá thú vị khi bạn đó đã tìm hiểu cách tích hợp một `SwiftUI View` vào làm content cho một `UITableViewCell`. Thách thức ở đây là làm sao chúng ta có thể kết hợp `SwiftUI` và `UITableViewCell` để hiển thị dữ liệu động, các cell không có chiều cao cố định. Các bạn tham khảo bài [phân tích tại đây nhé](https://noahgilmore.com/blog/swiftui-self-sizing-cells/).
 
 ## Step-by-step guide for localizing plurals in iOS
 
