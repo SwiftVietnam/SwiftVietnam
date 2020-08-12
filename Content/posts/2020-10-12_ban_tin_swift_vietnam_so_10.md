@@ -43,6 +43,8 @@ Nếu bạn phát triển các ứng dụng thương mại, hoặc có In-App-Pu
 
 Để hiểu thêm Attest API này hoạt động thế nào, các bạn có thể tham khảo [bài viết này](https://macsecurity.net/view/409-apple-is-stepping-up-app-verification-through-new-app-attest-api).
 
+Các bạn cũng có thể tham khảo chi tiết cách sử dụng Attest API tại [bài viết này](https://swiftrocks.com/app-attest-apple-protect-ios-jailbreak).
+
 ## Xây dựng ứng dụng đa nền tảng bằng SwiftUI
 
 ![10](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/10/hackernews.png)
