@@ -60,6 +60,8 @@ Một trong những điểm mạnh của SwiftUI là với chỉ một vài dòn
 
 ## swift-doc - tạo documentation cho các dự án Swift
 
+![11](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/11/swiftdoc.png)
+
 Viết documentation cho code là công việc cần thiết, đặc biết nếu chúng ta làm việc trong nhóm hoặc chia sẻ code với mọi người. Hiên [jazzy](https://github.com/realm/jazzy) là công cụ rất phổ biến để tạo documentation cho các mã nguồn trên Apple platform. Anh bạn [Mattt](https://nshipster.com/) có tạo ra một thư viện mới để tạo documentation cho các dự án Swift, có tên là swift-doc: https://github.com/SwiftDocOrg/swift-doc. `swift-doc` có khả năng tạo HTML hoặc Markdown documents, dễ dàng cho việc phát hành lên web.
 
 ## ToggleUI - Feature Toggle cho SwiftUI
@@ -69,6 +71,8 @@ Viết documentation cho code là công việc cần thiết, đặc biết nế
 # Tool:
 
 ## CheatSheet - tìm nhanh phím tắt
+
+![11](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/11/cheatsheet.png)
 
 [CheatSheet](https://mediaatelier.com/CheatSheet/) là một phần mềm miễn phí cho Mac để tìm nhanh các phím tắt cho tất cả các apps. Bạn chỉ ấn phím `⌘` khi đang sử dùng bất kỳ app nào trên Mac, một bảng danh sách sẽ hiện lên với hiển thị tất cả các phím tắt trong app hiện tại, rất thuận tiện cho việc sử dụng bàn phím thay vị chuyển sang dùng chuột.
 
