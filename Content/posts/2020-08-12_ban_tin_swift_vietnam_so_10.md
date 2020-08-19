@@ -1,5 +1,5 @@
 ---
-date: 2020-08-19 08:21
+date: 2020-08-12 08:21
 description: Bản tin Swift Việt Nam #10
 tags: news
 ---
