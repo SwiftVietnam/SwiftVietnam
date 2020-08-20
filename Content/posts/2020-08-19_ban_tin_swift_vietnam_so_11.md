@@ -16,7 +16,7 @@ Có lẽ tin tức nổi bật nhất liên quan đến Apple trong tuần vừa
 
 ![11](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/11/chris.png)
 
-Anh Chris Lattner, cha đẻ của ngôn ngữ Swift, hiện đang làm việc ở Google cho dự án [Swift for Tensorflow](https://www.tensorflow.org/swift). Mới đây anh Chris có một bài phỏng vấn về mối liên hệ ngiuwax ngôn ngữ lập trình, trình compiler và máy học. Nếu các bạn có hứng thú với chủ đề khá hóc búa này, mời các bạn xem video bài phỏng vấn [tại đây](https://www.youtube.com/watch?v=QeG9bdkc3Lk) nhé.
+Anh Chris Lattner, cha đẻ của ngôn ngữ Swift, đã từng làm việc 2 năm ở Google cho dự án liên quan đến máy học [Swift for Tensorflow](https://www.tensorflow.org/swift). Mới đây anh Chris có một bài phỏng vấn về mối liên hệ ngiuwax ngôn ngữ lập trình, trình compiler và máy học. Nếu các bạn có hứng thú với chủ đề khá hóc búa này, mời các bạn xem video bài phỏng vấn [tại đây](https://www.youtube.com/watch?v=QeG9bdkc3Lk) nhé.
 
 ## Sử dụng Swift với AWS Lambda
 
