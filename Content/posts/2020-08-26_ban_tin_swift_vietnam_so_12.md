@@ -24,8 +24,7 @@ Cuộc chiến giữa Epic Games và Apple có vẻ vẫn chưa đến hồi k�
 
 # Bài viết:
 
-
-## Kiểm thử Deeplink bằng UI Testing
+## Kiểm thử Deeplink tự động bằng UI Testing
 
 Deep-Linking là một thành phần không thể hiệu trong các mobile app hiện nay. Tuy nhiên việc kiểm thử Deeplink không phải là chuyện dễ dàng và thường phải làm một cách thủ công. Từ iOS 13, Apple đã hỗ trợ và mở rộng iOS Simulator rất nhiều để giúp cho việc kiểm thử Deeplink dễ dàng hơn. Bạn có thể tham khảo [bài viết này](https://masilotti.com/test-deep-links-with-ui-testing/) để xem cách kiểm thử Deeplink một cách tự động nhé.
 
@@ -43,11 +42,11 @@ Widgets là một feature mới xuất hiện trong iOS 14. Với việc các l�
 
 Mặc dù Swift đã hỗ trợ việc quản lý bộ nhớ tự động rất tốt, chúng ta vẫn cần phải cẩn trọng  khi viết code để tránh bị memory leak, đặc biệt là tránh việc có retain cycles.
 
-Bạn @Đào Duy Quang (https://www.facebook.com/quangmin91) có thảo luận về vấn đề này trong bài [blog gần đây](https://medium.com/ne-digital/memory-leak-detection-in-runtime-on-ios-cb4193f185fb)
+Bạn [@Đào Duy Quang](https://www.facebook.com/quangmin91) có thảo luận về vấn đề này trong bài [blog gần đây](https://medium.com/ne-digital/memory-leak-detection-in-runtime-on-ios-cb4193f185fb)
 
 Bạn Quang cũng có phát hành một thư viện mã nguồn mở để kiểm tra Memory Leak [tại đây](https://github.com/duyquang91/leakdetector)
 
-## AltStore - Sideload app mà không cần Jailbreak
+## AltStore - Sideload apps mà không cần Jailbreak
 
 ![12](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/12/altstore.png)
 
