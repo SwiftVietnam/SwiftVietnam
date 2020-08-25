@@ -42,15 +42,15 @@ Widgets là một feature mới xuất hiện trong iOS 14. Với việc các l�
 
 Mặc dù Swift đã hỗ trợ việc quản lý bộ nhớ tự động rất tốt, chúng ta vẫn cần phải cẩn trọng  khi viết code để tránh bị memory leak, đặc biệt là tránh việc có retain cycles.
 
-Bạn [@Đào Duy Quang](https://www.facebook.com/quangmin91) có thảo luận về vấn đề này trong bài [blog gần đây](https://medium.com/ne-digital/memory-leak-detection-in-runtime-on-ios-cb4193f185fb)
+Bạn [@Đào Duy Quang](https://www.facebook.com/quangmin91) có thảo luận về vấn đề này trong bài [blog gần đây](https://medium.com/ne-digital/memory-leak-detection-in-runtime-on-ios-cb4193f185fb).
 
-Bạn Quang cũng có phát hành một thư viện mã nguồn mở để kiểm tra Memory Leak [tại đây](https://github.com/duyquang91/leakdetector)
+Bạn Quang cũng có phát hành một thư viện mã nguồn mở để kiểm tra Memory Leak [tại đây](https://github.com/duyquang91/leakdetector).
 
 ## AltStore - Sideload apps mà không cần Jailbreak
 
 ![12](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/12/altstore.png)
 
-AltStore là một thư viện app dành cho các máy chạy iOS mà không cần phải Jailbreak. AltStore sử dụng Certificate và Provisioning Profiles của chính bạn để resign các app (từ file ipa) và sideload nó lên máy iOS của bạn. Bạn có thể tham khảo mã nguồn của AltStore [tại đây](https://github.com/rileytestut/AltStore)
+AltStore là một thư viện app dành cho các máy chạy iOS mà không cần phải Jailbreak. AltStore sử dụng Certificate và Provisioning Profiles của chính bạn để resign các app (từ file ipa) và sideload nó lên máy iOS của bạn. Bạn có thể tham khảo mã nguồn của AltStore [tại đây](https://github.com/rileytestut/AltStore).
 
 ## Arial - Screensaver cho Mac
 
@@ -70,13 +70,13 @@ Một lợi thế của SwiftUI so với UIKit đó là việc tạo hiệu ứn
 
 ![12](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/12/xcode-todo.gif)
 
-Tip này khá hay. Khi bạn tìm kiếm trong Xcode, bạn có thể sử dụng danh sách trả về như một todo list như [ở đây](https://twitter.com/lickability/status/1294295481812750336?s=20)
+Tip này khá hay. Khi bạn tìm kiếm trong Xcode, bạn có thể sử dụng danh sách trả về như một todo list như [ở đây](https://twitter.com/lickability/status/1294295481812750336?s=20).
 
 ## Bạn tốn bao nhiêu thời gian chờ Xcode chạy code?
 
 ![12](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/12/xcode-buildtime.png)
 
-Sử dụng [tool này](https://blog.kulman.sk/xcode-build-times/), bạn có thể đo được thời gian bạn chờ Xcode build code của bạn. Không có gì thiết thực lắm nhưng cũng khá thú vị 
+Sử dụng [tool này](https://blog.kulman.sk/xcode-build-times/), bạn có thể đo được thời gian bạn chờ Xcode build code của bạn. Không có gì thiết thực lắm nhưng cũng khá thú vị.
 
 # Hài hước:
 
