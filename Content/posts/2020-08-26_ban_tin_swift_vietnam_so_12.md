@@ -16,7 +16,7 @@ Cuộc chiến giữa Epic Games và Apple có vẻ vẫn chưa đến hồi k�
 
 ![12](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/12/appclips.jpg)
 
-Apple đã cập nhật Testflight và cho phép chúng ta có thể thử nghiệm tính năng App Clip. Bản cập nhật này cũng trình làng một icon mới cho app Testflight. Thông tin thêm về bản cập nhật này [tại đây](https://9to5mac.com/2020/08/17/apples-testflight-ios-beta-distribution-app-updated-with-detailed-icon-fit-for-a-mac/).
+[Apple đã cập nhật Testflight](https://developer.apple.com/news/releases/?id=08182020) và cho phép chúng ta có thể thử nghiệm tính năng App Clip. Bản cập nhật này cũng trình làng [một icon mới](https://developer.apple.com/assets/elements/icons/testflight/testflight-128X128_2x.png) cho app Testflight. Thông tin thêm về bản cập nhật này [tại đây](https://9to5mac.com/2020/08/17/apples-testflight-ios-beta-distribution-app-updated-with-detailed-icon-fit-for-a-mac/).
 
 ## Tìm hiểu `OptionSet`
 
@@ -27,7 +27,7 @@ Apple đã cập nhật Testflight và cho phép chúng ta có thể thử nghi�
 
 ## Kiểm thử Deeplink bằng UI Testing
 
-Deeplinking là một thành phần không thể hiệu trong các mobile app hiện nay. Tuy nhiên việc kiểm thử Deeplink không phải là chuyện dễ dàng và thường phải làm một cách thủ công. Từ iOS 13, Apple đã hỗ trợ và mở rộng iOS Simulator rất nhiều để giúp cho việc kiểm thử Deeplink dễ dàng hơn. Bạn có thể tham khảo [bài viết này](https://masilotti.com/test-deep-links-with-ui-testing/) để xem cách kiểm thử Deeplink một cách tự động nhé.
+Deep-Linking là một thành phần không thể hiệu trong các mobile app hiện nay. Tuy nhiên việc kiểm thử Deeplink không phải là chuyện dễ dàng và thường phải làm một cách thủ công. Từ iOS 13, Apple đã hỗ trợ và mở rộng iOS Simulator rất nhiều để giúp cho việc kiểm thử Deeplink dễ dàng hơn. Bạn có thể tham khảo [bài viết này](https://masilotti.com/test-deep-links-with-ui-testing/) để xem cách kiểm thử Deeplink một cách tự động nhé.
 
 ## Tips phát triển Widget cho iOS 14
 
