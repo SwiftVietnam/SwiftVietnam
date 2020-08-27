@@ -17,8 +17,8 @@ struct SwiftVietnam: Website {
 
     // Update these properties to configure your website:
     var url = URL(string: "https://swiftvietnam.com")!
-    var name = "Swift Vietnam Community"
-    var description = "A community for Vietnamese Swift enthusiasts."
+    var name = "Cộng đồng Swift Việt Nam"
+    var description = "Cộng đồng lập trình viên iOS, tvOS, macOS, watchOS và tvOS, và những người yêu thích ngôn ngữ lập trình Swift."
     var language: Language { .english }
     var imagePath: Path? { nil }
 }
