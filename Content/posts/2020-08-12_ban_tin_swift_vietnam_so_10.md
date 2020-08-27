@@ -67,13 +67,13 @@ Anh bạn [Majid](https://swiftwithmajid.com/) cũng có một series bài viế
 
 ## Self-Sizing UITableView Cells with SwiftUI
 
-Bài viết của bạn Noah Gilmore khá thú vị khi bạn đó đã tìm hiểu cách tích hợp một `SwiftUI View` vào làm content cho một `UITableViewCell`. Thách thức ở đây là làm sao chúng ta có thể kết hợp `SwiftUI` và `UITableViewCell` để hiển thị dữ liệu động, các cell không có chiều cao cố định. Các bạn tham khảo bài [phân tích tại đây nhé](https://noahgilmore.com/blog/swiftui-self-sizing-cells/).
+Bài viết của bạn Noah Gilmore khá thú vị khi bạn đó đã tìm hiểu cách tích hợp một `SwiftUI View` vào làm content cho một `UITableViewCell`. Thách thức ở đây là làm sao chúng ta có thể kết hợp `SwiftUI` và `UITableViewCell` để hiển thị dữ liệu động, các cell không có chiều cao cố định. Các bạn tham khảo bài [phân tích tại đây nhé](https://noahgilmore.com/blog/swiftui-self-sizing-cells/).
 
 ## Step-by-step guide for localizing plurals in iOS
 
 ![10](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/10/plural.png)
 
-Nếu các bạn đã từng xây dựng các ứng dụng có giao diện tiếng anh, chắc hẳn các bạn đã từng gặp vấn đề với việc phải hỗ trợ các danh từ số ít, số nhiều trong tiếng anh tuỳ thuộc vào ngữ cảnh, ví dụ như nếu bạn phải thiết kế một `UILabel` có title là "x day(s)" thì tuỳ thuộc vào `x = 1` hay `x > 1`, các bạn sẽ phải sử dụng `day` hoặc `days`. Rất may Apple có hỗ trợ việc localizing plurals này trực tiếp trong Xcode. Các bạn có thể xem hướng dẫn từng bước việc sử dụng plurals localization tại [bài viết này nhé](https://www.tanaschita.com/posts/20200801-plurals-localization-in-ios/).  
+Nếu các bạn đã từng xây dựng các ứng dụng có giao diện tiếng anh, chắc hẳn các bạn đã từng gặp vấn đề với việc phải hỗ trợ các danh từ số ít, số nhiều trong tiếng anh tuỳ thuộc vào ngữ cảnh, ví dụ như nếu bạn phải thiết kế một `UILabel` có title là "x day(s)" thì tuỳ thuộc vào `x = 1` hay `x > 1`, các bạn sẽ phải sử dụng `day` hoặc `days`. Rất may Apple có hỗ trợ việc localizing plurals này trực tiếp trong Xcode. Các bạn có thể xem hướng dẫn từng bước việc sử dụng plurals localization tại [bài viết này nhé](https://www.tanaschita.com/posts/20200801-plurals-localization-in-ios/).  
 
 # Mã nguồn:
 
