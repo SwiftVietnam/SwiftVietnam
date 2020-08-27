@@ -30,7 +30,7 @@ Với lập trình viên chúng ta, việc có logging data từ các app chúng
 
 ## Sử dụng CoreData với SwiftUI trong Xcode 12
 
-Nếu các bạn tạo project SwiftUI mới trong Xcode 12, các bạn sẽ không thấy `AppDelegate` hay `SceneDelegate` nữa, gây khó khăn cho việc thiết lập `CoreData`. Donny Wals có giới thiệu một cách để các bạn thiết lập CoreData và kết nối nó với phần UI [tại đây](https://www.donnywals.com/using-core-data-with-swiftui-2-0-and-xcode-12/).
+Nếu các bạn tạo project SwiftUI mới trong Xcode 12, các bạn sẽ không thấy `AppDelegate` hay `SceneDelegate` nữa, gây khó khăn cho việc thiết lập `CoreData`. Donny Wals có giới thiệu một cách để các bạn thiết lập CoreData và kết nối nó với phần UI [tại đây](https://www.donnywals.com/using-core-data-with-swiftui-2-0-and-xcode-12/).
 
 ## Thêm resources vào Swift Package Manager
 
