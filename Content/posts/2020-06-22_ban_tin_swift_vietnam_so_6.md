@@ -48,7 +48,7 @@ Một Youtube video tổng hợp của anh Paul Hudson về những tính năng 
 ## UICollectionView + UICollectionLayoutListConfiguration
 
 Tất nhiên Apple cũng vẫn bổ sung các tính năng mới cho UIKit, đặc biệt là với UICollectionView. Nếu như trong WWDC2019, 
-UICollectionView được bổ sung DiffableDataSource và các layout mới để để tối ưu việc hiển thị dữ liệu trên nhiều resolutions khác nhau, thì trong WWDC20 lần này, Apple giới thiệu `UICollectionLayoutListConfiguration`để giúp chúng ta có thể sử dụng `UICollectionView` như một `UITableView`. Thông tin ngắn gọn về `UICollectionLayoutListConfiguration` các bạn có thể xem [tại đây](https://wwdcnotes.com/notes/wwdc20/10026/)
+UICollectionView được bổ sung DiffableDataSource và các layout mới để để tối ưu việc hiển thị dữ liệu trên nhiều resolutions khác nhau, thì trong WWDC20 lần này, Apple giới thiệu `UICollectionLayoutListConfiguration` để giúp chúng ta có thể sử dụng `UICollectionView` như một `UITableView`. Thông tin ngắn gọn về `UICollectionLayoutListConfiguration` các bạn có thể xem [tại đây](https://wwdcnotes.com/notes/wwdc20/10026/)
 
 ##  Swift Package Manager
 

@@ -14,7 +14,7 @@ Tuần vừa rồi chắc bạn nào dùng Facebook SDK thì cũng biết là ap
 
 ## Swift Service Lifecycle
 
-Apple mới giới thiệu một Framework mới dành cho Server-Side Swift có tên là `Swift Service Lifecycle`. Tại mình cũng không quan tâm lắm đến Swift trên server nên mình không đi vào chi tiết. Các bạn đọc bài giới thiệu về Swift Service Lifecycle [ở đây](https://swift.org/blog/swift-service-lifecycle/) hoặc xem mã nguồn [tại đây](https://github.com/swift-server/swift-service-lifecycle).
+Apple mới giới thiệu một Framework mới dành cho Server-Side Swift có tên là `Swift Service Lifecycle`. Tại mình cũng không quan tâm lắm đến Swift trên server nên mình không đi vào chi tiết. Các bạn đọc bài giới thiệu về Swift Service Lifecycle [ở đây](https://swift.org/blog/swift-service-lifecycle/) hoặc xem mã nguồn [tại đây](https://github.com/swift-server/swift-service-lifecycle).
 
 # Bài viết:
 
@@ -34,7 +34,7 @@ Một trong những bổ xung đáng giá của SwiftUI trong năm 2020 là Grid
 
 ## SwiftUI vs UIKit
 
-Nếu các bạn đang quen sử dụng UIKit và bắt đầu học SwiftUI, chắc chắn các bạn sẽ thấy rất khó hiểu lúc bắt đầu. Điều này không có gì là lạ vì SwiftUI đi theo hướng ["declarative UI"](https://developer.apple.com/xcode/swiftui/) còn UIKit là "imperative UI". Một trong những concept đặc biệt của SwiftUI là tất cả `View` đều được khai báo bằng `struct`, tức là một `value type`, chứ không như `UIView` là một class, tức là `reference type`. Bài viết [này](https://www.hackingwithswift.com/books/ios-swiftui/why-does-swiftui-use-structs-for-views) của anh Paul Hudson sẽ giải thích rõ hơn tại sao `View` trong SwiftUI lại là `struct`.
+Nếu các bạn đang quen sử dụng UIKit và bắt đầu học SwiftUI, chắc chắn các bạn sẽ thấy rất khó hiểu lúc bắt đầu. Điều này không có gì là lạ vì SwiftUI đi theo hướng ["declarative UI"](https://developer.apple.com/xcode/swiftui/) còn UIKit là "imperative UI". Một trong những concept đặc biệt của SwiftUI là tất cả `View` đều được khai báo bằng `struct`, tức là một `value type`, chứ không như `UIView` là một class, tức là `reference type`. Bài viết [này](https://www.hackingwithswift.com/books/ios-swiftui/why-does-swiftui-use-structs-for-views) của anh Paul Hudson sẽ giải thích rõ hơn tại sao `View` trong SwiftUI lại là `struct`.
 
 ## Dùng Bazel để tăng tốc build iOS apps
 
