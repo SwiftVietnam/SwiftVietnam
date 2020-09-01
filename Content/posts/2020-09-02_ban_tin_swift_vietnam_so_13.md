@@ -82,9 +82,9 @@ Với việc SwiftUI sử dụng Function Bulder khắp mọi nơi, chúng ta kh
 Các bạn có thể xem qua bài giới thiệu về Workflow tại [video này](https://player.vimeo.com/video/362741019)
 # Tool:
 
-## Snip - Quản lý snippets
+## snip - Quản lý snippets
 
-![13](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/13/snip.png)
+![13](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/13/snips.png)
 
 Dự án mã mở "Snip" là một phần mềm chạy trên macOS dùng để quản lý các mẩu code thường dùng trên macOS. Toàn bộ mã nguồn được viết bằng SwiftUI và Combine, hỗ trợ syntax highlight hơn 100 ngôn ngữ khác nhau, hỗ trợ viết bằng Markdown và HTML và nhiều tính năng khác, mời các bạn tham khảo.
 
