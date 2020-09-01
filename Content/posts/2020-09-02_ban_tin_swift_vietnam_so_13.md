@@ -54,7 +54,7 @@ Core Data được sử dụng để lưu trữ và truy cứu dữ liệu trên
 
 [SwiftIO](https://github.com/madmachineio/SwiftIO) là một dự án nguồn mở nhằm mục đích đưa ngôn ngữ Swift lên vi xử lý, ví dụ như dòng Cortex processors. Nôm na là chúng ta có thể lập trình các board tương tự Arduino bằng ngôn ngữ Swift. Hiện dự án mới hỗ trợ một [board duy nhất](https://www.madmachine.io/product-page/swiftio) nhưng mình tin trong tương lai cũng ta sẽ thấy nhiều dòng sản phẩm phần cứng hỗ trợ SwiftiO.
 
-## Tokamak Sử dụng Swift để xây dựng ứng dụng Web
+## Tokamak - Sử dụng Swift để xây dựng ứng dụng Web
 
 Mình xin giới thiệu các bạn dự án [Tomarak](https://github.com/TokamakUI/Tokamak), sử dụng Swift để xây dựng ứng dụng Web.
 
@@ -80,6 +80,7 @@ Với việc SwiftUI sử dụng Function Bulder khắp mọi nơi, chúng ta kh
 Đặc biệt là thư viện này có cả phiên bản [viết bằng Kotlin](https://github.com/square/workflow-kotlin), hỗ trợ Android. Điều này giúp cho việc chia sử cấu trúc giữa Android và iOS app dễ dàng hơn.
 
 Các bạn có thể xem qua bài giới thiệu về Workflow tại [video này](https://player.vimeo.com/video/362741019)
+
 # Tool:
 
 ## snip - Quản lý snippets
