@@ -10,7 +10,7 @@ tags: news
 
 Apple tuần vừa rồi tung ra bản iOS 14 beta 6 và rất bất ngờ với phiên bản đầu tiên của iOS 13.7 beta.
 
-Cuộc chiến giữa Epic Games và Apple tiếp tục leo thang khi Apple đã [chính thức xoá tài khoản](https://mjtsai.com/blog/2020/08/28/apple-terminates-epic-games-developer-account/) developer phát hành game Fornite và các tựa đề khác của Epic Games khỏi hệ thống
+Cuộc chiến giữa Epic Games và Apple tiếp tục leo thang khi Apple đã [chính thức xoá tài khoản](https://mjtsai.com/blog/2020/08/28/apple-terminates-epic-games-developer-account/) developer phát hành game Fornite và các tựa đề khác của Epic Games khỏi hệ thống. Apple có vẻ muốn chữa cháy mấy phốt gần đây liên quan đến quá trình kiểm tra ứng dụng nên đã đươc ra [thông tin mới](https://developer.apple.com/news/?id=84w3e5bm) về những thay đổi của App Store cũng như khuyến khích mọi người [đóng góp ý kiến](https://developer.apple.com/contact/app-store/?topic=guideline) về quá trình kiểm tra app trước khi lên App Store.
 
 Hiện cộng đồng Swift Việt Nam đang chuẩn bị một hướng dẫn chi tiết cách xây dựng một ứng dụng băng SwiftUI từ lúc ý tưởng cho đến lúc phát hành lên App Store. Hiện mình đang thu thập ý kiến về serie hướng dẫn này trên group của Swift Việt Nam, mời các bạn [tham gia đóng góp ý kiến nhé](https://www.facebook.com/groups/691941251234927).
 
