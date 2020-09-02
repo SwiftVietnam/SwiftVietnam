@@ -39,12 +39,11 @@ Với việc các vi xử lý trên điện thoại ngày càng mạnh, cũng nh
 
 ## Sử dụng Core Data để cache dữ liệu từ Internet
 
-Core Data được sử dụng để lưu trữ và truy cứu dữ liệu trên thiết bị. Caching là kỹ thuật lưu tạm dữ liệu trích xuất từ internet để chúng ta giảm tần suất kết nối với internet cho ứng dụng hoặc cung cấp dữ liệu cho người dùng khi offline. [Bài viết này](https://www.donnywals.com/implementing-a-one-way-sync-strategy-with-core-data-urlsession-and-combine/
-) của Donny Wals có giới thiệu kỹ thuật sync dữ liệu vào Core Data sử dụng `URLSession` và `Combine`.
+Core Data được sử dụng để lưu trữ và truy cứu dữ liệu trên thiết bị. Caching là kỹ thuật lưu tạm dữ liệu trích xuất từ internet để chúng ta giảm tần suất kết nối với internet cho ứng dụng hoặc cung cấp dữ liệu cho người dùng khi offline. [Bài viết này](https://www.donnywals.com/implementing-a-one-way-sync-strategy-with-core-data-urlsession-and-combine/) của Donny Wals có giới thiệu kỹ thuật sync dữ liệu vào Core Data sử dụng `URLSession` và `Combine`.
 
 ## Sử dụng hàm như một biến phụ thuộc
 
-Đa phần chúng ta đã quen với việc sử dụng Protocol để định nghĩa một biến phụ thuộc và inject protocol này vào ứng dụng. Tuy nhiên việc sử dụng protocol để định nghĩa biến phụ thuộc có nhược điểm là chúng ta phải định nghĩa những biến phục thuộc này rất sớm trong lifecycle của ứng dụng ngay cả khi chung ta không dùng chúng ngay lập tức. [Bài viết này](https://itnext.io/functions-as-dependencies-in-swift-2bc382f9475d) có giới thiệu một kỹ thuật sử dụng high-order function để định nghĩa biến phụ thuộc và khởi tạo chúng một cách lazy. Mời các bạn tham khảo nhé
+Đa phần chúng ta đã quen với việc sử dụng Protocol để định nghĩa một biến phụ thuộc và inject protocol này vào ứng dụng. Tuy nhiên việc sử dụng protocol để định nghĩa biến phụ thuộc có nhược điểm là chúng ta phải định nghĩa những biến phục thuộc này rất sớm trong lifecycle của ứng dụng ngay cả khi chung ta không dùng chúng ngay lập tức. [Bài viết này](https://itnext.io/functions-as-dependencies-in-swift-2bc382f9475d) có giới thiệu một kỹ thuật sử dụng high-order function để định nghĩa biến phụ thuộc và khởi tạo chúng một cách lazy. Mời các bạn tham khảo nhé.
 
 # Mã nguồn:
 
