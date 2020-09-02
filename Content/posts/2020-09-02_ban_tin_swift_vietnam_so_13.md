@@ -112,7 +112,7 @@ Các bạn có thể tải "Not Phở" [tại đây nhé](https://apps.apple.com
 
 # Hài hước:
 
-Không ngờ có cả một câu chuyện drama đằng sau [cái meme nổi này](https://twitter.com/skepholic/status/1296865027941478400?s=20) 😭🤣.
+Không ngờ có cả một câu chuyện drama đằng sau [cái meme nổi tiếng này](https://twitter.com/skepholic/status/1296865027941478400?s=20) 😭🤣.
 
 # Lời kết:
 
