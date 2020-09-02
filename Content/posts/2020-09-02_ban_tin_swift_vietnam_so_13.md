@@ -19,15 +19,16 @@ Hiện cộng đồng Swift Việt Nam đang chuẩn bị một hướng dẫn c
 ## Thông tin Swift Evolution Proposals
 
 - Chấp nhận:
-    - [SE-0287](https://github.com/apple/swift-evolution/blob/master/proposals/0287-implicit-member-chains.md): Extend implicit member syntax to cover chains of member references
+  - [SE-0287](https://github.com/apple/swift-evolution/blob/master/proposals/0287-implicit-member-chains.md): Extend implicit member syntax to cover chains of member references
 - Review:
-    - [SE-0288](https://github.com/apple/swift-evolution/blob/master/proposals/0288-binaryinteger-ispower.md): Adding isPower(of:) to BinaryInteger
+  - [SE-0288](https://github.com/apple/swift-evolution/blob/master/proposals/0288-binaryinteger-ispower.md): Adding isPower(of:) to BinaryInteger
 
 ## Reimplement protocol conformance cache with a hash table
 
 Đọc qua thông tin trong cái [Pull Request này](https://github.com/apple/swift/pull/33487) mình có 2 suy nghĩ:
+
 - Rất vui vì Swift Compiler sẽ chạy nhanh hơn nếu code base có nhiều protocols
-- Ai định xin vào làm cho Apple thì xác định luôn là cầy thuật toán nhiều vào 😝. 
+- Ai định xin vào làm cho Apple thì xác định luôn là cầy thuật toán nhiều vào 😝.
 
 # Bài viết:
 
@@ -72,6 +73,7 @@ Với việc SwiftUI sử dụng Function Bulder khắp mọi nơi, chúng ta kh
 ![13](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/13/unidirectional.png)
 
 [Workflow](https://github.com/square/workflow-swift) là một thư viện mới, được phát triển bởi Square, dùng để tạo kiến trúc cho ứng dụng với các ưu điểm:
+
 - Sử dụng State Machine để thay đổi UI và Navigation
 - Composition và Scaling
 - Tách biệt giữa code cho business logic và UI.
@@ -86,7 +88,7 @@ Các bạn có thể xem qua bài giới thiệu về Workflow tại [video này
 
 ![13](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/13/snips.png)
 
-Dự án mã mở "Snip" là một phần mềm chạy trên macOS dùng để quản lý các mẩu code thường dùng trên macOS. Toàn bộ mã nguồn được viết bằng SwiftUI và Combine, hỗ trợ syntax highlight hơn 100 ngôn ngữ khác nhau, hỗ trợ viết bằng Markdown và HTML và nhiều tính năng khác, mời các bạn tham khảo.
+[Dự án mã mở "Snip"](https://github.com/Pictarine/macos-snippets) là một phần mềm chạy trên macOS dùng để quản lý các mẩu code thường dùng trên macOS. Toàn bộ mã nguồn được viết bằng SwiftUI và Combine, hỗ trợ syntax highlight hơn 100 ngôn ngữ khác nhau, hỗ trợ viết bằng Markdown và HTML và nhiều tính năng khác, mời các bạn tham khảo.
 
 # Tips & Tricks:
 
