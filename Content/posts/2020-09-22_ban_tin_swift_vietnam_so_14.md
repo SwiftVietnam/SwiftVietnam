@@ -58,7 +58,7 @@ SwiftUI được giới thiệu lần đầu tại WWDC 2019, phiên bản nâng
 
 ## Lịch sử trang System Preferences trên macOS
 
-![14](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/14/macos_preferences.png)
+![14](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/14/macos_preferences.jpg)
 
 Ai đã dùng máy Mac thì chắc chắn đã quen thuộc với ứng dụng System Preferences. Có thể nói đây là một trong những ứng dụng ít thay đổi nhất trong các phiên bản macOS. Các bạn tham khảo một bài viết khá thú vị về [lịch sử trang System Preferences trên macOS](https://www.arun.is/blog/system-preferences/)
 
@@ -100,7 +100,7 @@ Xcode 12 có [một option](https://twitter.com/zntfdr/status/130608699337431449
 
 ## Lọc nhanh Simulators và Scheme trong Xcode
 
-![14](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/14/xcode_similators.gif)
+![14](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/14/xcode_simulators.gif)
 
 Sử dụng tính năng lọc nhanh để tìm Simulator hoặc Scheme cần tìm, chi tiết [tại đây](https://twitter.com/novallkhan/status/1301948845220298753)
 
