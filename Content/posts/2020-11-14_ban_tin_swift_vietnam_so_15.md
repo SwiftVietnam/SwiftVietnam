@@ -1,6 +1,6 @@
 ---
-date: 2020-09-21 08:21
-description: Bản tin Swift Việt Nam #14
+date: 2020-11-14 08:21
+description: Bản tin Swift Việt Nam #15
 tags: news
 ---
 
