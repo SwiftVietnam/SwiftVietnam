@@ -24,7 +24,7 @@ Tham khảo Realtime iOS 14 adaption [tại đây](https://mixpanel.com/trends/#
 
 Swift Algorithms tập hợp các thuật toán liên quan đến các kiểu dữ liệu thích hợp với protocol Sequence hay Colleection
 
-Nếu các bạn đã từng xem Video "Embrace Algorithms" ở WWDC 2018: https://developer.apple.com/videos/play/wwdc2018/223/ , chắc hẳn các bạn sẽ thấy tầm quan trọng của việc sử dụng đúng thuật toán để giải quyết vấn đề trong lập trình.
+Nếu các bạn đã từng xem Video ["Embrace Algorithms"](https://developer.apple.com/videos/play/wwdc2018/223/) ở WWDC 2018 , chắc hẳn các bạn sẽ thấy tầm quan trọng của việc sử dụng đúng thuật toán để giải quyết vấn đề trong lập trình.
 
 Các thuật toán trong phiên bản hiện thời gồm có:
 - Combinations
@@ -106,7 +106,7 @@ Trong một ứng dụng iOS, chúng ta có rất nhiều đoạn có chạy kh�
 
 Busy Assertion Pattern là một pattern khá hay để chúng ta đồng bộ hoá việc kiểm thử các đoạn code không đồng bộ.
 
-Các bạn có thể đọc chi tiết về pattern này tại đây: https://www.vadimbulavin.com/swift-asynchronous-unit-testing-with-busy-assertion-pattern/
+Các bạn có thể đọc chi tiết về pattern này [tại đây](https://www.vadimbulavin.com/swift-asynchronous-unit-testing-with-busy-assertion-pattern/).
 
 # Mã nguồn:
 
