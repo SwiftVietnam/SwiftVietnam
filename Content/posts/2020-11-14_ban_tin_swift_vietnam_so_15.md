@@ -14,7 +14,7 @@ Bạn có biết là tính đến thời điểm hiện tại đã có nhiều t
 
 Ứng dụng của bạn đã hỗ trợ iOS 14 tốt chưa, bây giờ là thời điểm thích hợp để kiểm tra điều đó trước khi quá muộn đấy 😬
 
-Realtime iOS 14 adaption: https://mixpanel.com/trends/#report/ios_14
+Tham khảo Realtime iOS 14 adaption [tại đây](https://mixpanel.com/trends/#report/ios_14).
 
 # Swift:
 
@@ -51,7 +51,7 @@ Các biến trong Swift được định nghĩa non-atomic by default.
 
 Tuy nhiên, mới đây Apple đã giới thiệu một package mã mở có tên Swift Atomics. Package này giúp chúng ta có thể xây dựng các low-level atomic operation trực tiếp bằng Swift.
 
-Các bạn đọc thêm chi tiết về package Swift Atomics ở đây: https://swift.org/blog/swift-atomics/
+Các bạn đọc thêm chi tiết về package Swift Atomics [ở đây](https://swift.org/blog/swift-atomics/).
 
 ## Swift on Windows
 
@@ -64,8 +64,8 @@ Sau khi hỗ trợ Linux, Swift đã chính thức hỗ trợ Windows. Như vậ
 Hy vọng Apple cũng sẽ sớm đưa Xcode lên Windows để tiện cho việc viết Code.
 
 Hướng dẫn chi tiết về việc cài đặt Swift trên Windows tại đây:
-📖 Swift getting started: https://swift.org/getting-started/#installing-swift
-🎦 Swift on Windows: https://www.youtube.com/watch?v=rKN60MoqGn8
+📖 [Swift getting started](https://swift.org/getting-started/#installing-swift)
+🎦 [Swift on Windows](https://www.youtube.com/watch?v=rKN60MoqGn8)
 
 # Bài viết:
 
@@ -77,7 +77,7 @@ Vậy là Apple đã giới thiệu hàng loạt iPhone mới 🤩. Lần này a
 
 Chắc hẳn các bạn sẽ thắc mắc, các app hiện đã có trên App Store được xậy dựng bằng các Xcode phiên bản cũ thì sẽ hiển thị ra sao trên màn hình iPhone 12?
 
-Các bạn có thể tham khảo bài viết sau để xem cách Apple scale ứng dụng cũ để hiện thị trên màn hình iPhone 12 nhé: https://hacknicity.medium.com/how-ios-apps-adapt-to-the-various-iphone-12-screen-sizes-e45c021e1b8b
+Các bạn có thể tham khảo [bài viết sau](https://hacknicity.medium.com/how-ios-apps-adapt-to-the-various-iphone-12-screen-sizes-e45c021e1b8b) để xem cách Apple scale ứng dụng cũ để hiện thị trên màn hình iPhone 12 nhé.
 
 ## Home Screen Quick Actions with SwiftUI
 
@@ -85,8 +85,8 @@ Các bạn có thể tham khảo bài viết sau để xem cách Apple scale ứ
 
 Với việc giới thiệu phương thức mới để quản lý lifecyle cho ứng dụng SwiftUI từ Xcode 12, chúng ta sẽ không còn AppDelegate dể thực hiện một số tác vụ như khởi tạo các delegate để xử lý Home Screen Quick Action.
 
-Bài viết sau đây sẽ giới thiệu với các bạn cách thức xử lý Home Screen Quick Action trong SwiftUI 2.0:
-https://medium.com/@jeevat13/home-screen-quick-actions-swiftui-2-0-75d9ceac27c1
+Bài viết [sau đây](https://medium.com/@jeevat13/home-screen-quick-actions-swiftui-2-0-75d9ceac27c1) sẽ giới thiệu với các bạn cách thức xử lý Home Screen Quick Action trong SwiftUI 2.0:
+
 
 ## SwiftUI 2.0: The magic of redacted modifier
 
@@ -96,7 +96,7 @@ Redacted modifier là một tính năng mới rất hay trong SwiftUI 2.0. Nếu
 
 Trong SwiftUI 2.0, chúng ta chỉ cần cung cấp cấu trúc View, SwiftUI sẽ tự động phân tích và cung cấp một phiên bản redacted cho chúng ta sử dụng trong loading state, rất thuận tiện.
 
-Bạn có thể tham khảo bài viết sau để biết thêm chi tiết cách thức hoạt động của redacted modifier nhé: https://swiftwithmajid.com/2020/10/22/the-magic-of-redacted-modifier-in-swiftui/
+Bạn có thể tham khảo bài viết sau để biết thêm chi tiết cách thức hoạt động của redacted modifier [tại đây](https://swiftwithmajid.com/2020/10/22/the-magic-of-redacted-modifier-in-swiftui/). 
 
 ## Test code không đồng bộ bằng Busy Assertion Pattern
 
@@ -116,7 +116,7 @@ Các bạn có thể đọc chi tiết về pattern này tại đây: https://ww
 
 Việc SwiftUI hỗ trợ sử dụng các thành phần của UIKit nên việc tích hợp Camera vào SwiftUI không phải là việc quá khó. Tuy nhiên việc sử dụng AVFoundation để hỗ trợ tuỳ biến Camera trong SwiftUI là một tác vụ khá mới mà không phải lập trình viên nào cũng có thể hiểu ngay được.
 
-Mình giới thiệu các bạn một series bài viết miêu tả rất chi tiết việc tích hợp Camera, sử dụng AVFoundation trong một SwiftUI. Các bạn tham khảo tại đây: https://github.com/rorodriguez116/SwiftCamera
+Mình giới thiệu các bạn một series bài viết miêu tả rất chi tiết việc tích hợp Camera, sử dụng AVFoundation trong một SwiftUI. Các bạn tham khảo [tại đây](https://github.com/rorodriguez116/SwiftCamera).
 
 # Tool:
 
@@ -130,17 +130,17 @@ Bạn nào đã từng sử dụng Charles Proxy để debug network code trên 
 
 Mình giới thiệu các bạn một công cụ khác có tên là Bagel. Với công cụ nay, bạn sẽ embed một library nhỏ vào ứng dụng iOS của mình và sử dụng một app trên máy Mac để xem networking traffic. Rất thuận tiện trong việc tìm lỗi liên quan đến Networking.
 
-Các bạn xem thêm chi tiết về Bagel tại đây nhé: https://github.com/yagiz/Bagel
+Các bạn xem thêm chi tiết về Bagel [tại đây](https://github.com/yagiz/Bagel) nhé. 
 
 ## Lookin:
 
-![15](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/15/lookin.png)
+![15](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/15/lookin.jpg)
 
-[Miễn phí] [Nguồn mở] Ứng dụng debugging giao diện cho iOS Apps
+**Ứng dụng debugging giao diện cho iOS Apps miễn phí và nguồn mở**
 
 Ai dùng Xcode chắc đã quen với việc sử dung UI Inspector để kiểm tra và debug giao diện ứng dụng iOS apps.
 
-Ngoài ra có một công cụ khác khá nổi tiếng cho việc nay là Reveal: https://revealapp.com
+Ngoài ra có một công cụ khác khá nổi tiếng cho việc nay là [Reveal](https://revealapp.com).
 
 Mình xin giới thiệu với các bạn một công cụ miễn phí, nguồn mở khác phục vụ cho việc debug views, rất hữu ích khi phát triển giao diện cho ứng dụng iOS có tên là Lookin:
 
