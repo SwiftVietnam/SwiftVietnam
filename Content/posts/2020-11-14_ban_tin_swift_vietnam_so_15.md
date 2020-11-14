@@ -8,6 +8,8 @@ tags: news
 
 # Bản tin Swift Việt Nam #15
 
+![15](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/15/ios14.png)
+
 Bạn có biết là tính đến thời điểm hiện tại đã có nhiều thiết bị chạy iOS 14 hơn iOS 13 🤯
 
 Ứng dụng của bạn đã hỗ trợ iOS 14 tốt chưa, bây giờ là thời điểm thích hợp để kiểm tra điều đó trước khi quá muộn đấy 😬
