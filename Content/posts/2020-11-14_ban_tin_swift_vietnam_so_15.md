@@ -144,8 +144,8 @@ Ngoài ra có một công cụ khác khá nổi tiếng cho việc nay là [Reve
 
 Mình xin giới thiệu với các bạn một công cụ miễn phí, nguồn mở khác phục vụ cho việc debug views, rất hữu ích khi phát triển giao diện cho ứng dụng iOS có tên là Lookin:
 
-- 👉 Trang chủ: https://lookin.work
-- 👉 Mã nguồn: https://github.com/QMUI/LookinServer
+- 👉 Trang chủ: [https://lookin.work](https://lookin.work)
+- 👉 Mã nguồn: [https://github.com/QMUI/LookinServer](https://github.com/QMUI/LookinServer)
 
 # Tips & Tricks:
 
