@@ -39,7 +39,7 @@ Các thuật toán trong phiên bản hiện thời gồm có:
 - Partition
 - Rotate
 
-Các bạn xem giới thiệu chi tiết về Swift Algorithms trên trang Swift.org: https://swift.org/blog/swift-algorithms/
+Các bạn xem giới thiệu chi tiết về [Swift Algorithms](https://swift.org/blog/swift-algorithms/) trên trang Swift.org. 
 
 ## Swift Atomics
 
@@ -64,8 +64,8 @@ Sau khi hỗ trợ Linux, Swift đã chính thức hỗ trợ Windows. Như vậ
 Hy vọng Apple cũng sẽ sớm đưa Xcode lên Windows để tiện cho việc viết Code.
 
 Hướng dẫn chi tiết về việc cài đặt Swift trên Windows tại đây:
-📖 [Swift getting started](https://swift.org/getting-started/#installing-swift)
-🎦 [Swift on Windows](https://www.youtube.com/watch?v=rKN60MoqGn8)
+- 📖 [Swift getting started](https://swift.org/getting-started/#installing-swift)
+- 🎦 [Swift on Windows](https://www.youtube.com/watch?v=rKN60MoqGn8)
 
 # Bài viết:
 
@@ -144,8 +144,8 @@ Ngoài ra có một công cụ khác khá nổi tiếng cho việc nay là [Reve
 
 Mình xin giới thiệu với các bạn một công cụ miễn phí, nguồn mở khác phục vụ cho việc debug views, rất hữu ích khi phát triển giao diện cho ứng dụng iOS có tên là Lookin:
 
-👉 Trang chủ: https://lookin.work
-👉 Mã nguồn: https://github.com/QMUI/LookinServer
+- 👉 Trang chủ: https://lookin.work
+- 👉 Mã nguồn: https://github.com/QMUI/LookinServer
 
 # Tips & Tricks:
 
