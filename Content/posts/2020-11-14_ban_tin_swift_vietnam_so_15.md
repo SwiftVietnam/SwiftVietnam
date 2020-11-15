@@ -64,6 +64,7 @@ Sau khi hỗ trợ Linux, Swift đã chính thức hỗ trợ Windows. Như vậ
 Hy vọng Apple cũng sẽ sớm đưa Xcode lên Windows để tiện cho việc viết Code.
 
 Hướng dẫn chi tiết về việc cài đặt Swift trên Windows tại đây:
+
 - 📖 [Swift getting started](https://swift.org/getting-started/#installing-swift)
 - 🎦 [Swift on Windows](https://www.youtube.com/watch?v=rKN60MoqGn8)
 
@@ -81,12 +82,11 @@ Các bạn có thể tham khảo [bài viết sau](https://hacknicity.medium.com
 
 ## Home Screen Quick Actions with SwiftUI
 
-![15](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/15/quickaction.png)
+![15](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/15/quickaction.jpg)
 
 Với việc giới thiệu phương thức mới để quản lý lifecyle cho ứng dụng SwiftUI từ Xcode 12, chúng ta sẽ không còn AppDelegate dể thực hiện một số tác vụ như khởi tạo các delegate để xử lý Home Screen Quick Action.
 
 Bài viết [sau đây](https://medium.com/@jeevat13/home-screen-quick-actions-swiftui-2-0-75d9ceac27c1) sẽ giới thiệu với các bạn cách thức xử lý Home Screen Quick Action trong SwiftUI 2.0:
-
 
 ## SwiftUI 2.0: The magic of redacted modifier
 
