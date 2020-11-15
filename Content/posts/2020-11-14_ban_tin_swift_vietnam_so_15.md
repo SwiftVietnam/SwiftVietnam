@@ -55,7 +55,7 @@ Các bạn đọc thêm chi tiết về package Swift Atomics [ở đây](https:
 
 ## Swift on Windows
 
-![15](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/15/windows.png)
+![15](https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/Output/Images/swiftvietnam/15/windows.gif)
 
 **Swift đã chính thức hỗ trợ Windows**
 
