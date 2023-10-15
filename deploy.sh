@@ -1,8 +1,5 @@
 #!/bin/sh
 
-## Rebuild the website
-swift run
-
 ## Add custom domain CNAME
 echo "swiftvietnam.dev" > Output/CNAME
 
@@ -13,5 +10,5 @@ git push origin master
 
 ## Deploy to gh-pages
 echo "--> Deploy to live server -->"
-git subtree push --prefix Output origin gh-pages
-
+#git subtree push --prefix Output origin gh-pages
+git push origin `git subtree split --prefix Output master`:gh-pages --force

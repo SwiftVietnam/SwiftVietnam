@@ -1,1 +1,0 @@
-# Swift Việt Nam xin chào bạn!
