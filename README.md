@@ -1,7 +1,7 @@
 ## Swift Vietnam Community
 
-A community for Vietnamese Swiftlang enthusiasts [https://swiftvietnam.com](https://swiftvietnam.com).
+A community for Vietnamese Swiftlang enthusiasts [https://swiftvietnam.dev](https://swiftvietnam.dev).
 
 More to come in the future ....
 
-[@Swift_Vietnam](https://twitter.com/Swift_Vietnam)
+[@SwiftLangVietnam](https://www.facebook.com/SwiftLangVietnam)

@@ -2,7 +2,7 @@ import Foundation
 import Publish
 import Plot
 
-import SwiftPygmentsPublishPlugin
+//import SwiftPygmentsPublishPlugin
 
 // This type acts as the configuration for your website.
 struct SwiftVietnam: Website {
@@ -16,7 +16,7 @@ struct SwiftVietnam: Website {
     }
 
     // Update these properties to configure your website:
-    var url = URL(string: "https://swiftvietnam.com")!
+    var url = URL(string: "https://swiftvietnam.dev")!
     var name = "Cộng đồng Swift Việt Nam"
     var description = "Cộng đồng lập trình viên iOS, tvOS, macOS, watchOS và tvOS, và những người yêu thích ngôn ngữ lập trình Swift."
     var language: Language { .english }
@@ -25,8 +25,8 @@ struct SwiftVietnam: Website {
 
 // This will generate your website using the built-in Foundation theme:
 try SwiftVietnam().publish(
-    withTheme: .swiftvietnam,
-    plugins: [
-        .pygments()
-    ]
+    withTheme: .swiftvietnam
+    // plugins: [
+    //     .pygments()
+    // ]
 )

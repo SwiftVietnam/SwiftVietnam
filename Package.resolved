@@ -29,15 +29,6 @@
         }
       },
       {
-        "package": "LoggerKit",
-        "repositoryURL": "https://github.com/pvieito/LoggerKit.git",
-        "state": {
-          "branch": "master",
-          "revision": "ef47fd965cc1b78ddfd6c2907535cbfd66920444",
-          "version": null
-        }
-      },
-      {
         "package": "Plot",
         "repositoryURL": "https://github.com/johnsundell/plot.git",
         "state": {
@@ -56,24 +47,6 @@
         }
       },
       {
-        "package": "PythonKit",
-        "repositoryURL": "https://github.com/pvieito/PythonKit.git",
-        "state": {
-          "branch": "master",
-          "revision": "a0817e0d68f0a50a631fc5fab0b8d219fd010241",
-          "version": null
-        }
-      },
-      {
-        "package": "Rainbow",
-        "repositoryURL": "https://github.com/onevcat/Rainbow",
-        "state": {
-          "branch": null,
-          "revision": "9c52c1952e9b2305d4507cf473392ac2d7c9b155",
-          "version": "3.1.5"
-        }
-      },
-      {
         "package": "ShellOut",
         "repositoryURL": "https://github.com/johnsundell/shellout.git",
         "state": {
@@ -89,33 +62,6 @@
           "branch": null,
           "revision": "801c2878e4c6c5baf32fe132e1f3f3af6f9fd1b0",
           "version": "0.4.0"
-        }
-      },
-      {
-        "package": "swift-argument-parser",
-        "repositoryURL": "https://github.com/apple/swift-argument-parser",
-        "state": {
-          "branch": null,
-          "revision": "223d62adc52d51669ae2ee19bdb8b7d9fd6fcd9c",
-          "version": "0.0.6"
-        }
-      },
-      {
-        "package": "SwiftPygments",
-        "repositoryURL": "https://github.com/Ze0nC/SwiftPygments",
-        "state": {
-          "branch": "master",
-          "revision": "c22bcfcc5931db56c971c1d2722de856a8bfaf39",
-          "version": null
-        }
-      },
-      {
-        "package": "SwiftPygmentsPublishPlugin",
-        "repositoryURL": "https://github.com/Ze0nC/SwiftPygmentsPublishPlugin",
-        "state": {
-          "branch": "master",
-          "revision": "9280f5d55a4a7600cef2e08078ec456ab345904c",
-          "version": null
         }
       }
     ]

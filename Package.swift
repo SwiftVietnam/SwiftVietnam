@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.4
 
 import PackageDescription
 
@@ -9,14 +9,14 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/johnsundell/publish.git", from: "0.7.0"),
-        .package(url: "https://github.com/Ze0nC/SwiftPygmentsPublishPlugin", .branch("master"))
+        //.package(url: "https://github.com/Ze0nC/SwiftPygmentsPublishPlugin", .branch("master"))
     ],
     targets: [
-        .target(
+        .executableTarget(
             name: "SwiftVietnam",
             dependencies: [
-                "Publish", 
-                "SwiftPygmentsPublishPlugin"
+                .product(name: "Publish", package: "publish"), 
+                //"SwiftPygmentsPublishPlugin"
             ]
         )
     ]

@@ -4,7 +4,7 @@
 swift run
 
 ## Add custom domain CNAME
-echo "swiftvietnam.com" > Output/CNAME
+echo "swiftvietnam.dev" > Output/CNAME
 
 ## Add files to git
 git add .

@@ -16,7 +16,7 @@ Có nhiều lý do tại sao mình lại bắt đầu **"Bản tin Swift"**:
 - Mình muốn chia sẻ kiến thức và thông tin mình cập nhật được với nhiều người.
 - Minh muốn kết nối cộng đồng lập trình viên iOS Việt Nam để chúng ta có thể chia sẻ thông tin, cơ hội làm việc cũng như cùng nhau phát triển.
 
-Các bạn có thể truy cập trang web chính của **"Bản tin Swift"** tại: [https://swiftvietnam.com](https://swiftvietnam.com)
+Các bạn có thể truy cập trang web chính của **"Bản tin Swift"** tại: [https://swiftvietnam.dev](https://swiftvietnam.dev)
 
 # Tin tức
 
@@ -39,7 +39,7 @@ Mình tóm lược các Swift Evolution đã được cập nhật trong Swift 5
 - [SE-0272](https://github.com/apple/swift-evolution/blob/master/proposals/0272-swiftpm-binary-dependencies.md) Package Manager Binary Dependencies : yay, Google có thể sử dụng SPM để package Firebase được rồi.
 - [SE-0273](https://github.com/apple/swift-evolution/blob/master/proposals/0273-swiftpm-conditional-target-dependencies.md) Package Manager Conditional Target Dependencies: sử dụng các package khác nhau phụ thuộc vào platform.
 
-Đặc biệt là Swift 5.3 sẽ chính thức hỗ trợ Windows và một số [distro Linux khác](https://swift.org/blog/additional-linux-distros/) (hiện chỉ hỗ trợ chính thức Ubuntu). Mình đã dùng Swift 5.2 để tạo  [SwiftVietnam](https://swiftvietnam.com) trên Linux Ubuntu. Mình có viết về trải nghiệm của mình [tại đây](https://swiftvietnam.com/posts/2020-19-04_use_publish_to_create_static_websites/).
+Đặc biệt là Swift 5.3 sẽ chính thức hỗ trợ Windows và một số [distro Linux khác](https://swift.org/blog/additional-linux-distros/) (hiện chỉ hỗ trợ chính thức Ubuntu). Mình đã dùng Swift 5.2 để tạo  [SwiftVietnam](https://swiftvietnam.dev) trên Linux Ubuntu. Mình có viết về trải nghiệm của mình [tại đây](https://swiftvietnam.dev/posts/2020-19-04_use_publish_to_create_static_websites/).
 
 ## Lan truyền lỗi giữa các tầng trong cấu trúc của ứng dụng bằng Swift
 
