@@ -18,6 +18,15 @@ try {
   config = null;
 }
 
+// Optional explicit allowlist
+let feedAllowlist = null;
+try {
+  const raw = await fs.readFile(path.resolve('config/feeds.yml'), 'utf8');
+  feedAllowlist = YAML.parse(raw);
+} catch {
+  feedAllowlist = null;
+}
+
 const TZ = process.env.TZ || config?.timezone || 'Asia/Singapore';
 
 const parser = new Parser({
@@ -102,13 +111,27 @@ const excludeItemTitleRegex = (config?.filters?.excludeItemTitleRegex || []).map
 
 let sources = sourcesRaw.filter((s) => s?.rss);
 
+// If explicit feeds.yml has any enabled feeds, ONLY use those.
+const explicitFeeds = (feedAllowlist?.feeds || []).filter((f) => f?.enabled && f?.rss);
+const usingExplicitFeeds = explicitFeeds.length > 0;
+if (usingExplicitFeeds) {
+  sources = explicitFeeds.map((f) => ({
+    name: f.name || f.id || f.rss,
+    url: f.site || null,
+    rss: f.rss,
+    language: languageFilter,
+    categorySlug: 'explicit',
+    tags: f.tags || null
+  }));
+}
+
 if (languageFilter) {
   sources = sources.filter(
     (s) => (s.language || '').toLowerCase() === languageFilter.toLowerCase()
   );
 }
 
-if (categorySlugs.length) {
+if (!usingExplicitFeeds && categorySlugs.length) {
   const set = new Set(categorySlugs.map((s) => s.toLowerCase()));
   sources = sources.filter((s) => set.has((s.categorySlug || '').toLowerCase()));
 }

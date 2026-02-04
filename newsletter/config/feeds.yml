@@ -1,0 +1,41 @@
+# SwiftVietnam Digest - explicit RSS allowlist
+# Prefer editing this file to control exactly what gets crawled.
+# If at least one feed has enabled: true, the crawler will ONLY use enabled feeds here.
+
+version: 1
+feeds:
+  - id: apple-developer-news
+    name: Apple Developer News
+    site: https://developer.apple.com/news/
+    rss: https://developer.apple.com/news/rss/news.rss
+    enabled: true
+    tags: [apple, sdk]
+
+  - id: apple-developer-releases
+    name: Apple Developer Releases
+    site: https://developer.apple.com/news/releases/
+    rss: https://developer.apple.com/news/releases/rss/releases.rss
+    enabled: true
+    tags: [apple, releases]
+
+  - id: apple-developer-site-updates
+    name: Apple Developer Site Updates
+    site: https://developer.apple.com/news/site-updates/
+    rss: https://developer.apple.com/news/site-updates/rss/site-updates.rss
+    enabled: true
+    tags: [apple]
+
+  - id: swift-blog
+    name: Official Swift Blog
+    site: https://www.swift.org/blog/
+    rss: https://www.swift.org/atom.xml
+    enabled: true
+    tags: [swift]
+
+  # Disabled by default (enable when you want more volume)
+  - id: swift-packages-index
+    name: Swift Package Index — Recent Packages
+    site: https://swiftpackageindex.com/
+    rss: https://swiftpackageindex.com/rss/new-packages.xml
+    enabled: false
+    tags: [swift, packages]

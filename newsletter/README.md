@@ -39,8 +39,9 @@ DATE=2026-02-04 \
   node scripts/collect-from-iosdevdirectory.mjs
 ```
 
-Configuration:
-- Sources + filters are controlled by `newsletter/config/content-sources.yml` (committed for review).
+Configuration (committed for review):
+- `newsletter/config/feeds.yml`: explicit RSS allowlist. If any `enabled: true`, crawler uses ONLY those.
+- `newsletter/config/content-sources.yml`: iOSDevDirectory import settings + filters (used when allowlist is empty).
 
 Environment variables (optional overrides):
 - `CONFIG`: path to a different YAML config file
