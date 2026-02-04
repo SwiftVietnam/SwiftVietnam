@@ -11,8 +11,6 @@ const endDate = process.env.END_DATE
 if (!endDate.isValid) throw new Error(`Invalid END_DATE: ${process.env.END_DATE}`);
 
 const days = Number(process.env.DAYS || 7);
-const categorySlugs = process.env.CATEGORY_SLUGS || 'updates';
-const maxSources = process.env.MAX_SOURCES || '200';
 
 const weekStart = endDate.minus({ days: days - 1 }).startOf('day');
 
@@ -85,9 +83,6 @@ for (let i = 0; i < days; i++) {
   await run(['node', 'scripts/collect-from-iosdevdirectory.mjs'], {
     DATE: dateStr,
     TZ,
-    LANGUAGE: 'en',
-    CATEGORY_SLUGS: categorySlugs,
-    MAX_SOURCES: maxSources,
     CONCURRENCY: process.env.CONCURRENCY || '8',
     MAX_ITEMS_PER_FEED: process.env.MAX_ITEMS_PER_FEED || '20'
   });

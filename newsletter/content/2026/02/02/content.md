@@ -9,5 +9,5 @@ tags: []
 ---
 ## Links (auto-collected candidates)
 
-- **Merge pull request #3110 from MahdiBM/patch-9** — _TODO: add 1–3 sentence summary_. [Source](https://github.com/swiftlang/swift-evolution/commit/9b774938bb6ce47f3037e074cf73c7af821b62b0)
+_No items found._
 

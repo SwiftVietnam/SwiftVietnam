@@ -1,0 +1,33 @@
+# SwiftVietnam Digest - content crawling configuration
+# This file is committed to GitHub so sources can be reviewed/edited.
+
+version: 1
+timezone: Asia/Singapore
+
+# Import sources from iOSDevDirectory (https://github.com/daveverwer/iOSDevDirectory)
+iosDevDirectory:
+  enabled: true
+  language: en
+
+  # Only pull sources from these category slugs.
+  # Common ones: updates, packages, tools, testing, concurrency, etc.
+  includeCategorySlugs:
+    - updates
+
+  # Safety caps (prevents 1000+ feeds and timeouts)
+  maxSources: 50
+
+# Filtering rules applied to collected items.
+filters:
+  # Drop entire RSS feeds by regex (matches feed URL)
+  excludeSourceRssRegex:
+    # Swift Evolution GitHub commit feed is noisy for a digest
+    - "github\\.com/swiftlang/swift-evolution/commits/.*\\.atom"
+
+  # Drop items by URL regex
+  excludeItemUrlRegex:
+    - "github\\.com/swiftlang/swift-evolution/commit/"
+
+  # Drop items by title regex
+  excludeItemTitleRegex:
+    - "^Merge pull request"

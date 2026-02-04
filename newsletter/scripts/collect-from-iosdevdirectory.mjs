@@ -2,11 +2,23 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import Parser from 'rss-parser';
 import { DateTime } from 'luxon';
+import YAML from 'yaml';
 
-const TZ = process.env.TZ || 'Asia/Singapore';
+const CONFIG_PATH = process.env.CONFIG || path.resolve('config/content-sources.yml');
+
 const DATA_DIR = path.resolve('data/iosdevdirectory');
 const SOURCES_PATH = path.join(DATA_DIR, 'sources.json');
 const OUT_DIR = path.resolve('data/daily');
+
+let config = null;
+try {
+  const raw = await fs.readFile(CONFIG_PATH, 'utf8');
+  config = YAML.parse(raw);
+} catch {
+  config = null;
+}
+
+const TZ = process.env.TZ || config?.timezone || 'Asia/Singapore';
 
 const parser = new Parser({
   timeout: 20_000,
@@ -71,16 +83,29 @@ const dayEnd = runDate.endOf('day');
 
 const sourcesRaw = JSON.parse(await fs.readFile(SOURCES_PATH, 'utf8'));
 
-const languageFilter = (process.env.LANGUAGE || 'en').trim();
-const categorySlugs = (process.env.CATEGORY_SLUGS || '')
+const languageFilter = (process.env.LANGUAGE || config?.iosDevDirectory?.language || 'en').trim();
+
+const categorySlugs = (
+  process.env.CATEGORY_SLUGS ||
+  (config?.iosDevDirectory?.includeCategorySlugs || []).join(',') ||
+  ''
+)
   .split(',')
   .map((s) => s.trim())
   .filter(Boolean);
 
+const maxSourcesFromConfig = Number(config?.iosDevDirectory?.maxSources || 0);
+
+const excludeSourceRssRegex = (config?.filters?.excludeSourceRssRegex || []).map((r) => new RegExp(r));
+const excludeItemUrlRegex = (config?.filters?.excludeItemUrlRegex || []).map((r) => new RegExp(r));
+const excludeItemTitleRegex = (config?.filters?.excludeItemTitleRegex || []).map((r) => new RegExp(r, 'i'));
+
 let sources = sourcesRaw.filter((s) => s?.rss);
 
 if (languageFilter) {
-  sources = sources.filter((s) => (s.language || '').toLowerCase() === languageFilter.toLowerCase());
+  sources = sources.filter(
+    (s) => (s.language || '').toLowerCase() === languageFilter.toLowerCase()
+  );
 }
 
 if (categorySlugs.length) {
@@ -88,9 +113,14 @@ if (categorySlugs.length) {
   sources = sources.filter((s) => set.has((s.categorySlug || '').toLowerCase()));
 }
 
+if (excludeSourceRssRegex.length) {
+  sources = sources.filter((s) => !excludeSourceRssRegex.some((re) => re.test(s.rss)));
+}
+
 sources.sort((a, b) => String(a.name).localeCompare(String(b.name)));
 
-const maxSources = Number(process.env.MAX_SOURCES || 200);
+const maxSourcesEnv = Number(process.env.MAX_SOURCES || 0);
+const maxSources = maxSourcesEnv > 0 ? maxSourcesEnv : (maxSourcesFromConfig > 0 ? maxSourcesFromConfig : 200);
 if (Number.isFinite(maxSources) && maxSources > 0) {
   sources = sources.slice(0, maxSources);
 }
@@ -110,12 +140,18 @@ const settled = await mapLimit(sources, Number(process.env.CONCURRENCY || 8), as
       const zdt = dt.setZone(TZ);
       if (zdt < dayStart || zdt > dayEnd) continue;
 
+      const title = (item.title || '').trim();
+      const url = normalizeUrl(item.link);
+
+      if (url && excludeItemUrlRegex.some((re) => re.test(url))) continue;
+      if (title && excludeItemTitleRegex.some((re) => re.test(title))) continue;
+
       results.push({
         source: src.name,
         sourceUrl: src.url,
         sourceRss: src.rss,
-        title: (item.title || '').trim(),
-        url: normalizeUrl(item.link),
+        title,
+        url,
         publishedAt: zdt.toISO(),
         tags: src.tags || null
       });

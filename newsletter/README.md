@@ -39,14 +39,18 @@ DATE=2026-02-04 \
   node scripts/collect-from-iosdevdirectory.mjs
 ```
 
-Environment variables:
-- `DATE` (optional): `YYYY-MM-DD` in SGT
-- `TZ` (optional): defaults to `Asia/Singapore`
-- `LANGUAGE` (optional): defaults to `en`
-- `CATEGORY_SLUGS` (optional): comma-separated filter (only collect from those categories)
-- `MAX_SOURCES` (optional): cap number of feeds to fetch (default 200)
-- `CONCURRENCY` (optional): parallel feed fetches (default 8)
-- `MAX_ITEMS_PER_FEED` (optional): limit items scanned per feed (default 20)
+Configuration:
+- Sources + filters are controlled by `newsletter/config/content-sources.yml` (committed for review).
+
+Environment variables (optional overrides):
+- `CONFIG`: path to a different YAML config file
+- `DATE`: `YYYY-MM-DD` in SGT
+- `TZ`: timezone (defaults to config / `Asia/Singapore`)
+- `LANGUAGE`: override language
+- `CATEGORY_SLUGS`: override category slug filter
+- `MAX_SOURCES`: override max sources cap
+- `CONCURRENCY`: parallel feed fetches (default 8)
+- `MAX_ITEMS_PER_FEED`: limit items scanned per feed (default 20)
 
 Output:
 - `newsletter/data/daily/YYYY-MM-DD-iosdevdirectory.json`
