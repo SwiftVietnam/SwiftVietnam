@@ -2,9 +2,9 @@
 date: '2026-02-01'
 timezone: Asia/Singapore
 title: 'SwiftVietnam Daily — Feb 1, 2026'
-summary: Auto-collected candidates (please edit summaries).
+summary: Auto-collected links from RSS feeds.
 sources:
-  - iosdevdirectory
+  - rss
 tags: []
 ---
 ## Links (auto-collected candidates)

@@ -4,6 +4,14 @@
 version: 1
 timezone: Asia/Singapore
 
+# Explicit feeds (newsletter/config/feeds.yml)
+explicitFeeds:
+  # Max feeds to crawl per run (enabled feeds may be > this)
+  maxSources: 80
+  # How to select when enabled feeds exceed maxSources:
+  # - seededShuffle: deterministic daily shuffle, keeps variety without exploding runtime
+  strategy: seededShuffle
+
 # Import sources from iOSDevDirectory (https://github.com/daveverwer/iOSDevDirectory)
 iosDevDirectory:
   enabled: true

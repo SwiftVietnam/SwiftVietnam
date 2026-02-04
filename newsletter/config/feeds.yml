@@ -1,7 +1,3 @@
-# SwiftVietnam Digest - explicit RSS allowlist
-# Prefer editing this file to control exactly what gets crawled.
-# If at least one feed has enabled: true, the crawler will ONLY use enabled feeds here.
-
 version: 1
 feeds:
   - id: apple-developer-news
@@ -9,33 +5,1652 @@ feeds:
     site: https://developer.apple.com/news/
     rss: https://developer.apple.com/news/rss/news.rss
     enabled: true
-    tags: [apple, sdk]
-
+    priority: 1
+    tags:
+      - apple
+      - sdk
   - id: apple-developer-releases
     name: Apple Developer Releases
     site: https://developer.apple.com/news/releases/
     rss: https://developer.apple.com/news/releases/rss/releases.rss
     enabled: true
-    tags: [apple, releases]
-
+    priority: 1
+    tags:
+      - apple
+      - releases
   - id: apple-developer-site-updates
     name: Apple Developer Site Updates
     site: https://developer.apple.com/news/site-updates/
     rss: https://developer.apple.com/news/site-updates/rss/site-updates.rss
     enabled: true
-    tags: [apple]
-
+    priority: 1
+    tags:
+      - apple
   - id: swift-blog
     name: Official Swift Blog
     site: https://www.swift.org/blog/
     rss: https://www.swift.org/atom.xml
     enabled: true
-    tags: [swift]
-
-  # Disabled by default (enable when you want more volume)
+    priority: 1
+    tags:
+      - swift
+  - id: iosfeeds-var-log-journal
+    name: /var/log/journal
+    rss: https://journal.gaelfoppolo.com/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-a-swift-misadventure
+    name: A Swift Misadventure
+    rss: https://medium.com/feed/a-swift-misadventure
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-aaron-sky
+    name: Aaron Sky
+    rss: https://skyaaron.com/posts/index.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-ackermann-io
+    name: ackermann.io
+    site: https://ackermann.io/
+    rss: https://ackermann.io/feed
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Ryan Ackermann
+  - id: iosdev-adam-bell-s-blog
+    name: Adam Bell's Blog
+    site: https://blog.adambell.ca/
+    rss: https://blog.adambell.ca/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Adam Bell
+  - id: iosfeeds-adam-wareing-s-blog
+    name: Adam Wareing's Blog
+    rss: https://blog.aniseedapps.com/rss/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-adin-cebic-s-blog
+    name: Adin Cebic's Blog
+    rss: https://adincebic.com/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-adrian-sch-nig-s-blog
+    name: Adrian Schönig's Blog
+    rss: https://adrian.schoenig.me/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-adrian-liwa-on-medium
+    name: Adrian Śliwa on Medium
+    rss: https://medium.com/feed/@adrianmsliwa
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-advanced-swift
+    name: Advanced Swift
+    rss: https://www.robertpieta.com/rss
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-advanced-swift
+    name: Advanced Swift
+    rss: https://www.advancedswift.com/rss
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-airspeed-velocity
+    name: Airspeed Velocity
+    rss: https://airspeedvelocity.net/feed/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alan-zeino-on-medium
+    name: Alan Zeino on Medium
+    rss: https://medium.com/feed/@alanzeino
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alberto-de-bortoli-s-blog
+    name: Alberto De Bortoli’s Blog
+    rss: https://albertodebortoli.com/rss/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alejandro-martinez-s-blog
+    name: Alejandro Martinez's Blog
+    rss: https://alejandromp.com/development/feed.rss
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-aleksandar-vaci-s-blog
+    name: Aleksandar Vacić’s Blog
+    site: http://aplus.rs/categories/iosdev/
+    rss: http://aplus.rs/index.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Aleksandar Vacić
+  - id: iosfeeds-alessandro-manilii-on-medium
+    name: Alessandro Manilii on Medium
+    rss: https://medium.com/feed/@alessandromanilii
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alex-cohen-s-blog
+    name: Alex Cohen's Blog
+    rss: https://medium.com/@alexandercohen/feed
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alex-gurin-s-blog
+    name: Alex Gurin’s Blog
+    rss: https://medium.com/feed/@dn070287gav
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alex-knows-s-blog
+    name: Alex Knows's Blog
+    rss: https://alexknows.biz/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alex-lee-s-dev-blog
+    name: Alex Lee's Dev Blog
+    rss: https://www.thealexanderlee.com/blog?format=rss
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alex-shchukin-on-medium
+    name: Alex Shchukin on Medium
+    rss: https://medium.com/feed/@shchukin-alex
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alexander-grebenyuk-s-blog
+    name: Alexander Grebenyuk’s Blog
+    rss: https://kean.blog/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alexander-sandberg-s-blog
+    name: Alexander Sandberg’s Blog
+    rss: https://alexandersandberg.com/feed.rss
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alexander-wei-s-blog-teabyte
+    name: Alexander Weiß’s Blog (Teabyte)
+    rss: https://alexanderweiss.dev/blog/rss.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alexandros-salazar-s-blog
+    name: Alexandros Salazar’s Blog
+    rss: https://nomothetis.svbtle.com/feed
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alexey-naumov-s-blog
+    name: Alexey Naumov’s Blog
+    rss: https://nalexn.github.io/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alexis-creuzot-on-medium
+    name: Alexis Creuzot on Medium
+    rss: https://medium.com/feed/@alexiscreuzot
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-alexpaul-dev
+    name: alexpaul.dev
+    site: https://alexpaul.dev/
+    rss: https://alexpaul.dev/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Alex Paul
+  - id: iosfeeds-alia-s-artefacts
+    name: Alia's artefacts
+    rss: https://alia-traces.github.io/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-all-the-code-blog
+    name: All The Code Blog
+    rss: https://allthecode.co/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-allen-pike-s-blog
+    name: Allen Pike’s Blog
+    rss: https://feeds.allenpike.com/feed/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-alwaysprocessing
+    name: AlwaysProcessing
+    rss: https://alwaysprocessing.blog/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-amanjeet-s-blog
+    name: Amanjeet's Blog
+    rss: https://www.amanjeet.me/rss/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-amin-benarieb-s-blog
+    name: Amin Benarieb’s Blog
+    rss: https://amin.benarieb.com/index.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-ampersand-softworks
+    name: Ampersand Softworks
+    rss: https://ampersandsoftworks.com/feed/by_tag/development.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-amy-delves-blog
+    name: Amy Delves’ Blog
+    rss: https://cuteios.dev/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-amy-worrall-s-blog
+    name: Amy Worrall’s Blog
+    rss: https://www.amyworrall.com/blog?format=rss
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-anastasiia-vixentael-on-medium
+    name: Anastasiia Vixentael on Medium
+    rss: https://medium.com/feed/@vixentael/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-anastasiia-vixentael-on-medium
+    name: Anastasiia Vixentael on Medium
+    rss: https://medium.com/feed/@vixentael
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-andrea-stevanato-on-medium
+    name: Andrea Stevanato on Medium
+    rss: https://medium.com/feed/@andr3a88
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-andreas-l-demann-s-blog
+    name: Andreas Lüdemann’s Blog
+    rss: https://andreaslydemann.com/feed/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-andreas-neus-s-blog-anerma
+    name: Andreas Neusüß's Blog - Anerma
+    site: https://anerma.de/blog/
+    rss: https://anerma.de/blog/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Andreas Neusüß
+  - id: iosfeeds-andrew-bancroft-s-blog
+    name: Andrew Bancroft’s Blog
+    rss: https://www.andrewcbancroft.com/index.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-andrew-king-s-blog
+    name: Andrew King’s Blog
+    rss: https://andrewking.ca/category/ios-development/feed/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-andrey-volodin-on-medium
+    name: Andrey Volodin on Medium
+    rss: https://medium.com/feed/@s1ddok/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-andrey-volodin-on-medium
+    name: Andrey Volodin on Medium
+    rss: https://medium.com/feed/@s1ddok
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-andy-iakovlev-s-blog
+    name: Andy Iakovlev's Blog
+    rss: https://qstrnd.github.io/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-andy-ibanez-s-blog
+    name: Andy Ibanez’s Blog
+    rss: https://www.andyibanez.com/tags/apple/index.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-andy-matuschak-s-blog
+    name: Andy Matuschak’s Blog
+    rss: https://blog.andymatuschak.org/rss
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-answift-swift-dev-journey
+    name: AnSwift - Swift Dev Journey
+    rss: https://antran.app/rss/swift.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-antitypical
+    name: Antitypical
+    site: https://antitypical.com/
+    rss: https://antitypical.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Rob Rix
+  - id: iosfeeds-anton-s-blog
+    name: Anton’s Blog
+    rss: https://antongubarenko.substack.com/feed
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-anysuggestion
+    name: AnySuggestion
+    rss: https://medium.com/feed/anysuggestion
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-app-decentral
+    name: App Decentral
+    rss: https://appdecentral.com/feed/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-app-store-review-guidelines-history
+    name: App Store Review Guidelines History
+    site: http://www.appstorereviewguidelineshistory.com/
+    rss: http://www.appstorereviewguidelineshistory.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - updates
+    author: The Shape Team
+  - id: iosfeeds-appforce1-blog
+    name: AppForce1 blog
+    rss: https://appforce1.net/blog/rss.php
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-apple-platform-sdk-api-differences
+    name: Apple Platform SDK API Differences
+    site: http://codeworkshop.net/objc-diff/sdkdiffs/
+    rss: http://codeworkshop.net/feed
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - updates
+    author: Matt Stevens
+  - id: iosdev-appmakers-dev
+    name: AppMakers.Dev
+    site: https://appmakers.dev/category/blog/
+    rss: https://appmakers.dev/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Alexander Adelmaer
+  - id: iosfeeds-apps-dissected
+    name: Apps Dissected
+    rss: https://www.appsdissected.com/feed/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-appventure
+    name: Appventure
+    site: https://appventure.me/
+    rss: https://appventure.me/feed.rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Benedikt Terhechte
+  - id: iosfeeds-aqblog
+    name: AQBlog
+    rss: https://alanquatermain.me/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-arek-holko-s-blog
+    name: Arek Holko’s Blog
+    site: https://holko.pl/
+    rss: http://feeds.feedburner.com/ArkadiuszHolko
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Arek Holko
+  - id: iosfeeds-arjun-nayini-s-blog
+    name: Arjun Nayini’s Blog
+    rss: https://arjunnayini.com/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-arnaud-joubay-s-blog
+    name: Arnaud Joubay's Blog
+    rss: https://sowenjub.me/writes/rss/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-art-and-science-of-coding
+    name: Art and Science of Coding
+    rss: https://artandscienceofcoding.com/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-artem-loenko-on-medium
+    name: Artem Loenko on Medium
+    rss: https://medium.com/feed/@dive
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-artem-novichkov-s-blog
+    name: Artem Novichkov’s Blog
+    rss: https://teletype.in/rss/artemnovichkov
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-artem-novichkov-s-blog
+    name: Artem Novichkov’s Blog
+    rss: https://artemnovichkov.com/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-artem-novichkov-s-blog
+    name: Artem Novichkov’s Blog
+    rss: https://www.artemnovichkov.com/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-arthur-sabintsev-s-blog
+    name: Arthur Sabintsev's Blog
+    rss: https://medium.com/feed/@artsabintsev
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-arthur-van-siclen-on-medium
+    name: Arthur Van Siclen on Medium
+    rss: https://medium.com/feed/@arthurofbabylon
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-artur-grucha-a-s-blog
+    name: Artur Gruchała's Blog
+    rss: https://arturgruchala.com/rss/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-ash-furrow-s-blog
+    name: Ash Furrow’s Blog
+    site: https://ashfurrow.com/
+    rss: https://feed.ashfurrow.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Ash Furrow
+  - id: iosfeeds-asif-s-blog
+    name: Asif's Blog
+    rss: https://asifmohd.github.io/feed.ios.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-attributedstrings
+    name: AttributedStrings
+    rss: https://www.attributedstrings.com/rss/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-audiokit-blog
+    name: AudioKit Blog
+    site: https://audiokitpro.com/blog/
+    rss: https://audiokitpro.com/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: AudioKit
+  - id: iosfeeds-aymen-rebouh-on-medium
+    name: Aymen Rebouh on Medium
+    rss: https://medium.com/feed/@aymen.rebouh
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-azamsharp-blog
+    name: AzamSharp Blog
+    rss: https://azamsharp.com/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-badarinath-venkatnarayansetty-on-medium
+    name: Badarinath Venkatnarayansetty on Medium
+    rss: https://medium.com/feed/@badrinathvm
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-bartosz-ciechanowski-s-blog
+    name: Bartosz Ciechanowski’s Blog
+    rss: https://ciechanow.ski/atom.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-bartosz-kunat-s-blog
+    name: Bartosz Kunat’s Blog
+    rss: https://kunat.dev/tags/ios/index.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-bartosz-polaczyk-on-medium
+    name: Bartosz Polaczyk on Medium
+    rss: https://medium.com/feed/@londeix
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-bas-blog
+    name: Bas’ Blog
+    rss: https://basthomas.github.io/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-bas-blog
+    name: Bas’ Blog
+    rss: https://www.basbroek.nl/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-batikan-s-ios-blog
+    name: Batikan’s iOS Blog
+    rss: https://medium.com/feed/@batikansosun
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-becky-hansmeyer-s-blog
+    name: Becky Hansmeyer’s Blog
+    rss: https://beckyhansmeyer.com/category/general/feed/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-becky-hansmeyer-s-blog
+    name: Becky Hansmeyer’s Blog
+    rss: https://www.beckyhansmeyer.com/category/general/feed/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-ben-dodson-s-weblog
+    name: Ben Dodson’s Weblog
+    site: https://bendodson.com/weblog/
+    rss: https://bendodson.com/rss.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Ben Dodson
+  - id: iosfeeds-ben-gilroy-s-medium
+    name: Ben Gilroy's Medium
+    rss: https://medium.com/feed/@bengilroy
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-ben-scheirman-s-blog
+    name: Ben Scheirman’s Blog
+    rss: https://benscheirman.com/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-ben-scholtysik-s-blog
+    name: Ben Scholtysik’s Blog
+    rss: https://benjaminscholtysik.com/feed/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-ben-snider-s-blog
+    name: Ben Snider’s Blog
+    site: https://www.bensnider.com/
+    rss: https://www.bensnider.com/feeds/all.atom.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Ben Snider
+  - id: iosfeeds-benoit-pasquier-s-blog
+    name: Benoit Pasquier’s Blog
+    rss: https://benoitpasquier.com/index.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-berta-devant-on-medium
+    name: Berta Devant on Medium
+    rss: https://medium.com/feed/@bertadevant
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-besher-al-maleh-s-blog
+    name: Besher Al Maleh’s Blog
+    rss: https://medium.com/feed/@almalehdev
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-bitsplitting
+    name: Bitsplitting
+    site: https://bitsplitting.org/
+    rss: https://bitsplitting.org/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Daniel Jalkut
+  - id: iosdev-brad-root-s-blog
+    name: Brad Root’s Blog
+    site: https://amiantos.net/tags/programming/
+    rss: https://amiantos.net/tags/programming/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Brad Root
+  - id: iosfeeds-bret-victor-s-blog
+    name: Bret Victor’s Blog
+    rss: https://worrydream.com/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-brevans-io
+    name: Brevans.io
+    rss: https://brevans.io/index.php/feed/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-brian-coyner-s-blog
+    name: Brian Coyner’s Blog
+    rss: https://briancoyner.github.io/feed.rss
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-bright-inventions-blog
+    name: Bright Inventions’ Blog
+    rss: https://brightinventions.pl/blog/programming/ios/rss.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-brightdigit-developer-tutorials
+    name: BrightDigit - Developer Tutorials
+    rss: https://brightdigit.com/tutorials.rss
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-bryan-irace-s-blog
+    name: Bryan Irace’s Blog
+    rss: https://irace.me/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-bryce-bostwick-s-blog
+    name: Bryce Bostwick’s Blog
+    rss: https://bryce.co/index.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-build-and-run
+    name: Build and Run
+    site: https://thomas.zoechling.me/journal/
+    rss: https://thomas.zoechling.me/journal/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Thomas Zoechling
+  - id: iosfeeds-build-ms
+    name: Build.ms
+    rss: https://build.ms/feed.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-byla-lt
+    name: Byla.lt
+    rss: https://byla.lt/feed.rss
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-cabel-me
+    name: Cabel.me
+    rss: https://cabel.me/feed/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-cabel-me
+    name: Cabel.me
+    rss: https://cabel.com/feed/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-call-me-fishmeal
+    name: Call Me Fishmeal
+    rss: http://blog.wilshipley.com/rss.xml
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosfeeds-captain-swiftui
+    name: Captain SwiftUI
+    rss: https://captainswiftui.substack.com/feed
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-carpeaqua
+    name: carpeaqua
+    site: https://carpeaqua.com/
+    rss: https://carpeaqua.com/rss/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Justin Williams
+  - id: iosfeeds-carson-katri-s-blog
+    name: Carson Katri's Blog
+    rss: https://www.carsonkatri.com/feed.rss
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-cdf1982-blog
+    name: cdf1982 blog
+    site: https://cdf1982.com/blog
+    rss: https://cdf1982.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Cesare Forelli
+  - id: iosdev-cecilia-humlelu-on-medium
+    name: Cecilia Humlelu on Medium
+    site: https://medium.com/@cecilia.humlelu
+    rss: https://medium.com/feed/@cecilia.humlelu
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Cecilia Humlelu
+  - id: iosdev-charlie-chapman-s-blog
+    name: Charlie Chapman’s Blog
+    site: https://charliemchapman.com/
+    rss: https://charliemchapman.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Charlie Chapman
+  - id: iosdev-chase-lewis-blog
+    name: Chase Lewis Blog
+    site: https://medium.com/@jpmtech
+    rss: https://medium.com/feed/@jpmtech
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Chase Lewis
+  - id: iosdev-chris-dzombak-s-blog
+    name: Chris Dzombak’s Blog
+    site: https://www.dzombak.com/blog/
+    rss: https://www.dzombak.com/blog/rss/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Chris Dzombak
+  - id: iosdev-chris-eidhof-s-blog
+    name: Chris Eidhof’s Blog
+    site: https://chris.eidhof.nl/
+    rss: https://chris.eidhof.nl/index.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Chris Eidhof
+  - id: iosdev-chris-hefferman-s-blog
+    name: Chris Hefferman's Blog
+    site: https://chrishefferman.squarespace.com/blog-landing-page
+    rss: https://chrishefferman.squarespace.com/blog?format=rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Chris Hefferman
+  - id: iosdev-chris-marshall-on-medium
+    name: Chris Marshall on Medium
+    site: https://medium.com/chrismarshallny
+    rss: https://medium.com/feed/chrismarshallny
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Chris Marshall
+  - id: iosdev-chris-wu-s-blog
+    name: Chris Wu's Blog
+    site: https://chriswu.com/categories/development/
+    rss: https://chriswu.com/index.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Chris Wu
+  - id: iosdev-christian-selig-s-blog
+    name: Christian Selig's Blog
+    site: https://christianselig.com/
+    rss: https://christianselig.com/index.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Christian Selig
+  - id: iosdev-christian-tietze-s-blog
+    name: Christian Tietze’s Blog
+    site: https://christiantietze.de/
+    rss: https://christiantietze.de/feed.atom
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Christian Tietze
+  - id: iosdev-cocoa-is-my-girlfriend
+    name: Cocoa Is My Girlfriend
+    site: http://www.cimgf.com/
+    rss: http://www.cimgf.com/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Marcus Zarra and Matt Long
+  - id: iosdev-cocoa-samurai
+    name: Cocoa Samurai
+    site: https://cocoasamurai.blogspot.com/
+    rss: https://cocoasamurai.blogspot.com/feeds/posts/default
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Colin Wheeler
+  - id: iosdev-cocoa-with-love
+    name: Cocoa with Love
+    site: https://www.cocoawithlove.com/
+    rss: https://www.cocoawithlove.com/feed.xml?alt=rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Matt Gallagher
+  - id: iosdev-cocoacasts
+    name: Cocoacasts
+    site: https://cocoacasts.com/blog
+    rss: https://cocoacasts.com/feed.rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Bart Jacobs
+  - id: iosdev-cocoanetics
+    name: Cocoanetics
+    site: https://www.cocoanetics.com/blog/
+    rss: https://www.cocoanetics.com/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Oliver Drobnik
+  - id: iosdev-cocoaphony
+    name: Cocoaphony
+    site: https://robnapier.net/
+    rss: https://robnapier.net/atom.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Rob Napier
+  - id: iosdev-codakuma
+    name: Codakuma
+    site: https://codakuma.com/ios-blog/
+    rss: https://codakuma.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Shaun Donnelly
+  - id: iosfeeds-code-cook-read
+    name: CODE. COOK. READ.
+    rss: https://codecookread.com/feed/
+    enabled: false
+    priority: 5
+    tags:
+      - iosfeeds
+  - id: iosdev-coding-with-jeff
+    name: Coding with Jeff
+    site: https://www.codingwithjeff.org/
+    rss: https://www.codingwithjeff.org/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Jeff Merola
+  - id: iosdev-coding-with-vera
+    name: Coding With Vera
+    site: https://codingwithvera.com/
+    rss: https://codingwithvera.com/rss/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Vera Dias
+  - id: iosdev-codingwithkonsta-blog
+    name: CodingWithKonsta Blog
+    site: https://codingwithkonsta.substack.com/
+    rss: https://codingwithkonsta.substack.com/feed
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Konstantinos Nikoloutsos
+  - id: iosdev-coffee-code-tech-and-more
+    name: Coffee. Code. Tech. and more
+    site: https://cctplus.dev/
+    rss: https://cctplus.dev/rss/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Maegan Wilson
+  - id: iosdev-collin-donnell-s-blog
+    name: Collin Donnell’s Blog
+    site: https://collin.blog/
+    rss: https://collin.blog/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Collin Donnell
+  - id: iosdev-componentskit-s-blog
+    name: ComponentsKit's blog
+    site: https://componentskit.io/
+    rss: https://componentskit.io/blog/rss.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: ComponentsKit
+  - id: iosdev-conrad-stoll-s-blog
+    name: Conrad Stoll’s Blog
+    site: http://conradstoll.com/
+    rss: http://conradstoll.com/blog?format=RSS
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Conrad Stoll
+  - id: iosdev-contageous-dev
+    name: Contageous Dev
+    site: https://contagious.dev/blog/category/ios/
+    rss: https://contagious.dev/blog/category/ios/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Dan Griffin
+  - id: iosdev-cory-bohon-s-blog
+    name: Cory Bohon's Blog
+    site: https://corybohon.com/categories/software-development/
+    rss: https://corybohon.com/categories/software-development/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Cory Bohon
+  - id: iosdev-create-with-swift
+    name: Create with Swift
+    site: https://www.createwithswift.com/
+    rss: https://www.createwithswift.com/rss/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Giovanni Monaco, Tiago Gomes Pereira, and Moritz Philip Recke
+  - id: iosdev-crunchy-development
+    name: Crunchy Development
+    site: https://alisoftware.github.io/
+    rss: https://alisoftware.github.io/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Olivier Halligon
+  - id: iosdev-cube-free-coder
+    name: Cube Free Coder
+    site: https://cubefreecoder.com/categories/code/
+    rss: https://cubefreecoder.com/categories/code/index.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: David Bireta
+  - id: iosdev-cutting-io
+    name: cutting.io
+    site: https://cutting.io/
+    rss: https://cutting.io/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Dan Cutting
+  - id: iosdev-cyndi-chin-s-blog
+    name: Cyndi Chin's Blog
+    site: https://cyndichin.github.io/blog/
+    rss: https://cyndichin.github.io/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Cyndi Chin
+  - id: iosdev-damian-mehers-blog
+    name: Damian Mehers' Blog
+    site: https://damian.fyi/
+    rss: https://damian.fyi/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Damian Mehers
+  - id: iosdev-dan-gauthier-s-blog
+    name: Dan Gauthier’s Blog
+    site: https://danielgauthier.me/
+    rss: https://danielgauthier.me/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Dan Gauthier
+  - id: iosdev-dan-loman-s-blog
+    name: Dan Loman’s Blog
+    site: https://danloman.com/
+    rss: https://danloman.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Dan Loman
+  - id: iosdev-daniel-kennett-s-blog
+    name: Daniel Kennett’s Blog
+    site: https://ikennd.ac/
+    rss: https://ikennd.ac/atom.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Daniel Kennett
+  - id: iosdev-daniel-saidi-s-blog
+    name: Daniel Saidi’s Blog
+    site: https://danielsaidi.com/blog/
+    rss: https://danielsaidi.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Daniel Saidi
+  - id: iosdev-daniel-tavares-s-blog
+    name: Daniel Tavares’s Blog
+    site: https://dev.to/vibrazy
+    rss: https://dev.to/feed/vibrazy
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Daniel Tavares
+  - id: iosdev-daniel-tull-s-blog
+    name: Daniel Tull’s Blog
+    site: https://danieltull.co.uk/blog/
+    rss: https://danieltull.co.uk/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Daniel Tull
+  - id: iosdev-daniele-margutti-s-blog
+    name: Daniele Margutti's Blog
+    site: https://www.danielemargutti.com/
+    rss: https://www.danielemargutti.com/atom.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Daniele Margutti
+  - id: iosdev-danijela-vrzan-s-blog
+    name: Danijela Vrzan's Blog
+    site: https://danijelavrzan.com/
+    rss: https://danijelavrzan.com/feed.rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Danijela Vrzan
+  - id: iosdev-darryl-bayliss-s-blog
+    name: Darryl Bayliss's Blog
+    site: https://darrylbayliss.net/
+    rss: https://www.darrylbayliss.net/feeds/ios.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Darryl Bayliss
+  - id: iosdev-dasdom-dev-blog
+    name: Dasdom Dev Blog
+    site: https://dasdom.dev/
+    rss: https://dasdom.dev/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Dominik Hauser
+  - id: iosdev-dave-delong-s-blog
+    name: Dave DeLong’s Blog
+    site: https://davedelong.com/
+    rss: https://davedelong.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Dave DeLong
+  - id: iosdev-dave-dribin-s-blog
+    name: Dave Dribin’s Blog
+    site: https://www.dribin.org/dave/blog/
+    rss: https://www.dribin.org/dave/blog/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Dave Dribin
+  - id: iosdev-dave-verwer-s-blog
+    name: Dave Verwer’s Blog
+    site: https://daveverwer.com/
+    rss: https://daveverwer.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Dave Verwer
+  - id: iosdev-david-cordero-s-blog
+    name: David Cordero’s Blog
+    site: https://dcordero.me/
+    rss: https://dcordero.me/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: David Cordero
+  - id: iosdev-david-house-s-blog
+    name: David House’s Blog
+    site: https://www.davidahouse.com/
+    rss: https://www.davidahouse.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: David House
+  - id: iosdev-david-seek-s-blog
+    name: David Seek’s Blog
+    site: https://www.davidseek.com/
+    rss: https://www.davidseek.com/_feather/rss.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: David Seek and Ting Becker
+  - id: iosdev-david-sinclair-s-blog
+    name: David Sinclair’s Blog
+    site: http://dejal.com/blog/
+    rss: http://dejal.com/blog/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: David Sinclair
+  - id: iosdev-david-smith-s-blog
+    name: David Smith’s Blog’
+    site: https://www.david-smith.org/
+    rss: https://david-smith.org/atom.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: David Smith
+  - id: iosdev-david-v-knobelsdorff-s-blog
+    name: David v.Knobelsdorff's Blog
+    site: https://vknobelsdorff.com/
+    rss: https://vknobelsdorff.com/atom.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: David v.Knobelsdorff
+  - id: iosdev-david-yang-s-blog
+    name: David Yang’s Blog’
+    site: https://david.y4ng.fr/
+    rss: https://david.y4ng.fr/atom.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: David Yang
+  - id: iosdev-dazeend
+    name: DazeEnd
+    site: https://dazeend.org/
+    rss: https://dazeend.org/feed/?cat=-12
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Charles Perry
+  - id: iosdev-de-programmatica-ipsum
+    name: De Programmatica Ipsum
+    site: https://deprogrammaticaipsum.com/
+    rss: https://deprogrammaticaipsum.com/index.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Graham Lee and Adrian Kosmaczewski
+  - id: iosdev-dealloc
+    name: dealloc
+    site: https://belkadan.com/blog/
+    rss: https://belkadan.com/blog/atom
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Jordan Rose
+  - id: iosdev-dean-s-blog
+    name: Dean’s blog
+    site: https://blog.thomasdurand.fr/
+    rss: https://blog.thomasdurand.fr/index.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Thomas Durand
+  - id: iosdev-derik-ramirez-s-blog
+    name: Derik Ramirez’s Blog
+    site: https://rderik.com/
+    rss: https://rderik.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Derik Ramirez
+  - id: iosdev-deurell-labs-blog
+    name: Deurell Labs Blog
+    site: https://deurell.github.io/
+    rss: https://deurell.github.io/index.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Mikael Deurell
+  - id: iosdev-dev-etc
+    name: dev etc
+    site: http://devetc.org/
+    rss: http://devetc.org/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Jonathon Mah
+  - id: iosdev-development-with-mike-nachbaur
+    name: Development with Mike Nachbaur
+    site: https://nachbaur.com/
+    rss: https://nachbaur.com/posts/index.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Mike Nachbaur
+  - id: iosdev-devfright
+    name: DevFright
+    site: https://www.devfright.com/
+    rss: https://www.devfright.com/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Matthew Newill
+  - id: iosdev-device-blogs
+    name: Device Blogs
+    site: https://medium.com/@peterlivesey
+    rss: https://medium.com/feed/@peterlivesey
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Peter Livesey
+  - id: iosdev-digging-developer-blog
+    name: Digging Developer blog
+    site: https://diggingdeveloper.blog/
+    rss: https://diggingdeveloper.blog/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Oleksii Nezhyborets
+  - id: iosdev-digital-bunker
+    name: digital bunker
+    site: https://digitalbunker.dev/
+    rss: https://digitalbunker.dev/rss/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Aryaman Sharda
+  - id: iosdev-dim-sum-thinking
+    name: Dim Sum Thinking
+    site: https://dimsumthinking.com/
+    rss: https://dimsumthinking.com/rss.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Daniel Steinberg
+  - id: iosdev-dimi-chakarov-s-blog
+    name: Dimi Chakarov's Blog
+    site: https://dchakarov.com/
+    rss: https://dchakarov.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Dimi Chakarov
+  - id: iosdev-dino-bozic-on-medium
+    name: Dino Bozic on Medium
+    site: https://dino-bozic.medium.com/
+    rss: https://medium.com/feed/@dino-bozic
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Dino Bozic
+  - id: iosdev-dirk-holtwick-s-blog
+    name: Dirk Holtwick’s Blog
+    site: https://holtwick.de/en/blog/
+    rss: https://holtwick.de/atom.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Dirk Holtwick
+  - id: iosdev-swift-package-index-recently-added
+    name: Swift Package Index - Recently Added
+    site: https://swiftpackageindex.com/
+    rss: https://swiftpackageindex.com/packages.rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - packages
+    author: Dave Verwer and Sven A. Schmidt
+  - id: iosdev-swift-package-index-recent-releases
+    name: Swift Package Index – Recent Releases
+    site: https://swiftpackageindex.com/
+    rss: https://swiftpackageindex.com/releases.rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - packages
+    author: Dave Verwer and Sven A. Schmidt
+  - id: iosdev-the-always-right-institute
+    name: The Always Right Institute
+    site: https://www.alwaysrightinstitute.com/
+    rss: https://www.alwaysrightinstitute.com/feed
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Helge Heß
+  - id: iosdev-the-atomic-birdhouse
+    name: The Atomic Birdhouse
+    site: https://atomicbird.com/
+    rss: https://atomicbird.com/index.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Tom Harrington
+  - id: iosdev-the-code-hub-blog
+    name: The Code Hub Blog
+    site: https://www.thecodehub.ie/news/
+    rss: https://www.thecodehub.ie/news/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Matt Hanlon
+  - id: iosdev-the-dodo-developer
+    name: The Dodo Developer
+    site: https://www.thedododeveloper.com/
+    rss: https://www.thedododeveloper.com/feed
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Ben Dodson
   - id: swift-packages-index
     name: Swift Package Index — Recent Packages
     site: https://swiftpackageindex.com/
     rss: https://swiftpackageindex.com/rss/new-packages.xml
     enabled: false
-    tags: [swift, packages]
+    tags:
+      - swift
+      - packages

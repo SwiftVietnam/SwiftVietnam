@@ -10,13 +10,17 @@
     "new:day": "node scripts/new-day.mjs",
     "run:week": "node scripts/run-week.mjs",
     "build:week": "node scripts/build-weekly-site.mjs",
-    "search:iosdev": "node scripts/search-iosdevdirectory.mjs"
+    "search:iosdev": "node scripts/search-iosdevdirectory.mjs",
+    "sync:iosfeeds": "node scripts/sync-iosfeeds.mjs",
+    "sync:iosdevdirectory": "node scripts/sync-iosdevdirectory-feeds.mjs",
+    "feeds:toggle": "node scripts/toggle-feeds.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "cheerio": "^1.2.0",
     "gray-matter": "^4.0.3",
     "luxon": "^3.7.2",
     "marked": "^17.0.1",

@@ -64,6 +64,48 @@ function normalizeUrl(u) {
   }
 }
 
+function stripHtml(html) {
+  if (!html) return '';
+  return String(html)
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function extractFirstImg(html) {
+  if (!html) return null;
+  const m = String(html).match(/<img[^>]+src=["']([^"']+)["'][^>]*>/i);
+  return m ? normalizeUrl(m[1]) : null;
+}
+
+function pickImage(item) {
+  const enc = item?.enclosure?.url ? normalizeUrl(item.enclosure.url) : null;
+  if (enc && /\.(png|jpe?g|webp|gif)(\?|$)/i.test(enc)) return enc;
+
+  // media:content (rss-parser sometimes flattens unknown tags)
+  const mediaUrl =
+    normalizeUrl(item?.['media:content']?.url) ||
+    normalizeUrl(item?.['media:thumbnail']?.url);
+  if (mediaUrl) return mediaUrl;
+
+  return extractFirstImg(item?.content) || extractFirstImg(item?.summary);
+}
+
+function pickDescription(item) {
+  const snippet = item?.contentSnippet ? String(item.contentSnippet).trim() : '';
+  if (snippet) return snippet;
+
+  const content = stripHtml(item?.content);
+  if (content) return content;
+
+  const summary = stripHtml(item?.summary);
+  if (summary) return summary;
+
+  return '';
+}
+
 // Limit concurrency to avoid hammering feeds.
 async function mapLimit(items, limit, fn) {
   const ret = [];
@@ -104,6 +146,8 @@ const categorySlugs = (
   .filter(Boolean);
 
 const maxSourcesFromConfig = Number(config?.iosDevDirectory?.maxSources || 0);
+const maxExplicitSourcesFromConfig = Number(config?.explicitFeeds?.maxSources || 0);
+const explicitStrategy = String(config?.explicitFeeds?.strategy || 'seededShuffle');
 
 const excludeSourceRssRegex = (config?.filters?.excludeSourceRssRegex || []).map((r) => new RegExp(r));
 const excludeItemUrlRegex = (config?.filters?.excludeItemUrlRegex || []).map((r) => new RegExp(r));
@@ -121,6 +165,7 @@ if (usingExplicitFeeds) {
     rss: f.rss,
     language: languageFilter,
     categorySlug: 'explicit',
+    priority: f.priority ?? null,
     tags: f.tags || null
   }));
 }
@@ -142,10 +187,48 @@ if (excludeSourceRssRegex.length) {
 
 sources.sort((a, b) => String(a.name).localeCompare(String(b.name)));
 
+function seededShuffle(arr, seedStr) {
+  // Simple deterministic PRNG from string seed.
+  let seed = 0;
+  for (let i = 0; i < seedStr.length; i++) seed = (seed * 31 + seedStr.charCodeAt(i)) >>> 0;
+  function next() {
+    // xorshift32
+    seed ^= seed << 13;
+    seed >>>= 0;
+    seed ^= seed >> 17;
+    seed >>>= 0;
+    seed ^= seed << 5;
+    seed >>>= 0;
+    return seed / 0xffffffff;
+  }
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(next() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 const maxSourcesEnv = Number(process.env.MAX_SOURCES || 0);
-const maxSources = maxSourcesEnv > 0 ? maxSourcesEnv : (maxSourcesFromConfig > 0 ? maxSourcesFromConfig : 200);
-if (Number.isFinite(maxSources) && maxSources > 0) {
-  sources = sources.slice(0, maxSources);
+const maxDefault = 200;
+const maxSources = maxSourcesEnv > 0
+  ? maxSourcesEnv
+  : (usingExplicitFeeds
+      ? (maxExplicitSourcesFromConfig > 0 ? maxExplicitSourcesFromConfig : maxDefault)
+      : (maxSourcesFromConfig > 0 ? maxSourcesFromConfig : maxDefault));
+
+if (Number.isFinite(maxSources) && maxSources > 0 && sources.length > maxSources) {
+  if (usingExplicitFeeds && explicitStrategy === 'seededShuffle') {
+    // Keep high-priority feeds pinned, shuffle the rest.
+    const pinned = sources.filter((s) => Number(s.priority || 9) <= 2);
+    const rest = sources.filter((s) => !pinned.includes(s));
+
+    const remaining = Math.max(0, maxSources - pinned.length);
+    const shuffled = seededShuffle(rest, runDate.toISODate());
+    sources = pinned.concat(shuffled.slice(0, remaining));
+  } else {
+    sources = sources.slice(0, maxSources);
+  }
 }
 
 console.log(`Collecting from ${sources.length} RSS sources for ${dayStart.toISODate()} (${TZ})`);
@@ -165,6 +248,8 @@ const settled = await mapLimit(sources, Number(process.env.CONCURRENCY || 8), as
 
       const title = (item.title || '').trim();
       const url = normalizeUrl(item.link);
+      const description = pickDescription(item);
+      const image = pickImage(item);
 
       if (url && excludeItemUrlRegex.some((re) => re.test(url))) continue;
       if (title && excludeItemTitleRegex.some((re) => re.test(title))) continue;
@@ -175,6 +260,8 @@ const settled = await mapLimit(sources, Number(process.env.CONCURRENCY || 8), as
         sourceRss: src.rss,
         title,
         url,
+        description,
+        image,
         publishedAt: zdt.toISO(),
         tags: src.tags || null
       });

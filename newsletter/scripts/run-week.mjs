@@ -46,17 +46,40 @@ async function upsertDailyFile(dt, items) {
   const iso = dt.toISODate();
   const title = `SwiftVietnam Daily — ${dt.toFormat('LLL d, yyyy')}`;
 
+  const truncate = (s, n = 260) => {
+    const t = String(s || '').trim();
+    if (!t) return '';
+    if (t.length <= n) return t;
+    // try to cut at a sentence boundary
+    const cut = t.slice(0, n);
+    const idx = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('! '), cut.lastIndexOf('? '));
+    return (idx > 80 ? cut.slice(0, idx + 1) : cut).trim() + '…';
+  };
+
   const bullets = items
-    .slice(0, 30)
-    .map((it) => `- **${(it.title || '').replaceAll('\n', ' ').trim()}** — _TODO: add 1–3 sentence summary_. [Source](${it.url})`)
+    .slice(0, 40)
+    .map((it) => {
+      const title = (it.title || '').replaceAll('\n', ' ').trim();
+      const desc = truncate((it.description || '').replaceAll('\n', ' ').trim());
+      const img = it.image;
+
+      const line = desc
+        ? `- **${title}** — ${desc} [Source](${it.url})`
+        : `- **${title}** — [Source](${it.url})`;
+
+      if (img) {
+        return `${line}\n  ![](${img})`;
+      }
+      return line;
+    })
     .join('\n');
 
   const fm = {
     date: iso,
     timezone: TZ,
     title,
-    summary: 'Auto-collected candidates (please edit summaries).',
-    sources: ['iosdevdirectory'],
+    summary: 'Auto-collected links from RSS feeds.',
+    sources: ['rss'],
     tags: []
   };
 

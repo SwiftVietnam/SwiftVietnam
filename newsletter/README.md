@@ -25,7 +25,16 @@ Outputs:
 - `newsletter/data/iosdevdirectory/blogs.json` (raw)
 - `newsletter/data/iosdevdirectory/sources.json` (normalized)
 
-### Collect daily candidates from iOSDevDirectory RSS feeds
+### Sync RSS feeds from iosfeeds.com
+
+This pulls RSS feed URLs from https://iosfeeds.com/feeds, validates them, and appends valid feeds to `newsletter/config/feeds.yml`.
+
+```bash
+cd newsletter
+MAX_CHECK=250 CONCURRENCY=12 npm run sync:iosfeeds
+```
+
+### Collect daily candidates from RSS feeds
 
 Fetches RSS feeds and extracts items published on a given day (default: today in SGT).
 
