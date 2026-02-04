@@ -6,14 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "fetch:sources": "node scripts/fetch-iosdevdirectory-sources.mjs",
-    "collect:iosdev": "node scripts/collect-from-iosdevdirectory.mjs"
+    "collect:iosdev": "node scripts/collect-from-iosdevdirectory.mjs",
+    "new:day": "node scripts/new-day.mjs",
+    "run:week": "node scripts/run-week.mjs",
+    "build:week": "node scripts/build-weekly-site.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "luxon": "^3.7.2",
+    "marked": "^17.0.1",
     "rss-parser": "^3.13.0"
   }
 }

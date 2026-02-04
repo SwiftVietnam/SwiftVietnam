@@ -140,7 +140,7 @@ const deduped = results.filter((r) => {
 });
 
 await fs.mkdir(OUT_DIR, { recursive: true });
-const outPath = path.join(OUT_DIR, `${isoDayFolder(runDate)}-iosdevdirectory.json`.replaceAll('/', '-'));
+const outPath = path.join(OUT_DIR, `${runDate.toISODate()}-iosdevdirectory.json`);
 await fs.writeFile(outPath, JSON.stringify({
   date: runDate.toISODate(),
   timezone: TZ,
