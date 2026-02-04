@@ -9,7 +9,8 @@
     "collect:iosdev": "node scripts/collect-from-iosdevdirectory.mjs",
     "new:day": "node scripts/new-day.mjs",
     "run:week": "node scripts/run-week.mjs",
-    "build:week": "node scripts/build-weekly-site.mjs"
+    "build:week": "node scripts/build-weekly-site.mjs",
+    "search:iosdev": "node scripts/search-iosdevdirectory.mjs"
   },
   "keywords": [],
   "author": "",
