@@ -5,82 +5,284 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>SwiftVietnam Daily — Feb 3, 2026</title>
   <style>
-:root{--bg:#0b0e14;--card:#121826;--text:#e7e9ee;--muted:#a7b0c0;--link:#8ab4ff;--border:#23304a;}
-@media (prefers-color-scheme: light){:root{--bg:#ffffff;--card:#f6f7fb;--text:#0b1020;--muted:#4a5878;--link:#1a56db;--border:#d6dbea;}}
-body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text);}
-a{color:var(--link); text-decoration:none} a:hover{text-decoration:underline}
-.container{max-width:980px;margin:0 auto;padding:28px 18px;}
-.header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:18px;}
-.brand{font-weight:800;font-size:20px;letter-spacing:0.2px}
-.sub{color:var(--muted);font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;}
-.card{grid-column:span 12;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 14px;}
-.card h2{margin:0 0 10px 0;font-size:16px}
-.card h3{margin:16px 0 8px 0;font-size:14px}
-.card ul{margin:0;padding-left:18px}
-.footer{margin-top:22px;color:var(--muted);font-size:12px}
-.small{font-size:12px;color:var(--muted)}
-.badge{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:2px 9px;font-size:12px;color:var(--muted)}
+*{box-sizing:border-box}
+:root{
+  --bg:#0b0e14;
+  --panel:#101827;
+  --card:#0f172a;
+  --text:#e8edf6;
+  --muted:#a7b0c0;
+  --border:rgba(148,163,184,.18);
+  --shadow:0 1px 0 rgba(255,255,255,.04), 0 8px 30px rgba(0,0,0,.22);
+  --link:#8ab4ff;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f5f6f8;
+    --panel:#ffffff;
+    --card:#ffffff;
+    --text:#0b1020;
+    --muted:#4a5878;
+    --border:rgba(15,23,42,.12);
+    --shadow:0 1px 0 rgba(15,23,42,.04), 0 10px 24px rgba(15,23,42,.08);
+    --link:#1a56db;
+  }
+}
+
+html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); line-height:1.55}
+
+a{color:var(--link); text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{max-width:980px;margin:0 auto;padding:20px 14px 40px}
+
+.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--border)}
+.topbar-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px}
+.brand{display:flex;flex-direction:column;gap:2px}
+.brand-title{font-weight:800;letter-spacing:.2px;font-size:16px}
+.brand-sub{font-size:12px;color:var(--muted)}
+.nav a{font-size:13px;color:var(--muted)}
+.nav a:hover{color:var(--text)}
+
+.hero{margin-top:16px;background:var(--panel);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:16px}
+.hero h1{margin:0;font-size:18px}
+.hero p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+
+.grid{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+
+.day-card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.day-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:14px 14px 10px;border-bottom:1px solid var(--border)}
+.day-title{margin:0;font-size:15px;font-weight:750}
+.day-meta{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;white-space:nowrap}
+.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:3px 10px}
+
+.items{list-style:none;margin:0;padding:10px 10px 12px}
+.item{display:flex;gap:12px;padding:10px;border-radius:12px}
+.item:hover{background:color-mix(in srgb, var(--card) 88%, var(--text) 2%)}
+
+.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:color-mix(in srgb, var(--card) 92%, var(--text) 4%)}
+
+.item-body{min-width:0;display:flex;flex-direction:column;gap:4px}
+.item-title{font-weight:650;font-size:14px;line-height:1.25;margin:0;overflow-wrap:anywhere}
+.item-desc{color:var(--muted);font-size:13px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.item-foot{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:12px}
+.domain{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+
+.more{padding:0 14px 14px}
+.more a{font-size:13px;color:var(--muted)}
+.more a:hover{color:var(--text)}
+
+.footer{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}
+
+@media (max-width: 520px){
+  .thumb{width:56px;height:56px;border-radius:10px}
+  .item{padding:10px 8px}
+  .container{padding-left:12px;padding-right:12px}
+}
 </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div>
-        <div class="brand">SwiftVietnam Digest</div>
-        <div class="sub"><a href="../../../index.html">Daily index</a> • <a href="../../../../index.html">Weekly issue</a></div>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-title">SwiftVietnam Digest</div>
+        <div class="brand-sub">2026-02-03 • 20 links</div>
       </div>
-      <div class="sub"><span class="badge">2026-02-03</span></div>
+      <div class="nav"><a href="../../../index.html">Daily index</a> &nbsp; <a href="../../../../index.html">Weekly</a></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <h1>SwiftVietnam Daily — Feb 3, 2026</h1>
+      <p>20 links</p>
     </div>
 
-    <article class="card">
-      <h2>SwiftVietnam Daily — Feb 3, 2026</h2>
-      <div><h2>Links (auto-collected candidates)</h2>
-<ul>
-<li><strong>Edge-Optimized Speech Workflows: Combining Deepgram Nova-3 STT with Fish Speech V1.5 TTS</strong> — Voice AI is moving to the edge. Learn how to design speech workflows that stay fast, expressive, and reliable with Deepgram and Fish Speech. <a href="https://getstream.io/blog/edge-speech-deepgram-fish/">Source</a></li>
-<li><strong>Beyond the Human: Designing with Non-Human Personas in Mobile Apps</strong> — Design beyond the screen, non-human personas bring environmental reality into decision-making, from energy grids to cooling systems. <a href="https://www.createwithswift.com/beyond-the-human-designing-with-non-human-personas-in-mobile-apps/">Source</a></li>
-<li><strong>Upcoming SDK minimum requirements</strong> — Starting April 28, 2026, apps and games uploaded to App Store Connect need to meet the following minimum requirements:</li>
-</ul>
-<p>iOS and iPadOS apps must be built with the iOS 26 &amp; iPadOS 26 SDK or later
-tvOS apps must be built with the tvOS 26 SDK or later
-visionOS ap… <a href="https://developer.apple.com/news/?id=ueeok6yw">Source</a></p>
-<ul>
-<li><h2><strong>S5E21: All of the Dooms 🫡</strong> — Join us, while we&#39;re Waiting For Review...</h2>
-<a href="mailto:contact@waitingforreview.com">contact@waitingforreview.com</a>
-The Discord server is open to all, and you can contact us via our social links below.
-Enjoy the show,
-Dave ✨ and Daniel 🚀
-Show Notes:
-Lasercut video - <a href="https://www.tiktok.com/@telemetry%E2%80%A6">https://www.tiktok.com/@telemetry…</a> <a href="https://www.waitingforreview.com/s5e21">Source</a></li>
-<li><strong>Time is leafing</strong> — <a href="https://blog.eternalstorms.at/2026/02/03/time-is-leafing/">Source</a></li>
-<li><strong>The complete guide to digital signatures: PAdES, CAdES, and XAdES explained</strong> — Master digital signatures with this complete guide to PAdES, CAdES, and XAdES standards. Learn implementation with Nutrient SDK, API, Document Engine, and Workflow Automation. <a href="https://www.nutrient.io/blog/complete-guide-digital-signatures/">Source</a>
-<img src="https://www.nutrient.io/_astro/article-header.R8WyjT9p.png" alt=""></li>
-<li><strong>How to build a better tagging UI in SwiftUI with Antigravity | Sofia S4E4</strong> — <a href="https://www.youtube.com/watch?v=7y87nuq9x5Y">Source</a></li>
-<li><strong>Save URLs to Apple Reminders the Right Way</strong> — If you save a URL to Apple Reminders — via the Share Sheet or Siri — it goes into the reminder’s URL field. This sounds fine until you try to do anything useful with it.
-The Problem
-The URL field in Apple Reminders is not accessible through any API.… <a href="https://hboon.com/save-urls-to-apple-reminders-the-right-way/">Source</a></li>
-<li><strong>Serverpod for a Weekend - The Good, The Bad, and The Surprising</strong> — <a href="https://engineering.monstar-lab.com/en/post/2026/02/03/Serverpod-for-a-Weekend-The-Good-The-Bad-and-The-Surprising">Source</a></li>
-<li><strong>Late Night Silent Completions: Jiiiii — Part 804</strong> — <a href="https://www.youtube.com/watch?v=mFpBWER_YmA">Source</a></li>
-<li><strong>On-demand resources in iOS app</strong> — On-Demand Resources allow you to ship a smaller initial app download and fetch additional assets like images, sounds, level data, ML models, and more only when a user requires them.… <a href="https://swiftwithmajid.com/2026/02/03/on-demand-resources-in-ios-app/">Source</a></li>
-<li><strong>坏习惯是道好题目</strong> — <a href="https://limboy.me/posts/bad-habit-good-subject">Source</a></li>
-<li><strong>Food Assistant</strong> — Peter has been doing with OpenClaw. This agent is taking care of my food, so it has an idea of what I have in stock. It knows about my allergies, my dietary wishes, and it has recipes and a grocery list. It also has a list of dishes I enjoy making and eating.… <a href="http://chris.eidhof.nl/post/llm-month-food-assistant">Source</a></li>
-<li><strong>Codex App</strong> — OpenAI (Hacker News): Today, we’re introducing the Codex app for macOS—a powerful new interface designed to effortlessly manage multiple agents at once, run work in parallel, and collaborate with agents over long-running tasks.… <a href="https://mjtsai.com/blog/2026/02/02/codex-app/">Source</a></li>
-<li><strong>DFU Port on the 16-Inch MacBook Pro</strong> — Jeff Johnson: This [Apple documentation] is wrong, a discovery that took me about a half dozen attempts to update macOS on an external disk.… <a href="https://mjtsai.com/blog/2026/02/02/dfu-port-on-16-inch-macbook-pro/">Source</a></li>
-<li><strong>iOS 26.3: Limit Carrier Location Tracking</strong> — Juli Clover: Mobile networks determine location based on the cellular towers that a device connects to, but with the setting enabled, some of the data typically made available to mobile networks is being restricted.… <a href="https://mjtsai.com/blog/2026/02/02/ios-26-3-limit-carrier-location-tracking/">Source</a></li>
-<li><strong>Apple and Kakao Pay Fined Over Privacy</strong> — Proton’s Tech Fines Tracker (via Ben Lovejoy): While $7.8 billion in fines sounds substantial, it represents little more than a rounding error for Big Tech.… <a href="https://mjtsai.com/blog/2026/02/02/apple-and-kakao-pay-fined-over-privacy/">Source</a></li>
-<li><strong>탈진할 거 같습니다... - AI 단식 4일차</strong> — <a href="https://www.youtube.com/watch?v=RkUdoKYx1HI">Source</a></li>
-<li><strong>Hacking with Ktor</strong> — Every now and then when I’m out walking my dog I nerd snipe myself and start thinking of interesting little programming challenges to toy around with.
-This post explores using Ktor to build a tiny reverse proxy that forwards Snowplow events and pushes notifica… <a href="http://paul-samuels.com/blog/2026/02/02/hacking-with-ktor/">Source</a></li>
-<li><strong>New friendly place to share updates about your indie apps</strong> — Have you ever tried sharing your indie app on Reddit? If so, did your post get removed soon due to “self-promotion”?… <a href="https://nemecek.be/blog/214/new-friendly-place-to-share-updates-about-your-indie-apps">Source</a></li>
-<li><strong>Codex App - A First Look for App Development</strong> — <a href="https://www.youtube.com/watch?v=ICYbOfW5RoQ">Source</a></li>
-<li><strong>Musyc2 by Fingerlab, Built with AudioKit</strong> — Musyc2 by Fingerlab is an app that uses game physics for music creation
-Musyc2 by Fingerlab, Built with AudioKit first appeared on AudioKit Pro. <a href="https://audiokitpro.com/musyc2/">Source</a></li>
-<li><strong>iOS 16.7.14 (20H370)</strong> — View downloads <a href="https://developer.apple.com/news/releases/?id=02022026a">Source</a></li>
-<li><strong>iPadOS 16.7.14 (20H370)</strong> — View downloads <a href="https://developer.apple.com/news/releases/?id=02022026b">Source</a></li>
-<li><strong>Build a Voice Agent in Python: 2026 Guide</strong> — <a href="https://www.youtube.com/watch?v=KI_JslCXHTs">Source</a></li>
-</ul>
-</div>
-    </article>
+    <section class="day-card">
+      <ul class="items">
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://getstream.io/blog/edge-speech-deepgram-fish/" target="_blank" rel="noopener noreferrer">Edge-Optimized Speech Workflows: Combining Deepgram Nova-3 STT with Fish Speech V1.5 TTS</a></div>
+    <div class="item-desc">Voice AI is moving to the edge. Learn how to design speech workflows that stay fast, expressive, and reliable with Deepgram and Fish Speech.</div>
+    <div class="item-foot"><span class="domain">getstream.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.createwithswift.com/beyond-the-human-designing-with-non-human-personas-in-mobile-apps/" target="_blank" rel="noopener noreferrer">Beyond the Human: Designing with Non-Human Personas in Mobile Apps</a></div>
+    <div class="item-desc">Design beyond the screen, non-human personas bring environmental reality into decision-making, from energy grids to cooling systems.</div>
+    <div class="item-foot"><span class="domain">createwithswift.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://blog.eternalstorms.at/2026/02/03/time-is-leafing/" target="_blank" rel="noopener noreferrer">Time is leafing</a></div>
+    
+    <div class="item-foot"><span class="domain">blog.eternalstorms.at</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://www.nutrient.io/_astro/article-header.R8WyjT9p.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.nutrient.io/blog/complete-guide-digital-signatures/" target="_blank" rel="noopener noreferrer">The complete guide to digital signatures: PAdES, CAdES, and XAdES explained</a></div>
+    <div class="item-desc">Master digital signatures with this complete guide to PAdES, CAdES, and XAdES standards. Learn implementation with Nutrient SDK, API, Document Engine, and Workflow Automation.</div>
+    <div class="item-foot"><span class="domain">nutrient.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=7y87nuq9x5Y" target="_blank" rel="noopener noreferrer">How to build a better tagging UI in SwiftUI with Antigravity | Sofia S4E4</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://engineering.monstar-lab.com/en/post/2026/02/03/Serverpod-for-a-Weekend-The-Good-The-Bad-and-The-Surprising" target="_blank" rel="noopener noreferrer">Serverpod for a Weekend - The Good, The Bad, and The Surprising</a></div>
+    
+    <div class="item-foot"><span class="domain">engineering.monstar-lab.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=mFpBWER_YmA" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 804</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://swiftwithmajid.com/2026/02/03/on-demand-resources-in-ios-app/" target="_blank" rel="noopener noreferrer">On-demand resources in iOS app</a></div>
+    <div class="item-desc">On-Demand Resources allow you to ship a smaller initial app download and fetch additional assets like images, sounds, level data, ML models, and more only when a user requires them.…</div>
+    <div class="item-foot"><span class="domain">swiftwithmajid.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://limboy.me/posts/bad-habit-good-subject" target="_blank" rel="noopener noreferrer">坏习惯是道好题目</a></div>
+    
+    <div class="item-foot"><span class="domain">limboy.me</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="http://chris.eidhof.nl/post/llm-month-food-assistant" target="_blank" rel="noopener noreferrer">Food Assistant</a></div>
+    <div class="item-desc">Peter has been doing with OpenClaw. This agent is taking care of my food, so it has an idea of what I have in stock. It knows about my allergies, my dietary wishes, and it has recipes and a grocery list. It also has a list of dishes I enjoy making and eating.…</div>
+    <div class="item-foot"><span class="domain">chris.eidhof.nl</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/02/codex-app/" target="_blank" rel="noopener noreferrer">Codex App</a></div>
+    <div class="item-desc">OpenAI (Hacker News): Today, we’re introducing the Codex app for macOS—a powerful new interface designed to effortlessly manage multiple agents at once, run work in parallel, and collaborate with agents over long-running tasks.…</div>
+    <div class="item-foot"><span class="domain">mjtsai.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/02/dfu-port-on-16-inch-macbook-pro/" target="_blank" rel="noopener noreferrer">DFU Port on the 16-Inch MacBook Pro</a></div>
+    <div class="item-desc">Jeff Johnson: This [Apple documentation] is wrong, a discovery that took me about a half dozen attempts to update macOS on an external disk.…</div>
+    <div class="item-foot"><span class="domain">mjtsai.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/02/ios-26-3-limit-carrier-location-tracking/" target="_blank" rel="noopener noreferrer">iOS 26.3: Limit Carrier Location Tracking</a></div>
+    <div class="item-desc">Juli Clover: Mobile networks determine location based on the cellular towers that a device connects to, but with the setting enabled, some of the data typically made available to mobile networks is being restricted.…</div>
+    <div class="item-foot"><span class="domain">mjtsai.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/02/apple-and-kakao-pay-fined-over-privacy/" target="_blank" rel="noopener noreferrer">Apple and Kakao Pay Fined Over Privacy</a></div>
+    <div class="item-desc">Proton’s Tech Fines Tracker (via Ben Lovejoy): While $7.8 billion in fines sounds substantial, it represents little more than a rounding error for Big Tech.…</div>
+    <div class="item-foot"><span class="domain">mjtsai.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=RkUdoKYx1HI" target="_blank" rel="noopener noreferrer">탈진할 거 같습니다... - AI 단식 4일차</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://nemecek.be/blog/214/new-friendly-place-to-share-updates-about-your-indie-apps" target="_blank" rel="noopener noreferrer">New friendly place to share updates about your indie apps</a></div>
+    <div class="item-desc">Have you ever tried sharing your indie app on Reddit? If so, did your post get removed soon due to “self-promotion”?…</div>
+    <div class="item-foot"><span class="domain">nemecek.be</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=ICYbOfW5RoQ" target="_blank" rel="noopener noreferrer">Codex App - A First Look for App Development</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026a" target="_blank" rel="noopener noreferrer">iOS 16.7.14 (20H370)</a></div>
+    <div class="item-desc">View downloads</div>
+    <div class="item-foot"><span class="domain">developer.apple.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026b" target="_blank" rel="noopener noreferrer">iPadOS 16.7.14 (20H370)</a></div>
+    <div class="item-desc">View downloads</div>
+    <div class="item-foot"><span class="domain">developer.apple.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=KI_JslCXHTs" target="_blank" rel="noopener noreferrer">Build a Voice Agent in Python: 2026 Guide</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li></ul>
+    </section>
+
+    <div class="footer">Built by SwiftVietnam Digest pipeline.</div>
   </div>
 </body>
 </html>

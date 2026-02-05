@@ -5,75 +5,230 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>SwiftVietnam Daily — Jan 30, 2026</title>
   <style>
-:root{--bg:#0b0e14;--card:#121826;--text:#e7e9ee;--muted:#a7b0c0;--link:#8ab4ff;--border:#23304a;}
-@media (prefers-color-scheme: light){:root{--bg:#ffffff;--card:#f6f7fb;--text:#0b1020;--muted:#4a5878;--link:#1a56db;--border:#d6dbea;}}
-body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text);}
-a{color:var(--link); text-decoration:none} a:hover{text-decoration:underline}
-.container{max-width:980px;margin:0 auto;padding:28px 18px;}
-.header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:18px;}
-.brand{font-weight:800;font-size:20px;letter-spacing:0.2px}
-.sub{color:var(--muted);font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;}
-.card{grid-column:span 12;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 14px;}
-.card h2{margin:0 0 10px 0;font-size:16px}
-.card h3{margin:16px 0 8px 0;font-size:14px}
-.card ul{margin:0;padding-left:18px}
-.footer{margin-top:22px;color:var(--muted);font-size:12px}
-.small{font-size:12px;color:var(--muted)}
-.badge{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:2px 9px;font-size:12px;color:var(--muted)}
+*{box-sizing:border-box}
+:root{
+  --bg:#0b0e14;
+  --panel:#101827;
+  --card:#0f172a;
+  --text:#e8edf6;
+  --muted:#a7b0c0;
+  --border:rgba(148,163,184,.18);
+  --shadow:0 1px 0 rgba(255,255,255,.04), 0 8px 30px rgba(0,0,0,.22);
+  --link:#8ab4ff;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f5f6f8;
+    --panel:#ffffff;
+    --card:#ffffff;
+    --text:#0b1020;
+    --muted:#4a5878;
+    --border:rgba(15,23,42,.12);
+    --shadow:0 1px 0 rgba(15,23,42,.04), 0 10px 24px rgba(15,23,42,.08);
+    --link:#1a56db;
+  }
+}
+
+html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); line-height:1.55}
+
+a{color:var(--link); text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{max-width:980px;margin:0 auto;padding:20px 14px 40px}
+
+.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--border)}
+.topbar-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px}
+.brand{display:flex;flex-direction:column;gap:2px}
+.brand-title{font-weight:800;letter-spacing:.2px;font-size:16px}
+.brand-sub{font-size:12px;color:var(--muted)}
+.nav a{font-size:13px;color:var(--muted)}
+.nav a:hover{color:var(--text)}
+
+.hero{margin-top:16px;background:var(--panel);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:16px}
+.hero h1{margin:0;font-size:18px}
+.hero p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+
+.grid{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+
+.day-card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.day-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:14px 14px 10px;border-bottom:1px solid var(--border)}
+.day-title{margin:0;font-size:15px;font-weight:750}
+.day-meta{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;white-space:nowrap}
+.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:3px 10px}
+
+.items{list-style:none;margin:0;padding:10px 10px 12px}
+.item{display:flex;gap:12px;padding:10px;border-radius:12px}
+.item:hover{background:color-mix(in srgb, var(--card) 88%, var(--text) 2%)}
+
+.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:color-mix(in srgb, var(--card) 92%, var(--text) 4%)}
+
+.item-body{min-width:0;display:flex;flex-direction:column;gap:4px}
+.item-title{font-weight:650;font-size:14px;line-height:1.25;margin:0;overflow-wrap:anywhere}
+.item-desc{color:var(--muted);font-size:13px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.item-foot{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:12px}
+.domain{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+
+.more{padding:0 14px 14px}
+.more a{font-size:13px;color:var(--muted)}
+.more a:hover{color:var(--text)}
+
+.footer{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}
+
+@media (max-width: 520px){
+  .thumb{width:56px;height:56px;border-radius:10px}
+  .item{padding:10px 8px}
+  .container{padding-left:12px;padding-right:12px}
+}
 </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div>
-        <div class="brand">SwiftVietnam Digest</div>
-        <div class="sub"><a href="../../../index.html">Daily index</a> • <a href="../../../../index.html">Weekly issue</a></div>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-title">SwiftVietnam Digest</div>
+        <div class="brand-sub">2026-01-30 • 14 links</div>
       </div>
-      <div class="sub"><span class="badge">2026-01-30</span></div>
+      <div class="nav"><a href="../../../index.html">Daily index</a> &nbsp; <a href="../../../../index.html">Weekly</a></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <h1>SwiftVietnam Daily — Jan 30, 2026</h1>
+      <p>14 links</p>
     </div>
 
-    <article class="card">
-      <h2>SwiftVietnam Daily — Jan 30, 2026</h2>
-      <div><h2>Links (auto-collected candidates)</h2>
-<ul>
-<li><strong>OpenClaw: Viral AI Sidekick That Puts You and Your Data at Risk</strong> — OpenClaw showcases how powerful “local-first” AI agents can be, but it also shows how quickly convenience can turn into a security liability.
-The post OpenClaw: Viral AI Sidekick That Puts You and Your Data at Risk appeared first on Infinum. <a href="https://infinum.com/blog/openclaw-moltbot-clawdbot-viral-ai-sidekick/">Source</a></li>
-<li><strong>What&#39;s new in Swift: January 2026 Edition</strong> — A Reddit thread earlier this month asked about building web apps with Swift. For this edition of “What’s new in Swift,” we invited a developer to share their experience:
-Hi, I’m Nick Sloan.… <a href="https://swift.org/blog/whats-new-in-swift-january-2026/">Source</a></li>
-<li><strong>Solid Interfaces for visionOS: Widgets and Cognitive Space in Spatial Computing</strong> — A new grammar for designing Cognitive Spatial Experiences in visionOS and WebXR. <a href="https://www.createwithswift.com/solid-interfaces-for-visionos-widgets-and-cognitive-space-in-spatial-computing/">Source</a></li>
-<li><strong>How to submit your app for Shipyard</strong> — Everything you need to know to make your app installable, testable, and ready for Shipyard judging. <a href="https://www.revenuecat.com/blog/engineering/how-to-submit-your-app-for-shipyard/">Source</a>
-<img src="https://revenuecat.wpenginepowered.com/wp-content/uploads/2026/01/Shipyard_Blog_HowToSubmit_1600x800_v1.png" alt=""></li>
-<li><strong>Scaling WebRTC Video to 100,000 Participants: Stream’s Latest Video Benchmarks</strong> — Stream has reached a major milestone in real-time video infrastructure: Successfully scaling a single WebRTC-based livestream to 100,000 concurrent participants while maintaining ultra-low latency, stable frame rates, and zero packet loss.… <a href="https://getstream.io/blog/video-benchmark/">Source</a></li>
-<li><strong>Visual Intelligence in Claude: Interpreting Documents and Structured Content</strong> — Claude isn’t the model most users turn to when needing visual capabilities. Rather than optimizing primarily for object detection or scene description, Claude processes visual content through the same reasoning architecture it uses for text.… <a href="https://getstream.io/blog/anthropic-claude-visual-reasoning/">Source</a></li>
-<li><strong>Migrating an iOS app from Paid up Front to Freemium</strong> — Paid up front apps can be a tough sell on the App Store. You might be getting plenty of views on your product page, but if those views aren&#39;t converting to downloads, something has to change.… <a href="https://www.donnywals.com/migrating-an-ios-app-from-paid-up-front-to-freemium/">Source</a></li>
-<li><strong>Deconstructing Reality Composer Pro (Project Browser)</strong> — Part of what makes Reality Composer Pro a composer is asset management. Importing, soft validation, organizing, and iterating on the project structure are essential features to have in creative pipelines.… <a href="https://elkraneo.com/deconstructing-reality-composer-pro-project-browser/">Source</a></li>
-<li><strong>Nutrient Python SDK: Production-grade document processing for Python</strong> — Server-side document processing for Python. Convert documents, generate from templates, add signatures, extract data with OCR, and redact sensitive content — all with a clean, Pythonic API. <a href="https://www.nutrient.io/blog/introducing-nutrient-python-sdk/">Source</a>
-<img src="https://www.nutrient.io/_astro/article-header.BZKX0v3m.png" alt=""></li>
-<li><strong>강의제공자의 답변을 원합니다.</strong> — <a href="https://www.youtube.com/watch?v=8_zZUQcQBdA">Source</a></li>
-<li><strong>Late Night Silent Completions: Jiiiii — Part 800</strong> — <a href="https://www.youtube.com/watch?v=Yg3hiGiK9tQ">Source</a></li>
-<li><strong>Call Once</strong> — In this post I explore Swift’s @propertyWrappers and parameter packs to implement a common behaviour.
-I ran into some code that captured work in a closure and ensured it was only invoked once.
-The pattern for this one-shot closure looked like this:</li>
-</ul>
-<p>class Exam… <a href="http://paul-samuels.com/blog/2026/01/30/call-once/">Source</a></p>
-<ul>
-<li><strong>Tools I Love: xcrun simctl io booted recordVideo</strong> — Record high quality videos of the iOS simulator right from the command line. <a href="https://blog.eliperkins.com/tools-i-love-xcrun-simctl-recordVideo">Source</a></li>
-<li><strong>Issue 741</strong> — Forget about Windows and Wasm, what’s the flagship project for macOS and iOS?! 😂 <a href="https://iosdevweekly.com/issues/741/">Source</a></li>
-<li><strong>Routine 就是人生的复利</strong> — Routine 并不是束缚，而是让你摆脱内耗的工具。 <a href="https://limboy.me/posts/routine-compound-interest">Source</a></li>
-<li><strong>머리가 아픕니다.. - AI 단식 2일차</strong> — <a href="https://www.youtube.com/watch?v=G3Ux3brUqUM">Source</a></li>
-<li><strong>Print Design Mindset to App Design Mindset</strong> — The print design era
-There was a time when iOS app design wasn’t all that far off from print design.
-For the first couple years of the iPhone SDK (2008-2011):
-All iPhones had 320 width by 480 height screens.
-All iPhone screens were @1x non-retina.
-The platform… <a href="https://twocentstudios.com/2026/01/29/print-design-mindset/">Source</a></li>
-<li><strong>Price updates for apps, In-App Purchases, and subscriptions</strong> — The App Store is designed to make it easy to sell your digital goods and services globally, with support for 43 currencies across 175 storefronts.
-From time to time, we need to adjust prices or your proceeds due to changes in tax regulations or foreign exchang… <a href="https://developer.apple.com/news/?id=gvnljl3f">Source</a></li>
-<li><strong>How do you comparison shop in the App Store?</strong> — Hot on the heels of my previous blog post My collected App Store critiques, I have yet another critique. It’s undoubtedly old news to many people, my critique coming years too late, but in my defense, I almost never shop for apps in the App Store.… <a href="https://lapcatsoftware.com/articles/2026/1/10.html">Source</a></li>
-</ul>
-</div>
-    </article>
+    <section class="day-card">
+      <ul class="items">
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.createwithswift.com/solid-interfaces-for-visionos-widgets-and-cognitive-space-in-spatial-computing/" target="_blank" rel="noopener noreferrer">Solid Interfaces for visionOS: Widgets and Cognitive Space in Spatial Computing</a></div>
+    <div class="item-desc">A new grammar for designing Cognitive Spatial Experiences in visionOS and WebXR.</div>
+    <div class="item-foot"><span class="domain">createwithswift.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://revenuecat.wpenginepowered.com/wp-content/uploads/2026/01/Shipyard_Blog_HowToSubmit_1600x800_v1.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.revenuecat.com/blog/engineering/how-to-submit-your-app-for-shipyard/" target="_blank" rel="noopener noreferrer">How to submit your app for Shipyard</a></div>
+    <div class="item-desc">Everything you need to know to make your app installable, testable, and ready for Shipyard judging.</div>
+    <div class="item-foot"><span class="domain">revenuecat.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://getstream.io/blog/video-benchmark/" target="_blank" rel="noopener noreferrer">Scaling WebRTC Video to 100,000 Participants: Stream’s Latest Video Benchmarks</a></div>
+    <div class="item-desc">Stream has reached a major milestone in real-time video infrastructure: Successfully scaling a single WebRTC-based livestream to 100,000 concurrent participants while maintaining ultra-low latency, stable frame rates, and zero packet loss.…</div>
+    <div class="item-foot"><span class="domain">getstream.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://getstream.io/blog/anthropic-claude-visual-reasoning/" target="_blank" rel="noopener noreferrer">Visual Intelligence in Claude: Interpreting Documents and Structured Content</a></div>
+    <div class="item-desc">Claude isn’t the model most users turn to when needing visual capabilities. Rather than optimizing primarily for object detection or scene description, Claude processes visual content through the same reasoning architecture it uses for text.…</div>
+    <div class="item-foot"><span class="domain">getstream.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.donnywals.com/migrating-an-ios-app-from-paid-up-front-to-freemium/" target="_blank" rel="noopener noreferrer">Migrating an iOS app from Paid up Front to Freemium</a></div>
+    <div class="item-desc">Paid up front apps can be a tough sell on the App Store. You might be getting plenty of views on your product page, but if those views aren't converting to downloads, something has to change.…</div>
+    <div class="item-foot"><span class="domain">donnywals.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://elkraneo.com/deconstructing-reality-composer-pro-project-browser/" target="_blank" rel="noopener noreferrer">Deconstructing Reality Composer Pro (Project Browser)</a></div>
+    <div class="item-desc">Part of what makes Reality Composer Pro a composer is asset management. Importing, soft validation, organizing, and iterating on the project structure are essential features to have in creative pipelines.…</div>
+    <div class="item-foot"><span class="domain">elkraneo.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://www.nutrient.io/_astro/article-header.BZKX0v3m.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.nutrient.io/blog/introducing-nutrient-python-sdk/" target="_blank" rel="noopener noreferrer">Nutrient Python SDK: Production-grade document processing for Python</a></div>
+    <div class="item-desc">Server-side document processing for Python. Convert documents, generate from templates, add signatures, extract data with OCR, and redact sensitive content — all with a clean, Pythonic API.</div>
+    <div class="item-foot"><span class="domain">nutrient.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=8_zZUQcQBdA" target="_blank" rel="noopener noreferrer">강의제공자의 답변을 원합니다.</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=Yg3hiGiK9tQ" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 800</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://blog.eliperkins.com/tools-i-love-xcrun-simctl-recordVideo" target="_blank" rel="noopener noreferrer">Tools I Love: xcrun simctl io booted recordVideo</a></div>
+    <div class="item-desc">Record high quality videos of the iOS simulator right from the command line.</div>
+    <div class="item-foot"><span class="domain">blog.eliperkins.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://iosdevweekly.com/issues/741/" target="_blank" rel="noopener noreferrer">Issue 741</a></div>
+    <div class="item-desc">Forget about Windows and Wasm, what’s the flagship project for macOS and iOS?! 😂</div>
+    <div class="item-foot"><span class="domain">iosdevweekly.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://limboy.me/posts/routine-compound-interest" target="_blank" rel="noopener noreferrer">Routine 就是人生的复利</a></div>
+    <div class="item-desc">Routine 并不是束缚，而是让你摆脱内耗的工具。</div>
+    <div class="item-foot"><span class="domain">limboy.me</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=G3Ux3brUqUM" target="_blank" rel="noopener noreferrer">머리가 아픕니다.. - AI 단식 2일차</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://lapcatsoftware.com/articles/2026/1/10.html" target="_blank" rel="noopener noreferrer">How do you comparison shop in the App Store?</a></div>
+    <div class="item-desc">Hot on the heels of my previous blog post My collected App Store critiques, I have yet another critique. It’s undoubtedly old news to many people, my critique coming years too late, but in my defense, I almost never shop for apps in the App Store.…</div>
+    <div class="item-foot"><span class="domain">lapcatsoftware.com</span></div>
+  </div>
+</li></ul>
+    </section>
+
+    <div class="footer">Built by SwiftVietnam Digest pipeline.</div>
   </div>
 </body>
 </html>

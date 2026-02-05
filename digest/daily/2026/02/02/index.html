@@ -5,91 +5,356 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>SwiftVietnam Daily — Feb 2, 2026</title>
   <style>
-:root{--bg:#0b0e14;--card:#121826;--text:#e7e9ee;--muted:#a7b0c0;--link:#8ab4ff;--border:#23304a;}
-@media (prefers-color-scheme: light){:root{--bg:#ffffff;--card:#f6f7fb;--text:#0b1020;--muted:#4a5878;--link:#1a56db;--border:#d6dbea;}}
-body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text);}
-a{color:var(--link); text-decoration:none} a:hover{text-decoration:underline}
-.container{max-width:980px;margin:0 auto;padding:28px 18px;}
-.header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:18px;}
-.brand{font-weight:800;font-size:20px;letter-spacing:0.2px}
-.sub{color:var(--muted);font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;}
-.card{grid-column:span 12;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 14px;}
-.card h2{margin:0 0 10px 0;font-size:16px}
-.card h3{margin:16px 0 8px 0;font-size:14px}
-.card ul{margin:0;padding-left:18px}
-.footer{margin-top:22px;color:var(--muted);font-size:12px}
-.small{font-size:12px;color:var(--muted)}
-.badge{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:2px 9px;font-size:12px;color:var(--muted)}
+*{box-sizing:border-box}
+:root{
+  --bg:#0b0e14;
+  --panel:#101827;
+  --card:#0f172a;
+  --text:#e8edf6;
+  --muted:#a7b0c0;
+  --border:rgba(148,163,184,.18);
+  --shadow:0 1px 0 rgba(255,255,255,.04), 0 8px 30px rgba(0,0,0,.22);
+  --link:#8ab4ff;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f5f6f8;
+    --panel:#ffffff;
+    --card:#ffffff;
+    --text:#0b1020;
+    --muted:#4a5878;
+    --border:rgba(15,23,42,.12);
+    --shadow:0 1px 0 rgba(15,23,42,.04), 0 10px 24px rgba(15,23,42,.08);
+    --link:#1a56db;
+  }
+}
+
+html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); line-height:1.55}
+
+a{color:var(--link); text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{max-width:980px;margin:0 auto;padding:20px 14px 40px}
+
+.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--border)}
+.topbar-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px}
+.brand{display:flex;flex-direction:column;gap:2px}
+.brand-title{font-weight:800;letter-spacing:.2px;font-size:16px}
+.brand-sub{font-size:12px;color:var(--muted)}
+.nav a{font-size:13px;color:var(--muted)}
+.nav a:hover{color:var(--text)}
+
+.hero{margin-top:16px;background:var(--panel);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:16px}
+.hero h1{margin:0;font-size:18px}
+.hero p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+
+.grid{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+
+.day-card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.day-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:14px 14px 10px;border-bottom:1px solid var(--border)}
+.day-title{margin:0;font-size:15px;font-weight:750}
+.day-meta{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;white-space:nowrap}
+.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:3px 10px}
+
+.items{list-style:none;margin:0;padding:10px 10px 12px}
+.item{display:flex;gap:12px;padding:10px;border-radius:12px}
+.item:hover{background:color-mix(in srgb, var(--card) 88%, var(--text) 2%)}
+
+.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:color-mix(in srgb, var(--card) 92%, var(--text) 4%)}
+
+.item-body{min-width:0;display:flex;flex-direction:column;gap:4px}
+.item-title{font-weight:650;font-size:14px;line-height:1.25;margin:0;overflow-wrap:anywhere}
+.item-desc{color:var(--muted);font-size:13px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.item-foot{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:12px}
+.domain{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+
+.more{padding:0 14px 14px}
+.more a{font-size:13px;color:var(--muted)}
+.more a:hover{color:var(--text)}
+
+.footer{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}
+
+@media (max-width: 520px){
+  .thumb{width:56px;height:56px;border-radius:10px}
+  .item{padding:10px 8px}
+  .container{padding-left:12px;padding-right:12px}
+}
 </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div>
-        <div class="brand">SwiftVietnam Digest</div>
-        <div class="sub"><a href="../../../index.html">Daily index</a> • <a href="../../../../index.html">Weekly issue</a></div>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-title">SwiftVietnam Digest</div>
+        <div class="brand-sub">2026-02-02 • 28 links</div>
       </div>
-      <div class="sub"><span class="badge">2026-02-02</span></div>
+      <div class="nav"><a href="../../../index.html">Daily index</a> &nbsp; <a href="../../../../index.html">Weekly</a></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <h1>SwiftVietnam Daily — Feb 2, 2026</h1>
+      <p>28 links</p>
     </div>
 
-    <article class="card">
-      <h2>SwiftVietnam Daily — Feb 2, 2026</h2>
-      <div><h2>Links (auto-collected candidates)</h2>
-<ul>
-<li><strong>Building A2UI-Powered Interfaces with Stream Chat</strong> — Text-only AI responses are limiting. See how A2UI enables interactive, agent-driven UI inside a chat app. <a href="https://getstream.io/blog/a2ui-chat-integration/">Source</a></li>
-<li><strong>Cyber Security Model v4: How MOD Suppliers Can Prepare for Stricter Cyber Rules</strong> — Learn how MOD suppliers can prepare for CSMv4 with support from a DCC Level 1 certified company.
-The post Cyber Security Model v4: How MOD Suppliers Can Prepare for Stricter Cyber Rules appeared first on Infinum. <a href="https://infinum.com/blog/cyber-security-model-v4/">Source</a></li>
-<li><strong>Birds of Sanibel Island</strong> — My partner and I recently returned from a trip to Sanibel Island, Florida — a welcome break from winter in Michigan. We saw a bunch of new-to-us birds, as well as some familiar birds that migrate away from Michigan for the winter.… <a href="https://www.dzombak.com/blog/2026/02/birds-of-sanibel-island/">Source</a></li>
-<li><strong>Shifting Light, Unchanging Haystacks - Fatbobman&#39;s Swift Weekly #121</strong> — Two weeks ago, taking the opportunity of attending iOS Conf SG 2026, I visited the National Gallery Singapore and had the pleasure of viewing the special exhibition &quot;Into the Modern: Impressionism from the Museum of Fine Arts, Boston&quot;.… <a href="https://fatbobman.com/en/weekly/issue-121/">Source</a></li>
-<li><strong>变幻的光影，不变的干草堆 - 肘子的 Swift 周报 #121</strong> — 两周前，借着参加 iOS Conf SG 2026 的契机，我造访了新加坡国立美术馆，并有幸参观了《走进现代：波士顿美术博物馆印象派大师展》。尽管此前也看过不少优秀的展览，但这次经历仍带来了某种不同寻常的触动。 <a href="https://fatbobman.com/zh/weekly/issue-121/">Source</a></li>
-<li><strong>Deconstructing Reality Composer Pro (Viewport)</strong> — Viewport is deep (modes, debug views, presets/history). We are going to implement just a working viewer + camera for this pass; chasing full parity will balloon scope.</li>
-</ul>
-<p>The main viewport is built with RealityKit, and we&#39;ll add a layer for gestures, a grid… <a href="https://elkraneo.com/deconstructing-reality-composer-pro-viewport/">Source</a>
-  <img src="https://elkraneo.com/content/images/2026/02/Screenshot-2026-02-02-at-13.43.40.png" alt=""></p>
-<ul>
-<li><strong>SwiftUI Agent Skill: Build better views with AI</strong> — A SwiftUI Agent Skill that helps you build better views or refactor existing ones. It’s the reality we’re in today, and I honestly can’t live without it anymore myself.… <a href="https://www.avanderlee.com/ai-development/swiftui-agent-skill-build-better-views-with-ai/">Source</a></li>
-<li><strong>Fatbobman&#39;s Swift Weekly #121</strong> — Shifting Light, Unchanging Haystacks <a href="https://weekly.fatbobman.com/p/fatbobmans-swift-weekly-121">Source</a>
-<img src="https://substackcdn.com/image/fetch/$s_!2lY2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F927028ca-950c-40ea-91ac-181dd002a27a_1915x899.webp" alt=""></li>
-<li><strong>Supporting Markdown Search For LLMs</strong> — Learn a simple but effective technique that makes your blog more easily searchable for LLMs. <a href="https://build.ms/2026/2/2/supporting-markdown-search-for-llms/">Source</a></li>
-<li><strong>Scaling Activity Feeds to 100M Users: Stream’s Latest Benchmarks</strong> — Stream has reached a major milestone in activity feed infrastructure, successfully benchmarking over 37 million operations with a 10% write and 90% read workload distribution across a dataset of 100M users, 500M activities, and 200M follow relationships.… <a href="https://getstream.io/blog/activity-feeds-benchmark/">Source</a></li>
-<li><strong>A WhatsApp-style top banner for iOS using UIWindow and SwiftUI</strong> — A top banner looks simple until you try to make it reliable across tabs, navigation stacks, SwiftUI hosting, and modal presentations.… <a href="https://livsycode.com/swiftui/a-whatsapp-style-top-banner-for-ios-using-uiwindow/">Source</a></li>
-<li><strong>✅ Part 4 of Start building with Rive for iOS</strong> — This week, we&#39;re moving on to part 4 of the series, where we&#39;ll explore topics like creating workflows with Rive Scripting and improving the animation logic using the AI agent. <a href="https://www.ioscoffeebreak.com/issue/issue68">Source</a>
-<img src="https://raw.githubusercontent.com/henriquestiagoo/ioscoffeebreak-ci/refs/heads/main/issues/68.png" alt=""></li>
-<li><strong>2025: Year in review</strong> — From document tools to intelligent platform — how 2025 transformed the way we work with documents. <a href="https://www.nutrient.io/blog/2025-in-review/">Source</a>
-<img src="https://www.nutrient.io/_astro/article-header.DHLutvXl.png" alt=""></li>
-<li><strong>Swift Bits: Transition vs Transaction</strong> — Animate appearance and more! <a href="https://antongubarenko.substack.com/p/swift-bits-transition-vs-transaction">Source</a>
-<img src="https://substack-post-media.s3.amazonaws.com/public/images/0b4c8ebd-00e8-4219-ba26-fe61ef6af269_1024x1024.png" alt=""></li>
-<li><strong>Skills Are the Missing Piece in My AI Coding Workflow</strong> — I adopted skills quite late, but the timing turned out to be right. Skills now work in Droid, Claude Code, and Codex — so I can write them once and use them across all 3 agents.
-I wrote about my shared agent setup previously.… <a href="https://hboon.com/skills-are-the-missing-piece-in-my-ai-coding-workflow/">Source</a></li>
-<li><strong>Using a Second LLM to Review Your Coding Agent’s Work</strong> — Different LLMs think differently. When one gets stuck, it tends to bang its head against the wall — trying the same approach over and over.… <a href="https://hboon.com/using-a-second-llm-to-review-your-coding-agent-s-work/">Source</a></li>
-<li><strong>Ah pè Kè pè Ulh cha</strong> — <a href="https://www.youtube.com/watch?v=Bis4pGwiD58">Source</a></li>
-<li><strong>Ah pè Kè pè Ulh cha - Spockcast</strong> — <a href="https://www.youtube.com/shorts/YRyf1Q7wjAA">Source</a></li>
-<li><strong>Issue 089: Ruby</strong> — Welcome to the 89th issue of De Programmatica Ipsum, about Ruby.
-We are thrilled to welcome Graham back to the newsroom!… <a href="https://deprogrammaticaipsum.com/issue-89-ruby/">Source</a></li>
-<li><strong>The Great Xerox Compromise</strong> — I think of NeXTSTEP as one of the best compromises ever pulled off by the commercial computing industry. Xerox’s PARC laboratory showed people Smalltalk and the Personal Dynabook, giving people in the late 1970s one possible vision of the future of computing.… <a href="https://deprogrammaticaipsum.com/the-great-xerox-compromise/">Source</a></li>
-<li><strong>The Putrid Stench Of Decadence</strong> — The list of acceptance criteria for papers submitted to the 4th History of Programming Languages (HOPL) conference held in 2021 were the following: they had to refer to languages created before 2009, that were widely used around 2011, and that had great influe… <a href="https://deprogrammaticaipsum.com/the-putrid-stench-of-decadence/">Source</a></li>
-<li><strong>Eileen Uchitelle</strong> — It is seemingly impossible to talk about Ruby without talking about Rails, and this article will not be the exception.… <a href="https://deprogrammaticaipsum.com/eileen-uchitelle/">Source</a></li>
-<li><strong>_why</strong> — Most people traverse this industry in silence, duly writing, debugging, and deploying their code in whatever way ensures their salary or stock option grants; some others become unexpected stars in a firmament that would otherwise be dull and uneventful.… <a href="https://deprogrammaticaipsum.com/_why/">Source</a></li>
-<li><strong>Russ Olsen</strong> — Programming languages have settled into a comfortable middle age, with most coming to resemble one another. Many use some variety of ALGOL-derived structure, maybe with the occasional feature that first made its appearance in a LISP variant.… <a href="https://deprogrammaticaipsum.com/russ-olsen/">Source</a></li>
-<li><strong>Handling edge cases in Google Play Billing</strong> — Explains how to correctly handle common edge cases in Google Play Billing, including pending purchases, ITEM_ALREADY_OWNED errors, multi-quantity consumables, subscription downgrades, and network failures. <a href="https://www.revenuecat.com/blog/engineering/google-play-edge-cases/">Source</a>
-<img src="https://revenuecat.wpenginepowered.com/wp-content/uploads/2026/02/Blog_12_Understanding-Google-Plays-subscription-price-changes.png" alt=""></li>
-<li><strong>Late Night Silent Completions: Jiiiii — Part 803</strong> — <a href="https://www.youtube.com/watch?v=PnOqkjxLE3s">Source</a></li>
-<li><strong>Apple’s MacBook Pro DFU port documentation is wrong</strong> — According to the Apple support document How to identify the DFU port on Mac, the DFU (device firmware update) port location for MacBook Pro models with Apple silicon is as follows:</li>
-</ul>
-<p>14-inch MacBook Pro with M4 or M5 chip: The rightmost USB-C port when you’re f… <a href="https://lapcatsoftware.com/articles/2026/2/1.html">Source</a></p>
-<ul>
-<li><strong>Blog Fuckup</strong> — I’ve been working on my blog software (a static site generator) and I managed to screw things up enough that random old posts got published on the site and in the RSS feed.
-As soon as I saw the issue I fixed it, but I’ve been getting email from folks about som… <a href="https://inessential.com/2026/02/01/blog-fuckup.html">Source</a></li>
-<li><strong>Building Bitrise&#39;s AI platform: Scaling AI features across teams - Bitrise Blog</strong> — This is the fourth and final installment in our series about bringing AI to Bitrise. In Part 1, we explained why we built our own AI coding agent. Part 2 covered our browser-integrated AI Assistant.… <a href="https://bitrise.io/blog/post/building-bitrises-ai-platform-scaling-ai-features-across-teams">Source</a></li>
-<li><strong>Automated App Store Screenshots with Fastlane: A Practical Guide</strong> — Learn how to set up automated screenshot generation for App Store Connect using fastlane snapshot, with tips on accessibility identifiers, mock data, and handling iOS 26&#39;s new TabView. <a href="https://buczel.com/blog/fastlane-screenshots-ios/">Source</a></li>
-<li><strong>Codex cut Mastodon iOS clean builds 80%</strong> — Tuist generated projects. The honest answer is that real-world Xcode projects are messy. They are full of implicit configuration, one-off build settings, and decisions that made sense at the time but are hard to detect from the outside.… <a href="https://tuist.dev/blog/2026/02/02/migrating-mastodon-ios-to-tuist-with-codex">Source</a></li>
-<li><strong>Migrating to the Observation framework in SwiftUI</strong> — Learn how to use SwiftUI&#39;s @Observable macro. <a href="https://tanaschita.com/swiftui-observation-migrating-to-observation">Source</a></li>
-<li><strong>개발 진짜 🐶 힘드네요.. - AI 단식 3일차</strong> — <a href="https://www.youtube.com/watch?v=U4ysDvLLGhs">Source</a></li>
-<li><strong>HealthQL: SQL for Apple HealthKit</strong> — I built a Swift library that lets you query HealthKit data using SQL syntax. Working with HealthKit directly involves a lot of boilerplate—callback-based APIs, type-specific query objects, manual result transformation.… <a href="https://grantisom.com/2026/02/01/healthql-sql-for-healthkit.html">Source</a></li>
-</ul>
-</div>
-    </article>
+    <section class="day-card">
+      <ul class="items">
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://getstream.io/blog/a2ui-chat-integration/" target="_blank" rel="noopener noreferrer">Building A2UI-Powered Interfaces with Stream Chat</a></div>
+    <div class="item-desc">Text-only AI responses are limiting. See how A2UI enables interactive, agent-driven UI inside a chat app.</div>
+    <div class="item-foot"><span class="domain">getstream.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.dzombak.com/blog/2026/02/birds-of-sanibel-island/" target="_blank" rel="noopener noreferrer">Birds of Sanibel Island</a></div>
+    <div class="item-desc">My partner and I recently returned from a trip to Sanibel Island, Florida — a welcome break from winter in Michigan. We saw a bunch of new-to-us birds, as well as some familiar birds that migrate away from Michigan for the winter.…</div>
+    <div class="item-foot"><span class="domain">dzombak.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://fatbobman.com/en/weekly/issue-121/" target="_blank" rel="noopener noreferrer">Shifting Light, Unchanging Haystacks - Fatbobman's Swift Weekly #121</a></div>
+    <div class="item-desc">Two weeks ago, taking the opportunity of attending iOS Conf SG 2026, I visited the National Gallery Singapore and had the pleasure of viewing the special exhibition &quot;Into the Modern: Impressionism from the Museum of Fine Arts, Boston&quot;.…</div>
+    <div class="item-foot"><span class="domain">fatbobman.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://fatbobman.com/zh/weekly/issue-121/" target="_blank" rel="noopener noreferrer">变幻的光影，不变的干草堆 - 肘子的 Swift 周报 #121</a></div>
+    <div class="item-desc">两周前，借着参加 iOS Conf SG 2026 的契机，我造访了新加坡国立美术馆，并有幸参观了《走进现代：波士顿美术博物馆印象派大师展》。尽管此前也看过不少优秀的展览，但这次经历仍带来了某种不同寻常的触动。</div>
+    <div class="item-foot"><span class="domain">fatbobman.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.avanderlee.com/ai-development/swiftui-agent-skill-build-better-views-with-ai/" target="_blank" rel="noopener noreferrer">SwiftUI Agent Skill: Build better views with AI</a></div>
+    <div class="item-desc">A SwiftUI Agent Skill that helps you build better views or refactor existing ones. It’s the reality we’re in today, and I honestly can’t live without it anymore myself.…</div>
+    <div class="item-foot"><span class="domain">avanderlee.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://substackcdn.com/image/fetch/$s_!2lY2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F927028ca-950c-40ea-91ac-181dd002a27a_1915x899.webp" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://weekly.fatbobman.com/p/fatbobmans-swift-weekly-121" target="_blank" rel="noopener noreferrer">Fatbobman's Swift Weekly #121</a></div>
+    <div class="item-desc">Shifting Light, Unchanging Haystacks</div>
+    <div class="item-foot"><span class="domain">weekly.fatbobman.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://build.ms/2026/2/2/supporting-markdown-search-for-llms/" target="_blank" rel="noopener noreferrer">Supporting Markdown Search For LLMs</a></div>
+    <div class="item-desc">Learn a simple but effective technique that makes your blog more easily searchable for LLMs.</div>
+    <div class="item-foot"><span class="domain">build.ms</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://getstream.io/blog/activity-feeds-benchmark/" target="_blank" rel="noopener noreferrer">Scaling Activity Feeds to 100M Users: Stream’s Latest Benchmarks</a></div>
+    <div class="item-desc">Stream has reached a major milestone in activity feed infrastructure, successfully benchmarking over 37 million operations with a 10% write and 90% read workload distribution across a dataset of 100M users, 500M activities, and 200M follow relationships.…</div>
+    <div class="item-foot"><span class="domain">getstream.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://livsycode.com/swiftui/a-whatsapp-style-top-banner-for-ios-using-uiwindow/" target="_blank" rel="noopener noreferrer">A WhatsApp-style top banner for iOS using UIWindow and SwiftUI</a></div>
+    <div class="item-desc">A top banner looks simple until you try to make it reliable across tabs, navigation stacks, SwiftUI hosting, and modal presentations.…</div>
+    <div class="item-foot"><span class="domain">livsycode.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://raw.githubusercontent.com/henriquestiagoo/ioscoffeebreak-ci/refs/heads/main/issues/68.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.ioscoffeebreak.com/issue/issue68" target="_blank" rel="noopener noreferrer">✅ Part 4 of Start building with Rive for iOS</a></div>
+    <div class="item-desc">This week, we're moving on to part 4 of the series, where we'll explore topics like creating workflows with Rive Scripting and improving the animation logic using the AI agent.</div>
+    <div class="item-foot"><span class="domain">ioscoffeebreak.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://www.nutrient.io/_astro/article-header.DHLutvXl.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.nutrient.io/blog/2025-in-review/" target="_blank" rel="noopener noreferrer">2025: Year in review</a></div>
+    <div class="item-desc">From document tools to intelligent platform — how 2025 transformed the way we work with documents.</div>
+    <div class="item-foot"><span class="domain">nutrient.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://substack-post-media.s3.amazonaws.com/public/images/0b4c8ebd-00e8-4219-ba26-fe61ef6af269_1024x1024.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://antongubarenko.substack.com/p/swift-bits-transition-vs-transaction" target="_blank" rel="noopener noreferrer">Swift Bits: Transition vs Transaction</a></div>
+    <div class="item-desc">Animate appearance and more!</div>
+    <div class="item-foot"><span class="domain">antongubarenko.substack.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://hboon.com/using-a-second-llm-to-review-your-coding-agent-s-work/" target="_blank" rel="noopener noreferrer">Using a Second LLM to Review Your Coding Agent’s Work</a></div>
+    <div class="item-desc">Different LLMs think differently. When one gets stuck, it tends to bang its head against the wall — trying the same approach over and over.…</div>
+    <div class="item-foot"><span class="domain">hboon.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=Bis4pGwiD58" target="_blank" rel="noopener noreferrer">Ah pè Kè pè Ulh cha</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/YRyf1Q7wjAA" target="_blank" rel="noopener noreferrer">Ah pè Kè pè Ulh cha - Spockcast</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://deprogrammaticaipsum.com/the-great-xerox-compromise/" target="_blank" rel="noopener noreferrer">The Great Xerox Compromise</a></div>
+    <div class="item-desc">I think of NeXTSTEP as one of the best compromises ever pulled off by the commercial computing industry. Xerox’s PARC laboratory showed people Smalltalk and the Personal Dynabook, giving people in the late 1970s one possible vision of the future of computing.…</div>
+    <div class="item-foot"><span class="domain">deprogrammaticaipsum.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://deprogrammaticaipsum.com/the-putrid-stench-of-decadence/" target="_blank" rel="noopener noreferrer">The Putrid Stench Of Decadence</a></div>
+    <div class="item-desc">The list of acceptance criteria for papers submitted to the 4th History of Programming Languages (HOPL) conference held in 2021 were the following: they had to refer to languages created before 2009, that were widely used around 2011, and that had great influe…</div>
+    <div class="item-foot"><span class="domain">deprogrammaticaipsum.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://deprogrammaticaipsum.com/eileen-uchitelle/" target="_blank" rel="noopener noreferrer">Eileen Uchitelle</a></div>
+    <div class="item-desc">It is seemingly impossible to talk about Ruby without talking about Rails, and this article will not be the exception.…</div>
+    <div class="item-foot"><span class="domain">deprogrammaticaipsum.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://deprogrammaticaipsum.com/_why/" target="_blank" rel="noopener noreferrer">_why</a></div>
+    <div class="item-desc">Most people traverse this industry in silence, duly writing, debugging, and deploying their code in whatever way ensures their salary or stock option grants; some others become unexpected stars in a firmament that would otherwise be dull and uneventful.…</div>
+    <div class="item-foot"><span class="domain">deprogrammaticaipsum.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://deprogrammaticaipsum.com/russ-olsen/" target="_blank" rel="noopener noreferrer">Russ Olsen</a></div>
+    <div class="item-desc">Programming languages have settled into a comfortable middle age, with most coming to resemble one another. Many use some variety of ALGOL-derived structure, maybe with the occasional feature that first made its appearance in a LISP variant.…</div>
+    <div class="item-foot"><span class="domain">deprogrammaticaipsum.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://revenuecat.wpenginepowered.com/wp-content/uploads/2026/02/Blog_12_Understanding-Google-Plays-subscription-price-changes.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.revenuecat.com/blog/engineering/google-play-edge-cases/" target="_blank" rel="noopener noreferrer">Handling edge cases in Google Play Billing</a></div>
+    <div class="item-desc">Explains how to correctly handle common edge cases in Google Play Billing, including pending purchases, ITEM_ALREADY_OWNED errors, multi-quantity consumables, subscription downgrades, and network failures.</div>
+    <div class="item-foot"><span class="domain">revenuecat.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=PnOqkjxLE3s" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 803</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://bitrise.io/blog/post/building-bitrises-ai-platform-scaling-ai-features-across-teams" target="_blank" rel="noopener noreferrer">Building Bitrise's AI platform: Scaling AI features across teams - Bitrise Blog</a></div>
+    <div class="item-desc">This is the fourth and final installment in our series about bringing AI to Bitrise. In Part 1, we explained why we built our own AI coding agent. Part 2 covered our browser-integrated AI Assistant.…</div>
+    <div class="item-foot"><span class="domain">bitrise.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://buczel.com/blog/fastlane-screenshots-ios/" target="_blank" rel="noopener noreferrer">Automated App Store Screenshots with Fastlane: A Practical Guide</a></div>
+    <div class="item-desc">Learn how to set up automated screenshot generation for App Store Connect using fastlane snapshot, with tips on accessibility identifiers, mock data, and handling iOS 26's new TabView.</div>
+    <div class="item-foot"><span class="domain">buczel.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://tuist.dev/blog/2026/02/02/migrating-mastodon-ios-to-tuist-with-codex" target="_blank" rel="noopener noreferrer">Codex cut Mastodon iOS clean builds 80%</a></div>
+    <div class="item-desc">Tuist generated projects. The honest answer is that real-world Xcode projects are messy. They are full of implicit configuration, one-off build settings, and decisions that made sense at the time but are hard to detect from the outside.…</div>
+    <div class="item-foot"><span class="domain">tuist.dev</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://tanaschita.com/swiftui-observation-migrating-to-observation" target="_blank" rel="noopener noreferrer">Migrating to the Observation framework in SwiftUI</a></div>
+    <div class="item-desc">Learn how to use SwiftUI's @Observable macro.</div>
+    <div class="item-foot"><span class="domain">tanaschita.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=U4ysDvLLGhs" target="_blank" rel="noopener noreferrer">개발 진짜 🐶 힘드네요.. - AI 단식 3일차</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://grantisom.com/2026/02/01/healthql-sql-for-healthkit.html" target="_blank" rel="noopener noreferrer">HealthQL: SQL for Apple HealthKit</a></div>
+    <div class="item-desc">I built a Swift library that lets you query HealthKit data using SQL syntax. Working with HealthKit directly involves a lot of boilerplate—callback-based APIs, type-specific query objects, manual result transformation.…</div>
+    <div class="item-foot"><span class="domain">grantisom.com</span></div>
+  </div>
+</li></ul>
+    </section>
+
+    <div class="footer">Built by SwiftVietnam Digest pipeline.</div>
   </div>
 </body>
 </html>

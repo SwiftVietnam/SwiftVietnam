@@ -5,451 +5,1399 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>SwiftVietnam Digest — Week of Jan 30, 2026 → Feb 5, 2026</title>
   <style>
-:root{--bg:#0b0e14;--card:#121826;--text:#e7e9ee;--muted:#a7b0c0;--link:#8ab4ff;--border:#23304a;}
-@media (prefers-color-scheme: light){:root{--bg:#ffffff;--card:#f6f7fb;--text:#0b1020;--muted:#4a5878;--link:#1a56db;--border:#d6dbea;}}
-body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text);}
-a{color:var(--link); text-decoration:none} a:hover{text-decoration:underline}
-.container{max-width:980px;margin:0 auto;padding:28px 18px;}
-.header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:18px;}
-.brand{font-weight:800;font-size:20px;letter-spacing:0.2px}
-.sub{color:var(--muted);font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;}
-.card{grid-column:span 12;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 14px;}
-.card h2{margin:0 0 10px 0;font-size:16px}
-.card h3{margin:16px 0 8px 0;font-size:14px}
-.card ul{margin:0;padding-left:18px}
-.footer{margin-top:22px;color:var(--muted);font-size:12px}
-.small{font-size:12px;color:var(--muted)}
-.badge{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:2px 9px;font-size:12px;color:var(--muted)}
+*{box-sizing:border-box}
+:root{
+  --bg:#0b0e14;
+  --panel:#101827;
+  --card:#0f172a;
+  --text:#e8edf6;
+  --muted:#a7b0c0;
+  --border:rgba(148,163,184,.18);
+  --shadow:0 1px 0 rgba(255,255,255,.04), 0 8px 30px rgba(0,0,0,.22);
+  --link:#8ab4ff;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f5f6f8;
+    --panel:#ffffff;
+    --card:#ffffff;
+    --text:#0b1020;
+    --muted:#4a5878;
+    --border:rgba(15,23,42,.12);
+    --shadow:0 1px 0 rgba(15,23,42,.04), 0 10px 24px rgba(15,23,42,.08);
+    --link:#1a56db;
+  }
+}
+
+html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); line-height:1.55}
+
+a{color:var(--link); text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{max-width:980px;margin:0 auto;padding:20px 14px 40px}
+
+.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--border)}
+.topbar-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px}
+.brand{display:flex;flex-direction:column;gap:2px}
+.brand-title{font-weight:800;letter-spacing:.2px;font-size:16px}
+.brand-sub{font-size:12px;color:var(--muted)}
+.nav a{font-size:13px;color:var(--muted)}
+.nav a:hover{color:var(--text)}
+
+.hero{margin-top:16px;background:var(--panel);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:16px}
+.hero h1{margin:0;font-size:18px}
+.hero p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+
+.grid{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+
+.day-card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.day-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:14px 14px 10px;border-bottom:1px solid var(--border)}
+.day-title{margin:0;font-size:15px;font-weight:750}
+.day-meta{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;white-space:nowrap}
+.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:3px 10px}
+
+.items{list-style:none;margin:0;padding:10px 10px 12px}
+.item{display:flex;gap:12px;padding:10px;border-radius:12px}
+.item:hover{background:color-mix(in srgb, var(--card) 88%, var(--text) 2%)}
+
+.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:color-mix(in srgb, var(--card) 92%, var(--text) 4%)}
+
+.item-body{min-width:0;display:flex;flex-direction:column;gap:4px}
+.item-title{font-weight:650;font-size:14px;line-height:1.25;margin:0;overflow-wrap:anywhere}
+.item-desc{color:var(--muted);font-size:13px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.item-foot{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:12px}
+.domain{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+
+.more{padding:0 14px 14px}
+.more a{font-size:13px;color:var(--muted)}
+.more a:hover{color:var(--text)}
+
+.footer{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}
+
+@media (max-width: 520px){
+  .thumb{width:56px;height:56px;border-radius:10px}
+  .item{padding:10px 8px}
+  .container{padding-left:12px;padding-right:12px}
+}
 </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div>
-        <div class="brand">SwiftVietnam Digest</div>
-        <div class="sub">Weekly issue • Generated from markdown • Asia/Singapore</div>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-title">SwiftVietnam Digest</div>
+        <div class="brand-sub">Weekly issue • Asia/Singapore</div>
       </div>
-      <div class="sub"><a href="daily/index.html">Daily links</a></div>
+      <div class="nav"><a href="daily/index.html">Daily links</a></div>
     </div>
+  </div>
 
-    <div class="card">
-      <h2>SwiftVietnam Digest — Week of Jan 30, 2026 → Feb 5, 2026</h2>
-      <div class="small">This is an MVP build (layout + archive). Summaries may contain TODO placeholders.</div>
+  <div class="container">
+    <div class="hero">
+      <h1>SwiftVietnam Digest — Week of Jan 30, 2026 → Feb 5, 2026</h1>
+      <p>Minimal UI • Auto-collected from RSS • Images are thumbnails</p>
     </div>
 
     <div class="grid">
       
-    <article class="card">
-      <div class="small"><span class="badge">2026-01-30</span></div>
-      <h2>SwiftVietnam Daily — Jan 30, 2026</h2>
-      <div><h2>Links (auto-collected candidates)</h2>
-<ul>
-<li><strong>OpenClaw: Viral AI Sidekick That Puts You and Your Data at Risk</strong> — OpenClaw showcases how powerful “local-first” AI agents can be, but it also shows how quickly convenience can turn into a security liability.
-The post OpenClaw: Viral AI Sidekick That Puts You and Your Data at Risk appeared first on Infinum. <a href="https://infinum.com/blog/openclaw-moltbot-clawdbot-viral-ai-sidekick/">Source</a></li>
-<li><strong>What&#39;s new in Swift: January 2026 Edition</strong> — A Reddit thread earlier this month asked about building web apps with Swift. For this edition of “What’s new in Swift,” we invited a developer to share their experience:
-Hi, I’m Nick Sloan.… <a href="https://swift.org/blog/whats-new-in-swift-january-2026/">Source</a></li>
-<li><strong>Solid Interfaces for visionOS: Widgets and Cognitive Space in Spatial Computing</strong> — A new grammar for designing Cognitive Spatial Experiences in visionOS and WebXR. <a href="https://www.createwithswift.com/solid-interfaces-for-visionos-widgets-and-cognitive-space-in-spatial-computing/">Source</a></li>
-<li><strong>How to submit your app for Shipyard</strong> — Everything you need to know to make your app installable, testable, and ready for Shipyard judging. <a href="https://www.revenuecat.com/blog/engineering/how-to-submit-your-app-for-shipyard/">Source</a>
-<img src="https://revenuecat.wpenginepowered.com/wp-content/uploads/2026/01/Shipyard_Blog_HowToSubmit_1600x800_v1.png" alt=""></li>
-<li><strong>Scaling WebRTC Video to 100,000 Participants: Stream’s Latest Video Benchmarks</strong> — Stream has reached a major milestone in real-time video infrastructure: Successfully scaling a single WebRTC-based livestream to 100,000 concurrent participants while maintaining ultra-low latency, stable frame rates, and zero packet loss.… <a href="https://getstream.io/blog/video-benchmark/">Source</a></li>
-<li><strong>Visual Intelligence in Claude: Interpreting Documents and Structured Content</strong> — Claude isn’t the model most users turn to when needing visual capabilities. Rather than optimizing primarily for object detection or scene description, Claude processes visual content through the same reasoning architecture it uses for text.… <a href="https://getstream.io/blog/anthropic-claude-visual-reasoning/">Source</a></li>
-<li><strong>Migrating an iOS app from Paid up Front to Freemium</strong> — Paid up front apps can be a tough sell on the App Store. You might be getting plenty of views on your product page, but if those views aren&#39;t converting to downloads, something has to change.… <a href="https://www.donnywals.com/migrating-an-ios-app-from-paid-up-front-to-freemium/">Source</a></li>
-<li><strong>Deconstructing Reality Composer Pro (Project Browser)</strong> — Part of what makes Reality Composer Pro a composer is asset management. Importing, soft validation, organizing, and iterating on the project structure are essential features to have in creative pipelines.… <a href="https://elkraneo.com/deconstructing-reality-composer-pro-project-browser/">Source</a></li>
-<li><strong>Nutrient Python SDK: Production-grade document processing for Python</strong> — Server-side document processing for Python. Convert documents, generate from templates, add signatures, extract data with OCR, and redact sensitive content — all with a clean, Pythonic API. <a href="https://www.nutrient.io/blog/introducing-nutrient-python-sdk/">Source</a>
-<img src="https://www.nutrient.io/_astro/article-header.BZKX0v3m.png" alt=""></li>
-<li><strong>강의제공자의 답변을 원합니다.</strong> — <a href="https://www.youtube.com/watch?v=8_zZUQcQBdA">Source</a></li>
-<li><strong>Late Night Silent Completions: Jiiiii — Part 800</strong> — <a href="https://www.youtube.com/watch?v=Yg3hiGiK9tQ">Source</a></li>
-<li><strong>Call Once</strong> — In this post I explore Swift’s @propertyWrappers and parameter packs to implement a common behaviour.
-I ran into some code that captured work in a closure and ensured it was only invoked once.
-The pattern for this one-shot closure looked like this:</li>
-</ul>
-<p>class Exam… <a href="http://paul-samuels.com/blog/2026/01/30/call-once/">Source</a></p>
-<ul>
-<li><strong>Tools I Love: xcrun simctl io booted recordVideo</strong> — Record high quality videos of the iOS simulator right from the command line. <a href="https://blog.eliperkins.com/tools-i-love-xcrun-simctl-recordVideo">Source</a></li>
-<li><strong>Issue 741</strong> — Forget about Windows and Wasm, what’s the flagship project for macOS and iOS?! 😂 <a href="https://iosdevweekly.com/issues/741/">Source</a></li>
-<li><strong>Routine 就是人生的复利</strong> — Routine 并不是束缚，而是让你摆脱内耗的工具。 <a href="https://limboy.me/posts/routine-compound-interest">Source</a></li>
-<li><strong>머리가 아픕니다.. - AI 단식 2일차</strong> — <a href="https://www.youtube.com/watch?v=G3Ux3brUqUM">Source</a></li>
-<li><strong>Print Design Mindset to App Design Mindset</strong> — The print design era
-There was a time when iOS app design wasn’t all that far off from print design.
-For the first couple years of the iPhone SDK (2008-2011):
-All iPhones had 320 width by 480 height screens.
-All iPhone screens were @1x non-retina.
-The platform… <a href="https://twocentstudios.com/2026/01/29/print-design-mindset/">Source</a></li>
-<li><strong>Price updates for apps, In-App Purchases, and subscriptions</strong> — The App Store is designed to make it easy to sell your digital goods and services globally, with support for 43 currencies across 175 storefronts.
-From time to time, we need to adjust prices or your proceeds due to changes in tax regulations or foreign exchang… <a href="https://developer.apple.com/news/?id=gvnljl3f">Source</a></li>
-<li><strong>How do you comparison shop in the App Store?</strong> — Hot on the heels of my previous blog post My collected App Store critiques, I have yet another critique. It’s undoubtedly old news to many people, my critique coming years too late, but in my defense, I almost never shop for apps in the App Store.… <a href="https://lapcatsoftware.com/articles/2026/1/10.html">Source</a></li>
-</ul>
-</div>
-    </article>
+<section class="day-card">
+  <div class="day-head">
+    <h2 class="day-title">SwiftVietnam Daily — Jan 30, 2026</h2>
+    <div class="day-meta"><span class="badge">2026-01-30</span><span>14 links</span></div>
+  </div>
+  <ul class="items">
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.createwithswift.com/solid-interfaces-for-visionos-widgets-and-cognitive-space-in-spatial-computing/" target="_blank" rel="noopener noreferrer">Solid Interfaces for visionOS: Widgets and Cognitive Space in Spatial Computing</a></div>
+    <div class="item-desc">A new grammar for designing Cognitive Spatial Experiences in visionOS and WebXR.</div>
+    <div class="item-foot"><span class="domain">createwithswift.com</span></div>
+  </div>
+</li>
 
-    <article class="card">
-      <div class="small"><span class="badge">2026-01-31</span></div>
-      <h2>SwiftVietnam Daily — Jan 31, 2026</h2>
-      <div><h2>Links (auto-collected candidates)</h2>
-<ul>
-<li><strong>Sheet Background Interaction</strong> — Controls whether people can interact with the view behind a presentation. <a href="https://exploreswiftui.com/library/sheet/sheet-background-interaction">Source</a></li>
-<li><strong>Sheet Background</strong> — Sets the presentation background of the enclosing sheet using a shape style. <a href="https://exploreswiftui.com/library/sheet/sheet-background">Source</a></li>
-<li><strong>Claude Inside Xcode (What Could Go Wrong?) MTJC</strong> — <a href="https://www.youtube.com/shorts/AN-yu2QrRYg">Source</a></li>
-<li><strong>Sheet Drag Indicator Visibility</strong> — Sets the visibility of the drag indicator on top of a sheet. <a href="https://exploreswiftui.com/library/sheet/sheet-drag-indicator-visibility">Source</a></li>
-<li><strong>Sheet Size</strong> — Sets the available detents for the enclosing sheet. <a href="https://exploreswiftui.com/library/sheet/sheet-size">Source</a></li>
-<li><strong>Item Sheet</strong> — Presents a sheet using the given item as a data source for the sheet’s content.</li>
-</ul>
-<p>On watchOS, sheets are displayed as fullScreenCover. <a href="https://exploreswiftui.com/library/sheet/item-sheet">Source</a></p>
-<ul>
-<li><strong>Boolean Sheet</strong> — Presents a sheet when a binding to a Boolean value that you provide is true.</li>
-</ul>
-<p>On watchOS, sheets are displayed as fullScreenCover. <a href="https://exploreswiftui.com/library/sheet/boolean-sheet">Source</a></p>
-<ul>
-<li><strong>Late Night Silent Completions: Jiiiii — Part 802</strong> — <a href="https://www.youtube.com/watch?v=nNXhwUIqhkE">Source</a></li>
-<li><strong>How to make scale to fill NSImageView with remote Kingfisher image</strong> — Issue #1006
-When building macOS apps, you often need images that fill their container while keeping their aspect ratio - like cover photos or thumbnails. NSImageView doesn’t do this well out of the box.… <a href="http://onmyway133.com/posts/how-to-make-scale-to-fill-nsimageview-with-remote-kingfisher-image/">Source</a></li>
-<li><strong>NSTableView scroll bug in macOS Tahoe</strong> — Recently. I was working with an AppKit app that uses an NSTableView to display long list of items.… <a href="https://troz.net/post/2026/appkit-table-scroll-bug-in-macos-tahoe/">Source</a>
-<img src="https://troz.net/images/2026/table_top_scroll.png" alt=""></li>
-<li><strong>Claude Inside Xcode (What Could Go Wrong?)</strong> — In this episode Jaime and Tim are joined by Peter Witham and Josh Hrach to discuss how we each use AI in the development of iOS apps.</li>
-</ul>
-<p> What Genlock on the iPhone 17 Pro Means for Virtual Production
-Here&#39;s When Apple Plans to Unveil a New Siri Powered by Goog… <a href="https://shows.acast.com/mtjc-1/episodes/697d767965c54ec919c7e610">Source</a></p>
-<ul>
-<li><strong>2026 플러터 앱개발 끝까지 – 3강: Repository 적용, REST API CRUD, 이벤트 처리</strong> — <a href="https://www.youtube.com/watch?v=s2wngSMNC38">Source</a></li>
-<li><strong>Late Night Silent Completions: Jiiiii — Part 801</strong> — <a href="https://www.youtube.com/watch?v=QTDnbLvr8ds">Source</a></li>
-<li><strong>冷水澡是一座小金矿</strong> — <a href="https://limboy.me/posts/taking-cold-showers-is-a-hidden-treasure">Source</a></li>
-<li><strong>Apple’s Q1 2026 Results</strong> — Apple (transcript, MacRumors, CNBC, Hacker News): The Company posted quarterly revenue of $143.8 billion, up 16 percent year over year. Diluted earnings per share was $2.84, up 19 percent year over year.… <a href="https://mjtsai.com/blog/2026/01/30/apples-q1-2026-results/">Source</a></li>
-<li><strong>BizOneness: The Accounting Module in the SAP B1 web client</strong> — You can get to the details as well, which pops up another pane of detail within the same window.… <a href="https://makeapppie.com/2026/01/30/bizoneness-the-accounting-module-in-the-sap-b1-web-client/">Source</a></li>
-<li><strong>Mark Gurman cuenta todo de Siri y de la futura IA de Apple Intelligence</strong> — Mark Gurman, en una entrevista con TBPN, cuenta un buen número de cosas sobre Apple y la futura IA que llegará en 2026.</li>
-</ul>
-<p>El futuro CEO de Apple, cómo trabaja Apple hoy y por qué tuvieron que acudir a Google, las intentos de compra y los motivos por los que Ap… <a href="https://cuonda.com/apple-coding-daily/mark-gurman-cuenta-todo-de-siri-y-de-la-futura-ia-de-apple-intelligence">Source</a></p>
-<ul>
-<li><strong>How Apple Hooks Entire Frameworks</strong> — <a href="https://bryce.co/swizzle-everything/">Source</a></li>
-<li><strong>Keep Two Thoughts Podcast 149 - Distance</strong> — My first word for 2023. <a href="https://dimsumthinking.com/Podcast/2026/149Distance.html">Source</a></li>
-</ul>
-</div>
-    </article>
+<li class="item">
+  <img class="thumb" src="https://revenuecat.wpenginepowered.com/wp-content/uploads/2026/01/Shipyard_Blog_HowToSubmit_1600x800_v1.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.revenuecat.com/blog/engineering/how-to-submit-your-app-for-shipyard/" target="_blank" rel="noopener noreferrer">How to submit your app for Shipyard</a></div>
+    <div class="item-desc">Everything you need to know to make your app installable, testable, and ready for Shipyard judging.</div>
+    <div class="item-foot"><span class="domain">revenuecat.com</span></div>
+  </div>
+</li>
 
-    <article class="card">
-      <div class="small"><span class="badge">2026-02-01</span></div>
-      <h2>SwiftVietnam Daily — Feb 1, 2026</h2>
-      <div><h2>Links (auto-collected candidates)</h2>
-<ul>
-<li><strong>React Native Navigation 101</strong> — This is a quick guide to various navigation patterns in react native.
-Set up
-Let’s create a new project:</li>
-</ul>
-<p>npx create-expo-app@latest --template blank-typescript</p>
-<p>And update tsconfig.json to be able to handle absolute paths</p>
-<p>{
-  &quot;extends&quot;: &quot;expo/tsconfig.base&quot;… <a href="https://whackylabs.com/ts/react-native/navigation/2026/02/01/react-native-navigation-101/">Source</a></p>
-<ul>
-<li><strong>ازاي تقييم مشاريع ال freelancing من حيث الفلوس 💸و الوقت⏰ #software #freelancing #programming #iOS</strong> — <a href="https://www.youtube.com/shorts/lpwznG0-7-4">Source</a></li>
-<li><strong>SwiftUI DatePicker and ColorPicker Deep Dive (Ranges, Styles, Optional Dates, UIKit Color Picker)</strong> — <a href="https://www.youtube.com/watch?v=O540BJGGpYw">Source</a></li>
-<li><strong>Opinionated Read: How AI Impacts Skill Formation</strong> — The abstract to this preprint, by two authors both associated with Anthropic, makes the claim “We find that AI use impairs conceptual understanding, code reading, and debugging abilities, without delivering significant efficiency gains on average.… <a href="https://www.sicpers.info/2026/02/opinionated-read-how-ai-impacts-skill-formation/">Source</a></li>
-<li><strong>SwiftUI Dynamic Island QR Code Scanner | iOS 26 | Xcode 26</strong> — <a href="https://www.youtube.com/watch?v=RMfpocBggJg">Source</a></li>
-<li><strong>Good Work</strong> — These are some hand-written notes about the book Good Work by Paul Millerd.</li>
-</ul>
-<p>Table of Contents
-The Notes
-Personal Takes
-Related Articles
-The Notes</p>
-<p>Personal Takes
-Something that I found interesting about this book is that it seems written for people that don’t… <a href="https://manu.show/2026-02-01-ep091-good-work/">Source</a></p>
-<ul>
-<li><strong>Building An Indie App Business #88</strong> — I Went to Sleep and Woke Up to 8,000 Lines of Code <a href="https://sebastianroehl.substack.com/p/building-an-indie-app-business-88">Source</a>
-<img src="https://substackcdn.com/image/fetch/$s_!Z4xB!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F04f0ffb6-b9e1-4976-a187-b292ce6e5cc0_2400x1352.png" alt=""></li>
-<li><strong>Executing actions from Bazel aspects</strong> — So far I went through writing the aspect, but I haven’t shown how to run actions from it to do something useful. Remember: we can do very little during Starlark evaluation (Bazel’s analysis phase).… <a href="https://adincebic.com/2026/02/01/executing-actions-from-bazel-aspects.html">Source</a></li>
-<li><strong>Tunic First Time - Channel Redeem Game Night</strong> — <a href="https://www.twitch.tv/videos/2685925596">Source</a>
-<img src="https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/f5e194b39aec6cd0cab3_nutterfi_316589607255_1769920217//thumb/thumb0-512x288.jpg" alt=""></li>
-<li><strong>My top 8 ADVANCED UI design tips</strong> — <a href="https://www.youtube.com/watch?v=-2vzMH8iqsg">Source</a></li>
-<li><strong>Do You Really Need Dtos</strong> — Do You Really Need DTOs or Are You Just Copying JSON
-One of the most common tasks in iOS applications is consuming a JSON API.… <a href="https://azamsharp.com/2026/02/01/do-you-really-need-dtos.html">Source</a>
-<img src="https://azamsharp.school/images/swiftui-architecture-book-cover.png" alt=""></li>
-<li><strong>iOS 26 TabView UI Tests: Making Identifiers Work Everywhere</strong> — SwiftUI&#39;s TabView accessibility identifiers behave differently on iPad vs iPhone with Liquid Glass. Here&#39;s how to write tests that handle both devices reliably. <a href="https://buczel.com/blog/ios26-tabview-uitest-identifiers/">Source</a></li>
-<li><strong>呼吸能改变很多事</strong> — <a href="https://limboy.me/posts/breathe">Source</a></li>
-<li><strong>A Broken Heart</strong> — You always know it’s a good bug when your first reaction is, “How could this even happen?”
-The other day, I was refining the dashboard of a web app we’re working on – as you do – and I noticed it was taking forever to load.… <a href="https://www.allenpike.com/2026/a-broken-heart">Source</a>
-<img src="https://www.allenpike.com/images/2026/safari-profile.jpg" alt=""></li>
-<li><strong>[SE-0506] Advanced Observation Tracking</strong> — 안녕하세요. 그린입니다<br>이번 포스팅에서는 SE-0506 Advanced Observation Tracking에 대해 정리해보겠습니다</li>
-</ul>
-<p>Intro
-Swift의 Observation 프레임워크는 @Observable 매크로로 간단하게 변화를 추적할 수 있게 해줍니다.
-하지만 기존 withObservationTracking은 비동기 환경에 최적화되어 있어서, 동기 시스템과 연동하거나 더 세밀한 제어가 필요한 경우에는 한계가 있었습니다.
- 
-SE-0506은… <a href="https://green1229.tistory.com/607">Source</a></p>
-<ul>
-<li><strong>Disable Sheet Dismiss Swipe</strong> — Conditionally prevents interactive dismissal of presentations like popovers, sheets, and inspectors. Dragging the sheet is still possible to a limited extent, as shown in the screenshot, but it will never be dismissed. <a href="https://exploreswiftui.com/library/sheet/disable-sheet-dismiss-swipe">Source</a></li>
-<li><strong>Page Screen Sheet Size</strong> — On devices smaller than a page of paper, such as iPhone, Apple Watch, and 8&quot; or 11&quot; iPads, the sheet fills the entire height and, unlike the default sheet on iPad, the full width. On macOS, .page behaves like .fitted. <a href="https://exploreswiftui.com/library/sheet/page-screen-sheet-size">Source</a></li>
-<li><strong>Fitted Sheet Sizing</strong> — Sets the sizing of the containing presentation. This does not have any effect on smaller devices like iPhone and Apple Watch. On macOS, fitted is the default. <a href="https://exploreswiftui.com/library/sheet/fitted-sheet-sizing">Source</a></li>
-<li><strong>Sheet Corner Radius</strong> — Requests that the presentation have a specific corner radius. <a href="https://exploreswiftui.com/library/sheet/sheet-corner-radius">Source</a></li>
-<li><strong>Prioritize Sheet Content Scrolling</strong> — Configures the behavior of swipe gestures on a presentation. PresentationContentInteraction.scrolls prioritizes scrolling the content over resizing the sheet. <a href="https://exploreswiftui.com/library/sheet/prioritize-sheet-content-scrolling">Source</a></li>
-</ul>
-</div>
-    </article>
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://getstream.io/blog/video-benchmark/" target="_blank" rel="noopener noreferrer">Scaling WebRTC Video to 100,000 Participants: Stream’s Latest Video Benchmarks</a></div>
+    <div class="item-desc">Stream has reached a major milestone in real-time video infrastructure: Successfully scaling a single WebRTC-based livestream to 100,000 concurrent participants while maintaining ultra-low latency, stable frame rates, and zero packet loss.…</div>
+    <div class="item-foot"><span class="domain">getstream.io</span></div>
+  </div>
+</li>
 
-    <article class="card">
-      <div class="small"><span class="badge">2026-02-02</span></div>
-      <h2>SwiftVietnam Daily — Feb 2, 2026</h2>
-      <div><h2>Links (auto-collected candidates)</h2>
-<ul>
-<li><strong>Building A2UI-Powered Interfaces with Stream Chat</strong> — Text-only AI responses are limiting. See how A2UI enables interactive, agent-driven UI inside a chat app. <a href="https://getstream.io/blog/a2ui-chat-integration/">Source</a></li>
-<li><strong>Cyber Security Model v4: How MOD Suppliers Can Prepare for Stricter Cyber Rules</strong> — Learn how MOD suppliers can prepare for CSMv4 with support from a DCC Level 1 certified company.
-The post Cyber Security Model v4: How MOD Suppliers Can Prepare for Stricter Cyber Rules appeared first on Infinum. <a href="https://infinum.com/blog/cyber-security-model-v4/">Source</a></li>
-<li><strong>Birds of Sanibel Island</strong> — My partner and I recently returned from a trip to Sanibel Island, Florida — a welcome break from winter in Michigan. We saw a bunch of new-to-us birds, as well as some familiar birds that migrate away from Michigan for the winter.… <a href="https://www.dzombak.com/blog/2026/02/birds-of-sanibel-island/">Source</a></li>
-<li><strong>Shifting Light, Unchanging Haystacks - Fatbobman&#39;s Swift Weekly #121</strong> — Two weeks ago, taking the opportunity of attending iOS Conf SG 2026, I visited the National Gallery Singapore and had the pleasure of viewing the special exhibition &quot;Into the Modern: Impressionism from the Museum of Fine Arts, Boston&quot;.… <a href="https://fatbobman.com/en/weekly/issue-121/">Source</a></li>
-<li><strong>变幻的光影，不变的干草堆 - 肘子的 Swift 周报 #121</strong> — 两周前，借着参加 iOS Conf SG 2026 的契机，我造访了新加坡国立美术馆，并有幸参观了《走进现代：波士顿美术博物馆印象派大师展》。尽管此前也看过不少优秀的展览，但这次经历仍带来了某种不同寻常的触动。 <a href="https://fatbobman.com/zh/weekly/issue-121/">Source</a></li>
-<li><strong>Deconstructing Reality Composer Pro (Viewport)</strong> — Viewport is deep (modes, debug views, presets/history). We are going to implement just a working viewer + camera for this pass; chasing full parity will balloon scope.</li>
-</ul>
-<p>The main viewport is built with RealityKit, and we&#39;ll add a layer for gestures, a grid… <a href="https://elkraneo.com/deconstructing-reality-composer-pro-viewport/">Source</a>
-  <img src="https://elkraneo.com/content/images/2026/02/Screenshot-2026-02-02-at-13.43.40.png" alt=""></p>
-<ul>
-<li><strong>SwiftUI Agent Skill: Build better views with AI</strong> — A SwiftUI Agent Skill that helps you build better views or refactor existing ones. It’s the reality we’re in today, and I honestly can’t live without it anymore myself.… <a href="https://www.avanderlee.com/ai-development/swiftui-agent-skill-build-better-views-with-ai/">Source</a></li>
-<li><strong>Fatbobman&#39;s Swift Weekly #121</strong> — Shifting Light, Unchanging Haystacks <a href="https://weekly.fatbobman.com/p/fatbobmans-swift-weekly-121">Source</a>
-<img src="https://substackcdn.com/image/fetch/$s_!2lY2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F927028ca-950c-40ea-91ac-181dd002a27a_1915x899.webp" alt=""></li>
-<li><strong>Supporting Markdown Search For LLMs</strong> — Learn a simple but effective technique that makes your blog more easily searchable for LLMs. <a href="https://build.ms/2026/2/2/supporting-markdown-search-for-llms/">Source</a></li>
-<li><strong>Scaling Activity Feeds to 100M Users: Stream’s Latest Benchmarks</strong> — Stream has reached a major milestone in activity feed infrastructure, successfully benchmarking over 37 million operations with a 10% write and 90% read workload distribution across a dataset of 100M users, 500M activities, and 200M follow relationships.… <a href="https://getstream.io/blog/activity-feeds-benchmark/">Source</a></li>
-<li><strong>A WhatsApp-style top banner for iOS using UIWindow and SwiftUI</strong> — A top banner looks simple until you try to make it reliable across tabs, navigation stacks, SwiftUI hosting, and modal presentations.… <a href="https://livsycode.com/swiftui/a-whatsapp-style-top-banner-for-ios-using-uiwindow/">Source</a></li>
-<li><strong>✅ Part 4 of Start building with Rive for iOS</strong> — This week, we&#39;re moving on to part 4 of the series, where we&#39;ll explore topics like creating workflows with Rive Scripting and improving the animation logic using the AI agent. <a href="https://www.ioscoffeebreak.com/issue/issue68">Source</a>
-<img src="https://raw.githubusercontent.com/henriquestiagoo/ioscoffeebreak-ci/refs/heads/main/issues/68.png" alt=""></li>
-<li><strong>2025: Year in review</strong> — From document tools to intelligent platform — how 2025 transformed the way we work with documents. <a href="https://www.nutrient.io/blog/2025-in-review/">Source</a>
-<img src="https://www.nutrient.io/_astro/article-header.DHLutvXl.png" alt=""></li>
-<li><strong>Swift Bits: Transition vs Transaction</strong> — Animate appearance and more! <a href="https://antongubarenko.substack.com/p/swift-bits-transition-vs-transaction">Source</a>
-<img src="https://substack-post-media.s3.amazonaws.com/public/images/0b4c8ebd-00e8-4219-ba26-fe61ef6af269_1024x1024.png" alt=""></li>
-<li><strong>Skills Are the Missing Piece in My AI Coding Workflow</strong> — I adopted skills quite late, but the timing turned out to be right. Skills now work in Droid, Claude Code, and Codex — so I can write them once and use them across all 3 agents.
-I wrote about my shared agent setup previously.… <a href="https://hboon.com/skills-are-the-missing-piece-in-my-ai-coding-workflow/">Source</a></li>
-<li><strong>Using a Second LLM to Review Your Coding Agent’s Work</strong> — Different LLMs think differently. When one gets stuck, it tends to bang its head against the wall — trying the same approach over and over.… <a href="https://hboon.com/using-a-second-llm-to-review-your-coding-agent-s-work/">Source</a></li>
-<li><strong>Ah pè Kè pè Ulh cha</strong> — <a href="https://www.youtube.com/watch?v=Bis4pGwiD58">Source</a></li>
-<li><strong>Ah pè Kè pè Ulh cha - Spockcast</strong> — <a href="https://www.youtube.com/shorts/YRyf1Q7wjAA">Source</a></li>
-<li><strong>Issue 089: Ruby</strong> — Welcome to the 89th issue of De Programmatica Ipsum, about Ruby.
-We are thrilled to welcome Graham back to the newsroom!… <a href="https://deprogrammaticaipsum.com/issue-89-ruby/">Source</a></li>
-<li><strong>The Great Xerox Compromise</strong> — I think of NeXTSTEP as one of the best compromises ever pulled off by the commercial computing industry. Xerox’s PARC laboratory showed people Smalltalk and the Personal Dynabook, giving people in the late 1970s one possible vision of the future of computing.… <a href="https://deprogrammaticaipsum.com/the-great-xerox-compromise/">Source</a></li>
-<li><strong>The Putrid Stench Of Decadence</strong> — The list of acceptance criteria for papers submitted to the 4th History of Programming Languages (HOPL) conference held in 2021 were the following: they had to refer to languages created before 2009, that were widely used around 2011, and that had great influe… <a href="https://deprogrammaticaipsum.com/the-putrid-stench-of-decadence/">Source</a></li>
-<li><strong>Eileen Uchitelle</strong> — It is seemingly impossible to talk about Ruby without talking about Rails, and this article will not be the exception.… <a href="https://deprogrammaticaipsum.com/eileen-uchitelle/">Source</a></li>
-<li><strong>_why</strong> — Most people traverse this industry in silence, duly writing, debugging, and deploying their code in whatever way ensures their salary or stock option grants; some others become unexpected stars in a firmament that would otherwise be dull and uneventful.… <a href="https://deprogrammaticaipsum.com/_why/">Source</a></li>
-<li><strong>Russ Olsen</strong> — Programming languages have settled into a comfortable middle age, with most coming to resemble one another. Many use some variety of ALGOL-derived structure, maybe with the occasional feature that first made its appearance in a LISP variant.… <a href="https://deprogrammaticaipsum.com/russ-olsen/">Source</a></li>
-<li><strong>Handling edge cases in Google Play Billing</strong> — Explains how to correctly handle common edge cases in Google Play Billing, including pending purchases, ITEM_ALREADY_OWNED errors, multi-quantity consumables, subscription downgrades, and network failures. <a href="https://www.revenuecat.com/blog/engineering/google-play-edge-cases/">Source</a>
-<img src="https://revenuecat.wpenginepowered.com/wp-content/uploads/2026/02/Blog_12_Understanding-Google-Plays-subscription-price-changes.png" alt=""></li>
-<li><strong>Late Night Silent Completions: Jiiiii — Part 803</strong> — <a href="https://www.youtube.com/watch?v=PnOqkjxLE3s">Source</a></li>
-<li><strong>Apple’s MacBook Pro DFU port documentation is wrong</strong> — According to the Apple support document How to identify the DFU port on Mac, the DFU (device firmware update) port location for MacBook Pro models with Apple silicon is as follows:</li>
-</ul>
-<p>14-inch MacBook Pro with M4 or M5 chip: The rightmost USB-C port when you’re f… <a href="https://lapcatsoftware.com/articles/2026/2/1.html">Source</a></p>
-<ul>
-<li><strong>Blog Fuckup</strong> — I’ve been working on my blog software (a static site generator) and I managed to screw things up enough that random old posts got published on the site and in the RSS feed.
-As soon as I saw the issue I fixed it, but I’ve been getting email from folks about som… <a href="https://inessential.com/2026/02/01/blog-fuckup.html">Source</a></li>
-<li><strong>Building Bitrise&#39;s AI platform: Scaling AI features across teams - Bitrise Blog</strong> — This is the fourth and final installment in our series about bringing AI to Bitrise. In Part 1, we explained why we built our own AI coding agent. Part 2 covered our browser-integrated AI Assistant.… <a href="https://bitrise.io/blog/post/building-bitrises-ai-platform-scaling-ai-features-across-teams">Source</a></li>
-<li><strong>Automated App Store Screenshots with Fastlane: A Practical Guide</strong> — Learn how to set up automated screenshot generation for App Store Connect using fastlane snapshot, with tips on accessibility identifiers, mock data, and handling iOS 26&#39;s new TabView. <a href="https://buczel.com/blog/fastlane-screenshots-ios/">Source</a></li>
-<li><strong>Codex cut Mastodon iOS clean builds 80%</strong> — Tuist generated projects. The honest answer is that real-world Xcode projects are messy. They are full of implicit configuration, one-off build settings, and decisions that made sense at the time but are hard to detect from the outside.… <a href="https://tuist.dev/blog/2026/02/02/migrating-mastodon-ios-to-tuist-with-codex">Source</a></li>
-<li><strong>Migrating to the Observation framework in SwiftUI</strong> — Learn how to use SwiftUI&#39;s @Observable macro. <a href="https://tanaschita.com/swiftui-observation-migrating-to-observation">Source</a></li>
-<li><strong>개발 진짜 🐶 힘드네요.. - AI 단식 3일차</strong> — <a href="https://www.youtube.com/watch?v=U4ysDvLLGhs">Source</a></li>
-<li><strong>HealthQL: SQL for Apple HealthKit</strong> — I built a Swift library that lets you query HealthKit data using SQL syntax. Working with HealthKit directly involves a lot of boilerplate—callback-based APIs, type-specific query objects, manual result transformation.… <a href="https://grantisom.com/2026/02/01/healthql-sql-for-healthkit.html">Source</a></li>
-</ul>
-</div>
-    </article>
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://getstream.io/blog/anthropic-claude-visual-reasoning/" target="_blank" rel="noopener noreferrer">Visual Intelligence in Claude: Interpreting Documents and Structured Content</a></div>
+    <div class="item-desc">Claude isn’t the model most users turn to when needing visual capabilities. Rather than optimizing primarily for object detection or scene description, Claude processes visual content through the same reasoning architecture it uses for text.…</div>
+    <div class="item-foot"><span class="domain">getstream.io</span></div>
+  </div>
+</li>
 
-    <article class="card">
-      <div class="small"><span class="badge">2026-02-03</span></div>
-      <h2>SwiftVietnam Daily — Feb 3, 2026</h2>
-      <div><h2>Links (auto-collected candidates)</h2>
-<ul>
-<li><strong>Edge-Optimized Speech Workflows: Combining Deepgram Nova-3 STT with Fish Speech V1.5 TTS</strong> — Voice AI is moving to the edge. Learn how to design speech workflows that stay fast, expressive, and reliable with Deepgram and Fish Speech. <a href="https://getstream.io/blog/edge-speech-deepgram-fish/">Source</a></li>
-<li><strong>Beyond the Human: Designing with Non-Human Personas in Mobile Apps</strong> — Design beyond the screen, non-human personas bring environmental reality into decision-making, from energy grids to cooling systems. <a href="https://www.createwithswift.com/beyond-the-human-designing-with-non-human-personas-in-mobile-apps/">Source</a></li>
-<li><strong>Upcoming SDK minimum requirements</strong> — Starting April 28, 2026, apps and games uploaded to App Store Connect need to meet the following minimum requirements:</li>
-</ul>
-<p>iOS and iPadOS apps must be built with the iOS 26 &amp; iPadOS 26 SDK or later
-tvOS apps must be built with the tvOS 26 SDK or later
-visionOS ap… <a href="https://developer.apple.com/news/?id=ueeok6yw">Source</a></p>
-<ul>
-<li><h2><strong>S5E21: All of the Dooms 🫡</strong> — Join us, while we&#39;re Waiting For Review...</h2>
-<a href="mailto:contact@waitingforreview.com">contact@waitingforreview.com</a>
-The Discord server is open to all, and you can contact us via our social links below.
-Enjoy the show,
-Dave ✨ and Daniel 🚀
-Show Notes:
-Lasercut video - <a href="https://www.tiktok.com/@telemetry%E2%80%A6">https://www.tiktok.com/@telemetry…</a> <a href="https://www.waitingforreview.com/s5e21">Source</a></li>
-<li><strong>Time is leafing</strong> — <a href="https://blog.eternalstorms.at/2026/02/03/time-is-leafing/">Source</a></li>
-<li><strong>The complete guide to digital signatures: PAdES, CAdES, and XAdES explained</strong> — Master digital signatures with this complete guide to PAdES, CAdES, and XAdES standards. Learn implementation with Nutrient SDK, API, Document Engine, and Workflow Automation. <a href="https://www.nutrient.io/blog/complete-guide-digital-signatures/">Source</a>
-<img src="https://www.nutrient.io/_astro/article-header.R8WyjT9p.png" alt=""></li>
-<li><strong>How to build a better tagging UI in SwiftUI with Antigravity | Sofia S4E4</strong> — <a href="https://www.youtube.com/watch?v=7y87nuq9x5Y">Source</a></li>
-<li><strong>Save URLs to Apple Reminders the Right Way</strong> — If you save a URL to Apple Reminders — via the Share Sheet or Siri — it goes into the reminder’s URL field. This sounds fine until you try to do anything useful with it.
-The Problem
-The URL field in Apple Reminders is not accessible through any API.… <a href="https://hboon.com/save-urls-to-apple-reminders-the-right-way/">Source</a></li>
-<li><strong>Serverpod for a Weekend - The Good, The Bad, and The Surprising</strong> — <a href="https://engineering.monstar-lab.com/en/post/2026/02/03/Serverpod-for-a-Weekend-The-Good-The-Bad-and-The-Surprising">Source</a></li>
-<li><strong>Late Night Silent Completions: Jiiiii — Part 804</strong> — <a href="https://www.youtube.com/watch?v=mFpBWER_YmA">Source</a></li>
-<li><strong>On-demand resources in iOS app</strong> — On-Demand Resources allow you to ship a smaller initial app download and fetch additional assets like images, sounds, level data, ML models, and more only when a user requires them.… <a href="https://swiftwithmajid.com/2026/02/03/on-demand-resources-in-ios-app/">Source</a></li>
-<li><strong>坏习惯是道好题目</strong> — <a href="https://limboy.me/posts/bad-habit-good-subject">Source</a></li>
-<li><strong>Food Assistant</strong> — Peter has been doing with OpenClaw. This agent is taking care of my food, so it has an idea of what I have in stock. It knows about my allergies, my dietary wishes, and it has recipes and a grocery list. It also has a list of dishes I enjoy making and eating.… <a href="http://chris.eidhof.nl/post/llm-month-food-assistant">Source</a></li>
-<li><strong>Codex App</strong> — OpenAI (Hacker News): Today, we’re introducing the Codex app for macOS—a powerful new interface designed to effortlessly manage multiple agents at once, run work in parallel, and collaborate with agents over long-running tasks.… <a href="https://mjtsai.com/blog/2026/02/02/codex-app/">Source</a></li>
-<li><strong>DFU Port on the 16-Inch MacBook Pro</strong> — Jeff Johnson: This [Apple documentation] is wrong, a discovery that took me about a half dozen attempts to update macOS on an external disk.… <a href="https://mjtsai.com/blog/2026/02/02/dfu-port-on-16-inch-macbook-pro/">Source</a></li>
-<li><strong>iOS 26.3: Limit Carrier Location Tracking</strong> — Juli Clover: Mobile networks determine location based on the cellular towers that a device connects to, but with the setting enabled, some of the data typically made available to mobile networks is being restricted.… <a href="https://mjtsai.com/blog/2026/02/02/ios-26-3-limit-carrier-location-tracking/">Source</a></li>
-<li><strong>Apple and Kakao Pay Fined Over Privacy</strong> — Proton’s Tech Fines Tracker (via Ben Lovejoy): While $7.8 billion in fines sounds substantial, it represents little more than a rounding error for Big Tech.… <a href="https://mjtsai.com/blog/2026/02/02/apple-and-kakao-pay-fined-over-privacy/">Source</a></li>
-<li><strong>탈진할 거 같습니다... - AI 단식 4일차</strong> — <a href="https://www.youtube.com/watch?v=RkUdoKYx1HI">Source</a></li>
-<li><strong>Hacking with Ktor</strong> — Every now and then when I’m out walking my dog I nerd snipe myself and start thinking of interesting little programming challenges to toy around with.
-This post explores using Ktor to build a tiny reverse proxy that forwards Snowplow events and pushes notifica… <a href="http://paul-samuels.com/blog/2026/02/02/hacking-with-ktor/">Source</a></li>
-<li><strong>New friendly place to share updates about your indie apps</strong> — Have you ever tried sharing your indie app on Reddit? If so, did your post get removed soon due to “self-promotion”?… <a href="https://nemecek.be/blog/214/new-friendly-place-to-share-updates-about-your-indie-apps">Source</a></li>
-<li><strong>Codex App - A First Look for App Development</strong> — <a href="https://www.youtube.com/watch?v=ICYbOfW5RoQ">Source</a></li>
-<li><strong>Musyc2 by Fingerlab, Built with AudioKit</strong> — Musyc2 by Fingerlab is an app that uses game physics for music creation
-Musyc2 by Fingerlab, Built with AudioKit first appeared on AudioKit Pro. <a href="https://audiokitpro.com/musyc2/">Source</a></li>
-<li><strong>iOS 16.7.14 (20H370)</strong> — View downloads <a href="https://developer.apple.com/news/releases/?id=02022026a">Source</a></li>
-<li><strong>iPadOS 16.7.14 (20H370)</strong> — View downloads <a href="https://developer.apple.com/news/releases/?id=02022026b">Source</a></li>
-<li><strong>Build a Voice Agent in Python: 2026 Guide</strong> — <a href="https://www.youtube.com/watch?v=KI_JslCXHTs">Source</a></li>
-</ul>
-</div>
-    </article>
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.donnywals.com/migrating-an-ios-app-from-paid-up-front-to-freemium/" target="_blank" rel="noopener noreferrer">Migrating an iOS app from Paid up Front to Freemium</a></div>
+    <div class="item-desc">Paid up front apps can be a tough sell on the App Store. You might be getting plenty of views on your product page, but if those views aren't converting to downloads, something has to change.…</div>
+    <div class="item-foot"><span class="domain">donnywals.com</span></div>
+  </div>
+</li>
 
-    <article class="card">
-      <div class="small"><span class="badge">2026-02-04</span></div>
-      <h2>SwiftVietnam Daily — Feb 4, 2026</h2>
-      <div><h2>Links (auto-collected candidates)</h2>
-<ul>
-<li><strong>امتا ال ITI تكون خطوة كويسة و امتاا لا؟!#بودكاست #software #programming #mobiledevelopment #ITI #iOS</strong> — <a href="https://www.youtube.com/shorts/XtmszZufL1c">Source</a></li>
-<li><strong>Marketplace Content Moderation: How to Build Trust and Prevent Abuse at Scale</strong> — Every listing, message, and review shapes whether a transaction happens. <a href="https://getstream.io/blog/marketplace-content-moderation/">Source</a></li>
-<li><strong>From Pixel Capture to Metadata: Reimagining Screen Recording Architecture on macOS</strong> — Independent developer Sintone shares a deep dive into building a macOS screen recorder.… <a href="https://fatbobman.com/en/posts/screensage-from-pixel-to-meta/">Source</a></li>
-<li><strong>macOS 录屏软件开发实录：从像素抓取到元数据重现</strong> — 视频正在取代文字成为主流的表达方式，而好工具是创作的加速器。macOS 录屏软件 ScreenSage Pro 的独立开发者 Sintone 分享了从像素抓取到元数据重现的全过程。从屏幕录制、元数据捕获，到高性能视频合成，他详述了开发中的挑战与解决方案。 <a href="https://fatbobman.com/zh/posts/screensage-from-pixel-to-meta/">Source</a></li>
-<li><strong>How ElevenLabs builds and grows consumer AI apps without losing speed or clarity</strong> — On the podcast: how earned media can drive paid performance, building features that make for good tweets, and why stripping out your onboarding quiz might beat optimizing it. <a href="https://www.revenuecat.com/blog/growth/jack-tanmay-elevenlabs-sub-club-podcast-2026/">Source</a>
-<img src="https://revenuecat.wpenginepowered.com/wp-content/uploads/2026/02/RC-Blog-Cover-ElevenLabs-1.png" alt=""></li>
-<li><strong>Late Night Silent Completions: Jiiiii — Part 807</strong> — <a href="https://www.youtube.com/watch?v=GYkM412PGZM">Source</a></li>
-<li><strong>#40 - SwiftUI Custom View Modifiers</strong> — Making the code more readable and flexible <a href="https://curatedios.substack.com/p/40-swiftui-custom-view-modifiers">Source</a>
-<img src="https://substack-post-media.s3.amazonaws.com/public/images/9715ae60-f4eb-4ac1-8c28-375b83dcf0f5_654x325.png" alt=""></li>
-<li><strong>[React] 16강. useCallback - 함수 재생성과 랜더링 제어</strong> — <a href="https://www.youtube.com/watch?v=6UmAlOOtbP0">Source</a></li>
-<li><strong>OpenClaw + Telegram + Ollama: Local Personal AI Assistant #ai #openclaw #ollama #llm #telegram</strong> — <a href="https://www.youtube.com/shorts/5RRhX7jg8RQ">Source</a></li>
-<li><strong>swift-associated-objects</strong> — Associated objects utils
-CaptureContext/swift-associated-objects <a href="https://swiftpackageindex.com/CaptureContext/swift-associated-objects">Source</a></li>
-<li><strong>swift-resettable</strong> — Swift undo-redo manager
-CaptureContext/swift-resettable <a href="https://swiftpackageindex.com/CaptureContext/swift-resettable">Source</a></li>
-<li><strong>An Xcode Agent Prompt: What It Signals for Combine and RxSwift</strong> — Greetings, traveler! While poking around Xcode’s agent prompts, people noticed a blunt instruction: Avoid using the Combine framework and instead prefer to use Swift’s async and await versions of APIs instead.… <a href="https://livsycode.com/blog/an-xcode-agent-prompt-what-it-signals-for-combine-and-rxswift/">Source</a></li>
-<li><strong>How ElevenLabs Builds, Prices, and Grows AI Consumer Apps</strong> — On the podcast we talk with Tanmay and Jack about how earned media can drive paid performance, building features that make for good tweets, and why stripping out your onboarding quiz might beat optimizing it.
-Top Takeaways:</li>
-</ul>
-<p>📊Pricing should match how users th… <a href="https://subclub.com/episode/how-elevenlabs-builds-prices-and-grows-ai-consumer-apps">Source</a></p>
-<ul>
-<li><strong>swift-casification</strong> — Package for tokenizing and case swapping for free strings
-CaptureContext/swift-casification <a href="https://swiftpackageindex.com/CaptureContext/swift-casification">Source</a></li>
-<li><strong>SequreSDK</strong> — qtrust-id/SeQure-iOS-SDK <a href="https://swiftpackageindex.com/qtrust-id/SeQure-iOS-SDK">Source</a></li>
-<li><strong>First City Monument Bank streamlines banking processes with Nutrient Workflow</strong> — Discover how FCMB cut errors and sped up banking approvals with Nutrient Workflow <a href="https://www.nutrient.io/blog/nutrient-workflow-banking-success-fcmb/">Source</a>
-<img src="https://www.nutrient.io/_astro/article-header.Bj6nAsU2.jpg" alt=""></li>
-<li><strong>package-resources-cli</strong> — Code generator for swift-package-resources
-CaptureContext/package-resources-cli <a href="https://swiftpackageindex.com/CaptureContext/package-resources-cli">Source</a></li>
-<li><strong>swift-package-resources</strong> — Package with lightweight resources models for code generation
-CaptureContext/swift-package-resources <a href="https://swiftpackageindex.com/CaptureContext/swift-package-resources">Source</a></li>
-<li><strong>swift-tiktoken</strong> — A pure Swift implementation of OpenAI&#39;s tiktoken tokenizer
-DePasqualeOrg/swift-tiktoken <a href="https://swiftpackageindex.com/DePasqualeOrg/swift-tiktoken">Source</a></li>
-<li><strong>cocoa-aliases</strong> — Just a bunch of typealeases for the AppKit and UIKit
-CaptureContext/cocoa-aliases <a href="https://swiftpackageindex.com/CaptureContext/cocoa-aliases">Source</a></li>
-<li><strong>Day 3! Seven quotes that changed my life</strong> — <a href="https://www.youtube.com/shorts/TyDNpPgx6g4">Source</a></li>
-<li><strong>Day 2 of seven quotes that have changed my life</strong> — <a href="https://www.youtube.com/shorts/xhKsAeSRw8Y">Source</a></li>
-<li><strong>Day 1 of 7! Quotes that changed my life</strong> — <a href="https://www.youtube.com/shorts/4ncgphNBfgU">Source</a></li>
-<li><strong>AgentAdapter</strong> — A CLI tool for managing coding agent documentation from a single source.
-mtj0928/agent-adapter <a href="https://swiftpackageindex.com/mtj0928/agent-adapter">Source</a></li>
-<li><strong>Late Night Silent Completions: Jiiiii — Part 805</strong> — <a href="https://www.youtube.com/watch?v=KIB30T-ZtVs">Source</a></li>
-<li><strong>Bitrise bridges GitHub’s mobile performance gap with new purpose-built infrastructure: Bitrise Build Hub - Bitrise Blog</strong> — Bitrise launches Build Hub, a fully-managed Apple silicon and Linux infrastructure with a powerful execution layer for GitHub Actions. <a href="https://bitrise.io/blog/post/build-hub-press-release">Source</a></li>
-<li><strong>Chrome Extension 是 Vibe Coding 的绝佳载体</strong> — <a href="https://limboy.me/posts/chrome-extension-vibe-coding-container">Source</a></li>
-<li><strong>RealityKit &amp; Reality Composer Pro [SUBSCRIBER]</strong> — Learn how to create augmented reality experiences using Reality Composer Pro with RealityKit and USDz. Create 3D scenes employing models, animations, and interactions using RealityKit.… <a href="https://www.kodeco.com/ios/paths/visionos-beyond-the-basics/51928619-realitykit-reality-composer-pro">Source</a></li>
-<li><strong>Agentic Coding in Xcode 26.3 with Claude Code and Codex</strong> — I was filled with whimsy watching OpenAI announce their Codex app1 not even two days ago. But life comes at you fast.… <a href="https://swiftjectivec.com/Agentic-Coding-Codex-Claude-Code-in-Xcode/">Source</a></li>
-<li><strong>AsyncStream &amp; AsyncThrowingStream in Swift - Real-Time Data Sync Explained</strong> — Modern apps are no longer single-device experiences. Users expect their data to stay perfectly in sync across iPhone, iPad, and Mac, with… <a href="https://www.sagarunagar.com/blog/asyncstream-asyncthrowingstream-swift/">Source</a></li>
-<li><strong>선택에 대한 두려움 - AI 단식 6일차</strong> — <a href="https://www.youtube.com/watch?v=wPwq_19Pa_c">Source</a></li>
-<li><strong>SymbolBrowser Mac Menu Bar App</strong> — <a href="https://www.youtube.com/watch?v=JtSeAs1ILuE">Source</a></li>
-<li><strong>Agentic coding in Xcode 26.3</strong> — Greetings, traveler! In a recent demo, Apple showed something that feels like a real shift in how development tools work. With Xcode 26.3, coding is no longer just about writing lines of Swift faster.… <a href="https://livsycode.com/blog/agentic-coding-in-xcode-26-3/">Source</a></li>
-<li><strong>No Such Thing as Speed of Light</strong> — <a href="http://www.russbishop.net/no-such-thing-as-speed-of-light">Source</a></li>
-<li><strong>Tahoe NSTableView Scrolling Bug</strong> — Sarah Reichelt (Mastodon): [When] I scrolled down from the top, the content rows would scroll into the header, making the top messy and unreadable.… <a href="https://mjtsai.com/blog/2026/02/03/tahoe-nstableview-scrolling-bug/">Source</a></li>
-<li><strong>Apple Platform Security Guide (January 2026)</strong> — Apple (revision history, PDF, Hacker News): Topics added:Automatically unlock Apple devicesCommunicating emergency information using satellitesQuantum-secure cryptography in Apple operating systemsPlatform Single Sign-onEnergyKit data securityAttestation proce… <a href="https://mjtsai.com/blog/2026/02/03/apple-platform-security-guide-january-2026/">Source</a></li>
-<li><strong>Sinofsky on Cook and Forstall</strong> — Richard Lawler: Emails released by the Justice Department on Friday appear to show that former Windows boss Steven Sinofsky not only consulted Jeffrey Epstein for help in securing his $14 million “retirement” package in November of 2012, but also in working on… <a href="https://mjtsai.com/blog/2026/02/03/sinofsky-on-cook-and-forstall/">Source</a></li>
-<li><strong>The Fallen Apple</strong> — Matt Gemmell (Mastodon, Hacker News): Executives, experts, engineers, and designers are all leaving for more lucrative positions at even less scrupulous companies.… <a href="https://mjtsai.com/blog/2026/02/03/the-fallen-apple/">Source</a></li>
-<li><strong>Introducing KeyFramify App, a simple Keyframe video editor🎉</strong> — <a href="https://www.youtube.com/shorts/GPnXl1o4BS8">Source</a></li>
-<li><strong>Hello Developer: February 2026</strong> — In this edition: Big news about agentic coding in Xcode. Plus:</li>
-</ul>
-<p>Join us for an online code-along about coding intelligence.
-Get your Swift Student Challenge submissions ready.
-Browse new developer activities on SwiftUI, the new design, security, and more.
-Catc… <a href="https://developer.apple.com/news/?id=6iajkgmp">Source</a>
-  <img src="https://devimages-cdn.apple.com/wwdc-services/articles/images/5564186E-EBEE-4F97-8B34-D4B38374BDD8/2048.jpeg" alt=""></p>
-<ul>
-<li><strong>App Store Connect Update</strong> — View release notes <a href="https://developer.apple.com/news/releases/?id=02022026b">Source</a></li>
-<li><strong>Xcode 26.3 Release Candidate (17C519)</strong> — View downloadsView release notes <a href="https://developer.apple.com/news/releases/?id=02032026a">Source</a></li>
-<li><strong>My (deeply stressful) big tech interview grind</strong> — A survival guide for the tech job market in 2026 <a href="https://blog.jacobstechtavern.com/p/interview-grind">Source</a>
-<img src="https://substackcdn.com/image/fetch/$s_!ASyg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F82226f30-8964-4fad-a246-de6fe6e4c5e6_1680x1200.png" alt=""></li>
-<li><strong>Newsletter 306 - Pronoia</strong> — When people conspire to do good for each other. Also, Kevin Kelly &quot;How will the miracle happen today&quot;, using Reminders to organize your to-dos, Booker Prize recommendations, Where are all the protest songs, &#39;remove before flight&#39; tags from the Challenger, Magg… <a href="https://mailchi.mp/caacf16a2f2b/306-pronoia">Source</a></li>
-<li><strong>The Codex Trap: Upgrading to Pro Won’t Unlock a New Codex Model</strong> — I’m writing this as a friendly PSA for fellow devs who use Codex (especially via codex CLI) and are tempted by the $200 ChatGPT Pro upgrade.
-Because I fell into a trap.
-What I expected when I upgraded
-I was on the $20 plan, and I upgraded to Pro thinking:
-“Nic… <a href="https://samwize.com/2026/02/04/the-codex-trap-upgrading-to-pro-won-t-unlock-a-new-codex-model/">Source</a></li>
-</ul>
-</div>
-    </article>
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://elkraneo.com/deconstructing-reality-composer-pro-project-browser/" target="_blank" rel="noopener noreferrer">Deconstructing Reality Composer Pro (Project Browser)</a></div>
+    <div class="item-desc">Part of what makes Reality Composer Pro a composer is asset management. Importing, soft validation, organizing, and iterating on the project structure are essential features to have in creative pipelines.…</div>
+    <div class="item-foot"><span class="domain">elkraneo.com</span></div>
+  </div>
+</li>
 
-    <article class="card">
-      <div class="small"><span class="badge">2026-02-05</span></div>
-      <h2>SwiftVietnam Daily — Feb 5, 2026</h2>
-      <div><h2>Links (auto-collected candidates)</h2>
-<ul>
-<li><strong>Live Coding, no AI - 1Hour</strong> — <a href="https://www.youtube.com/watch?v=-mqznrnsktw">Source</a></li>
-<li><strong>Two Years of Apple Vision Pro with the Step Into Vision Community</strong> — Members of the Step Into Vision community gathered on Feb 2, 2026 to celebrate and reflect on two years of Apple Vision Pro.… <a href="https://shows.acast.com/mtjc-1/episodes/6983f0ad1976ad123705a2e9">Source</a></li>
-<li><strong>MSAL - 2.8.2</strong> — MSAL – Version 2.8.2 
-Microsoft Authentication Library (MSAL) for iOS and macOS
-AzureAD/microsoft-authentication-library-for-objc <a href="https://swiftpackageindex.com/AzureAD/microsoft-authentication-library-for-objc">Source</a></li>
-<li><strong>Late Night Silent Completions: Jiiiii — Part 806</strong> — <a href="https://www.youtube.com/watch?v=ND1plo-fDvk">Source</a></li>
-<li><strong>ZaberMotionLib - 8.1.0</strong> — ZaberMotionLib – Version 8.1.0 
-A Swift library used to operate Zaber devices
-zabertech/zaber-motion-lib-swift <a href="https://swiftpackageindex.com/zabertech/zaber-motion-lib-swift">Source</a></li>
-<li><strong>SmartBinaryCodable</strong> — noworrieseh/SmartBinaryCodable <a href="https://swiftpackageindex.com/noworrieseh/SmartBinaryCodable">Source</a></li>
-<li><strong>Xcode 26.3</strong> — Apple (RC xip, downloads, Hacker News): Xcode 26.3 introduces support for agentic coding, a new way in Xcode for developers to build apps, powered by coding agents from Anthropic and OpenAI.… <a href="https://mjtsai.com/blog/2026/02/04/xcode-26-3/">Source</a></li>
-<li><strong>Testing Tip: Always Show Scrollbars</strong> — Marcin Wichary: This scrollbar serves no purpose, so it will become visual noise for a lot of your users. But when you yourself use “shy” scrollbars, you might not even realize.… <a href="https://mjtsai.com/blog/2026/02/04/testing-tip-always-show-scrollbars/">Source</a></li>
-<li><strong>SuperDuper 3.12</strong> — Dave Nanian: We’ve made some improvements to our scheduler to help mitigate some of the Tahoe “stalling during Dark Wake” problems. They’re not 100%, but things are better, and we’re investigating additional improvements for the next update.… <a href="https://mjtsai.com/blog/2026/02/04/superduper-3-12/">Source</a></li>
-<li><strong>d - 0.6.1</strong> — d – Version 0.6.1 
-expressive number formatting for pure Swift applications
-tayloraswift/d <a href="https://swiftpackageindex.com/tayloraswift/d">Source</a></li>
-<li><strong>Those Who Swift - Issue 252</strong> — Your weekly dose of Swift! <a href="https://thosewhoswift.substack.com/p/those-who-swift-issue-252">Source</a>
-<img src="https://substackcdn.com/image/fetch/$s_!FQA8!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3ed0e7ea-c533-4c89-ac9b-f1bc72c616e2_500x500.png" alt=""></li>
-<li><strong>cmd-arg-lib - 0.4.1</strong> — cmd-arg-lib – Version 0.4.1</li>
-</ul>
-<p>ouser4629/cmd-arg-lib <a href="https://swiftpackageindex.com/ouser4629/cmd-arg-lib">Source</a></p>
-<ul>
-<li><strong>AI는 정말 학습에 도움이 되는 걸까 - AI 단식 7일차</strong> — <a href="https://www.youtube.com/watch?v=rkyKQpHiqKw">Source</a></li>
-<li><strong>skip - 1.7.1</strong> — skip – Version 1.7.1 
-Skip enables the creation of native SwiftUI apps for iOS and Android
-skiptools/skip <a href="https://swiftpackageindex.com/skiptools/skip">Source</a></li>
-<li><strong>Complex 3D Animation Effect Using SwiftUI | BlueNote&#39;s 3D Paywall Effect | Xcode 26</strong> — <a href="https://www.youtube.com/watch?v=XhgLm3T6BkU">Source</a></li>
-<li><strong>skip-unit - 1.5.0</strong> — skip-unit – Version 1.5.0 
-Unit testing for Skip apps, adapting Swift XCUnit to transpiled Kotlin JUnit test cases
-skiptools/skip-unit <a href="https://swiftpackageindex.com/skiptools/skip-unit">Source</a></li>
-<li><strong>Running Bluesky PDS undockered</strong> — A bit over a year ago, in the first week of January 2025, I migrated my main Bluesky account to my own PDS on a Netcup VPS.… <a href="https://mackuba.eu/2026/02/04/pds-undockered/">Source</a></li>
-<li><strong>GoogleMobileAds - 13.0.0</strong> — GoogleMobileAds – Version 13.0.0</li>
-</ul>
-<p>googleads/swift-package-manager-google-mobile-ads <a href="https://swiftpackageindex.com/googleads/swift-package-manager-google-mobile-ads">Source</a></p>
-<ul>
-<li><strong>MapsGL - v1.4.0</strong> — MapsGL – Version v1.4.0 
-MapsGL is an easy-to-use, highly customizable Swift SDK for visualizing both weather and custom data, powered by Metal
-vaisala-xweather/mapsgl-apple-sdk <a href="https://swiftpackageindex.com/vaisala-xweather/mapsgl-apple-sdk">Source</a></li>
-<li><strong>TPInAppReceipt - 4.0.1</strong> — TPInAppReceipt – Version 4.0.1 
-Reading and Validating In App Purchase Receipt Locally.
-tikhop/TPInAppReceipt <a href="https://swiftpackageindex.com/tikhop/TPInAppReceipt">Source</a></li>
-<li><strong>FileSystem - 0.14.18</strong> — FileSystem – Version 0.14.18 
-📁 A platform-agnostic Swift Package to interact with the file system
-tuist/FileSystem <a href="https://swiftpackageindex.com/tuist/FileSystem">Source</a></li>
-<li><strong>llama.swift - 2.7936.0</strong> — llama.swift – Version 2.7936.0 
-A package that provides semantically versioned access to llama.cpp in your Swift projects.
-mattt/llama.swift <a href="https://swiftpackageindex.com/mattt/llama.swift">Source</a></li>
-<li><strong>Bizoneness and LucaP: SAP B1Web client, LucaP ERP, and making a roadmap for an application</strong> — <a href="https://makeapppie.com/2026/02/04/bizoneness-and-lucap-sap-b1web-client-lucap-erp-and-making-a-roadmap-for-an-application/">Source</a></li>
-<li><strong>Introducing Flightpaths by Runway</strong> — Flightpaths unlocks entirely new ways to set up, manage, and automate your end-to-end release cycles.… <a href="https://www.runway.team/blog/introducing-flightpaths-by-runway">Source</a></li>
-<li><strong>SessionReplaySDK</strong> — 📹 Lightweight iOS SDK for recording user sessions with video, touch events, console logs &amp; network requests. Privacy-first with automatic PII masking. Pure Swift, zero dependencies.
-AlmoutasemNabil/SessionReplaySDK <a href="https://swiftpackageindex.com/AlmoutasemNabil/SessionReplaySDK">Source</a></li>
-<li><strong>quickly</strong> — a fast package manager written in Swift, for Swift
-atpugvaraa/quickly <a href="https://swiftpackageindex.com/atpugvaraa/quickly">Source</a></li>
-<li><strong>Your Shipyard: Creator Contest questions answered</strong> — Clear answers on building, monetization, submissions, and judging <a href="https://www.revenuecat.com/blog/company/shipyard-2026-questions/">Source</a>
-<img src="https://revenuecat.wpenginepowered.com/wp-content/uploads/2026/02/Shipyard_Blog_YourShipYardQuestions_1600x800_v1.png" alt=""></li>
-<li><strong>26.3 iOS RC (23D125)</strong> — View downloadsView release notes <a href="https://developer.apple.com/news/releases/?id=02022026a">Source</a></li>
-<li><strong>iPadOS 26.3 RC (23D125)</strong> — View downloadsView release notes <a href="https://developer.apple.com/news/releases/?id=02022026b">Source</a></li>
-<li><strong>macOS 26.3 RC (25D122)</strong> — View downloadsView release notes <a href="https://developer.apple.com/news/releases/?id=02022026c">Source</a></li>
-<li><strong>tvOS 26.3 RC (23K619)</strong> — View downloadsView release notes <a href="https://developer.apple.com/news/releases/?id=02022026d">Source</a></li>
-<li><strong>visionOS 26.3 RC (23N619)</strong> — View downloadsView release notes <a href="https://developer.apple.com/news/releases/?id=02022026e">Source</a></li>
-<li><strong>watchOS 26.3 RC (23S618)</strong> — View downloadsView release notes <a href="https://developer.apple.com/news/releases/?id=02022026f">Source</a></li>
-<li><strong>iOS 18.7.5 (22H311)</strong> — View downloads <a href="https://developer.apple.com/news/releases/?id=02022026g">Source</a></li>
-<li><strong>iPadOS 18.7.5 (22H311)</strong> — View downloads <a href="https://developer.apple.com/news/releases/?id=02022026h">Source</a></li>
-<li><strong>¿Por qué abandonan los programadores Junior?</strong> — <a href="https://www.youtube.com/shorts/oPJuV6fgUeI">Source</a></li>
-<li><strong>Objectively Better, Observably Trickier</strong> — The Observation Framework is great... once you figure out how it actually works <a href="https://captainswiftui.substack.com/p/objectively-better-observably-trickier">Source</a>
-<img src="https://substackcdn.com/image/fetch/$s_!EK1p!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6e532c11-2efd-44c1-a6f1-4abf4e02ddba_1456x1048.jpeg" alt=""></li>
-<li><strong>An Introduction to Liquid Glass for iOS 26 [FREE]</strong> — Apple’s new Liquid Glass design language marks a major shift in iOS 26 UI design. Learn what Liquid Glass is, how it works across SwiftUI and UIKit, and what to watch out for when updating an existing iOS app. <a href="https://www.kodeco.com/49905345-an-introduction-to-liquid-glass-for-ios-26">Source</a></li>
-</ul>
-</div>
-    </article>
+<li class="item">
+  <img class="thumb" src="https://www.nutrient.io/_astro/article-header.BZKX0v3m.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.nutrient.io/blog/introducing-nutrient-python-sdk/" target="_blank" rel="noopener noreferrer">Nutrient Python SDK: Production-grade document processing for Python</a></div>
+    <div class="item-desc">Server-side document processing for Python. Convert documents, generate from templates, add signatures, extract data with OCR, and redact sensitive content — all with a clean, Pythonic API.</div>
+    <div class="item-foot"><span class="domain">nutrient.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=8_zZUQcQBdA" target="_blank" rel="noopener noreferrer">강의제공자의 답변을 원합니다.</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=Yg3hiGiK9tQ" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 800</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://blog.eliperkins.com/tools-i-love-xcrun-simctl-recordVideo" target="_blank" rel="noopener noreferrer">Tools I Love: xcrun simctl io booted recordVideo</a></div>
+    <div class="item-desc">Record high quality videos of the iOS simulator right from the command line.</div>
+    <div class="item-foot"><span class="domain">blog.eliperkins.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://iosdevweekly.com/issues/741/" target="_blank" rel="noopener noreferrer">Issue 741</a></div>
+    <div class="item-desc">Forget about Windows and Wasm, what’s the flagship project for macOS and iOS?! 😂</div>
+    <div class="item-foot"><span class="domain">iosdevweekly.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://limboy.me/posts/routine-compound-interest" target="_blank" rel="noopener noreferrer">Routine 就是人生的复利</a></div>
+    <div class="item-desc">Routine 并不是束缚，而是让你摆脱内耗的工具。</div>
+    <div class="item-foot"><span class="domain">limboy.me</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=G3Ux3brUqUM" target="_blank" rel="noopener noreferrer">머리가 아픕니다.. - AI 단식 2일차</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://lapcatsoftware.com/articles/2026/1/10.html" target="_blank" rel="noopener noreferrer">How do you comparison shop in the App Store?</a></div>
+    <div class="item-desc">Hot on the heels of my previous blog post My collected App Store critiques, I have yet another critique. It’s undoubtedly old news to many people, my critique coming years too late, but in my defense, I almost never shop for apps in the App Store.…</div>
+    <div class="item-foot"><span class="domain">lapcatsoftware.com</span></div>
+  </div>
+</li></ul>
+  <div class="more"><a href="daily/2026/01/30/index.html">Open daily page →</a></div>
+</section>
+
+<section class="day-card">
+  <div class="day-head">
+    <h2 class="day-title">SwiftVietnam Daily — Jan 31, 2026</h2>
+    <div class="day-meta"><span class="badge">2026-01-31</span><span>14 links</span></div>
+  </div>
+  <ul class="items">
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/sheet-background-interaction" target="_blank" rel="noopener noreferrer">Sheet Background Interaction</a></div>
+    <div class="item-desc">Controls whether people can interact with the view behind a presentation.</div>
+    <div class="item-foot"><span class="domain">exploreswiftui.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/sheet-background" target="_blank" rel="noopener noreferrer">Sheet Background</a></div>
+    <div class="item-desc">Sets the presentation background of the enclosing sheet using a shape style.</div>
+    <div class="item-foot"><span class="domain">exploreswiftui.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/AN-yu2QrRYg" target="_blank" rel="noopener noreferrer">Claude Inside Xcode (What Could Go Wrong?) MTJC</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/sheet-drag-indicator-visibility" target="_blank" rel="noopener noreferrer">Sheet Drag Indicator Visibility</a></div>
+    <div class="item-desc">Sets the visibility of the drag indicator on top of a sheet.</div>
+    <div class="item-foot"><span class="domain">exploreswiftui.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/sheet-size" target="_blank" rel="noopener noreferrer">Sheet Size</a></div>
+    <div class="item-desc">Sets the available detents for the enclosing sheet.</div>
+    <div class="item-foot"><span class="domain">exploreswiftui.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=nNXhwUIqhkE" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 802</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://troz.net/images/2026/table_top_scroll.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://troz.net/post/2026/appkit-table-scroll-bug-in-macos-tahoe/" target="_blank" rel="noopener noreferrer">NSTableView scroll bug in macOS Tahoe</a></div>
+    <div class="item-desc">Recently. I was working with an AppKit app that uses an NSTableView to display long list of items.…</div>
+    <div class="item-foot"><span class="domain">troz.net</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=s2wngSMNC38" target="_blank" rel="noopener noreferrer">2026 플러터 앱개발 끝까지 – 3강: Repository 적용, REST API CRUD, 이벤트 처리</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=QTDnbLvr8ds" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 801</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://limboy.me/posts/taking-cold-showers-is-a-hidden-treasure" target="_blank" rel="noopener noreferrer">冷水澡是一座小金矿</a></div>
+    
+    <div class="item-foot"><span class="domain">limboy.me</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://mjtsai.com/blog/2026/01/30/apples-q1-2026-results/" target="_blank" rel="noopener noreferrer">Apple’s Q1 2026 Results</a></div>
+    <div class="item-desc">Apple (transcript, MacRumors, CNBC, Hacker News): The Company posted quarterly revenue of $143.8 billion, up 16 percent year over year. Diluted earnings per share was $2.84, up 19 percent year over year.…</div>
+    <div class="item-foot"><span class="domain">mjtsai.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://makeapppie.com/2026/01/30/bizoneness-the-accounting-module-in-the-sap-b1-web-client/" target="_blank" rel="noopener noreferrer">BizOneness: The Accounting Module in the SAP B1 web client</a></div>
+    <div class="item-desc">You can get to the details as well, which pops up another pane of detail within the same window.…</div>
+    <div class="item-foot"><span class="domain">makeapppie.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://bryce.co/swizzle-everything/" target="_blank" rel="noopener noreferrer">How Apple Hooks Entire Frameworks</a></div>
+    
+    <div class="item-foot"><span class="domain">bryce.co</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://dimsumthinking.com/Podcast/2026/149Distance.html" target="_blank" rel="noopener noreferrer">Keep Two Thoughts Podcast 149 - Distance</a></div>
+    <div class="item-desc">My first word for 2023.</div>
+    <div class="item-foot"><span class="domain">dimsumthinking.com</span></div>
+  </div>
+</li></ul>
+  <div class="more"><a href="daily/2026/01/31/index.html">Open daily page →</a></div>
+</section>
+
+<section class="day-card">
+  <div class="day-head">
+    <h2 class="day-title">SwiftVietnam Daily — Feb 1, 2026</h2>
+    <div class="day-meta"><span class="badge">2026-02-01</span><span>15 links</span></div>
+  </div>
+  <ul class="items">
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/lpwznG0-7-4" target="_blank" rel="noopener noreferrer">ازاي تقييم مشاريع ال freelancing من حيث الفلوس 💸و الوقت⏰ #software #freelancing #programming #iOS</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=O540BJGGpYw" target="_blank" rel="noopener noreferrer">SwiftUI DatePicker and ColorPicker Deep Dive (Ranges, Styles, Optional Dates, UIKit Color Picker)</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.sicpers.info/2026/02/opinionated-read-how-ai-impacts-skill-formation/" target="_blank" rel="noopener noreferrer">Opinionated Read: How AI Impacts Skill Formation</a></div>
+    <div class="item-desc">The abstract to this preprint, by two authors both associated with Anthropic, makes the claim “We find that AI use impairs conceptual understanding, code reading, and debugging abilities, without delivering significant efficiency gains on average.…</div>
+    <div class="item-foot"><span class="domain">sicpers.info</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=RMfpocBggJg" target="_blank" rel="noopener noreferrer">SwiftUI Dynamic Island QR Code Scanner | iOS 26 | Xcode 26</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://substackcdn.com/image/fetch/$s_!Z4xB!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F04f0ffb6-b9e1-4976-a187-b292ce6e5cc0_2400x1352.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://sebastianroehl.substack.com/p/building-an-indie-app-business-88" target="_blank" rel="noopener noreferrer">Building An Indie App Business #88</a></div>
+    <div class="item-desc">I Went to Sleep and Woke Up to 8,000 Lines of Code</div>
+    <div class="item-foot"><span class="domain">sebastianroehl.substack.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://adincebic.com/2026/02/01/executing-actions-from-bazel-aspects.html" target="_blank" rel="noopener noreferrer">Executing actions from Bazel aspects</a></div>
+    <div class="item-desc">So far I went through writing the aspect, but I haven’t shown how to run actions from it to do something useful. Remember: we can do very little during Starlark evaluation (Bazel’s analysis phase).…</div>
+    <div class="item-foot"><span class="domain">adincebic.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/f5e194b39aec6cd0cab3_nutterfi_316589607255_1769920217//thumb/thumb0-512x288.jpg" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.twitch.tv/videos/2685925596" target="_blank" rel="noopener noreferrer">Tunic First Time - Channel Redeem Game Night</a></div>
+    
+    <div class="item-foot"><span class="domain">twitch.tv</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=-2vzMH8iqsg" target="_blank" rel="noopener noreferrer">My top 8 ADVANCED UI design tips</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://buczel.com/blog/ios26-tabview-uitest-identifiers/" target="_blank" rel="noopener noreferrer">iOS 26 TabView UI Tests: Making Identifiers Work Everywhere</a></div>
+    <div class="item-desc">SwiftUI's TabView accessibility identifiers behave differently on iPad vs iPhone with Liquid Glass. Here's how to write tests that handle both devices reliably.</div>
+    <div class="item-foot"><span class="domain">buczel.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://limboy.me/posts/breathe" target="_blank" rel="noopener noreferrer">呼吸能改变很多事</a></div>
+    
+    <div class="item-foot"><span class="domain">limboy.me</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/disable-sheet-dismiss-swipe" target="_blank" rel="noopener noreferrer">Disable Sheet Dismiss Swipe</a></div>
+    <div class="item-desc">Conditionally prevents interactive dismissal of presentations like popovers, sheets, and inspectors. Dragging the sheet is still possible to a limited extent, as shown in the screenshot, but it will never be dismissed.</div>
+    <div class="item-foot"><span class="domain">exploreswiftui.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/page-screen-sheet-size" target="_blank" rel="noopener noreferrer">Page Screen Sheet Size</a></div>
+    <div class="item-desc">On devices smaller than a page of paper, such as iPhone, Apple Watch, and 8&quot; or 11&quot; iPads, the sheet fills the entire height and, unlike the default sheet on iPad, the full width. On macOS, .page behaves like .fitted.</div>
+    <div class="item-foot"><span class="domain">exploreswiftui.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/fitted-sheet-sizing" target="_blank" rel="noopener noreferrer">Fitted Sheet Sizing</a></div>
+    <div class="item-desc">Sets the sizing of the containing presentation. This does not have any effect on smaller devices like iPhone and Apple Watch. On macOS, fitted is the default.</div>
+    <div class="item-foot"><span class="domain">exploreswiftui.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/sheet-corner-radius" target="_blank" rel="noopener noreferrer">Sheet Corner Radius</a></div>
+    <div class="item-desc">Requests that the presentation have a specific corner radius.</div>
+    <div class="item-foot"><span class="domain">exploreswiftui.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/prioritize-sheet-content-scrolling" target="_blank" rel="noopener noreferrer">Prioritize Sheet Content Scrolling</a></div>
+    <div class="item-desc">Configures the behavior of swipe gestures on a presentation. PresentationContentInteraction.scrolls prioritizes scrolling the content over resizing the sheet.</div>
+    <div class="item-foot"><span class="domain">exploreswiftui.com</span></div>
+  </div>
+</li></ul>
+  <div class="more"><a href="daily/2026/02/01/index.html">Open daily page →</a></div>
+</section>
+
+<section class="day-card">
+  <div class="day-head">
+    <h2 class="day-title">SwiftVietnam Daily — Feb 2, 2026</h2>
+    <div class="day-meta"><span class="badge">2026-02-02</span><span>28 links</span></div>
+  </div>
+  <ul class="items">
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://getstream.io/blog/a2ui-chat-integration/" target="_blank" rel="noopener noreferrer">Building A2UI-Powered Interfaces with Stream Chat</a></div>
+    <div class="item-desc">Text-only AI responses are limiting. See how A2UI enables interactive, agent-driven UI inside a chat app.</div>
+    <div class="item-foot"><span class="domain">getstream.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.dzombak.com/blog/2026/02/birds-of-sanibel-island/" target="_blank" rel="noopener noreferrer">Birds of Sanibel Island</a></div>
+    <div class="item-desc">My partner and I recently returned from a trip to Sanibel Island, Florida — a welcome break from winter in Michigan. We saw a bunch of new-to-us birds, as well as some familiar birds that migrate away from Michigan for the winter.…</div>
+    <div class="item-foot"><span class="domain">dzombak.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://fatbobman.com/en/weekly/issue-121/" target="_blank" rel="noopener noreferrer">Shifting Light, Unchanging Haystacks - Fatbobman's Swift Weekly #121</a></div>
+    <div class="item-desc">Two weeks ago, taking the opportunity of attending iOS Conf SG 2026, I visited the National Gallery Singapore and had the pleasure of viewing the special exhibition &quot;Into the Modern: Impressionism from the Museum of Fine Arts, Boston&quot;.…</div>
+    <div class="item-foot"><span class="domain">fatbobman.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://fatbobman.com/zh/weekly/issue-121/" target="_blank" rel="noopener noreferrer">变幻的光影，不变的干草堆 - 肘子的 Swift 周报 #121</a></div>
+    <div class="item-desc">两周前，借着参加 iOS Conf SG 2026 的契机，我造访了新加坡国立美术馆，并有幸参观了《走进现代：波士顿美术博物馆印象派大师展》。尽管此前也看过不少优秀的展览，但这次经历仍带来了某种不同寻常的触动。</div>
+    <div class="item-foot"><span class="domain">fatbobman.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.avanderlee.com/ai-development/swiftui-agent-skill-build-better-views-with-ai/" target="_blank" rel="noopener noreferrer">SwiftUI Agent Skill: Build better views with AI</a></div>
+    <div class="item-desc">A SwiftUI Agent Skill that helps you build better views or refactor existing ones. It’s the reality we’re in today, and I honestly can’t live without it anymore myself.…</div>
+    <div class="item-foot"><span class="domain">avanderlee.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://substackcdn.com/image/fetch/$s_!2lY2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F927028ca-950c-40ea-91ac-181dd002a27a_1915x899.webp" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://weekly.fatbobman.com/p/fatbobmans-swift-weekly-121" target="_blank" rel="noopener noreferrer">Fatbobman's Swift Weekly #121</a></div>
+    <div class="item-desc">Shifting Light, Unchanging Haystacks</div>
+    <div class="item-foot"><span class="domain">weekly.fatbobman.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://build.ms/2026/2/2/supporting-markdown-search-for-llms/" target="_blank" rel="noopener noreferrer">Supporting Markdown Search For LLMs</a></div>
+    <div class="item-desc">Learn a simple but effective technique that makes your blog more easily searchable for LLMs.</div>
+    <div class="item-foot"><span class="domain">build.ms</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://getstream.io/blog/activity-feeds-benchmark/" target="_blank" rel="noopener noreferrer">Scaling Activity Feeds to 100M Users: Stream’s Latest Benchmarks</a></div>
+    <div class="item-desc">Stream has reached a major milestone in activity feed infrastructure, successfully benchmarking over 37 million operations with a 10% write and 90% read workload distribution across a dataset of 100M users, 500M activities, and 200M follow relationships.…</div>
+    <div class="item-foot"><span class="domain">getstream.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://livsycode.com/swiftui/a-whatsapp-style-top-banner-for-ios-using-uiwindow/" target="_blank" rel="noopener noreferrer">A WhatsApp-style top banner for iOS using UIWindow and SwiftUI</a></div>
+    <div class="item-desc">A top banner looks simple until you try to make it reliable across tabs, navigation stacks, SwiftUI hosting, and modal presentations.…</div>
+    <div class="item-foot"><span class="domain">livsycode.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://raw.githubusercontent.com/henriquestiagoo/ioscoffeebreak-ci/refs/heads/main/issues/68.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.ioscoffeebreak.com/issue/issue68" target="_blank" rel="noopener noreferrer">✅ Part 4 of Start building with Rive for iOS</a></div>
+    <div class="item-desc">This week, we're moving on to part 4 of the series, where we'll explore topics like creating workflows with Rive Scripting and improving the animation logic using the AI agent.</div>
+    <div class="item-foot"><span class="domain">ioscoffeebreak.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://www.nutrient.io/_astro/article-header.DHLutvXl.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.nutrient.io/blog/2025-in-review/" target="_blank" rel="noopener noreferrer">2025: Year in review</a></div>
+    <div class="item-desc">From document tools to intelligent platform — how 2025 transformed the way we work with documents.</div>
+    <div class="item-foot"><span class="domain">nutrient.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://substack-post-media.s3.amazonaws.com/public/images/0b4c8ebd-00e8-4219-ba26-fe61ef6af269_1024x1024.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://antongubarenko.substack.com/p/swift-bits-transition-vs-transaction" target="_blank" rel="noopener noreferrer">Swift Bits: Transition vs Transaction</a></div>
+    <div class="item-desc">Animate appearance and more!</div>
+    <div class="item-foot"><span class="domain">antongubarenko.substack.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://hboon.com/using-a-second-llm-to-review-your-coding-agent-s-work/" target="_blank" rel="noopener noreferrer">Using a Second LLM to Review Your Coding Agent’s Work</a></div>
+    <div class="item-desc">Different LLMs think differently. When one gets stuck, it tends to bang its head against the wall — trying the same approach over and over.…</div>
+    <div class="item-foot"><span class="domain">hboon.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=Bis4pGwiD58" target="_blank" rel="noopener noreferrer">Ah pè Kè pè Ulh cha</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/YRyf1Q7wjAA" target="_blank" rel="noopener noreferrer">Ah pè Kè pè Ulh cha - Spockcast</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://deprogrammaticaipsum.com/the-great-xerox-compromise/" target="_blank" rel="noopener noreferrer">The Great Xerox Compromise</a></div>
+    <div class="item-desc">I think of NeXTSTEP as one of the best compromises ever pulled off by the commercial computing industry. Xerox’s PARC laboratory showed people Smalltalk and the Personal Dynabook, giving people in the late 1970s one possible vision of the future of computing.…</div>
+    <div class="item-foot"><span class="domain">deprogrammaticaipsum.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://deprogrammaticaipsum.com/the-putrid-stench-of-decadence/" target="_blank" rel="noopener noreferrer">The Putrid Stench Of Decadence</a></div>
+    <div class="item-desc">The list of acceptance criteria for papers submitted to the 4th History of Programming Languages (HOPL) conference held in 2021 were the following: they had to refer to languages created before 2009, that were widely used around 2011, and that had great influe…</div>
+    <div class="item-foot"><span class="domain">deprogrammaticaipsum.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://deprogrammaticaipsum.com/eileen-uchitelle/" target="_blank" rel="noopener noreferrer">Eileen Uchitelle</a></div>
+    <div class="item-desc">It is seemingly impossible to talk about Ruby without talking about Rails, and this article will not be the exception.…</div>
+    <div class="item-foot"><span class="domain">deprogrammaticaipsum.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://deprogrammaticaipsum.com/_why/" target="_blank" rel="noopener noreferrer">_why</a></div>
+    <div class="item-desc">Most people traverse this industry in silence, duly writing, debugging, and deploying their code in whatever way ensures their salary or stock option grants; some others become unexpected stars in a firmament that would otherwise be dull and uneventful.…</div>
+    <div class="item-foot"><span class="domain">deprogrammaticaipsum.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://deprogrammaticaipsum.com/russ-olsen/" target="_blank" rel="noopener noreferrer">Russ Olsen</a></div>
+    <div class="item-desc">Programming languages have settled into a comfortable middle age, with most coming to resemble one another. Many use some variety of ALGOL-derived structure, maybe with the occasional feature that first made its appearance in a LISP variant.…</div>
+    <div class="item-foot"><span class="domain">deprogrammaticaipsum.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://revenuecat.wpenginepowered.com/wp-content/uploads/2026/02/Blog_12_Understanding-Google-Plays-subscription-price-changes.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.revenuecat.com/blog/engineering/google-play-edge-cases/" target="_blank" rel="noopener noreferrer">Handling edge cases in Google Play Billing</a></div>
+    <div class="item-desc">Explains how to correctly handle common edge cases in Google Play Billing, including pending purchases, ITEM_ALREADY_OWNED errors, multi-quantity consumables, subscription downgrades, and network failures.</div>
+    <div class="item-foot"><span class="domain">revenuecat.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=PnOqkjxLE3s" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 803</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://bitrise.io/blog/post/building-bitrises-ai-platform-scaling-ai-features-across-teams" target="_blank" rel="noopener noreferrer">Building Bitrise's AI platform: Scaling AI features across teams - Bitrise Blog</a></div>
+    <div class="item-desc">This is the fourth and final installment in our series about bringing AI to Bitrise. In Part 1, we explained why we built our own AI coding agent. Part 2 covered our browser-integrated AI Assistant.…</div>
+    <div class="item-foot"><span class="domain">bitrise.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://buczel.com/blog/fastlane-screenshots-ios/" target="_blank" rel="noopener noreferrer">Automated App Store Screenshots with Fastlane: A Practical Guide</a></div>
+    <div class="item-desc">Learn how to set up automated screenshot generation for App Store Connect using fastlane snapshot, with tips on accessibility identifiers, mock data, and handling iOS 26's new TabView.</div>
+    <div class="item-foot"><span class="domain">buczel.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://tuist.dev/blog/2026/02/02/migrating-mastodon-ios-to-tuist-with-codex" target="_blank" rel="noopener noreferrer">Codex cut Mastodon iOS clean builds 80%</a></div>
+    <div class="item-desc">Tuist generated projects. The honest answer is that real-world Xcode projects are messy. They are full of implicit configuration, one-off build settings, and decisions that made sense at the time but are hard to detect from the outside.…</div>
+    <div class="item-foot"><span class="domain">tuist.dev</span></div>
+  </div>
+</li></ul>
+  <div class="more"><a href="daily/2026/02/02/index.html">View all 28 links →</a></div>
+</section>
+
+<section class="day-card">
+  <div class="day-head">
+    <h2 class="day-title">SwiftVietnam Daily — Feb 3, 2026</h2>
+    <div class="day-meta"><span class="badge">2026-02-03</span><span>20 links</span></div>
+  </div>
+  <ul class="items">
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://getstream.io/blog/edge-speech-deepgram-fish/" target="_blank" rel="noopener noreferrer">Edge-Optimized Speech Workflows: Combining Deepgram Nova-3 STT with Fish Speech V1.5 TTS</a></div>
+    <div class="item-desc">Voice AI is moving to the edge. Learn how to design speech workflows that stay fast, expressive, and reliable with Deepgram and Fish Speech.</div>
+    <div class="item-foot"><span class="domain">getstream.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.createwithswift.com/beyond-the-human-designing-with-non-human-personas-in-mobile-apps/" target="_blank" rel="noopener noreferrer">Beyond the Human: Designing with Non-Human Personas in Mobile Apps</a></div>
+    <div class="item-desc">Design beyond the screen, non-human personas bring environmental reality into decision-making, from energy grids to cooling systems.</div>
+    <div class="item-foot"><span class="domain">createwithswift.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://blog.eternalstorms.at/2026/02/03/time-is-leafing/" target="_blank" rel="noopener noreferrer">Time is leafing</a></div>
+    
+    <div class="item-foot"><span class="domain">blog.eternalstorms.at</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://www.nutrient.io/_astro/article-header.R8WyjT9p.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.nutrient.io/blog/complete-guide-digital-signatures/" target="_blank" rel="noopener noreferrer">The complete guide to digital signatures: PAdES, CAdES, and XAdES explained</a></div>
+    <div class="item-desc">Master digital signatures with this complete guide to PAdES, CAdES, and XAdES standards. Learn implementation with Nutrient SDK, API, Document Engine, and Workflow Automation.</div>
+    <div class="item-foot"><span class="domain">nutrient.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=7y87nuq9x5Y" target="_blank" rel="noopener noreferrer">How to build a better tagging UI in SwiftUI with Antigravity | Sofia S4E4</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://engineering.monstar-lab.com/en/post/2026/02/03/Serverpod-for-a-Weekend-The-Good-The-Bad-and-The-Surprising" target="_blank" rel="noopener noreferrer">Serverpod for a Weekend - The Good, The Bad, and The Surprising</a></div>
+    
+    <div class="item-foot"><span class="domain">engineering.monstar-lab.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=mFpBWER_YmA" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 804</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://swiftwithmajid.com/2026/02/03/on-demand-resources-in-ios-app/" target="_blank" rel="noopener noreferrer">On-demand resources in iOS app</a></div>
+    <div class="item-desc">On-Demand Resources allow you to ship a smaller initial app download and fetch additional assets like images, sounds, level data, ML models, and more only when a user requires them.…</div>
+    <div class="item-foot"><span class="domain">swiftwithmajid.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://limboy.me/posts/bad-habit-good-subject" target="_blank" rel="noopener noreferrer">坏习惯是道好题目</a></div>
+    
+    <div class="item-foot"><span class="domain">limboy.me</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="http://chris.eidhof.nl/post/llm-month-food-assistant" target="_blank" rel="noopener noreferrer">Food Assistant</a></div>
+    <div class="item-desc">Peter has been doing with OpenClaw. This agent is taking care of my food, so it has an idea of what I have in stock. It knows about my allergies, my dietary wishes, and it has recipes and a grocery list. It also has a list of dishes I enjoy making and eating.…</div>
+    <div class="item-foot"><span class="domain">chris.eidhof.nl</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/02/codex-app/" target="_blank" rel="noopener noreferrer">Codex App</a></div>
+    <div class="item-desc">OpenAI (Hacker News): Today, we’re introducing the Codex app for macOS—a powerful new interface designed to effortlessly manage multiple agents at once, run work in parallel, and collaborate with agents over long-running tasks.…</div>
+    <div class="item-foot"><span class="domain">mjtsai.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/02/dfu-port-on-16-inch-macbook-pro/" target="_blank" rel="noopener noreferrer">DFU Port on the 16-Inch MacBook Pro</a></div>
+    <div class="item-desc">Jeff Johnson: This [Apple documentation] is wrong, a discovery that took me about a half dozen attempts to update macOS on an external disk.…</div>
+    <div class="item-foot"><span class="domain">mjtsai.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/02/ios-26-3-limit-carrier-location-tracking/" target="_blank" rel="noopener noreferrer">iOS 26.3: Limit Carrier Location Tracking</a></div>
+    <div class="item-desc">Juli Clover: Mobile networks determine location based on the cellular towers that a device connects to, but with the setting enabled, some of the data typically made available to mobile networks is being restricted.…</div>
+    <div class="item-foot"><span class="domain">mjtsai.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/02/apple-and-kakao-pay-fined-over-privacy/" target="_blank" rel="noopener noreferrer">Apple and Kakao Pay Fined Over Privacy</a></div>
+    <div class="item-desc">Proton’s Tech Fines Tracker (via Ben Lovejoy): While $7.8 billion in fines sounds substantial, it represents little more than a rounding error for Big Tech.…</div>
+    <div class="item-foot"><span class="domain">mjtsai.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=RkUdoKYx1HI" target="_blank" rel="noopener noreferrer">탈진할 거 같습니다... - AI 단식 4일차</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://nemecek.be/blog/214/new-friendly-place-to-share-updates-about-your-indie-apps" target="_blank" rel="noopener noreferrer">New friendly place to share updates about your indie apps</a></div>
+    <div class="item-desc">Have you ever tried sharing your indie app on Reddit? If so, did your post get removed soon due to “self-promotion”?…</div>
+    <div class="item-foot"><span class="domain">nemecek.be</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=ICYbOfW5RoQ" target="_blank" rel="noopener noreferrer">Codex App - A First Look for App Development</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026a" target="_blank" rel="noopener noreferrer">iOS 16.7.14 (20H370)</a></div>
+    <div class="item-desc">View downloads</div>
+    <div class="item-foot"><span class="domain">developer.apple.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026b" target="_blank" rel="noopener noreferrer">iPadOS 16.7.14 (20H370)</a></div>
+    <div class="item-desc">View downloads</div>
+    <div class="item-foot"><span class="domain">developer.apple.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=KI_JslCXHTs" target="_blank" rel="noopener noreferrer">Build a Voice Agent in Python: 2026 Guide</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li></ul>
+  <div class="more"><a href="daily/2026/02/03/index.html">Open daily page →</a></div>
+</section>
+
+<section class="day-card">
+  <div class="day-head">
+    <h2 class="day-title">SwiftVietnam Daily — Feb 4, 2026</h2>
+    <div class="day-meta"><span class="badge">2026-02-04</span><span>34 links</span></div>
+  </div>
+  <ul class="items">
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/XtmszZufL1c" target="_blank" rel="noopener noreferrer">امتا ال ITI تكون خطوة كويسة و امتاا لا؟!#بودكاست #software #programming #mobiledevelopment #ITI #iOS</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://getstream.io/blog/marketplace-content-moderation/" target="_blank" rel="noopener noreferrer">Marketplace Content Moderation: How to Build Trust and Prevent Abuse at Scale</a></div>
+    <div class="item-desc">Every listing, message, and review shapes whether a transaction happens.</div>
+    <div class="item-foot"><span class="domain">getstream.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://fatbobman.com/en/posts/screensage-from-pixel-to-meta/" target="_blank" rel="noopener noreferrer">From Pixel Capture to Metadata: Reimagining Screen Recording Architecture on macOS</a></div>
+    <div class="item-desc">Independent developer Sintone shares a deep dive into building a macOS screen recorder.…</div>
+    <div class="item-foot"><span class="domain">fatbobman.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://fatbobman.com/zh/posts/screensage-from-pixel-to-meta/" target="_blank" rel="noopener noreferrer">macOS 录屏软件开发实录：从像素抓取到元数据重现</a></div>
+    <div class="item-desc">视频正在取代文字成为主流的表达方式，而好工具是创作的加速器。macOS 录屏软件 ScreenSage Pro 的独立开发者 Sintone 分享了从像素抓取到元数据重现的全过程。从屏幕录制、元数据捕获，到高性能视频合成，他详述了开发中的挑战与解决方案。</div>
+    <div class="item-foot"><span class="domain">fatbobman.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://revenuecat.wpenginepowered.com/wp-content/uploads/2026/02/RC-Blog-Cover-ElevenLabs-1.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.revenuecat.com/blog/growth/jack-tanmay-elevenlabs-sub-club-podcast-2026/" target="_blank" rel="noopener noreferrer">How ElevenLabs builds and grows consumer AI apps without losing speed or clarity</a></div>
+    <div class="item-desc">On the podcast: how earned media can drive paid performance, building features that make for good tweets, and why stripping out your onboarding quiz might beat optimizing it.</div>
+    <div class="item-foot"><span class="domain">revenuecat.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=GYkM412PGZM" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 807</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://substack-post-media.s3.amazonaws.com/public/images/9715ae60-f4eb-4ac1-8c28-375b83dcf0f5_654x325.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://curatedios.substack.com/p/40-swiftui-custom-view-modifiers" target="_blank" rel="noopener noreferrer">#40 - SwiftUI Custom View Modifiers</a></div>
+    <div class="item-desc">Making the code more readable and flexible</div>
+    <div class="item-foot"><span class="domain">curatedios.substack.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=6UmAlOOtbP0" target="_blank" rel="noopener noreferrer">[React] 16강. useCallback - 함수 재생성과 랜더링 제어</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/5RRhX7jg8RQ" target="_blank" rel="noopener noreferrer">OpenClaw + Telegram + Ollama: Local Personal AI Assistant #ai #openclaw #ollama #llm #telegram</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://livsycode.com/blog/an-xcode-agent-prompt-what-it-signals-for-combine-and-rxswift/" target="_blank" rel="noopener noreferrer">An Xcode Agent Prompt: What It Signals for Combine and RxSwift</a></div>
+    <div class="item-desc">Greetings, traveler! While poking around Xcode’s agent prompts, people noticed a blunt instruction: Avoid using the Combine framework and instead prefer to use Swift’s async and await versions of APIs instead.…</div>
+    <div class="item-foot"><span class="domain">livsycode.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://swiftpackageindex.com/qtrust-id/SeQure-iOS-SDK" target="_blank" rel="noopener noreferrer">SequreSDK</a></div>
+    <div class="item-desc">qtrust-id/SeQure-iOS-SDK</div>
+    <div class="item-foot"><span class="domain">swiftpackageindex.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://www.nutrient.io/_astro/article-header.Bj6nAsU2.jpg" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.nutrient.io/blog/nutrient-workflow-banking-success-fcmb/" target="_blank" rel="noopener noreferrer">First City Monument Bank streamlines banking processes with Nutrient Workflow</a></div>
+    <div class="item-desc">Discover how FCMB cut errors and sped up banking approvals with Nutrient Workflow</div>
+    <div class="item-foot"><span class="domain">nutrient.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/TyDNpPgx6g4" target="_blank" rel="noopener noreferrer">Day 3! Seven quotes that changed my life</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/xhKsAeSRw8Y" target="_blank" rel="noopener noreferrer">Day 2 of seven quotes that have changed my life</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/4ncgphNBfgU" target="_blank" rel="noopener noreferrer">Day 1 of 7! Quotes that changed my life</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=KIB30T-ZtVs" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 805</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://bitrise.io/blog/post/build-hub-press-release" target="_blank" rel="noopener noreferrer">Bitrise bridges GitHub’s mobile performance gap with new purpose-built infrastructure: Bitrise Build Hub - Bitrise Blog</a></div>
+    <div class="item-desc">Bitrise launches Build Hub, a fully-managed Apple silicon and Linux infrastructure with a powerful execution layer for GitHub Actions.</div>
+    <div class="item-foot"><span class="domain">bitrise.io</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://limboy.me/posts/chrome-extension-vibe-coding-container" target="_blank" rel="noopener noreferrer">Chrome Extension 是 Vibe Coding 的绝佳载体</a></div>
+    
+    <div class="item-foot"><span class="domain">limboy.me</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.kodeco.com/ios/paths/visionos-beyond-the-basics/51928619-realitykit-reality-composer-pro" target="_blank" rel="noopener noreferrer">RealityKit &amp; Reality Composer Pro [SUBSCRIBER]</a></div>
+    <div class="item-desc">Learn how to create augmented reality experiences using Reality Composer Pro with RealityKit and USDz. Create 3D scenes employing models, animations, and interactions using RealityKit.…</div>
+    <div class="item-foot"><span class="domain">kodeco.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://swiftjectivec.com/Agentic-Coding-Codex-Claude-Code-in-Xcode/" target="_blank" rel="noopener noreferrer">Agentic Coding in Xcode 26.3 with Claude Code and Codex</a></div>
+    <div class="item-desc">I was filled with whimsy watching OpenAI announce their Codex app1 not even two days ago. But life comes at you fast.…</div>
+    <div class="item-foot"><span class="domain">swiftjectivec.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.sagarunagar.com/blog/asyncstream-asyncthrowingstream-swift/" target="_blank" rel="noopener noreferrer">AsyncStream &amp; AsyncThrowingStream in Swift - Real-Time Data Sync Explained</a></div>
+    <div class="item-desc">Modern apps are no longer single-device experiences. Users expect their data to stay perfectly in sync across iPhone, iPad, and Mac, with…</div>
+    <div class="item-foot"><span class="domain">sagarunagar.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=wPwq_19Pa_c" target="_blank" rel="noopener noreferrer">선택에 대한 두려움 - AI 단식 6일차</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=JtSeAs1ILuE" target="_blank" rel="noopener noreferrer">SymbolBrowser Mac Menu Bar App</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://livsycode.com/blog/agentic-coding-in-xcode-26-3/" target="_blank" rel="noopener noreferrer">Agentic coding in Xcode 26.3</a></div>
+    <div class="item-desc">Greetings, traveler! In a recent demo, Apple showed something that feels like a real shift in how development tools work. With Xcode 26.3, coding is no longer just about writing lines of Swift faster.…</div>
+    <div class="item-foot"><span class="domain">livsycode.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="http://www.russbishop.net/no-such-thing-as-speed-of-light" target="_blank" rel="noopener noreferrer">No Such Thing as Speed of Light</a></div>
+    
+    <div class="item-foot"><span class="domain">russbishop.net</span></div>
+  </div>
+</li></ul>
+  <div class="more"><a href="daily/2026/02/04/index.html">View all 34 links →</a></div>
+</section>
+
+<section class="day-card">
+  <div class="day-head">
+    <h2 class="day-title">SwiftVietnam Daily — Feb 5, 2026</h2>
+    <div class="day-meta"><span class="badge">2026-02-05</span><span>25 links</span></div>
+  </div>
+  <ul class="items">
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=-mqznrnsktw" target="_blank" rel="noopener noreferrer">Live Coding, no AI - 1Hour</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://shows.acast.com/mtjc-1/episodes/6983f0ad1976ad123705a2e9" target="_blank" rel="noopener noreferrer">Two Years of Apple Vision Pro with the Step Into Vision Community</a></div>
+    <div class="item-desc">Members of the Step Into Vision community gathered on Feb 2, 2026 to celebrate and reflect on two years of Apple Vision Pro.…</div>
+    <div class="item-foot"><span class="domain">shows.acast.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=ND1plo-fDvk" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 806</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://swiftpackageindex.com/noworrieseh/SmartBinaryCodable" target="_blank" rel="noopener noreferrer">SmartBinaryCodable</a></div>
+    <div class="item-desc">noworrieseh/SmartBinaryCodable</div>
+    <div class="item-foot"><span class="domain">swiftpackageindex.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/04/xcode-26-3/" target="_blank" rel="noopener noreferrer">Xcode 26.3</a></div>
+    <div class="item-desc">Apple (RC xip, downloads, Hacker News): Xcode 26.3 introduces support for agentic coding, a new way in Xcode for developers to build apps, powered by coding agents from Anthropic and OpenAI.…</div>
+    <div class="item-foot"><span class="domain">mjtsai.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/04/testing-tip-always-show-scrollbars/" target="_blank" rel="noopener noreferrer">Testing Tip: Always Show Scrollbars</a></div>
+    <div class="item-desc">Marcin Wichary: This scrollbar serves no purpose, so it will become visual noise for a lot of your users. But when you yourself use “shy” scrollbars, you might not even realize.…</div>
+    <div class="item-foot"><span class="domain">mjtsai.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/04/superduper-3-12/" target="_blank" rel="noopener noreferrer">SuperDuper 3.12</a></div>
+    <div class="item-desc">Dave Nanian: We’ve made some improvements to our scheduler to help mitigate some of the Tahoe “stalling during Dark Wake” problems. They’re not 100%, but things are better, and we’re investigating additional improvements for the next update.…</div>
+    <div class="item-foot"><span class="domain">mjtsai.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://substackcdn.com/image/fetch/$s_!FQA8!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3ed0e7ea-c533-4c89-ac9b-f1bc72c616e2_500x500.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://thosewhoswift.substack.com/p/those-who-swift-issue-252" target="_blank" rel="noopener noreferrer">Those Who Swift - Issue 252</a></div>
+    <div class="item-desc">Your weekly dose of Swift!</div>
+    <div class="item-foot"><span class="domain">thosewhoswift.substack.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=rkyKQpHiqKw" target="_blank" rel="noopener noreferrer">AI는 정말 학습에 도움이 되는 걸까 - AI 단식 7일차</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=XhgLm3T6BkU" target="_blank" rel="noopener noreferrer">Complex 3D Animation Effect Using SwiftUI | BlueNote's 3D Paywall Effect | Xcode 26</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://mackuba.eu/2026/02/04/pds-undockered/" target="_blank" rel="noopener noreferrer">Running Bluesky PDS undockered</a></div>
+    <div class="item-desc">A bit over a year ago, in the first week of January 2025, I migrated my main Bluesky account to my own PDS on a Netcup VPS.…</div>
+    <div class="item-foot"><span class="domain">mackuba.eu</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://makeapppie.com/2026/02/04/bizoneness-and-lucap-sap-b1web-client-lucap-erp-and-making-a-roadmap-for-an-application/" target="_blank" rel="noopener noreferrer">Bizoneness and LucaP: SAP B1Web client, LucaP ERP, and making a roadmap for an application</a></div>
+    
+    <div class="item-foot"><span class="domain">makeapppie.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.runway.team/blog/introducing-flightpaths-by-runway" target="_blank" rel="noopener noreferrer">Introducing Flightpaths by Runway</a></div>
+    <div class="item-desc">Flightpaths unlocks entirely new ways to set up, manage, and automate your end-to-end release cycles.…</div>
+    <div class="item-foot"><span class="domain">runway.team</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://revenuecat.wpenginepowered.com/wp-content/uploads/2026/02/Shipyard_Blog_YourShipYardQuestions_1600x800_v1.png" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.revenuecat.com/blog/company/shipyard-2026-questions/" target="_blank" rel="noopener noreferrer">Your Shipyard: Creator Contest questions answered</a></div>
+    <div class="item-desc">Clear answers on building, monetization, submissions, and judging</div>
+    <div class="item-foot"><span class="domain">revenuecat.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026a" target="_blank" rel="noopener noreferrer">26.3 iOS RC (23D125)</a></div>
+    <div class="item-desc">View downloadsView release notes</div>
+    <div class="item-foot"><span class="domain">developer.apple.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026b" target="_blank" rel="noopener noreferrer">iPadOS 26.3 RC (23D125)</a></div>
+    <div class="item-desc">View downloadsView release notes</div>
+    <div class="item-foot"><span class="domain">developer.apple.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026c" target="_blank" rel="noopener noreferrer">macOS 26.3 RC (25D122)</a></div>
+    <div class="item-desc">View downloadsView release notes</div>
+    <div class="item-foot"><span class="domain">developer.apple.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026d" target="_blank" rel="noopener noreferrer">tvOS 26.3 RC (23K619)</a></div>
+    <div class="item-desc">View downloadsView release notes</div>
+    <div class="item-foot"><span class="domain">developer.apple.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026e" target="_blank" rel="noopener noreferrer">visionOS 26.3 RC (23N619)</a></div>
+    <div class="item-desc">View downloadsView release notes</div>
+    <div class="item-foot"><span class="domain">developer.apple.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026f" target="_blank" rel="noopener noreferrer">watchOS 26.3 RC (23S618)</a></div>
+    <div class="item-desc">View downloadsView release notes</div>
+    <div class="item-foot"><span class="domain">developer.apple.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026g" target="_blank" rel="noopener noreferrer">iOS 18.7.5 (22H311)</a></div>
+    <div class="item-desc">View downloads</div>
+    <div class="item-foot"><span class="domain">developer.apple.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026h" target="_blank" rel="noopener noreferrer">iPadOS 18.7.5 (22H311)</a></div>
+    <div class="item-desc">View downloads</div>
+    <div class="item-foot"><span class="domain">developer.apple.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/oPJuV6fgUeI" target="_blank" rel="noopener noreferrer">¿Por qué abandonan los programadores Junior?</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <img class="thumb" src="https://substackcdn.com/image/fetch/$s_!EK1p!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6e532c11-2efd-44c1-a6f1-4abf4e02ddba_1456x1048.jpeg" alt="" loading="lazy" decoding="async"/>
+  <div class="item-body">
+    <div class="item-title"><a href="https://captainswiftui.substack.com/p/objectively-better-observably-trickier" target="_blank" rel="noopener noreferrer">Objectively Better, Observably Trickier</a></div>
+    <div class="item-desc">The Observation Framework is great... once you figure out how it actually works</div>
+    <div class="item-foot"><span class="domain">captainswiftui.substack.com</span></div>
+  </div>
+</li>
+
+<li class="item">
+  <div class="thumb" aria-hidden="true"></div>
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.kodeco.com/49905345-an-introduction-to-liquid-glass-for-ios-26" target="_blank" rel="noopener noreferrer">An Introduction to Liquid Glass for iOS 26 [FREE]</a></div>
+    <div class="item-desc">Apple’s new Liquid Glass design language marks a major shift in iOS 26 UI design. Learn what Liquid Glass is, how it works across SwiftUI and UIKit, and what to watch out for when updating an existing iOS app.</div>
+    <div class="item-foot"><span class="domain">kodeco.com</span></div>
+  </div>
+</li></ul>
+  <div class="more"><a href="daily/2026/02/05/index.html">Open daily page →</a></div>
+</section>
     </div>
 
     <div class="footer">Built by SwiftVietnam Digest pipeline.</div>
