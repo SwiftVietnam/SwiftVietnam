@@ -204,6 +204,9 @@ for (let i = 0; i < days; i++) {
   if (d) daysData.push(d);
 }
 
+// Sort newest day first (latest on top)
+const daysDataSorted = daysData.slice().sort((a, b) => b.date.localeCompare(a.date));
+
 await fs.mkdir(dist, { recursive: true });
 
 const issueTitle = `SwiftVietnam Digest — Week of ${weekStart.toFormat('LLL d, yyyy')} → ${endDate.toFormat('LLL d, yyyy')}`;
@@ -281,7 +284,7 @@ const indexHtml = `<!doctype html>
     </div>
 
     <div class="grid">
-      ${daysData.map(renderDayCard).join('\n')}
+      ${daysDataSorted.map(renderDayCard).join('\n')}
     </div>
 
     <div class="footer">Built by SwiftVietnam Digest pipeline.</div>
@@ -294,7 +297,7 @@ await fs.writeFile(path.join(dist, 'index.html'), indexHtml, 'utf8');
 // Daily index page
 await fs.mkdir(path.join(dist, 'daily'), { recursive: true });
 
-const dailyList = daysData
+const dailyList = daysDataSorted
   .map((d) => {
     const rel = dailyRel(d.date);
     return `<li class="item"><div class="item-body"><div class="item-title"><a href="../${esc(rel)}">${esc(d.date)}</a></div><div class="item-desc">${esc(d.title)} • ${d.items.length} links</div></div></li>`;
