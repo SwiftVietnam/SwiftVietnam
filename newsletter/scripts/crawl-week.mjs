@@ -141,6 +141,9 @@ console.log(`Window: ${startDate.toISO()} → ${endOfWindow.toISO()}`);
 const byDay = new Map();
 const invalidFeeds = [];
 
+// De-dupe across all feeds + days in this run
+const globalSeenUrl = new Set();
+
 const settled = await mapLimit(feeds, CONCURRENCY, async (feed) => {
   let res;
   try {
@@ -188,6 +191,10 @@ const settled = await mapLimit(feeds, CONCURRENCY, async (feed) => {
     const day = zdt.toISODate();
     const url = normalizeUrl(item.link);
     if (!url) continue;
+
+    // Deduplicate across feeds so we don't show the same URL multiple times
+    if (globalSeenUrl.has(url)) continue;
+    globalSeenUrl.add(url);
 
     const rec = {
       title: (item.title || '').replaceAll('\n', ' ').trim(),
