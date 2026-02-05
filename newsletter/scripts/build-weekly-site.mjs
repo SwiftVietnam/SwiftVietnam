@@ -354,7 +354,7 @@ const indexHtml = `<!doctype html>
     <div class="topbar-inner">
       <div class="brand">
         <div class="brand-title">SwiftVietnam Digest</div>
-        <div class="brand-sub">Weekly issue • ${esc(TZ)}</div>
+        <!-- subtitle removed -->
       </div>
       <div class="nav"><a href="daily/index.html">Daily links</a></div>
     </div>
@@ -363,7 +363,7 @@ const indexHtml = `<!doctype html>
   <div class="container">
     <div class="hero">
       <h1>${esc(issueTitle)}</h1>
-      <p>Minimal UI • Auto-collected from RSS • Images are thumbnails</p>
+      <!-- tagline removed -->
     </div>
 
     <div class="grid">
@@ -407,7 +407,7 @@ const dailyIndexHtml = `<!doctype html>
     <div class="topbar-inner">
       <div class="brand">
         <div class="brand-title">SwiftVietnam Digest</div>
-        <div class="brand-sub">Daily archive • ${esc(TZ)}</div>
+        <!-- subtitle removed -->
       </div>
       <div class="nav"><a href="../index.html">Weekly issue</a></div>
     </div>
@@ -465,7 +465,7 @@ for (const d of daysData) {
     <div class="topbar-inner">
       <div class="brand">
         <div class="brand-title">SwiftVietnam Digest</div>
-        <div class="brand-sub">${esc(d.date)} • ${d.items.length} links</div>
+        <!-- subtitle removed -->
       </div>
       <div class="nav"><a href="../../../index.html">Daily index</a> &nbsp; <a href="../../../../index.html">Weekly</a></div>
     </div>
