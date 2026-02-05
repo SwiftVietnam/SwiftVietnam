@@ -15,7 +15,7 @@ tags: []
 Microsoft Authentication Library (MSAL) for iOS and macOS
 AzureAD/microsoft-authentication-library-for-objc [Source](https://swiftpackageindex.com/AzureAD/microsoft-authentication-library-for-objc)
 - **Late Night Silent Completions: Jiiiii — Part 806** — [Source](https://www.youtube.com/watch?v=ND1plo-fDvk)
-- **ZaberMotionLib - 8.1.0-rc** — ZaberMotionLib – Version 8.1.0-rc 
+- **ZaberMotionLib - 8.1.0** — ZaberMotionLib – Version 8.1.0 
 A Swift library used to operate Zaber devices
 zabertech/zaber-motion-lib-swift [Source](https://swiftpackageindex.com/zabertech/zaber-motion-lib-swift)
 - **SmartBinaryCodable** — noworrieseh/SmartBinaryCodable [Source](https://swiftpackageindex.com/noworrieseh/SmartBinaryCodable)

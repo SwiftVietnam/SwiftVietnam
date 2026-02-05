@@ -48,6 +48,12 @@ async function isValidFeed(url) {
     if (!looksLikeFeed) return { ok: false, reason: 'Not RSS/Atom' };
     return { ok: true };
   } catch (e) {
+    // Some errors are clearly permanent (e.g. TLS cert mismatch)
+    const code = e?.cause?.code || e?.code;
+    if (code === 'ERR_TLS_CERT_ALTNAME_INVALID') {
+      return { ok: false, reason: 'TLS cert hostname mismatch' };
+    }
+
     // timeouts/network errors could be transient; don't prune
     return { ok: true, reason: `Transient error: ${String(e)}` };
   }
