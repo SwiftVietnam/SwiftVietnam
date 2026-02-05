@@ -1,0 +1,77 @@
+name: Crawl RSS sources (SwiftVietnam Digest)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 00:10 daily Asia/Singapore == 16:10 UTC (previous day)
+    - cron: "10 16 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "digest-crawl"
+  cancel-in-progress: true
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: newsletter/package-lock.json
+
+      - name: Install deps
+        working-directory: newsletter
+        run: npm ci
+
+      - name: Import all RSS feeds from iOSDevDirectory (no validation)
+        working-directory: newsletter
+        env:
+          DISABLE_TAG: ""
+          VALIDATE: "false"
+          ENABLE_NEW: "true"
+        run: node scripts/sync-iosdevdirectory-feeds.mjs
+
+      - name: Enable all feeds
+        working-directory: newsletter
+        run: npm run feeds:enable-all
+
+      - name: Prune clearly invalid feeds (404/410 or not RSS)
+        working-directory: newsletter
+        env:
+          CONCURRENCY: "30"
+          TIMEOUT_MS: "7000"
+          APPLY: "true"
+        run: npm run feeds:prune
+
+      - name: Crawl recent items and update daily markdown (last 2 days)
+        working-directory: newsletter
+        env:
+          TZ: Asia/Singapore
+          DAYS: "2"
+          CONCURRENCY: "30"
+          MAX_ITEMS_PER_FEED: "15"
+          TIMEOUT_MS: "12000"
+        run: node scripts/crawl-week.mjs
+
+      - name: Commit updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add newsletter/config/feeds.yml newsletter/content
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto crawl digest content (SGT)"
+            git push
+          fi

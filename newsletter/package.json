@@ -13,7 +13,10 @@
     "search:iosdev": "node scripts/search-iosdevdirectory.mjs",
     "sync:iosfeeds": "node scripts/sync-iosfeeds.mjs",
     "sync:iosdevdirectory": "node scripts/sync-iosdevdirectory-feeds.mjs",
-    "feeds:toggle": "node scripts/toggle-feeds.mjs"
+    "feeds:toggle": "node scripts/toggle-feeds.mjs",
+    "feeds:enable-all": "node scripts/enable-all-feeds.mjs",
+    "feeds:prune": "node scripts/prune-invalid-feeds.mjs",
+    "crawl:week": "node scripts/crawl-week.mjs"
   },
   "keywords": [],
   "author": "",

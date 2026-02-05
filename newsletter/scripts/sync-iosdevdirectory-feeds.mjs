@@ -7,10 +7,11 @@ const BLOGS_JSON_URL =
 
 const FEEDS_YML = path.resolve('config/feeds.yml');
 
-const MAX_CHECK = Number(process.env.MAX_CHECK || 300); // validate this many candidate feeds
+const MAX_CHECK = Number(process.env.MAX_CHECK || 300); // validate this many candidate feeds (0 => all)
 const CONCURRENCY = Number(process.env.CONCURRENCY || 16);
 const TIMEOUT_MS = Number(process.env.TIMEOUT_MS || 7000);
 
+const VALIDATE = String(process.env.VALIDATE || 'true').toLowerCase() === 'true';
 const ENABLE_NEW = String(process.env.ENABLE_NEW || 'false').toLowerCase() === 'true';
 const DISABLE_TAG = (process.env.DISABLE_TAG || 'iosfeeds').trim();
 
@@ -138,16 +139,25 @@ for (const s of filtered) {
   unique.push(s);
 }
 
-const toCheck = unique.slice(0, MAX_CHECK);
-console.log(`iOSDevDirectory: ${unique.length} RSS feeds found. Validating first ${toCheck.length}...`);
+const toCheck = MAX_CHECK === 0 ? unique : unique.slice(0, MAX_CHECK);
 
-const checked = await mapLimit(toCheck, CONCURRENCY, async (s) => {
-  const ok = await isValidFeed(s.rss);
-  return ok ? s : null;
-});
+let valid;
+if (!VALIDATE) {
+  valid = unique;
+  console.log(`iOSDevDirectory: ${unique.length} RSS feeds found. (VALIDATE=false) Adding without validation.`);
+} else {
+  console.log(
+    `iOSDevDirectory: ${unique.length} RSS feeds found. Validating ${toCheck.length}...`
+  );
 
-const valid = checked.filter(Boolean);
-console.log(`Valid RSS feeds: ${valid.length}`);
+  const checked = await mapLimit(toCheck, CONCURRENCY, async (s) => {
+    const ok = await isValidFeed(s.rss);
+    return ok ? s : null;
+  });
+
+  valid = checked.filter(Boolean);
+  console.log(`Valid RSS feeds: ${valid.length}`);
+}
 
 let added = 0;
 for (const v of valid) {
