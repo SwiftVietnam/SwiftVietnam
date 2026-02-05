@@ -17,6 +17,7 @@ const root = path.resolve('content');
 const dist = path.resolve('site-dist');
 
 const WEEKLY_PREVIEW_LIMIT = Number(process.env.WEEKLY_PREVIEW_LIMIT || 25);
+const PREVIEW_PER_KIND = Number(process.env.PREVIEW_PER_KIND || 8);
 
 function dayMdPath(dt) {
   return path.join(root, dt.toFormat('yyyy'), dt.toFormat('LL'), dt.toFormat('dd'), 'content.md');
@@ -155,6 +156,15 @@ a:hover{text-decoration:underline}
 .badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:3px 10px}
 
 .items{list-style:none;margin:0;padding:10px 10px 12px}
+
+.section{padding:10px 10px 12px}
+.section+.section{border-top:1px solid var(--border)}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 4px 10px;color:var(--muted);font-size:12px}
+.section-title{font-weight:750;color:var(--muted)}
+.section-count{color:var(--muted)}
+.section .items{padding:0}
+.section .item{padding:10px 4px}
+
 .item{display:flex;gap:12px;padding:10px;border-radius:12px}
 .item:hover{background:rgba(148,163,184,.10)}
 @media (prefers-color-scheme: light){.item:hover{background:rgba(15,23,42,.05)}}
@@ -216,6 +226,57 @@ function dailyRel(dateISO) {
   return `daily/${y}/${m}/${d}/index.html`;
 }
 
+function contentKind(url) {
+  const u = String(url || '').toLowerCase();
+  if (!u) return 'article';
+
+  // video
+  if (
+    u.includes('youtube.com/') ||
+    u.includes('youtu.be/') ||
+    u.includes('vimeo.com/') ||
+    u.includes('twitch.tv/')
+  ) {
+    return 'video';
+  }
+
+  // podcast / audio
+  if (
+    /\.(mp3|m4a|aac|ogg)(\?|$)/i.test(u) ||
+    u.includes('podcasts.apple.com/') ||
+    u.includes('open.spotify.com/show') ||
+    u.includes('open.spotify.com/episode') ||
+    u.includes('acast.com/') ||
+    u.includes('buzzsprout.com/') ||
+    u.includes('simplecast.com/') ||
+    u.includes('libsyn.com/') ||
+    u.includes('transistor.fm/') ||
+    u.includes('megaphone.fm/') ||
+    u.includes('pca.st/') ||
+    u.includes('overcast.fm/') ||
+    u.includes('pod.link/')
+  ) {
+    return 'podcast';
+  }
+
+  return 'article';
+}
+
+function splitByKind(items) {
+  const out = { article: [], podcast: [], video: [] };
+  for (const it of items || []) {
+    const k = contentKind(it.url);
+    out[k].push(it);
+  }
+  return out;
+}
+
+function kindLabel(kind) {
+  if (kind === 'video') return 'Videos';
+  if (kind === 'podcast') return 'Podcasts';
+  return 'Articles';
+}
+
 function renderItem(it) {
   const host = safeHost(it.url);
   const hasImage = Boolean(it.image);
@@ -236,14 +297,36 @@ function renderItem(it) {
 </li>`;
 }
 
+function renderSection(kind, items, { limit } = {}) {
+  const list = typeof limit === 'number' ? items.slice(0, limit) : items;
+  if (!list.length) return '';
+
+  const itemsHtml = list.map(renderItem).join('\n');
+
+  return `
+  <div class="section">
+    <div class="section-head">
+      <div class="section-title">${esc(kindLabel(kind))}</div>
+      <div class="section-count">${items.length}</div>
+    </div>
+    <ul class="items">${itemsHtml}</ul>
+  </div>`;
+}
+
 function renderDayCard(d) {
   const rel = dailyRel(d.date);
-  const preview = d.items.slice(0, WEEKLY_PREVIEW_LIMIT);
-  const itemsHtml = preview.length
-    ? preview.map(renderItem).join('\n')
-    : `<li class="item"><div class="item-body"><div class="item-title">No items found.</div></div></li>`;
 
-  const more = d.items.length > preview.length
+  const groups = splitByKind(d.items);
+
+  // keep weekly page concise but still show all types
+  const maxPer = Math.max(3, PREVIEW_PER_KIND);
+  const sections = [
+    renderSection('article', groups.article, { limit: maxPer }),
+    renderSection('podcast', groups.podcast, { limit: maxPer }),
+    renderSection('video', groups.video, { limit: maxPer })
+  ].filter(Boolean).join('\n');
+
+  const more = d.items.length > WEEKLY_PREVIEW_LIMIT
     ? `<div class="more"><a href="${esc(rel)}">View all ${d.items.length} links →</a></div>`
     : `<div class="more"><a href="${esc(rel)}">Open daily page →</a></div>`;
 
@@ -253,7 +336,7 @@ function renderDayCard(d) {
     <h2 class="day-title">${esc(d.title)}</h2>
     <div class="day-meta"><span class="badge">${esc(d.date)}</span><span>${d.items.length} links</span></div>
   </div>
-  <ul class="items">${itemsHtml}</ul>
+  ${sections || `<div class="section"><ul class="items"><li class="item"><div class="item-body"><div class="item-title">No items found.</div></div></li></ul></div>`}
   ${more}
 </section>`;
 }
@@ -300,7 +383,14 @@ await fs.mkdir(path.join(dist, 'daily'), { recursive: true });
 const dailyList = daysDataSorted
   .map((d) => {
     const rel = dailyRel(d.date);
-    return `<li class="item"><div class="item-body"><div class="item-title"><a href="../${esc(rel)}">${esc(d.date)}</a></div><div class="item-desc">${esc(d.title)} • ${d.items.length} links</div></div></li>`;
+    const g = splitByKind(d.items);
+    const bits = [
+      g.article.length ? `${g.article.length} articles` : null,
+      g.podcast.length ? `${g.podcast.length} podcasts` : null,
+      g.video.length ? `${g.video.length} videos` : null
+    ].filter(Boolean).join(' • ');
+
+    return `<li class="item no-thumb"><div class="item-body"><div class="item-title"><a href="../${esc(rel)}">${esc(d.date)}</a></div><div class="item-desc">${esc(d.title)} • ${d.items.length} links${bits ? ` • ${esc(bits)}` : ''}</div></div></li>`;
   })
   .join('\n');
 
@@ -344,9 +434,23 @@ for (const d of daysData) {
   const dayDir = path.join(dist, 'daily', y, m, dd);
   await fs.mkdir(dayDir, { recursive: true });
 
-  const itemsHtml = d.items.length
-    ? d.items.map(renderItem).join('\n')
-    : `<li class="item"><div class="item-body"><div class="item-title">No items found.</div></div></li>`;
+  const groups = splitByKind(d.items);
+
+  const itemsHtml = ['article', 'podcast', 'video']
+    .map((k) => {
+      const list = groups[k];
+      if (!list.length) return '';
+      return `
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title">${esc(kindLabel(k))}</div>
+          <div class="section-count">${list.length}</div>
+        </div>
+        <ul class="items">${list.map(renderItem).join('\n')}</ul>
+      </div>`;
+    })
+    .filter(Boolean)
+    .join('\n') || `<div class="section"><ul class="items"><li class="item"><div class="item-body"><div class="item-title">No items found.</div></div></li></ul></div>`;
 
   const dayHtml = `<!doctype html>
 <html>
@@ -374,7 +478,7 @@ for (const d of daysData) {
     </div>
 
     <section class="day-card">
-      <ul class="items">${itemsHtml}</ul>
+      ${itemsHtml}
     </section>
 
     <div class="footer">Built by SwiftVietnam Digest pipeline.</div>
