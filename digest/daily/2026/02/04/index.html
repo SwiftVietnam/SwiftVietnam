@@ -59,6 +59,15 @@ a:hover{text-decoration:underline}
 .badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:3px 10px}
 
 .items{list-style:none;margin:0;padding:10px 10px 12px}
+
+.section{padding:10px 10px 12px}
+.section+.section{border-top:1px solid var(--border)}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 4px 10px;color:var(--muted);font-size:12px}
+.section-title{font-weight:750;color:var(--muted)}
+.section-count{color:var(--muted)}
+.section .items{padding:0}
+.section .item{padding:10px 4px}
+
 .item{display:flex;gap:12px;padding:10px;border-radius:12px}
 .item:hover{background:rgba(148,163,184,.10)}
 @media (prefers-color-scheme: light){.item:hover{background:rgba(15,23,42,.05)}}
@@ -105,16 +114,13 @@ a:hover{text-decoration:underline}
     </div>
 
     <section class="day-card">
-      <ul class="items">
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/shorts/XtmszZufL1c" target="_blank" rel="noopener noreferrer">امتا ال ITI تكون خطوة كويسة و امتاا لا؟!#بودكاست #software #programming #mobiledevelopment #ITI #iOS</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
+      
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title">Articles</div>
+          <div class="section-count">23</div>
+        </div>
+        <ul class="items">
 <li class="item no-thumb">
   
   <div class="item-body">
@@ -151,39 +157,12 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=GYkM412PGZM" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 807</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
 <li class="item">
   <img class="thumb" src="https://substack-post-media.s3.amazonaws.com/public/images/9715ae60-f4eb-4ac1-8c28-375b83dcf0f5_654x325.png" alt="" loading="lazy" decoding="async"/>
   <div class="item-body">
     <div class="item-title"><a href="https://curatedios.substack.com/p/40-swiftui-custom-view-modifiers" target="_blank" rel="noopener noreferrer">#40 - SwiftUI Custom View Modifiers</a></div>
     <div class="item-desc">Making the code more readable and flexible</div>
     <div class="item-foot"><span class="domain">curatedios.substack.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=6UmAlOOtbP0" target="_blank" rel="noopener noreferrer">[React] 16강. useCallback - 함수 재생성과 랜더링 제어</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/shorts/5RRhX7jg8RQ" target="_blank" rel="noopener noreferrer">OpenClaw + Telegram + Ollama: Local Personal AI Assistant #ai #openclaw #ollama #llm #telegram</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
   </div>
 </li>
 
@@ -211,42 +190,6 @@ a:hover{text-decoration:underline}
     <div class="item-title"><a href="https://www.nutrient.io/blog/nutrient-workflow-banking-success-fcmb/" target="_blank" rel="noopener noreferrer">First City Monument Bank streamlines banking processes with Nutrient Workflow</a></div>
     <div class="item-desc">Discover how FCMB cut errors and sped up banking approvals with Nutrient Workflow</div>
     <div class="item-foot"><span class="domain">nutrient.io</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/shorts/TyDNpPgx6g4" target="_blank" rel="noopener noreferrer">Day 3! Seven quotes that changed my life</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/shorts/xhKsAeSRw8Y" target="_blank" rel="noopener noreferrer">Day 2 of seven quotes that have changed my life</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/shorts/4ncgphNBfgU" target="_blank" rel="noopener noreferrer">Day 1 of 7! Quotes that changed my life</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=KIB30T-ZtVs" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 805</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
   </div>
 </li>
 
@@ -292,24 +235,6 @@ a:hover{text-decoration:underline}
     <div class="item-title"><a href="https://www.sagarunagar.com/blog/asyncstream-asyncthrowingstream-swift/" target="_blank" rel="noopener noreferrer">AsyncStream &amp; AsyncThrowingStream in Swift - Real-Time Data Sync Explained</a></div>
     <div class="item-desc">Modern apps are no longer single-device experiences. Users expect their data to stay perfectly in sync across iPhone, iPad, and Mac, with…</div>
     <div class="item-foot"><span class="domain">sagarunagar.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=wPwq_19Pa_c" target="_blank" rel="noopener noreferrer">선택에 대한 두려움 - AI 단식 6일차</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=JtSeAs1ILuE" target="_blank" rel="noopener noreferrer">SymbolBrowser Mac Menu Bar App</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
   </div>
 </li>
 
@@ -370,15 +295,6 @@ a:hover{text-decoration:underline}
 <li class="item no-thumb">
   
   <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/shorts/GPnXl1o4BS8" target="_blank" rel="noopener noreferrer">Introducing KeyFramify App, a simple Keyframe video editor🎉</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
     <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026b" target="_blank" rel="noopener noreferrer">App Store Connect Update</a></div>
     <div class="item-desc">View release notes</div>
     <div class="item-foot"><span class="domain">developer.apple.com</span></div>
@@ -411,6 +327,113 @@ a:hover{text-decoration:underline}
     <div class="item-foot"><span class="domain">mailchi.mp</span></div>
   </div>
 </li></ul>
+      </div>
+
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title">Videos</div>
+          <div class="section-count">11</div>
+        </div>
+        <ul class="items">
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/XtmszZufL1c" target="_blank" rel="noopener noreferrer">امتا ال ITI تكون خطوة كويسة و امتاا لا؟!#بودكاست #software #programming #mobiledevelopment #ITI #iOS</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=GYkM412PGZM" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 807</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=6UmAlOOtbP0" target="_blank" rel="noopener noreferrer">[React] 16강. useCallback - 함수 재생성과 랜더링 제어</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/5RRhX7jg8RQ" target="_blank" rel="noopener noreferrer">OpenClaw + Telegram + Ollama: Local Personal AI Assistant #ai #openclaw #ollama #llm #telegram</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/TyDNpPgx6g4" target="_blank" rel="noopener noreferrer">Day 3! Seven quotes that changed my life</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/xhKsAeSRw8Y" target="_blank" rel="noopener noreferrer">Day 2 of seven quotes that have changed my life</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/4ncgphNBfgU" target="_blank" rel="noopener noreferrer">Day 1 of 7! Quotes that changed my life</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=KIB30T-ZtVs" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 805</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=wPwq_19Pa_c" target="_blank" rel="noopener noreferrer">선택에 대한 두려움 - AI 단식 6일차</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=JtSeAs1ILuE" target="_blank" rel="noopener noreferrer">SymbolBrowser Mac Menu Bar App</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/GPnXl1o4BS8" target="_blank" rel="noopener noreferrer">Introducing KeyFramify App, a simple Keyframe video editor🎉</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li></ul>
+      </div>
     </section>
 
     <div class="footer">Built by SwiftVietnam Digest pipeline.</div>

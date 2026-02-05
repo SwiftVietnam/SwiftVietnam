@@ -59,6 +59,15 @@ a:hover{text-decoration:underline}
 .badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:3px 10px}
 
 .items{list-style:none;margin:0;padding:10px 10px 12px}
+
+.section{padding:10px 10px 12px}
+.section+.section{border-top:1px solid var(--border)}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 4px 10px;color:var(--muted);font-size:12px}
+.section-title{font-weight:750;color:var(--muted)}
+.section-count{color:var(--muted)}
+.section .items{padding:0}
+.section .item{padding:10px 4px}
+
 .item{display:flex;gap:12px;padding:10px;border-radius:12px}
 .item:hover{background:rgba(148,163,184,.10)}
 @media (prefers-color-scheme: light){.item:hover{background:rgba(15,23,42,.05)}}
@@ -105,7 +114,13 @@ a:hover{text-decoration:underline}
     </div>
 
     <section class="day-card">
-      <ul class="items">
+      
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title">Articles</div>
+          <div class="section-count">24</div>
+        </div>
+        <ul class="items">
 <li class="item no-thumb">
   
   <div class="item-body">
@@ -226,24 +241,6 @@ a:hover{text-decoration:underline}
 <li class="item no-thumb">
   
   <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=Bis4pGwiD58" target="_blank" rel="noopener noreferrer">Ah pè Kè pè Ulh cha</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/shorts/YRyf1Q7wjAA" target="_blank" rel="noopener noreferrer">Ah pè Kè pè Ulh cha - Spockcast</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
     <div class="item-title"><a href="https://deprogrammaticaipsum.com/the-great-xerox-compromise/" target="_blank" rel="noopener noreferrer">The Great Xerox Compromise</a></div>
     <div class="item-desc">I think of NeXTSTEP as one of the best compromises ever pulled off by the commercial computing industry. Xerox’s PARC laboratory showed people Smalltalk and the Personal Dynabook, giving people in the late 1970s one possible vision of the future of computing.…</div>
     <div class="item-foot"><span class="domain">deprogrammaticaipsum.com</span></div>
@@ -298,15 +295,6 @@ a:hover{text-decoration:underline}
 <li class="item no-thumb">
   
   <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=PnOqkjxLE3s" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 803</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
     <div class="item-title"><a href="https://bitrise.io/blog/post/building-bitrises-ai-platform-scaling-ai-features-across-teams" target="_blank" rel="noopener noreferrer">Building Bitrise's AI platform: Scaling AI features across teams - Bitrise Blog</a></div>
     <div class="item-desc">This is the fourth and final installment in our series about bringing AI to Bitrise. In Part 1, we explained why we built our own AI coding agent. Part 2 covered our browser-integrated AI Assistant.…</div>
     <div class="item-foot"><span class="domain">bitrise.io</span></div>
@@ -343,7 +331,23 @@ a:hover{text-decoration:underline}
 <li class="item no-thumb">
   
   <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=U4ysDvLLGhs" target="_blank" rel="noopener noreferrer">개발 진짜 🐶 힘드네요.. - AI 단식 3일차</a></div>
+    <div class="item-title"><a href="https://grantisom.com/2026/02/01/healthql-sql-for-healthkit.html" target="_blank" rel="noopener noreferrer">HealthQL: SQL for Apple HealthKit</a></div>
+    <div class="item-desc">I built a Swift library that lets you query HealthKit data using SQL syntax. Working with HealthKit directly involves a lot of boilerplate—callback-based APIs, type-specific query objects, manual result transformation.…</div>
+    <div class="item-foot"><span class="domain">grantisom.com</span></div>
+  </div>
+</li></ul>
+      </div>
+
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title">Videos</div>
+          <div class="section-count">4</div>
+        </div>
+        <ul class="items">
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=Bis4pGwiD58" target="_blank" rel="noopener noreferrer">Ah pè Kè pè Ulh cha</a></div>
     
     <div class="item-foot"><span class="domain">youtube.com</span></div>
   </div>
@@ -352,11 +356,30 @@ a:hover{text-decoration:underline}
 <li class="item no-thumb">
   
   <div class="item-body">
-    <div class="item-title"><a href="https://grantisom.com/2026/02/01/healthql-sql-for-healthkit.html" target="_blank" rel="noopener noreferrer">HealthQL: SQL for Apple HealthKit</a></div>
-    <div class="item-desc">I built a Swift library that lets you query HealthKit data using SQL syntax. Working with HealthKit directly involves a lot of boilerplate—callback-based APIs, type-specific query objects, manual result transformation.…</div>
-    <div class="item-foot"><span class="domain">grantisom.com</span></div>
+    <div class="item-title"><a href="https://www.youtube.com/shorts/YRyf1Q7wjAA" target="_blank" rel="noopener noreferrer">Ah pè Kè pè Ulh cha - Spockcast</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=PnOqkjxLE3s" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 803</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=U4ysDvLLGhs" target="_blank" rel="noopener noreferrer">개발 진짜 🐶 힘드네요.. - AI 단식 3일차</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
   </div>
 </li></ul>
+      </div>
     </section>
 
     <div class="footer">Built by SwiftVietnam Digest pipeline.</div>

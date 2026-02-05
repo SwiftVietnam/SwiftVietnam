@@ -59,6 +59,15 @@ a:hover{text-decoration:underline}
 .badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:3px 10px}
 
 .items{list-style:none;margin:0;padding:10px 10px 12px}
+
+.section{padding:10px 10px 12px}
+.section+.section{border-top:1px solid var(--border)}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 4px 10px;color:var(--muted);font-size:12px}
+.section-title{font-weight:750;color:var(--muted)}
+.section-count{color:var(--muted)}
+.section .items{padding:0}
+.section .item{padding:10px 4px}
+
 .item{display:flex;gap:12px;padding:10px;border-radius:12px}
 .item:hover{background:rgba(148,163,184,.10)}
 @media (prefers-color-scheme: light){.item:hover{background:rgba(15,23,42,.05)}}
@@ -105,7 +114,13 @@ a:hover{text-decoration:underline}
     </div>
 
     <section class="day-card">
-      <ul class="items">
+      
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title">Articles</div>
+          <div class="section-count">15</div>
+        </div>
+        <ul class="items">
 <li class="item no-thumb">
   
   <div class="item-body">
@@ -145,27 +160,9 @@ a:hover{text-decoration:underline}
 <li class="item no-thumb">
   
   <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=7y87nuq9x5Y" target="_blank" rel="noopener noreferrer">How to build a better tagging UI in SwiftUI with Antigravity | Sofia S4E4</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
     <div class="item-title"><a href="https://engineering.monstar-lab.com/en/post/2026/02/03/Serverpod-for-a-Weekend-The-Good-The-Bad-and-The-Surprising" target="_blank" rel="noopener noreferrer">Serverpod for a Weekend - The Good, The Bad, and The Surprising</a></div>
     
     <div class="item-foot"><span class="domain">engineering.monstar-lab.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=mFpBWER_YmA" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 804</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
   </div>
 </li>
 
@@ -235,27 +232,9 @@ a:hover{text-decoration:underline}
 <li class="item no-thumb">
   
   <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=RkUdoKYx1HI" target="_blank" rel="noopener noreferrer">탈진할 거 같습니다... - AI 단식 4일차</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
     <div class="item-title"><a href="https://nemecek.be/blog/214/new-friendly-place-to-share-updates-about-your-indie-apps" target="_blank" rel="noopener noreferrer">New friendly place to share updates about your indie apps</a></div>
     <div class="item-desc">Have you ever tried sharing your indie app on Reddit? If so, did your post get removed soon due to “self-promotion”?…</div>
     <div class="item-foot"><span class="domain">nemecek.be</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=ICYbOfW5RoQ" target="_blank" rel="noopener noreferrer">Codex App - A First Look for App Development</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
   </div>
 </li>
 
@@ -275,6 +254,49 @@ a:hover{text-decoration:underline}
     <div class="item-desc">View downloads</div>
     <div class="item-foot"><span class="domain">developer.apple.com</span></div>
   </div>
+</li></ul>
+      </div>
+
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title">Videos</div>
+          <div class="section-count">5</div>
+        </div>
+        <ul class="items">
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=7y87nuq9x5Y" target="_blank" rel="noopener noreferrer">How to build a better tagging UI in SwiftUI with Antigravity | Sofia S4E4</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=mFpBWER_YmA" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 804</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=RkUdoKYx1HI" target="_blank" rel="noopener noreferrer">탈진할 거 같습니다... - AI 단식 4일차</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=ICYbOfW5RoQ" target="_blank" rel="noopener noreferrer">Codex App - A First Look for App Development</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
 </li>
 
 <li class="item no-thumb">
@@ -285,6 +307,7 @@ a:hover{text-decoration:underline}
     <div class="item-foot"><span class="domain">youtube.com</span></div>
   </div>
 </li></ul>
+      </div>
     </section>
 
     <div class="footer">Built by SwiftVietnam Digest pipeline.</div>

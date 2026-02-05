@@ -59,6 +59,15 @@ a:hover{text-decoration:underline}
 .badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:3px 10px}
 
 .items{list-style:none;margin:0;padding:10px 10px 12px}
+
+.section{padding:10px 10px 12px}
+.section+.section{border-top:1px solid var(--border)}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 4px 10px;color:var(--muted);font-size:12px}
+.section-title{font-weight:750;color:var(--muted)}
+.section-count{color:var(--muted)}
+.section .items{padding:0}
+.section .item{padding:10px 4px}
+
 .item{display:flex;gap:12px;padding:10px;border-radius:12px}
 .item:hover{background:rgba(148,163,184,.10)}
 @media (prefers-color-scheme: light){.item:hover{background:rgba(15,23,42,.05)}}
@@ -105,7 +114,13 @@ a:hover{text-decoration:underline}
     </div>
 
     <section class="day-card">
-      <ul class="items">
+      
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title">Articles</div>
+          <div class="section-count">11</div>
+        </div>
+        <ul class="items">
 <li class="item no-thumb">
   
   <div class="item-body">
@@ -172,24 +187,6 @@ a:hover{text-decoration:underline}
 <li class="item no-thumb">
   
   <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=8_zZUQcQBdA" target="_blank" rel="noopener noreferrer">강의제공자의 답변을 원합니다.</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=Yg3hiGiK9tQ" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 800</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
     <div class="item-title"><a href="https://blog.eliperkins.com/tools-i-love-xcrun-simctl-recordVideo" target="_blank" rel="noopener noreferrer">Tools I Love: xcrun simctl io booted recordVideo</a></div>
     <div class="item-desc">Record high quality videos of the iOS simulator right from the command line.</div>
     <div class="item-foot"><span class="domain">blog.eliperkins.com</span></div>
@@ -217,7 +214,23 @@ a:hover{text-decoration:underline}
 <li class="item no-thumb">
   
   <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=G3Ux3brUqUM" target="_blank" rel="noopener noreferrer">머리가 아픕니다.. - AI 단식 2일차</a></div>
+    <div class="item-title"><a href="https://lapcatsoftware.com/articles/2026/1/10.html" target="_blank" rel="noopener noreferrer">How do you comparison shop in the App Store?</a></div>
+    <div class="item-desc">Hot on the heels of my previous blog post My collected App Store critiques, I have yet another critique. It’s undoubtedly old news to many people, my critique coming years too late, but in my defense, I almost never shop for apps in the App Store.…</div>
+    <div class="item-foot"><span class="domain">lapcatsoftware.com</span></div>
+  </div>
+</li></ul>
+      </div>
+
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title">Videos</div>
+          <div class="section-count">3</div>
+        </div>
+        <ul class="items">
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=8_zZUQcQBdA" target="_blank" rel="noopener noreferrer">강의제공자의 답변을 원합니다.</a></div>
     
     <div class="item-foot"><span class="domain">youtube.com</span></div>
   </div>
@@ -226,11 +239,21 @@ a:hover{text-decoration:underline}
 <li class="item no-thumb">
   
   <div class="item-body">
-    <div class="item-title"><a href="https://lapcatsoftware.com/articles/2026/1/10.html" target="_blank" rel="noopener noreferrer">How do you comparison shop in the App Store?</a></div>
-    <div class="item-desc">Hot on the heels of my previous blog post My collected App Store critiques, I have yet another critique. It’s undoubtedly old news to many people, my critique coming years too late, but in my defense, I almost never shop for apps in the App Store.…</div>
-    <div class="item-foot"><span class="domain">lapcatsoftware.com</span></div>
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=Yg3hiGiK9tQ" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 800</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=G3Ux3brUqUM" target="_blank" rel="noopener noreferrer">머리가 아픕니다.. - AI 단식 2일차</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
   </div>
 </li></ul>
+      </div>
     </section>
 
     <div class="footer">Built by SwiftVietnam Digest pipeline.</div>

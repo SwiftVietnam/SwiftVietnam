@@ -59,6 +59,15 @@ a:hover{text-decoration:underline}
 .badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:3px 10px}
 
 .items{list-style:none;margin:0;padding:10px 10px 12px}
+
+.section{padding:10px 10px 12px}
+.section+.section{border-top:1px solid var(--border)}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 4px 10px;color:var(--muted);font-size:12px}
+.section-title{font-weight:750;color:var(--muted)}
+.section-count{color:var(--muted)}
+.section .items{padding:0}
+.section .item{padding:10px 4px}
+
 .item{display:flex;gap:12px;padding:10px;border-radius:12px}
 .item:hover{background:rgba(148,163,184,.10)}
 @media (prefers-color-scheme: light){.item:hover{background:rgba(15,23,42,.05)}}
@@ -105,7 +114,13 @@ a:hover{text-decoration:underline}
     </div>
 
     <section class="day-card">
-      <ul class="items">
+      
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title">Articles</div>
+          <div class="section-count">10</div>
+        </div>
+        <ul class="items">
 <li class="item no-thumb">
   
   <div class="item-body">
@@ -127,15 +142,6 @@ a:hover{text-decoration:underline}
 <li class="item no-thumb">
   
   <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/shorts/AN-yu2QrRYg" target="_blank" rel="noopener noreferrer">Claude Inside Xcode (What Could Go Wrong?) MTJC</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
     <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/sheet-drag-indicator-visibility" target="_blank" rel="noopener noreferrer">Sheet Drag Indicator Visibility</a></div>
     <div class="item-desc">Sets the visibility of the drag indicator on top of a sheet.</div>
     <div class="item-foot"><span class="domain">exploreswiftui.com</span></div>
@@ -151,39 +157,12 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=nNXhwUIqhkE" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 802</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
 <li class="item">
   <img class="thumb" src="https://troz.net/images/2026/table_top_scroll.png" alt="" loading="lazy" decoding="async"/>
   <div class="item-body">
     <div class="item-title"><a href="https://troz.net/post/2026/appkit-table-scroll-bug-in-macos-tahoe/" target="_blank" rel="noopener noreferrer">NSTableView scroll bug in macOS Tahoe</a></div>
     <div class="item-desc">Recently. I was working with an AppKit app that uses an NSTableView to display long list of items.…</div>
     <div class="item-foot"><span class="domain">troz.net</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=s2wngSMNC38" target="_blank" rel="noopener noreferrer">2026 플러터 앱개발 끝까지 – 3강: Repository 적용, REST API CRUD, 이벤트 처리</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
-  </div>
-</li>
-
-<li class="item no-thumb">
-  
-  <div class="item-body">
-    <div class="item-title"><a href="https://www.youtube.com/watch?v=QTDnbLvr8ds" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 801</a></div>
-    
-    <div class="item-foot"><span class="domain">youtube.com</span></div>
   </div>
 </li>
 
@@ -231,6 +210,50 @@ a:hover{text-decoration:underline}
     <div class="item-foot"><span class="domain">dimsumthinking.com</span></div>
   </div>
 </li></ul>
+      </div>
+
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title">Videos</div>
+          <div class="section-count">4</div>
+        </div>
+        <ul class="items">
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/shorts/AN-yu2QrRYg" target="_blank" rel="noopener noreferrer">Claude Inside Xcode (What Could Go Wrong?) MTJC</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=nNXhwUIqhkE" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 802</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=s2wngSMNC38" target="_blank" rel="noopener noreferrer">2026 플러터 앱개발 끝까지 – 3강: Repository 적용, REST API CRUD, 이벤트 처리</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li>
+
+<li class="item no-thumb">
+  
+  <div class="item-body">
+    <div class="item-title"><a href="https://www.youtube.com/watch?v=QTDnbLvr8ds" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 801</a></div>
+    
+    <div class="item-foot"><span class="domain">youtube.com</span></div>
+  </div>
+</li></ul>
+      </div>
     </section>
 
     <div class="footer">Built by SwiftVietnam Digest pipeline.</div>
