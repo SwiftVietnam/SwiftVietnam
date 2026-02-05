@@ -37,7 +37,8 @@ a:hover{text-decoration:underline}
 
 .container{max-width:980px;margin:0 auto;padding:20px 14px 40px}
 
-.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--border)}
+.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:rgba(11,14,20,.72);border-bottom:1px solid var(--border)}
+@media (prefers-color-scheme: light){.topbar{background:rgba(245,246,248,.72)}}
 .topbar-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px}
 .brand{display:flex;flex-direction:column;gap:2px}
 .brand-title{font-weight:800;letter-spacing:.2px;font-size:16px}
@@ -59,9 +60,13 @@ a:hover{text-decoration:underline}
 
 .items{list-style:none;margin:0;padding:10px 10px 12px}
 .item{display:flex;gap:12px;padding:10px;border-radius:12px}
-.item:hover{background:color-mix(in srgb, var(--card) 88%, var(--text) 2%)}
+.item:hover{background:rgba(148,163,184,.10)}
+@media (prefers-color-scheme: light){.item:hover{background:rgba(15,23,42,.05)}}
 
-.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:color-mix(in srgb, var(--card) 92%, var(--text) 4%)}
+.item.no-thumb{gap:0}
+
+.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:rgba(148,163,184,.10)}
+@media (prefers-color-scheme: light){.thumb{background:rgba(15,23,42,.04)}}
 
 .item-body{min-width:0;display:flex;flex-direction:column;gap:4px}
 .item-title{font-weight:650;font-size:14px;line-height:1.25;margin:0;overflow-wrap:anywhere}
@@ -101,8 +106,8 @@ a:hover{text-decoration:underline}
 
     <section class="day-card">
       <ul class="items">
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/shorts/lpwznG0-7-4" target="_blank" rel="noopener noreferrer">ازاي تقييم مشاريع ال freelancing من حيث الفلوس 💸و الوقت⏰ #software #freelancing #programming #iOS</a></div>
     
@@ -110,8 +115,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=O540BJGGpYw" target="_blank" rel="noopener noreferrer">SwiftUI DatePicker and ColorPicker Deep Dive (Ranges, Styles, Optional Dates, UIKit Color Picker)</a></div>
     
@@ -119,8 +124,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.sicpers.info/2026/02/opinionated-read-how-ai-impacts-skill-formation/" target="_blank" rel="noopener noreferrer">Opinionated Read: How AI Impacts Skill Formation</a></div>
     <div class="item-desc">The abstract to this preprint, by two authors both associated with Anthropic, makes the claim “We find that AI use impairs conceptual understanding, code reading, and debugging abilities, without delivering significant efficiency gains on average.…</div>
@@ -128,8 +133,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=RMfpocBggJg" target="_blank" rel="noopener noreferrer">SwiftUI Dynamic Island QR Code Scanner | iOS 26 | Xcode 26</a></div>
     
@@ -146,8 +151,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://adincebic.com/2026/02/01/executing-actions-from-bazel-aspects.html" target="_blank" rel="noopener noreferrer">Executing actions from Bazel aspects</a></div>
     <div class="item-desc">So far I went through writing the aspect, but I haven’t shown how to run actions from it to do something useful. Remember: we can do very little during Starlark evaluation (Bazel’s analysis phase).…</div>
@@ -164,8 +169,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=-2vzMH8iqsg" target="_blank" rel="noopener noreferrer">My top 8 ADVANCED UI design tips</a></div>
     
@@ -173,8 +178,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://buczel.com/blog/ios26-tabview-uitest-identifiers/" target="_blank" rel="noopener noreferrer">iOS 26 TabView UI Tests: Making Identifiers Work Everywhere</a></div>
     <div class="item-desc">SwiftUI's TabView accessibility identifiers behave differently on iPad vs iPhone with Liquid Glass. Here's how to write tests that handle both devices reliably.</div>
@@ -182,8 +187,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://limboy.me/posts/breathe" target="_blank" rel="noopener noreferrer">呼吸能改变很多事</a></div>
     
@@ -191,8 +196,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/disable-sheet-dismiss-swipe" target="_blank" rel="noopener noreferrer">Disable Sheet Dismiss Swipe</a></div>
     <div class="item-desc">Conditionally prevents interactive dismissal of presentations like popovers, sheets, and inspectors. Dragging the sheet is still possible to a limited extent, as shown in the screenshot, but it will never be dismissed.</div>
@@ -200,8 +205,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/page-screen-sheet-size" target="_blank" rel="noopener noreferrer">Page Screen Sheet Size</a></div>
     <div class="item-desc">On devices smaller than a page of paper, such as iPhone, Apple Watch, and 8&quot; or 11&quot; iPads, the sheet fills the entire height and, unlike the default sheet on iPad, the full width. On macOS, .page behaves like .fitted.</div>
@@ -209,8 +214,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/fitted-sheet-sizing" target="_blank" rel="noopener noreferrer">Fitted Sheet Sizing</a></div>
     <div class="item-desc">Sets the sizing of the containing presentation. This does not have any effect on smaller devices like iPhone and Apple Watch. On macOS, fitted is the default.</div>
@@ -218,8 +223,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/sheet-corner-radius" target="_blank" rel="noopener noreferrer">Sheet Corner Radius</a></div>
     <div class="item-desc">Requests that the presentation have a specific corner radius.</div>
@@ -227,8 +232,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/prioritize-sheet-content-scrolling" target="_blank" rel="noopener noreferrer">Prioritize Sheet Content Scrolling</a></div>
     <div class="item-desc">Configures the behavior of swipe gestures on a presentation. PresentationContentInteraction.scrolls prioritizes scrolling the content over resizing the sheet.</div>

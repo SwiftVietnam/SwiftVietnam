@@ -37,7 +37,8 @@ a:hover{text-decoration:underline}
 
 .container{max-width:980px;margin:0 auto;padding:20px 14px 40px}
 
-.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--border)}
+.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:rgba(11,14,20,.72);border-bottom:1px solid var(--border)}
+@media (prefers-color-scheme: light){.topbar{background:rgba(245,246,248,.72)}}
 .topbar-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px}
 .brand{display:flex;flex-direction:column;gap:2px}
 .brand-title{font-weight:800;letter-spacing:.2px;font-size:16px}
@@ -59,9 +60,13 @@ a:hover{text-decoration:underline}
 
 .items{list-style:none;margin:0;padding:10px 10px 12px}
 .item{display:flex;gap:12px;padding:10px;border-radius:12px}
-.item:hover{background:color-mix(in srgb, var(--card) 88%, var(--text) 2%)}
+.item:hover{background:rgba(148,163,184,.10)}
+@media (prefers-color-scheme: light){.item:hover{background:rgba(15,23,42,.05)}}
 
-.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:color-mix(in srgb, var(--card) 92%, var(--text) 4%)}
+.item.no-thumb{gap:0}
+
+.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:rgba(148,163,184,.10)}
+@media (prefers-color-scheme: light){.thumb{background:rgba(15,23,42,.04)}}
 
 .item-body{min-width:0;display:flex;flex-direction:column;gap:4px}
 .item-title{font-weight:650;font-size:14px;line-height:1.25;margin:0;overflow-wrap:anywhere}

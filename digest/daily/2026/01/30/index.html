@@ -37,7 +37,8 @@ a:hover{text-decoration:underline}
 
 .container{max-width:980px;margin:0 auto;padding:20px 14px 40px}
 
-.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--border)}
+.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:rgba(11,14,20,.72);border-bottom:1px solid var(--border)}
+@media (prefers-color-scheme: light){.topbar{background:rgba(245,246,248,.72)}}
 .topbar-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px}
 .brand{display:flex;flex-direction:column;gap:2px}
 .brand-title{font-weight:800;letter-spacing:.2px;font-size:16px}
@@ -59,9 +60,13 @@ a:hover{text-decoration:underline}
 
 .items{list-style:none;margin:0;padding:10px 10px 12px}
 .item{display:flex;gap:12px;padding:10px;border-radius:12px}
-.item:hover{background:color-mix(in srgb, var(--card) 88%, var(--text) 2%)}
+.item:hover{background:rgba(148,163,184,.10)}
+@media (prefers-color-scheme: light){.item:hover{background:rgba(15,23,42,.05)}}
 
-.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:color-mix(in srgb, var(--card) 92%, var(--text) 4%)}
+.item.no-thumb{gap:0}
+
+.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:rgba(148,163,184,.10)}
+@media (prefers-color-scheme: light){.thumb{background:rgba(15,23,42,.04)}}
 
 .item-body{min-width:0;display:flex;flex-direction:column;gap:4px}
 .item-title{font-weight:650;font-size:14px;line-height:1.25;margin:0;overflow-wrap:anywhere}
@@ -101,8 +106,8 @@ a:hover{text-decoration:underline}
 
     <section class="day-card">
       <ul class="items">
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.createwithswift.com/solid-interfaces-for-visionos-widgets-and-cognitive-space-in-spatial-computing/" target="_blank" rel="noopener noreferrer">Solid Interfaces for visionOS: Widgets and Cognitive Space in Spatial Computing</a></div>
     <div class="item-desc">A new grammar for designing Cognitive Spatial Experiences in visionOS and WebXR.</div>
@@ -119,8 +124,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://getstream.io/blog/video-benchmark/" target="_blank" rel="noopener noreferrer">Scaling WebRTC Video to 100,000 Participants: Stream’s Latest Video Benchmarks</a></div>
     <div class="item-desc">Stream has reached a major milestone in real-time video infrastructure: Successfully scaling a single WebRTC-based livestream to 100,000 concurrent participants while maintaining ultra-low latency, stable frame rates, and zero packet loss.…</div>
@@ -128,8 +133,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://getstream.io/blog/anthropic-claude-visual-reasoning/" target="_blank" rel="noopener noreferrer">Visual Intelligence in Claude: Interpreting Documents and Structured Content</a></div>
     <div class="item-desc">Claude isn’t the model most users turn to when needing visual capabilities. Rather than optimizing primarily for object detection or scene description, Claude processes visual content through the same reasoning architecture it uses for text.…</div>
@@ -137,8 +142,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.donnywals.com/migrating-an-ios-app-from-paid-up-front-to-freemium/" target="_blank" rel="noopener noreferrer">Migrating an iOS app from Paid up Front to Freemium</a></div>
     <div class="item-desc">Paid up front apps can be a tough sell on the App Store. You might be getting plenty of views on your product page, but if those views aren't converting to downloads, something has to change.…</div>
@@ -146,8 +151,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://elkraneo.com/deconstructing-reality-composer-pro-project-browser/" target="_blank" rel="noopener noreferrer">Deconstructing Reality Composer Pro (Project Browser)</a></div>
     <div class="item-desc">Part of what makes Reality Composer Pro a composer is asset management. Importing, soft validation, organizing, and iterating on the project structure are essential features to have in creative pipelines.…</div>
@@ -164,8 +169,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=8_zZUQcQBdA" target="_blank" rel="noopener noreferrer">강의제공자의 답변을 원합니다.</a></div>
     
@@ -173,8 +178,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=Yg3hiGiK9tQ" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 800</a></div>
     
@@ -182,8 +187,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://blog.eliperkins.com/tools-i-love-xcrun-simctl-recordVideo" target="_blank" rel="noopener noreferrer">Tools I Love: xcrun simctl io booted recordVideo</a></div>
     <div class="item-desc">Record high quality videos of the iOS simulator right from the command line.</div>
@@ -191,8 +196,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://iosdevweekly.com/issues/741/" target="_blank" rel="noopener noreferrer">Issue 741</a></div>
     <div class="item-desc">Forget about Windows and Wasm, what’s the flagship project for macOS and iOS?! 😂</div>
@@ -200,8 +205,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://limboy.me/posts/routine-compound-interest" target="_blank" rel="noopener noreferrer">Routine 就是人生的复利</a></div>
     <div class="item-desc">Routine 并不是束缚，而是让你摆脱内耗的工具。</div>
@@ -209,8 +214,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=G3Ux3brUqUM" target="_blank" rel="noopener noreferrer">머리가 아픕니다.. - AI 단식 2일차</a></div>
     
@@ -218,8 +223,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://lapcatsoftware.com/articles/2026/1/10.html" target="_blank" rel="noopener noreferrer">How do you comparison shop in the App Store?</a></div>
     <div class="item-desc">Hot on the heels of my previous blog post My collected App Store critiques, I have yet another critique. It’s undoubtedly old news to many people, my critique coming years too late, but in my defense, I almost never shop for apps in the App Store.…</div>

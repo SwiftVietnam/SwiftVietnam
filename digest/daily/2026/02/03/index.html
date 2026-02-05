@@ -37,7 +37,8 @@ a:hover{text-decoration:underline}
 
 .container{max-width:980px;margin:0 auto;padding:20px 14px 40px}
 
-.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--border)}
+.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:rgba(11,14,20,.72);border-bottom:1px solid var(--border)}
+@media (prefers-color-scheme: light){.topbar{background:rgba(245,246,248,.72)}}
 .topbar-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px}
 .brand{display:flex;flex-direction:column;gap:2px}
 .brand-title{font-weight:800;letter-spacing:.2px;font-size:16px}
@@ -59,9 +60,13 @@ a:hover{text-decoration:underline}
 
 .items{list-style:none;margin:0;padding:10px 10px 12px}
 .item{display:flex;gap:12px;padding:10px;border-radius:12px}
-.item:hover{background:color-mix(in srgb, var(--card) 88%, var(--text) 2%)}
+.item:hover{background:rgba(148,163,184,.10)}
+@media (prefers-color-scheme: light){.item:hover{background:rgba(15,23,42,.05)}}
 
-.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:color-mix(in srgb, var(--card) 92%, var(--text) 4%)}
+.item.no-thumb{gap:0}
+
+.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:rgba(148,163,184,.10)}
+@media (prefers-color-scheme: light){.thumb{background:rgba(15,23,42,.04)}}
 
 .item-body{min-width:0;display:flex;flex-direction:column;gap:4px}
 .item-title{font-weight:650;font-size:14px;line-height:1.25;margin:0;overflow-wrap:anywhere}
@@ -101,8 +106,8 @@ a:hover{text-decoration:underline}
 
     <section class="day-card">
       <ul class="items">
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://getstream.io/blog/edge-speech-deepgram-fish/" target="_blank" rel="noopener noreferrer">Edge-Optimized Speech Workflows: Combining Deepgram Nova-3 STT with Fish Speech V1.5 TTS</a></div>
     <div class="item-desc">Voice AI is moving to the edge. Learn how to design speech workflows that stay fast, expressive, and reliable with Deepgram and Fish Speech.</div>
@@ -110,8 +115,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.createwithswift.com/beyond-the-human-designing-with-non-human-personas-in-mobile-apps/" target="_blank" rel="noopener noreferrer">Beyond the Human: Designing with Non-Human Personas in Mobile Apps</a></div>
     <div class="item-desc">Design beyond the screen, non-human personas bring environmental reality into decision-making, from energy grids to cooling systems.</div>
@@ -119,8 +124,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://blog.eternalstorms.at/2026/02/03/time-is-leafing/" target="_blank" rel="noopener noreferrer">Time is leafing</a></div>
     
@@ -137,8 +142,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=7y87nuq9x5Y" target="_blank" rel="noopener noreferrer">How to build a better tagging UI in SwiftUI with Antigravity | Sofia S4E4</a></div>
     
@@ -146,8 +151,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://engineering.monstar-lab.com/en/post/2026/02/03/Serverpod-for-a-Weekend-The-Good-The-Bad-and-The-Surprising" target="_blank" rel="noopener noreferrer">Serverpod for a Weekend - The Good, The Bad, and The Surprising</a></div>
     
@@ -155,8 +160,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=mFpBWER_YmA" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 804</a></div>
     
@@ -164,8 +169,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://swiftwithmajid.com/2026/02/03/on-demand-resources-in-ios-app/" target="_blank" rel="noopener noreferrer">On-demand resources in iOS app</a></div>
     <div class="item-desc">On-Demand Resources allow you to ship a smaller initial app download and fetch additional assets like images, sounds, level data, ML models, and more only when a user requires them.…</div>
@@ -173,8 +178,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://limboy.me/posts/bad-habit-good-subject" target="_blank" rel="noopener noreferrer">坏习惯是道好题目</a></div>
     
@@ -182,8 +187,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="http://chris.eidhof.nl/post/llm-month-food-assistant" target="_blank" rel="noopener noreferrer">Food Assistant</a></div>
     <div class="item-desc">Peter has been doing with OpenClaw. This agent is taking care of my food, so it has an idea of what I have in stock. It knows about my allergies, my dietary wishes, and it has recipes and a grocery list. It also has a list of dishes I enjoy making and eating.…</div>
@@ -191,8 +196,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/02/codex-app/" target="_blank" rel="noopener noreferrer">Codex App</a></div>
     <div class="item-desc">OpenAI (Hacker News): Today, we’re introducing the Codex app for macOS—a powerful new interface designed to effortlessly manage multiple agents at once, run work in parallel, and collaborate with agents over long-running tasks.…</div>
@@ -200,8 +205,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/02/dfu-port-on-16-inch-macbook-pro/" target="_blank" rel="noopener noreferrer">DFU Port on the 16-Inch MacBook Pro</a></div>
     <div class="item-desc">Jeff Johnson: This [Apple documentation] is wrong, a discovery that took me about a half dozen attempts to update macOS on an external disk.…</div>
@@ -209,8 +214,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/02/ios-26-3-limit-carrier-location-tracking/" target="_blank" rel="noopener noreferrer">iOS 26.3: Limit Carrier Location Tracking</a></div>
     <div class="item-desc">Juli Clover: Mobile networks determine location based on the cellular towers that a device connects to, but with the setting enabled, some of the data typically made available to mobile networks is being restricted.…</div>
@@ -218,8 +223,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/02/apple-and-kakao-pay-fined-over-privacy/" target="_blank" rel="noopener noreferrer">Apple and Kakao Pay Fined Over Privacy</a></div>
     <div class="item-desc">Proton’s Tech Fines Tracker (via Ben Lovejoy): While $7.8 billion in fines sounds substantial, it represents little more than a rounding error for Big Tech.…</div>
@@ -227,8 +232,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=RkUdoKYx1HI" target="_blank" rel="noopener noreferrer">탈진할 거 같습니다... - AI 단식 4일차</a></div>
     
@@ -236,8 +241,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://nemecek.be/blog/214/new-friendly-place-to-share-updates-about-your-indie-apps" target="_blank" rel="noopener noreferrer">New friendly place to share updates about your indie apps</a></div>
     <div class="item-desc">Have you ever tried sharing your indie app on Reddit? If so, did your post get removed soon due to “self-promotion”?…</div>
@@ -245,8 +250,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=ICYbOfW5RoQ" target="_blank" rel="noopener noreferrer">Codex App - A First Look for App Development</a></div>
     
@@ -254,8 +259,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026a" target="_blank" rel="noopener noreferrer">iOS 16.7.14 (20H370)</a></div>
     <div class="item-desc">View downloads</div>
@@ -263,8 +268,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026b" target="_blank" rel="noopener noreferrer">iPadOS 16.7.14 (20H370)</a></div>
     <div class="item-desc">View downloads</div>
@@ -272,8 +277,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=KI_JslCXHTs" target="_blank" rel="noopener noreferrer">Build a Voice Agent in Python: 2026 Guide</a></div>
     

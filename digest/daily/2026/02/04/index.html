@@ -37,7 +37,8 @@ a:hover{text-decoration:underline}
 
 .container{max-width:980px;margin:0 auto;padding:20px 14px 40px}
 
-.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--border)}
+.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:rgba(11,14,20,.72);border-bottom:1px solid var(--border)}
+@media (prefers-color-scheme: light){.topbar{background:rgba(245,246,248,.72)}}
 .topbar-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px}
 .brand{display:flex;flex-direction:column;gap:2px}
 .brand-title{font-weight:800;letter-spacing:.2px;font-size:16px}
@@ -59,9 +60,13 @@ a:hover{text-decoration:underline}
 
 .items{list-style:none;margin:0;padding:10px 10px 12px}
 .item{display:flex;gap:12px;padding:10px;border-radius:12px}
-.item:hover{background:color-mix(in srgb, var(--card) 88%, var(--text) 2%)}
+.item:hover{background:rgba(148,163,184,.10)}
+@media (prefers-color-scheme: light){.item:hover{background:rgba(15,23,42,.05)}}
 
-.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:color-mix(in srgb, var(--card) 92%, var(--text) 4%)}
+.item.no-thumb{gap:0}
+
+.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:rgba(148,163,184,.10)}
+@media (prefers-color-scheme: light){.thumb{background:rgba(15,23,42,.04)}}
 
 .item-body{min-width:0;display:flex;flex-direction:column;gap:4px}
 .item-title{font-weight:650;font-size:14px;line-height:1.25;margin:0;overflow-wrap:anywhere}
@@ -101,8 +106,8 @@ a:hover{text-decoration:underline}
 
     <section class="day-card">
       <ul class="items">
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/shorts/XtmszZufL1c" target="_blank" rel="noopener noreferrer">امتا ال ITI تكون خطوة كويسة و امتاا لا؟!#بودكاست #software #programming #mobiledevelopment #ITI #iOS</a></div>
     
@@ -110,8 +115,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://getstream.io/blog/marketplace-content-moderation/" target="_blank" rel="noopener noreferrer">Marketplace Content Moderation: How to Build Trust and Prevent Abuse at Scale</a></div>
     <div class="item-desc">Every listing, message, and review shapes whether a transaction happens.</div>
@@ -119,8 +124,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://fatbobman.com/en/posts/screensage-from-pixel-to-meta/" target="_blank" rel="noopener noreferrer">From Pixel Capture to Metadata: Reimagining Screen Recording Architecture on macOS</a></div>
     <div class="item-desc">Independent developer Sintone shares a deep dive into building a macOS screen recorder.…</div>
@@ -128,8 +133,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://fatbobman.com/zh/posts/screensage-from-pixel-to-meta/" target="_blank" rel="noopener noreferrer">macOS 录屏软件开发实录：从像素抓取到元数据重现</a></div>
     <div class="item-desc">视频正在取代文字成为主流的表达方式，而好工具是创作的加速器。macOS 录屏软件 ScreenSage Pro 的独立开发者 Sintone 分享了从像素抓取到元数据重现的全过程。从屏幕录制、元数据捕获，到高性能视频合成，他详述了开发中的挑战与解决方案。</div>
@@ -146,8 +151,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=GYkM412PGZM" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 807</a></div>
     
@@ -164,8 +169,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=6UmAlOOtbP0" target="_blank" rel="noopener noreferrer">[React] 16강. useCallback - 함수 재생성과 랜더링 제어</a></div>
     
@@ -173,8 +178,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/shorts/5RRhX7jg8RQ" target="_blank" rel="noopener noreferrer">OpenClaw + Telegram + Ollama: Local Personal AI Assistant #ai #openclaw #ollama #llm #telegram</a></div>
     
@@ -182,8 +187,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://livsycode.com/blog/an-xcode-agent-prompt-what-it-signals-for-combine-and-rxswift/" target="_blank" rel="noopener noreferrer">An Xcode Agent Prompt: What It Signals for Combine and RxSwift</a></div>
     <div class="item-desc">Greetings, traveler! While poking around Xcode’s agent prompts, people noticed a blunt instruction: Avoid using the Combine framework and instead prefer to use Swift’s async and await versions of APIs instead.…</div>
@@ -191,8 +196,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://swiftpackageindex.com/qtrust-id/SeQure-iOS-SDK" target="_blank" rel="noopener noreferrer">SequreSDK</a></div>
     <div class="item-desc">qtrust-id/SeQure-iOS-SDK</div>
@@ -209,8 +214,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/shorts/TyDNpPgx6g4" target="_blank" rel="noopener noreferrer">Day 3! Seven quotes that changed my life</a></div>
     
@@ -218,8 +223,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/shorts/xhKsAeSRw8Y" target="_blank" rel="noopener noreferrer">Day 2 of seven quotes that have changed my life</a></div>
     
@@ -227,8 +232,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/shorts/4ncgphNBfgU" target="_blank" rel="noopener noreferrer">Day 1 of 7! Quotes that changed my life</a></div>
     
@@ -236,8 +241,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=KIB30T-ZtVs" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 805</a></div>
     
@@ -245,8 +250,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://bitrise.io/blog/post/build-hub-press-release" target="_blank" rel="noopener noreferrer">Bitrise bridges GitHub’s mobile performance gap with new purpose-built infrastructure: Bitrise Build Hub - Bitrise Blog</a></div>
     <div class="item-desc">Bitrise launches Build Hub, a fully-managed Apple silicon and Linux infrastructure with a powerful execution layer for GitHub Actions.</div>
@@ -254,8 +259,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://limboy.me/posts/chrome-extension-vibe-coding-container" target="_blank" rel="noopener noreferrer">Chrome Extension 是 Vibe Coding 的绝佳载体</a></div>
     
@@ -263,8 +268,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.kodeco.com/ios/paths/visionos-beyond-the-basics/51928619-realitykit-reality-composer-pro" target="_blank" rel="noopener noreferrer">RealityKit &amp; Reality Composer Pro [SUBSCRIBER]</a></div>
     <div class="item-desc">Learn how to create augmented reality experiences using Reality Composer Pro with RealityKit and USDz. Create 3D scenes employing models, animations, and interactions using RealityKit.…</div>
@@ -272,8 +277,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://swiftjectivec.com/Agentic-Coding-Codex-Claude-Code-in-Xcode/" target="_blank" rel="noopener noreferrer">Agentic Coding in Xcode 26.3 with Claude Code and Codex</a></div>
     <div class="item-desc">I was filled with whimsy watching OpenAI announce their Codex app1 not even two days ago. But life comes at you fast.…</div>
@@ -281,8 +286,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.sagarunagar.com/blog/asyncstream-asyncthrowingstream-swift/" target="_blank" rel="noopener noreferrer">AsyncStream &amp; AsyncThrowingStream in Swift - Real-Time Data Sync Explained</a></div>
     <div class="item-desc">Modern apps are no longer single-device experiences. Users expect their data to stay perfectly in sync across iPhone, iPad, and Mac, with…</div>
@@ -290,8 +295,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=wPwq_19Pa_c" target="_blank" rel="noopener noreferrer">선택에 대한 두려움 - AI 단식 6일차</a></div>
     
@@ -299,8 +304,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=JtSeAs1ILuE" target="_blank" rel="noopener noreferrer">SymbolBrowser Mac Menu Bar App</a></div>
     
@@ -308,8 +313,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://livsycode.com/blog/agentic-coding-in-xcode-26-3/" target="_blank" rel="noopener noreferrer">Agentic coding in Xcode 26.3</a></div>
     <div class="item-desc">Greetings, traveler! In a recent demo, Apple showed something that feels like a real shift in how development tools work. With Xcode 26.3, coding is no longer just about writing lines of Swift faster.…</div>
@@ -317,8 +322,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="http://www.russbishop.net/no-such-thing-as-speed-of-light" target="_blank" rel="noopener noreferrer">No Such Thing as Speed of Light</a></div>
     
@@ -326,8 +331,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/03/tahoe-nstableview-scrolling-bug/" target="_blank" rel="noopener noreferrer">Tahoe NSTableView Scrolling Bug</a></div>
     <div class="item-desc">Sarah Reichelt (Mastodon): [When] I scrolled down from the top, the content rows would scroll into the header, making the top messy and unreadable.…</div>
@@ -335,8 +340,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/03/apple-platform-security-guide-january-2026/" target="_blank" rel="noopener noreferrer">Apple Platform Security Guide (January 2026)</a></div>
     <div class="item-desc">Apple (revision history, PDF, Hacker News): Topics added:Automatically unlock Apple devicesCommunicating emergency information using satellitesQuantum-secure cryptography in Apple operating systemsPlatform Single Sign-onEnergyKit data securityAttestation proce…</div>
@@ -344,8 +349,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/03/sinofsky-on-cook-and-forstall/" target="_blank" rel="noopener noreferrer">Sinofsky on Cook and Forstall</a></div>
     <div class="item-desc">Richard Lawler: Emails released by the Justice Department on Friday appear to show that former Windows boss Steven Sinofsky not only consulted Jeffrey Epstein for help in securing his $14 million “retirement” package in November of 2012, but also in working on…</div>
@@ -353,8 +358,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://mjtsai.com/blog/2026/02/03/the-fallen-apple/" target="_blank" rel="noopener noreferrer">The Fallen Apple</a></div>
     <div class="item-desc">Matt Gemmell (Mastodon, Hacker News): Executives, experts, engineers, and designers are all leaving for more lucrative positions at even less scrupulous companies.…</div>
@@ -362,8 +367,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/shorts/GPnXl1o4BS8" target="_blank" rel="noopener noreferrer">Introducing KeyFramify App, a simple Keyframe video editor🎉</a></div>
     
@@ -371,8 +376,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02022026b" target="_blank" rel="noopener noreferrer">App Store Connect Update</a></div>
     <div class="item-desc">View release notes</div>
@@ -380,8 +385,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://developer.apple.com/news/releases/?id=02032026a" target="_blank" rel="noopener noreferrer">Xcode 26.3 Release Candidate (17C519)</a></div>
     <div class="item-desc">View downloadsView release notes</div>
@@ -398,8 +403,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://mailchi.mp/caacf16a2f2b/306-pronoia" target="_blank" rel="noopener noreferrer">Newsletter 306 - Pronoia</a></div>
     <div class="item-desc">When people conspire to do good for each other. Also, Kevin Kelly &quot;How will the miracle happen today&quot;, using Reminders to organize your to-dos, Booker Prize recommendations, Where are all the protest songs, 'remove before flight' tags from the Challenger, Magg…</div>

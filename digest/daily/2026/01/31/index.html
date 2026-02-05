@@ -37,7 +37,8 @@ a:hover{text-decoration:underline}
 
 .container{max-width:980px;margin:0 auto;padding:20px 14px 40px}
 
-.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--border)}
+.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:rgba(11,14,20,.72);border-bottom:1px solid var(--border)}
+@media (prefers-color-scheme: light){.topbar{background:rgba(245,246,248,.72)}}
 .topbar-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px}
 .brand{display:flex;flex-direction:column;gap:2px}
 .brand-title{font-weight:800;letter-spacing:.2px;font-size:16px}
@@ -59,9 +60,13 @@ a:hover{text-decoration:underline}
 
 .items{list-style:none;margin:0;padding:10px 10px 12px}
 .item{display:flex;gap:12px;padding:10px;border-radius:12px}
-.item:hover{background:color-mix(in srgb, var(--card) 88%, var(--text) 2%)}
+.item:hover{background:rgba(148,163,184,.10)}
+@media (prefers-color-scheme: light){.item:hover{background:rgba(15,23,42,.05)}}
 
-.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:color-mix(in srgb, var(--card) 92%, var(--text) 4%)}
+.item.no-thumb{gap:0}
+
+.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:rgba(148,163,184,.10)}
+@media (prefers-color-scheme: light){.thumb{background:rgba(15,23,42,.04)}}
 
 .item-body{min-width:0;display:flex;flex-direction:column;gap:4px}
 .item-title{font-weight:650;font-size:14px;line-height:1.25;margin:0;overflow-wrap:anywhere}
@@ -101,8 +106,8 @@ a:hover{text-decoration:underline}
 
     <section class="day-card">
       <ul class="items">
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/sheet-background-interaction" target="_blank" rel="noopener noreferrer">Sheet Background Interaction</a></div>
     <div class="item-desc">Controls whether people can interact with the view behind a presentation.</div>
@@ -110,8 +115,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/sheet-background" target="_blank" rel="noopener noreferrer">Sheet Background</a></div>
     <div class="item-desc">Sets the presentation background of the enclosing sheet using a shape style.</div>
@@ -119,8 +124,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/shorts/AN-yu2QrRYg" target="_blank" rel="noopener noreferrer">Claude Inside Xcode (What Could Go Wrong?) MTJC</a></div>
     
@@ -128,8 +133,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/sheet-drag-indicator-visibility" target="_blank" rel="noopener noreferrer">Sheet Drag Indicator Visibility</a></div>
     <div class="item-desc">Sets the visibility of the drag indicator on top of a sheet.</div>
@@ -137,8 +142,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://exploreswiftui.com/library/sheet/sheet-size" target="_blank" rel="noopener noreferrer">Sheet Size</a></div>
     <div class="item-desc">Sets the available detents for the enclosing sheet.</div>
@@ -146,8 +151,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=nNXhwUIqhkE" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 802</a></div>
     
@@ -164,8 +169,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=s2wngSMNC38" target="_blank" rel="noopener noreferrer">2026 플러터 앱개발 끝까지 – 3강: Repository 적용, REST API CRUD, 이벤트 처리</a></div>
     
@@ -173,8 +178,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://www.youtube.com/watch?v=QTDnbLvr8ds" target="_blank" rel="noopener noreferrer">Late Night Silent Completions: Jiiiii — Part 801</a></div>
     
@@ -182,8 +187,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://limboy.me/posts/taking-cold-showers-is-a-hidden-treasure" target="_blank" rel="noopener noreferrer">冷水澡是一座小金矿</a></div>
     
@@ -191,8 +196,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://mjtsai.com/blog/2026/01/30/apples-q1-2026-results/" target="_blank" rel="noopener noreferrer">Apple’s Q1 2026 Results</a></div>
     <div class="item-desc">Apple (transcript, MacRumors, CNBC, Hacker News): The Company posted quarterly revenue of $143.8 billion, up 16 percent year over year. Diluted earnings per share was $2.84, up 19 percent year over year.…</div>
@@ -200,8 +205,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://makeapppie.com/2026/01/30/bizoneness-the-accounting-module-in-the-sap-b1-web-client/" target="_blank" rel="noopener noreferrer">BizOneness: The Accounting Module in the SAP B1 web client</a></div>
     <div class="item-desc">You can get to the details as well, which pops up another pane of detail within the same window.…</div>
@@ -209,8 +214,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://bryce.co/swizzle-everything/" target="_blank" rel="noopener noreferrer">How Apple Hooks Entire Frameworks</a></div>
     
@@ -218,8 +223,8 @@ a:hover{text-decoration:underline}
   </div>
 </li>
 
-<li class="item">
-  <div class="thumb" aria-hidden="true"></div>
+<li class="item no-thumb">
+  
   <div class="item-body">
     <div class="item-title"><a href="https://dimsumthinking.com/Podcast/2026/149Distance.html" target="_blank" rel="noopener noreferrer">Keep Two Thoughts Podcast 149 - Distance</a></div>
     <div class="item-desc">My first word for 2023.</div>
