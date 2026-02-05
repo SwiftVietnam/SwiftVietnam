@@ -2,18 +2,21 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { DateTime } from 'luxon';
 import matter from 'gray-matter';
-import { marked } from 'marked';
 
 const TZ = process.env.TZ || 'Asia/Singapore';
 const endDate = process.env.END_DATE
   ? DateTime.fromISO(process.env.END_DATE, { zone: TZ })
   : DateTime.now().setZone(TZ);
 
+if (!endDate.isValid) throw new Error(`Invalid END_DATE: ${process.env.END_DATE}`);
+
 const days = Number(process.env.DAYS || 7);
 const weekStart = endDate.minus({ days: days - 1 }).startOf('day');
 
 const root = path.resolve('content');
 const dist = path.resolve('site-dist');
+
+const WEEKLY_PREVIEW_LIMIT = Number(process.env.WEEKLY_PREVIEW_LIMIT || 25);
 
 function dayMdPath(dt) {
   return path.join(root, dt.toFormat('yyyy'), dt.toFormat('LL'), dt.toFormat('dd'), 'content.md');
@@ -27,23 +30,152 @@ function esc(s) {
     .replaceAll('"', '&quot;');
 }
 
+function safeHost(u) {
+  try {
+    const host = new URL(u).hostname.replace(/^www\./, '');
+    return host;
+  } catch {
+    return '';
+  }
+}
+
+function parseItemsFromContent(markdown) {
+  const lines = String(markdown || '').split(/\r?\n/);
+
+  /** @type {Array<{title:string,url:string,description:string,image:string|null}>} */
+  const items = [];
+  let current = null;
+
+  const flush = () => {
+    if (current && current.url) items.push(current);
+    current = null;
+  };
+
+  for (const line of lines) {
+    const l = line.trimEnd();
+
+    // New bullet
+    if (l.startsWith('- ')) {
+      flush();
+
+      const sourceMatch = l.match(/\[Source\]\(([^)]+)\)\s*$/);
+      const url = sourceMatch ? sourceMatch[1] : '';
+      const withoutSource = sourceMatch ? l.slice(0, sourceMatch.index).trim() : l.slice(2).trim();
+
+      // Remove leading "- "
+      const core = withoutSource.startsWith('- ') ? withoutSource.slice(2).trim() : withoutSource;
+
+      // Expect "**Title** — Desc"
+      const m = core.match(/^\*\*(.+?)\*\*\s*(?:—\s*(.*))?$/);
+      const title = (m?.[1] || core).trim();
+      const description = (m?.[2] || '').trim();
+
+      current = {
+        title,
+        url,
+        description,
+        image: null
+      };
+      continue;
+    }
+
+    // Optional image line for previous bullet (indented)
+    const img = l.trim();
+    if (current && img.startsWith('![](') && img.endsWith(')')) {
+      const u = img.slice('![]('.length, -1).trim();
+      current.image = u || null;
+      continue;
+    }
+  }
+
+  flush();
+
+  // De-dupe by URL
+  const seen = new Set();
+  return items.filter((it) => {
+    if (!it.url) return false;
+    if (seen.has(it.url)) return false;
+    seen.add(it.url);
+    return true;
+  });
+}
+
 const style = `
-:root{--bg:#0b0e14;--card:#121826;--text:#e7e9ee;--muted:#a7b0c0;--link:#8ab4ff;--border:#23304a;}
-@media (prefers-color-scheme: light){:root{--bg:#ffffff;--card:#f6f7fb;--text:#0b1020;--muted:#4a5878;--link:#1a56db;--border:#d6dbea;}}
-body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text);}
-a{color:var(--link); text-decoration:none} a:hover{text-decoration:underline}
-.container{max-width:980px;margin:0 auto;padding:28px 18px;}
-.header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:18px;}
-.brand{font-weight:800;font-size:20px;letter-spacing:0.2px}
-.sub{color:var(--muted);font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;}
-.card{grid-column:span 12;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 14px;}
-.card h2{margin:0 0 10px 0;font-size:16px}
-.card h3{margin:16px 0 8px 0;font-size:14px}
-.card ul{margin:0;padding-left:18px}
-.footer{margin-top:22px;color:var(--muted);font-size:12px}
-.small{font-size:12px;color:var(--muted)}
-.badge{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:2px 9px;font-size:12px;color:var(--muted)}
+*{box-sizing:border-box}
+:root{
+  --bg:#0b0e14;
+  --panel:#101827;
+  --card:#0f172a;
+  --text:#e8edf6;
+  --muted:#a7b0c0;
+  --border:rgba(148,163,184,.18);
+  --shadow:0 1px 0 rgba(255,255,255,.04), 0 8px 30px rgba(0,0,0,.22);
+  --link:#8ab4ff;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f5f6f8;
+    --panel:#ffffff;
+    --card:#ffffff;
+    --text:#0b1020;
+    --muted:#4a5878;
+    --border:rgba(15,23,42,.12);
+    --shadow:0 1px 0 rgba(15,23,42,.04), 0 10px 24px rgba(15,23,42,.08);
+    --link:#1a56db;
+  }
+}
+
+html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); line-height:1.55}
+
+a{color:var(--link); text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{max-width:980px;margin:0 auto;padding:20px 14px 40px}
+
+.topbar{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(14px);background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--border)}
+.topbar-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px}
+.brand{display:flex;flex-direction:column;gap:2px}
+.brand-title{font-weight:800;letter-spacing:.2px;font-size:16px}
+.brand-sub{font-size:12px;color:var(--muted)}
+.nav a{font-size:13px;color:var(--muted)}
+.nav a:hover{color:var(--text)}
+
+.hero{margin-top:16px;background:var(--panel);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:16px}
+.hero h1{margin:0;font-size:18px}
+.hero p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+
+.grid{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+
+.day-card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.day-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:14px 14px 10px;border-bottom:1px solid var(--border)}
+.day-title{margin:0;font-size:15px;font-weight:750}
+.day-meta{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;white-space:nowrap}
+.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:3px 10px}
+
+.items{list-style:none;margin:0;padding:10px 10px 12px}
+.item{display:flex;gap:12px;padding:10px;border-radius:12px}
+.item:hover{background:color-mix(in srgb, var(--card) 88%, var(--text) 2%)}
+
+.thumb{width:72px;height:72px;flex:0 0 auto;border-radius:12px;object-fit:cover;border:1px solid var(--border);background:color-mix(in srgb, var(--card) 92%, var(--text) 4%)}
+
+.item-body{min-width:0;display:flex;flex-direction:column;gap:4px}
+.item-title{font-weight:650;font-size:14px;line-height:1.25;margin:0;overflow-wrap:anywhere}
+.item-desc{color:var(--muted);font-size:13px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.item-foot{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:12px}
+.domain{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+
+.more{padding:0 14px 14px}
+.more a{font-size:13px;color:var(--muted)}
+.more a:hover{color:var(--text)}
+
+.footer{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}
+
+@media (max-width: 520px){
+  .thumb{width:56px;height:56px;border-radius:10px}
+  .item{padding:10px 8px}
+  .container{padding-left:12px;padding-right:12px}
+}
 `;
 
 async function loadDay(dt) {
@@ -51,11 +183,10 @@ async function loadDay(dt) {
   try {
     const raw = await fs.readFile(p, 'utf8');
     const parsed = matter(raw);
-    return {
-      date: dt.toISODate(),
-      title: parsed.data?.title || dt.toISODate(),
-      html: marked.parse(parsed.content)
-    };
+    const date = dt.toISODate();
+    const title = parsed.data?.title || `SwiftVietnam Daily — ${dt.toFormat('LLL d, yyyy')}`;
+    const items = parseItemsFromContent(parsed.content);
+    return { date, title, items };
   } catch {
     return null;
   }
@@ -72,27 +203,51 @@ await fs.mkdir(dist, { recursive: true });
 
 const issueTitle = `SwiftVietnam Digest — Week of ${weekStart.toFormat('LLL d, yyyy')} → ${endDate.toFormat('LLL d, yyyy')}`;
 
-const issueBody = daysData
-  .map(
-    (d) => `
-    <article class="card">
-      <div class="small"><span class="badge">${esc(d.date)}</span></div>
-      <h2>${esc(d.title)}</h2>
-      <div>${d.html}</div>
-    </article>`
-  )
-  .join('\n');
+function dailyRel(dateISO) {
+  const [y, m, d] = dateISO.split('-');
+  return `daily/${y}/${m}/${d}/index.html`;
+}
 
-const dailyLinks = daysData
-  .map((d) => {
-    const [y, m, dd] = d.date.split('-');
-    const rel = `daily/${y}/${m}/${dd}/index.html`;
-    return { d, rel };
-  })
-  .map(
-    ({ d, rel }) => `<li><a href="../${rel}">${esc(d.date)}</a> — ${esc(d.title)}</li>`
-  )
-  .join('\n');
+function renderItem(it) {
+  const host = safeHost(it.url);
+  const thumb = it.image
+    ? `<img class="thumb" src="${esc(it.image)}" alt="" loading="lazy" decoding="async"/>`
+    : `<div class="thumb" aria-hidden="true"></div>`;
+
+  const desc = it.description ? `<div class="item-desc">${esc(it.description)}</div>` : '';
+
+  return `
+<li class="item">
+  ${thumb}
+  <div class="item-body">
+    <div class="item-title"><a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">${esc(it.title || it.url)}</a></div>
+    ${desc}
+    <div class="item-foot"><span class="domain">${esc(host)}</span></div>
+  </div>
+</li>`;
+}
+
+function renderDayCard(d) {
+  const rel = dailyRel(d.date);
+  const preview = d.items.slice(0, WEEKLY_PREVIEW_LIMIT);
+  const itemsHtml = preview.length
+    ? preview.map(renderItem).join('\n')
+    : `<li class="item"><div class="item-body"><div class="item-title">No items found.</div></div></li>`;
+
+  const more = d.items.length > preview.length
+    ? `<div class="more"><a href="${esc(rel)}">View all ${d.items.length} links →</a></div>`
+    : `<div class="more"><a href="${esc(rel)}">Open daily page →</a></div>`;
+
+  return `
+<section class="day-card">
+  <div class="day-head">
+    <h2 class="day-title">${esc(d.title)}</h2>
+    <div class="day-meta"><span class="badge">${esc(d.date)}</span><span>${d.items.length} links</span></div>
+  </div>
+  <ul class="items">${itemsHtml}</ul>
+  ${more}
+</section>`;
+}
 
 const indexHtml = `<!doctype html>
 <html>
@@ -103,22 +258,24 @@ const indexHtml = `<!doctype html>
   <style>${style}</style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div>
-        <div class="brand">SwiftVietnam Digest</div>
-        <div class="sub">Weekly issue • Generated from markdown • ${esc(TZ)}</div>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-title">SwiftVietnam Digest</div>
+        <div class="brand-sub">Weekly issue • ${esc(TZ)}</div>
       </div>
-      <div class="sub"><a href="daily/index.html">Daily links</a></div>
+      <div class="nav"><a href="daily/index.html">Daily links</a></div>
     </div>
+  </div>
 
-    <div class="card">
-      <h2>${esc(issueTitle)}</h2>
-      <div class="small">This is an MVP build (layout + archive). Summaries may contain TODO placeholders.</div>
+  <div class="container">
+    <div class="hero">
+      <h1>${esc(issueTitle)}</h1>
+      <p>Minimal UI • Auto-collected from RSS • Images are thumbnails</p>
     </div>
 
     <div class="grid">
-      ${issueBody}
+      ${daysData.map(renderDayCard).join('\n')}
     </div>
 
     <div class="footer">Built by SwiftVietnam Digest pipeline.</div>
@@ -130,7 +287,15 @@ await fs.writeFile(path.join(dist, 'index.html'), indexHtml, 'utf8');
 
 // Daily index page
 await fs.mkdir(path.join(dist, 'daily'), { recursive: true });
-const dailyIndex = `<!doctype html>
+
+const dailyList = daysData
+  .map((d) => {
+    const rel = dailyRel(d.date);
+    return `<li class="item"><div class="item-body"><div class="item-title"><a href="../${esc(rel)}">${esc(d.date)}</a></div><div class="item-desc">${esc(d.title)} • ${d.items.length} links</div></div></li>`;
+  })
+  .join('\n');
+
+const dailyIndexHtml = `<!doctype html>
 <html>
 <head>
   <meta charset="utf-8"/>
@@ -139,30 +304,40 @@ const dailyIndex = `<!doctype html>
   <style>${style}</style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div>
-        <div class="brand">SwiftVietnam Digest</div>
-        <div class="sub">Daily archive • ${esc(TZ)}</div>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-title">SwiftVietnam Digest</div>
+        <div class="brand-sub">Daily archive • ${esc(TZ)}</div>
       </div>
-      <div class="sub"><a href="../index.html">Weekly issue</a></div>
+      <div class="nav"><a href="../index.html">Weekly issue</a></div>
     </div>
+  </div>
 
-    <div class="card">
-      <h2>Daily links (this week)</h2>
-      <ul>${dailyLinks || '<li>No daily pages found.</li>'}</ul>
+  <div class="container">
+    <div class="hero">
+      <h1>Daily links (this week)</h1>
+      <p>Open a day for the full list.</p>
     </div>
+    <section class="day-card">
+      <ul class="items">${dailyList || '<li class="item"><div class="item-body"><div class="item-title">No daily pages found.</div></div></li>'}</ul>
+    </section>
+    <div class="footer">Built by SwiftVietnam Digest pipeline.</div>
   </div>
 </body>
 </html>`;
 
-await fs.writeFile(path.join(dist, 'daily', 'index.html'), dailyIndex, 'utf8');
+await fs.writeFile(path.join(dist, 'daily', 'index.html'), dailyIndexHtml, 'utf8');
 
 // Per-day pages
 for (const d of daysData) {
   const [y, m, dd] = d.date.split('-');
   const dayDir = path.join(dist, 'daily', y, m, dd);
   await fs.mkdir(dayDir, { recursive: true });
+
+  const itemsHtml = d.items.length
+    ? d.items.map(renderItem).join('\n')
+    : `<li class="item"><div class="item-body"><div class="item-title">No items found.</div></div></li>`;
 
   const dayHtml = `<!doctype html>
 <html>
@@ -173,19 +348,27 @@ for (const d of daysData) {
   <style>${style}</style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div>
-        <div class="brand">SwiftVietnam Digest</div>
-        <div class="sub"><a href="../../../index.html">Daily index</a> • <a href="../../../../index.html">Weekly issue</a></div>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-title">SwiftVietnam Digest</div>
+        <div class="brand-sub">${esc(d.date)} • ${d.items.length} links</div>
       </div>
-      <div class="sub"><span class="badge">${esc(d.date)}</span></div>
+      <div class="nav"><a href="../../../index.html">Daily index</a> &nbsp; <a href="../../../../index.html">Weekly</a></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <h1>${esc(d.title)}</h1>
+      <p>${d.items.length} links</p>
     </div>
 
-    <article class="card">
-      <h2>${esc(d.title)}</h2>
-      <div>${d.html}</div>
-    </article>
+    <section class="day-card">
+      <ul class="items">${itemsHtml}</ul>
+    </section>
+
+    <div class="footer">Built by SwiftVietnam Digest pipeline.</div>
   </div>
 </body>
 </html>`;
