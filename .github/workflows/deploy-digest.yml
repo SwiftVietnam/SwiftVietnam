@@ -2,12 +2,21 @@ name: Deploy SwiftVietnam Digest
 
 on:
   workflow_dispatch:
+
+  # NOTE: pushes made by GitHub Actions (GITHUB_TOKEN) do NOT trigger other workflows.
+  # Our crawl job commits content daily, so we deploy on workflow completion instead.
+  workflow_run:
+    workflows: ["Crawl RSS sources (SwiftVietnam Digest)"]
+    types: [completed]
+
   push:
     branches: ["master"]
     paths:
       - "newsletter/**"
       - ".github/workflows/deploy-digest.yml"
+
   schedule:
+    # Keep a weekly backstop deploy.
     # 00:00 Sunday Asia/Singapore == 16:00 Saturday UTC
     - cron: "0 16 * * 6"
 
