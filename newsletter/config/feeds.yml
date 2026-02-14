@@ -4716,16 +4716,6 @@ feeds:
       - iosdevdirectory
       - development
     author: Luis Recuenco
-  - id: iosdev-luke-smith-s-blog
-    name: Luke Smith’s Blog
-    site: https://www.lukecsmith.co.uk/
-    rss: https://www.lukecsmith.co.uk/feed/
-    enabled: true
-    priority: 5
-    tags:
-      - iosdevdirectory
-      - development
-    author: Luke Smith
   - id: iosdev-luke-wroblewski-s-blog
     name: Luke Wroblewski’s Blog
     site: https://www.lukew.com/
@@ -9296,16 +9286,6 @@ feeds:
       - iosdevdirectory
       - youtube
     author: Alfian Losari
-  - id: iosdev-xmartlabs-blog
-    name: Xmartlabs Blog
-    site: https://blog.xmartlabs.com/category/ios-development/
-    rss: https://blog.xmartlabs.com/feed.xml
-    enabled: true
-    priority: 5
-    tags:
-      - iosdevdirectory
-      - companies
-    author: Xmartlabs Team
   - id: iosdev-xreality-zone
     name: XReality.Zone 中文版
     site: https://xreality.zone/zh/
