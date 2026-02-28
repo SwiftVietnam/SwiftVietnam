@@ -7309,16 +7309,6 @@ feeds:
       - iosdevdirectory
       - development
     author: Simon Fairbairn
-  - id: iosdev-simple-swift-guide
-    name: Simple Swift Guide
-    site: https://www.simpleswiftguide.com/
-    rss: https://www.simpleswiftguide.com/feed/
-    enabled: true
-    priority: 5
-    tags:
-      - iosdevdirectory
-      - development
-    author: Randy Swift
   - id: iosdev-sintraworks-blog
     name: SintraWorks Blog
     site: https://sintraworks.github.io/
@@ -9229,6 +9219,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Wouter Dijks
+  - id: iosdev-wwdc-notes
+    name: WWDC Notes
+    site: https://wwdcnotes.com/
+    rss: https://wwdcnotes.com/feed.rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: The WWDC Community
   - id: iosdev-xavier-lowmiller-s-blog
     name: Xavier Lowmiller's Blog
     site: https://xavierlowmiller.github.io/
@@ -9269,6 +9269,16 @@ feeds:
       - iosdevdirectory
       - youtube
     author: Alfian Losari
+  - id: iosdev-xmartlabs-blog
+    name: Xmartlabs Blog
+    site: https://blog.xmartlabs.com/category/ios-development/
+    rss: https://blog.xmartlabs.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - companies
+    author: Xmartlabs Team
   - id: iosdev-xreality-zone
     name: XReality.Zone 中文版
     site: https://xreality.zone/zh/
@@ -9329,6 +9339,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Yonas Kolb
+  - id: iosdev-yono-mittlefehldt-s-blog
+    name: Yono Mittlefehldt’s Blog
+    site: https://yono.ai/
+    rss: https://yono.ai/feed.rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Yono Mittlefehldt
   - id: iosdev-yoswift
     name: YoSwift
     site: https://yoswift.dev/
