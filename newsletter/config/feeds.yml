@@ -7462,6 +7462,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Srđan Stanić
+  - id: iosdev-stacktrace-podcast
+    name: Stacktrace Podcast
+    site: https://stacktracepodcast.fm/
+    rss: https://stacktracepodcast.fm/podcast?format=RSS
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - podcasts
+    author: John Sundell and Gui Rambo
   - id: iosdev-stavros-schizas-blog
     name: Stavros Schizas' Blog
     site: https://stavrosschizas.com/
