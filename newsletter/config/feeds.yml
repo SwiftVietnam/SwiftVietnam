@@ -647,6 +647,16 @@ feeds:
       - iosdevdirectory
       - youtube
     author: Lucas Derraugh
+  - id: iosdev-appleboy
+    name: appleboy
+    site: https://appleboy.tech/
+    rss: https://appleboy.tech/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Asser Osama
   - id: iosdev-appmakers-dev
     name: AppMakers.Dev
     site: https://appmakers.dev/category/blog/
@@ -7552,16 +7562,6 @@ feeds:
       - iosdevdirectory
       - youtube
     author: GetStream.io
-  - id: iosdev-stuart-breckenridge-s-blog
-    name: Stuart Breckenridge’s Blog
-    site: https://stuartbreckenridge.net/
-    rss: https://stuartbreckenridge.net/rss/
-    enabled: true
-    priority: 5
-    tags:
-      - iosdevdirectory
-      - development
-    author: Stuart Breckenridge
   - id: iosdev-stuart-hall-s-blog
     name: Stuart Hall’s Blog
     site: http://stuartkhall.com/
