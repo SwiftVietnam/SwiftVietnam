@@ -115,7 +115,7 @@ feeds:
   - id: iosdev-adam-wulf-s-blog
     name: Adam Wulf's Blog
     site: https://adamwulf.me/
-    rss: https://adamwulf.me/feed/
+    rss: https://adamwulf.me/index.xml
     enabled: true
     priority: 5
     tags:
@@ -498,6 +498,16 @@ feeds:
     priority: 5
     tags:
       - iosfeeds
+  - id: iosdev-andy-iakovlev-s-blog
+    name: Andy Iakovlev's Blog
+    site: https://iakovlev.blog/
+    rss: https://iakovlev.blog/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Andrei (Andy) Iakovlev
   - id: iosfeeds-andy-ibanez-s-blog
     name: Andy Ibanez’s Blog
     rss: https://www.andyibanez.com/tags/apple/index.xml
@@ -1144,6 +1154,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Walid SASSI
+  - id: iosdev-blueground-s-engineering-blog
+    name: Blueground's Engineering Blog
+    site: https://engineering.theblueground.com/
+    rss: https://engineering.theblueground.com/rss/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - companies
+    author: iOS Engineers @ Blueground
   - id: iosdev-bpxl-craft
     name: BPXL Craft
     site: https://medium.com/bpxl-craft
@@ -1462,6 +1482,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Chris Marshall
+  - id: iosdev-chris-marshall-on-medium
+    name: Chris Marshall on Medium
+    site: https://chrismarshallny.medium.com/
+    rss: https://medium.com/feed/@chrismarshallny
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - companies
+    author: Chris Marshall
   - id: iosdev-chris-mash-on-medium
     name: Chris Mash on Medium
     site: https://chris-mash.medium.com/
@@ -1692,16 +1722,6 @@ feeds:
       - iosdevdirectory
       - youtube
     author: Ben, Dimitri, Fernando, Johnny, and Spencer
-  - id: iosdev-code-cook-read
-    name: CODE. COOK. READ.
-    site: https://codecookread.com/
-    rss: https://codecookread.com/feed/
-    enabled: true
-    priority: 5
-    tags:
-      - iosdevdirectory
-      - development
-    author: Greg Scown
   - id: iosdev-codemagic-blog
     name: Codemagic Blog
     site: https://blog.codemagic.io/
@@ -1962,6 +1982,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Cyndi Chin
+  - id: iosdev-dadederk
+    name: Dadederk
+    site: https://accessibilityupto11.com/
+    rss: https://accessibilityupto11.com/feed.rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Daniel Devesa Derksen-Staats
   - id: iosdev-damian-mehers-blog
     name: Damian Mehers' Blog
     site: https://damian.fyi/
@@ -2336,6 +2366,16 @@ feeds:
     name: Design Details
     site: https://spec.fm/podcasts/design-details
     rss: https://simplecast.fm/podcasts/1034/rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - podcasts
+    author: Marshall Bock and Brian Lovin
+  - id: iosdev-design-details
+    name: Design Details
+    site: https://designdetails.fm/
+    rss: https://feeds.simplecast.com/eew_vyNL
     enabled: true
     priority: 5
     tags:
@@ -3132,6 +3172,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Gene De Lisa
+  - id: iosdev-gene-de-lisa-s-blog
+    name: Gene De Lisa’s Blog
+    site: https://rockhoppertech.com/
+    rss: https://rockhoppertech.com/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Gene De Lisa
   - id: iosdev-geoff-hackworth-on-medium
     name: Geoff Hackworth on Medium
     site: https://hacknicity.medium.com/
@@ -3702,6 +3752,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Ioannis Diamantidis
+  - id: iosdev-ios-app-templates-blog
+    name: iOS App Templates Blog
+    site: https://iosapptemplates.com/blog/
+    rss: https://iosapptemplates.com/blog/rss.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Florian Marcu
   - id: iosdev-ios-building-blocks
     name: iOS Building Blocks
     site: https://www.spreaker.com/podcast/ios-building-blocks--5865659
@@ -3722,6 +3782,16 @@ feeds:
       - iosdevdirectory
       - newsletters
     author: Pol Piella Abadia
+  - id: iosdev-ios-code-review-curated-code-improvement-tips
+    name: iOS Code Review - Curated code improvement tips
+    site: https://ioscodereview.com/
+    rss: https://ioscodereview.com/issues/rss/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - newsletters
+    author: Marina Gornostaeva
   - id: iosdev-ios-coffee-break-newsletter
     name: iOS Coffee Break Newsletter
     site: https://www.ioscoffeebreak.com/
@@ -3862,6 +3932,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Jacob Bartlett
+  - id: iosdev-jager-yoo-s-medium
+    name: Jager-yoo's Medium
+    site: https://medium.com/@Jager-yoo
+    rss: https://medium.com/feed/@Jager-yoo
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Jaeho Yoo
   - id: iosdev-jaim-zuber-s-blog
     name: Jaim Zuber's blog
     site: https://jaimzuber.com/
@@ -4156,6 +4236,16 @@ feeds:
     name: Jonathan Tarud - Tech. Business. Design.
     site: https://www.jonathant.com/
     rss: https://feed.jonathant.com/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Jonathan Tarud
+  - id: iosdev-jonathan-tarud-tech-business-design
+    name: Jonathan Tarud - Tech. Business. Design.
+    site: https://www.jonathant.com/
+    rss: https://www.jonathant.com/feed/
     enabled: true
     priority: 5
     tags:
@@ -4712,6 +4802,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Luis Recuenco
+  - id: iosdev-luke-smith-s-blog
+    name: Luke Smith’s Blog
+    site: https://www.lukecsmith.co.uk/
+    rss: https://www.lukecsmith.co.uk/feed.rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Luke Smith
   - id: iosdev-luke-wroblewski-s-blog
     name: Luke Wroblewski’s Blog
     site: https://www.lukew.com/
@@ -5002,6 +5102,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Martin Grider
+  - id: iosdev-martin-mitrevski-s-blog
+    name: Martin Mitrevski’s Blog
+    site: https://martinmitrevski.com/
+    rss: https://martinmitrevski.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Martin Mitrevski
   - id: iosdev-mateusz-matrejek-s-blog
     name: Mateusz Matrejek's Blog
     site: https://matrejek.eu/
@@ -5302,6 +5412,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Miguel Quinones
+  - id: iosdev-mihaela-mj-s-blog
+    name: Mihaela MJ's Blog
+    site: https://aleahim.com/
+    rss: https://aleahim.com/rss.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Mihaela MJ
   - id: iosdev-mike-mikina-on-youtube
     name: Mike Mikina on YouTube
     site: https://www.youtube.com/channel/UCZVk_jOoXCPL9c6YKuMDJjA
@@ -5762,6 +5882,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Niamh Power
+  - id: iosdev-nick-babich-s-blog
+    name: Nick Babich’s Blog
+    site: https://babich.biz/blog/
+    rss: https://babich.biz/blog/rss/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - design
+    author: Nick Babich
   - id: iosdev-nick-mcconnell-on-medium
     name: Nick McConnell on Medium
     site: https://medium.com/@nicmcconn
@@ -5832,16 +5962,6 @@ feeds:
       - iosdevdirectory
       - development
     author: Natalia Panferova and Matthaus Woolard
-  - id: iosdev-noah-gilmore-s-blog
-    name: Noah Gilmore’s Blog
-    site: https://noahgilmore.com/blog/tags/ios
-    rss: https://noahgilmore.com/blog/ios.xml
-    enabled: true
-    priority: 5
-    tags:
-      - iosdevdirectory
-      - development
-    author: Noah Gilmore
   - id: iosdev-noah-martin-on-medium
     name: Noah Martin on Medium
     site: https://medium.com/@noahm444
@@ -6252,6 +6372,16 @@ feeds:
       - iosdevdirectory
       - design
     author: Pasquale D’Silva
+  - id: iosdev-pastey-s-blog
+    name: Pastey’s blog
+    site: https://pastey.github.io/
+    rss: https://pastey.github.io/blog/index.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Pavlo Shkrabliuk
   - id: iosdev-patrick-balestra-s-blog
     name: Patrick Balestra’s Blog
     site: https://patrickbalestra.com/blog/
@@ -6312,6 +6442,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Paulo Andrade
+  - id: iosdev-pavel-zak-s-dev-blog
+    name: Pavel Zak’s Dev Blog
+    site: https://nerdyak.tech/
+    rss: https://nerdyak.tech/atom.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Pavel Zak
   - id: iosdev-pawe-madej-s-blog
     name: Paweł Madej's Blog
     site: https://www.pawelmadej.com/
@@ -6416,6 +6556,16 @@ feeds:
     name: Pieces of My Soul
     site: https://wezzard.com/
     rss: feed://wezzard.com/rss.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: WeZZard
+  - id: iosdev-pieces-of-my-soul
+    name: Pieces of My Soul
+    site: https://wezzard.com/
+    rss: https://wezzard.com/rss.xml
     enabled: true
     priority: 5
     tags:
@@ -7462,6 +7612,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Srđan Stanić
+  - id: iosdev-stacktrace-podcast
+    name: Stacktrace Podcast
+    site: https://stacktracepodcast.fm/
+    rss: https://stacktracepodcast.fm/feed.rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - podcasts
+    author: John Sundell and Gui Rambo
   - id: iosdev-stavros-schizas-blog
     name: Stavros Schizas' Blog
     site: https://stavrosschizas.com/
@@ -7562,6 +7722,16 @@ feeds:
       - iosdevdirectory
       - youtube
     author: GetStream.io
+  - id: iosdev-stuart-breckenridge-s-blog
+    name: Stuart Breckenridge’s Blog
+    site: https://stuartbreckenridge.net/
+    rss: https://stuartbreckenridge.net/rss/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Stuart Breckenridge
   - id: iosdev-stuart-hall-s-blog
     name: Stuart Hall’s Blog
     site: http://stuartkhall.com/
@@ -8212,16 +8382,6 @@ feeds:
       - iosdevdirectory
       - development
     author: Tammo Freese
-  - id: iosdev-tanaschita
-    name: Tanaschita
-    site: https://tanaschita.com/
-    rss: https://tanaschita.com/rss.xml
-    enabled: true
-    priority: 5
-    tags:
-      - iosdevdirectory
-      - development
-    author: Natascha Fadeeva
   - id: iosdev-tanin-s-blog
     name: Tanin’s Blog
     site: https://www.tanin.me/
@@ -8282,6 +8442,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Ashish Kakkad
+  - id: iosdev-testable-apple
+    name: Testable Apple
+    site: https://testableapple.com/
+    rss: https://testableapple.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Alexey Alter-Pesotskiy
   - id: iosdev-thatvirtualboy
     name: thatvirtualboy
     site: https://thatvirtualboy.com/
@@ -8402,6 +8572,16 @@ feeds:
       - iosdevdirectory
       - marketing
     author: Ortwin Gentz
+  - id: iosdev-the-grizzly-labs-blog
+    name: The Grizzly Labs' Blog
+    site: https://blog.thegrizzlylabs.com/
+    rss: https://blog.thegrizzlylabs.com/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - companies
+    author: The Grizzly Labs
   - id: iosdev-the-mental-blog
     name: The Mental Blog
     site: https://mentalfaculty.tumblr.com/
