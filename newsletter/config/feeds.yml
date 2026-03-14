@@ -51,6 +51,16 @@ feeds:
       - iosdevdirectory
       - 開發
     author: Ethan Huang
+  - id: iosdev-13
+    name: 13+
+    site: https://ethanhuang13.plus/
+    rss: https://ethanhuang13.plus/rss/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - 開發
+    author: Ethan Huang
   - id: iosfeeds-a-swift-misadventure
     name: A Swift Misadventure
     rss: https://medium.com/feed/a-swift-misadventure
@@ -1722,6 +1732,16 @@ feeds:
       - iosdevdirectory
       - youtube
     author: Ben, Dimitri, Fernando, Johnny, and Spencer
+  - id: iosdev-code-cook-read
+    name: CODE. COOK. READ.
+    site: https://codecookread.com/
+    rss: https://codecookread.com/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Greg Scown
   - id: iosdev-codemagic-blog
     name: Codemagic Blog
     site: https://blog.codemagic.io/
@@ -3582,6 +3602,16 @@ feeds:
       - iosdevdirectory
       - podcasts
     author: Steve Scott and John Fox
+  - id: iosdev-idiots-with-ios
+    name: idiots with iOS
+    site: https://idiotswithios.com/
+    rss: https://idiotswithios.com/feed/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Mrugesh Tank, Pulkit Vora
   - id: iosdev-ignore-the-code
     name: ignore the code
     site: https://ignorethecode.net/blog/
@@ -7722,16 +7752,6 @@ feeds:
       - iosdevdirectory
       - youtube
     author: GetStream.io
-  - id: iosdev-stuart-breckenridge-s-blog
-    name: Stuart Breckenridge’s Blog
-    site: https://stuartbreckenridge.net/
-    rss: https://stuartbreckenridge.net/rss/
-    enabled: true
-    priority: 5
-    tags:
-      - iosdevdirectory
-      - development
-    author: Stuart Breckenridge
   - id: iosdev-stuart-hall-s-blog
     name: Stuart Hall’s Blog
     site: http://stuartkhall.com/
@@ -8382,6 +8402,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Tammo Freese
+  - id: iosdev-tanaschita
+    name: Tanaschita
+    site: https://tanaschita.com/
+    rss: https://tanaschita.com/rss.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Natascha Fadeeva
   - id: iosdev-tanin-s-blog
     name: Tanin’s Blog
     site: https://www.tanin.me/
