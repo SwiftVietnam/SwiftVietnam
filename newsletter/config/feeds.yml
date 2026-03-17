@@ -3982,6 +3982,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Jaim Zuber
+  - id: iosdev-jakub-milcarz-s-blog
+    name: Jakub Milcarz's blog
+    site: https://medium.com/@kubamilcarz
+    rss: https://medium.com/feed/@kubamilcarz
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Jakub Milcarz
   - id: iosdev-james-dempsey-s-blog
     name: James Dempsey’s Blog
     site: https://jamesdempsey.net/
