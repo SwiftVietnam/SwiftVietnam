@@ -1732,16 +1732,6 @@ feeds:
       - iosdevdirectory
       - youtube
     author: Ben, Dimitri, Fernando, Johnny, and Spencer
-  - id: iosdev-code-cook-read
-    name: CODE. COOK. READ.
-    site: https://codecookread.com/
-    rss: https://codecookread.com/feed/
-    enabled: true
-    priority: 5
-    tags:
-      - iosdevdirectory
-      - development
-    author: Greg Scown
   - id: iosdev-codemagic-blog
     name: Codemagic Blog
     site: https://blog.codemagic.io/
@@ -3912,6 +3902,16 @@ feeds:
       - iosdevdirectory
       - podcasts
     author: Jaim Zuber, Andrew Madsen, Erica Sadun and Gui Rambo
+  - id: iosdev-it-s-just-text-files-people
+    name: It's Just Text Files, People
+    site: https://jacobvanorder.github.io/
+    rss: https://jacobvanorder.github.io/feed.xml
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Jacob Van Order
   - id: iosdev-ivan-thinking
     name: "Ivan: Thinking"
     site: https://ivanthinking.net/tags/ios-development/
@@ -4682,6 +4682,16 @@ feeds:
       - iosdevdirectory
       - youtube
     author: Erik D. Kennedy
+  - id: iosdev-lebedev-on-ios-swift
+    name: Lebedev on iOS & Swift
+    site: https://quasaryy.medium.com/
+    rss: https://quasaryy.medium.com/feed
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Yury Lebedev
   - id: iosdev-leonardo-diaz-s-blog
     name: Leonardo Diaz's Blog
     site: https://leonardodiaz.medium.com/
@@ -8422,16 +8432,6 @@ feeds:
       - iosdevdirectory
       - development
     author: Tammo Freese
-  - id: iosdev-tanaschita
-    name: Tanaschita
-    site: https://tanaschita.com/
-    rss: https://tanaschita.com/rss.xml
-    enabled: true
-    priority: 5
-    tags:
-      - iosdevdirectory
-      - development
-    author: Natascha Fadeeva
   - id: iosdev-tanin-s-blog
     name: Tanin’s Blog
     site: https://www.tanin.me/
@@ -9182,16 +9182,6 @@ feeds:
       - iosdevdirectory
       - development
     author: Keith Harrison
-  - id: iosdev-user-onboarding
-    name: User Onboarding
-    site: https://www.useronboard.com/
-    rss: http://www.useronboard.com/rss/
-    enabled: true
-    priority: 5
-    tags:
-      - iosdevdirectory
-      - design
-    author: Samuel Hulick
   - id: iosdev-vadim-drobinin-s-blog
     name: Vadim Drobinin’s Blog
     site: https://drobinin.com/
