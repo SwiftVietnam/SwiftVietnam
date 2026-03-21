@@ -7822,6 +7822,16 @@ feeds:
       - iosdevdirectory
       - youtube
     author: GetStream.io
+  - id: iosdev-stuart-breckenridge-s-blog
+    name: Stuart Breckenridge’s Blog
+    site: https://stuartbreckenridge.net/
+    rss: https://stuartbreckenridge.net/rss/
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Stuart Breckenridge
   - id: iosdev-stuart-hall-s-blog
     name: Stuart Hall’s Blog
     site: http://stuartkhall.com/
@@ -8892,6 +8902,16 @@ feeds:
       - iosdevdirectory
       - development
     author: Thomas Ricouard
+  - id: iosdev-thorsten-stark-s-blog
+    name: Thorsten Stark's Blog
+    site: https://thorsten-stark.de/
+    rss: https://thorsten-stark.de/feed.rss
+    enabled: true
+    priority: 5
+    tags:
+      - iosdevdirectory
+      - development
+    author: Thorsten Stark
   - id: iosdev-those-who-swift
     name: Those Who Swift
     site: https://thosewhoswift.substack.com/
