@@ -21,11 +21,31 @@ const highlighter = await getSingletonHighlighter({
 
 const renderer = new marked.Renderer();
 renderer.code = function ({ text, lang }) {
+  // Strip excessive blank lines: keep a blank only after a line that closes a
+  // top-level block (ends with } or ]), which is an intentional section break.
+  // All other blank lines (between params, imports, properties) are removed.
+  const lines = text.split('\n');
+  const cleaned: string[] = [];
+  for (const line of lines) {
+    if (line.trim() !== '') {
+      cleaned.push(line);
+      continue;
+    }
+    const lastCode = [...cleaned].reverse().find(l => l.trim() !== '');
+    const prevIsBlank = cleaned.length > 0 && cleaned[cleaned.length - 1].trim() === '';
+    // Keep blank only after a closing brace/bracket at column 0 (top-level block end)
+    if (!prevIsBlank && lastCode && /^[}\]]/.test(lastCode.trimEnd())) {
+      cleaned.push(line);
+    }
+  }
+  while (cleaned.length > 0 && cleaned[cleaned.length - 1].trim() === '') cleaned.pop();
+  const cleanText = cleaned.join('\n');
+
   const language = lang?.toLowerCase() || 'text';
   try {
-    return highlighter.codeToHtml(text, { lang: language, theme: 'github-light' });
+    return highlighter.codeToHtml(cleanText, { lang: language, theme: 'github-light' });
   } catch {
-    return `<pre class="shiki-fallback"><code>${text}</code></pre>`;
+    return `<pre class="shiki-fallback"><code>${cleanText}</code></pre>`;
   }
 };
 
