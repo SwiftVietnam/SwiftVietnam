@@ -20,7 +20,7 @@ const date = new Date(item.publishedAt).toLocaleDateString('vi-VN', {
 });
 ---
 
-<BaseLayout title={`${item.title} | SwiftVietnam News`} description={item.summaryVi}>
+<BaseLayout title={`${item.title} | SwiftVietnam News`} description={item.summaryVi || item.summaryEn} ogImage={item.coverImage || 'https://swiftvietnam.dev/logo.png'}>
   <article class="article">
     <a href="/news/">← Quay lại danh sách / Back to news</a>
     <h1>{item.title}</h1>
