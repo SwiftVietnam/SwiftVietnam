@@ -17,7 +17,6 @@
 <p><strong>Ví dụ 1 – Bar Chart cơ bản:</strong></p>
 <pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#6F42C1"> Charts</span></span>
 <span class="line"><span style="color:#D73A49">import</span><span style="color:#6F42C1"> SwiftUI</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> SalesData</span><span style="color:#24292E">: </span><span style="color:#6F42C1">Identifiable </span><span style="color:#24292E">{</span></span>
 <span class="line"><span style="color:#D73A49">    let</span><span style="color:#24292E"> id </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> UUID</span><span style="color:#24292E">()</span></span>
 <span class="line"><span style="color:#D73A49">    let</span><span style="color:#24292E"> month: </span><span style="color:#005CC5">String</span></span>
@@ -60,7 +59,6 @@
 <span class="line"><span style="color:#24292E">.</span><span style="color:#005CC5">chartLegend</span><span style="color:#24292E">(</span><span style="color:#005CC5">position</span><span style="color:#24292E">: .bottom)</span></span></code></pre><hr>
 <p><strong>Ví dụ 3 – Interactive selection (tooltip):</strong></p>
 <pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">@State</span><span style="color:#D73A49"> private</span><span style="color:#D73A49"> var</span><span style="color:#24292E"> selectedDate: Date</span><span style="color:#D73A49">?</span><span style="color:#D73A49"> =</span><span style="color:#005CC5"> nil</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#005CC5">Chart</span><span style="color:#24292E">(data) { item </span><span style="color:#D73A49">in</span></span>
 <span class="line"><span style="color:#005CC5">    LineMark</span><span style="color:#24292E">(</span></span>
 <span class="line"><span style="color:#005CC5">        x</span><span style="color:#24292E">: .</span><span style="color:#005CC5">value</span><span style="color:#24292E">(</span><span style="color:#032F62">"Ngày"</span><span style="color:#24292E">, item.date),</span></span>
