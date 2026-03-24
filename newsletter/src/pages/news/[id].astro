@@ -1,5 +1,6 @@
 ---
 import { marked } from 'marked';
+import { getSingletonHighlighter } from 'shiki';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import dataset from '../../data/news.generated.json';
 
@@ -12,7 +13,24 @@ export function getStaticPaths() {
 }
 
 const { item } = Astro.props;
-const html = marked.parse(item.contentMarkdown || '', { async: false });
+
+const highlighter = await getSingletonHighlighter({
+  themes: ['github-light'],
+  langs: ['swift', 'objc', 'bash', 'shell', 'javascript', 'typescript', 'json', 'text'],
+});
+
+const renderer = new marked.Renderer();
+renderer.code = function ({ text, lang }) {
+  const language = lang?.toLowerCase() || 'text';
+  try {
+    return highlighter.codeToHtml(text, { lang: language, theme: 'github-light' });
+  } catch {
+    return `<pre class="shiki-fallback"><code>${text}</code></pre>`;
+  }
+};
+
+const html = marked.parse(item.contentMarkdown || '', { renderer, async: false });
+
 const date = new Date(item.publishedAt).toLocaleDateString('vi-VN', {
   year: 'numeric',
   month: 'long',
@@ -22,13 +40,16 @@ const date = new Date(item.publishedAt).toLocaleDateString('vi-VN', {
 
 <BaseLayout title={`${item.title} | SwiftVietnam News`} description={item.summaryVi || item.summaryEn} ogImage={item.coverImage || 'https://swiftvietnam.dev/logo.png'}>
   <article class="article">
-    <a href="/news/">← Quay lại danh sách / Back to news</a>
+    <a href="/news/">← Quay lại danh sách</a>
     <h1>{item.title}</h1>
     <div class="meta">
       <span>{date}</span>
+      <span class="meta-dot">·</span>
       <span>{item.authorName}</span>
+      <span class="meta-dot">·</span>
       <span>{item.platform.toUpperCase()}</span>
-      <span><a href={item.sourceUrl} target="_blank" rel="noreferrer">Source</a></span>
+      <span class="meta-dot">·</span>
+      <span><a href={item.sourceUrl} target="_blank" rel="noreferrer">Nguồn</a></span>
       <span><a href={item.issueUrl} target="_blank" rel="noreferrer">GitHub Issue</a></span>
     </div>
     <p class="summary">{item.summaryVi || item.summaryEn}</p>
