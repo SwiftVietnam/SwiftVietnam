@@ -61,6 +61,13 @@ body {
   align-items: center;
   gap: 10px;
   min-width: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand:hover {
+  text-decoration: none;
+  opacity: 0.8;
 }
 
 .brand-logo {
