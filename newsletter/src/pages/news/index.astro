@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import dataset from '../../data/news.generated.json';
+
+const items = dataset.items || [];
+---
+
+<BaseLayout title="SwiftVietnam News" description="Tin tức Apple cho lập trình viên iOS/macOS Việt Nam.">
+  <section class="hero">
+    <h1>Tin tức Apple cho cộng đồng iOS/macOS Việt Nam</h1>
+  </section>
+
+  {items.length === 0 ? (
+    <article class="card">
+      <h2>Chưa có bài viết nào được publish</h2>
+      <p class="summary">Tạo issue có label <code>news</code> và <code>published</code>, sau đó chạy sync để hiển thị.</p>
+    </article>
+  ) : (
+    <section class="grid">
+      {items.map((item) => (
+        <NewsCard item={item} />
+      ))}
+    </section>
+  )}
+</BaseLayout>

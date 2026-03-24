@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'SwiftVietnam News',
+  description = 'Tin tức Apple cho lập trình viên iOS/macOS Việt Nam.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">
+          SwiftVietnam News
+          <small>Tin Apple cho iOS/macOS Developers Việt Nam</small>
+        </div>
+        <nav>
+          <a href="/news/">News</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+    <footer class="container footer">
+      <div>© SwiftVietnam</div>
+    </footer>
+  </body>
+</html>

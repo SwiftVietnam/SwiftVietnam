@@ -1,0 +1,31 @@
+name: News Post
+description: Tạo bài viết news cho SwiftVietnam News app
+title: "[News] "
+labels: ["news"]
+body:
+  - type: textarea
+    id: content
+    attributes:
+      label: News content
+      description: Dán nội dung theo format markdown có YAML front matter.
+      value: |
+        ---
+        title: ""
+        summary_vi: ""
+        summary_en: ""
+        published_at: "2026-03-23T10:00:00.000Z"
+        source_url: "https://developer.apple.com/news/"
+        cover_image: ""
+        author_name: "SwiftVietnam"
+        platform: "both"
+        lang: "vi"
+        tags:
+          - "ios"
+          - "macos"
+        ---
+
+        ## Bối cảnh / Context
+
+        ## Tác động với dev Việt Nam / Why it matters
+
+        ## Chi tiết kỹ thuật / Technical details

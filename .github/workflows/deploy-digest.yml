@@ -48,18 +48,21 @@ jobs:
         working-directory: newsletter
         run: npm ci
 
-      - name: Build weekly site (from current markdown)
+      - name: Sync published GitHub issues
         working-directory: newsletter
         env:
-          TZ: Asia/Singapore
-          DAYS: "7"
-        run: node scripts/build-weekly-site.mjs
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run news:sync
+
+      - name: Build Astro static site
+        working-directory: newsletter
+        run: npm run build
 
       - name: Deploy to gh-pages (digest/)
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: newsletter/site-dist
+          publish_dir: newsletter/dist
           destination_dir: digest
           keep_files: true

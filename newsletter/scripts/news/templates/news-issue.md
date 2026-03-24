@@ -1,0 +1,27 @@
+---
+title: "{{title}}"
+summary_vi: "{{summary_vi}}"
+summary_en: "{{summary_en}}"
+published_at: "{{published_at}}"
+source_url: "{{source_url}}"
+cover_image: "{{cover_image}}"
+author_name: "{{author_name}}"
+platform: "{{platform}}"
+lang: "{{lang}}"
+tags:
+{{tags_yaml}}
+---
+
+## Bối cảnh / Context
+
+Mô tả ngắn về tin tức Apple hoặc cập nhật kỹ thuật cho iOS/macOS developers.
+
+## Tác động với dev Việt Nam / Why it matters
+
+Phân tích ngắn gọn vì sao thông tin này quan trọng với cộng đồng iOS/macOS Việt Nam.
+
+## Chi tiết kỹ thuật / Technical details
+
+- Điểm chính 1
+- Điểm chính 2
+- Điểm chính 3

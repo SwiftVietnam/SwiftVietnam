@@ -1,0 +1,26 @@
+---
+const { item } = Astro.props;
+
+const date = new Date(item.publishedAt).toLocaleDateString('vi-VN', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<article class="card">
+  <h2><a href={item.url}>{item.title}</a></h2>
+  <div class="meta">
+    <span>{date}</span>
+    <span>{item.platform.toUpperCase()}</span>
+    <span><a href={item.issueUrl} target="_blank" rel="noreferrer">Issue #{item.githubNumber}</a></span>
+  </div>
+  <p class="summary">{item.summaryVi || item.summaryEn}</p>
+  {item.tags.length > 0 && (
+    <div class="tags">
+      {item.tags.map((tag) => (
+        <span class="tag">{tag}</span>
+      ))}
+    </div>
+  )}
+</article>

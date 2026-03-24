@@ -1,0 +1,40 @@
+---
+import { marked } from 'marked';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import dataset from '../../data/news.generated.json';
+
+export function getStaticPaths() {
+  const items = dataset.items || [];
+  return items.map((item) => ({
+    params: { id: String(item.id) },
+    props: { item }
+  }));
+}
+
+const { item } = Astro.props;
+const html = marked.parse(item.contentMarkdown || '', { async: false });
+const date = new Date(item.publishedAt).toLocaleDateString('vi-VN', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<BaseLayout title={`${item.title} | SwiftVietnam News`} description={item.summaryVi}>
+  <article class="article">
+    <a href="/news/">← Quay lại danh sách / Back to news</a>
+    <h1>{item.title}</h1>
+    <div class="meta">
+      <span>{date}</span>
+      <span>{item.authorName}</span>
+      <span>{item.platform.toUpperCase()}</span>
+      <span><a href={item.sourceUrl} target="_blank" rel="noreferrer">Source</a></span>
+      <span><a href={item.issueUrl} target="_blank" rel="noreferrer">GitHub Issue</a></span>
+    </div>
+    <p class="summary">{item.summaryVi || item.summaryEn}</p>
+
+    {item.coverImage && <img src={item.coverImage} alt={item.title} class="article-cover" loading="lazy" />}
+
+    <div class="prose" set:html={html}></div>
+  </article>
+</BaseLayout>
