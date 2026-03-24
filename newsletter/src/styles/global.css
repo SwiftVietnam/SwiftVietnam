@@ -452,7 +452,10 @@ a:hover {
 
 .prose .shiki .line {
   display: block;
-  min-height: 1em;
+}
+
+.prose .shiki .line:empty {
+  min-height: 0.6em;
 }
 
 @media (max-width: 720px) {
