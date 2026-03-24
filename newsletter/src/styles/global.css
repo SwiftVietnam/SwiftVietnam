@@ -362,6 +362,61 @@ a:hover {
 
 .prose a { color: var(--accent); }
 
+/* ── Tables ── */
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1.5em 0;
+  font-size: 0.93rem;
+  background: var(--panel);
+  box-shadow: var(--shadow-sm);
+}
+
+.prose thead {
+  background: rgba(0, 0, 0, 0.028);
+}
+
+.prose th {
+  padding: 11px 18px;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.prose td {
+  padding: 11px 18px;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(210, 210, 215, 0.55);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.prose tr:last-child td {
+  border-bottom: none;
+}
+
+.prose tbody tr {
+  transition: background 0.12s ease;
+}
+
+.prose tbody tr:hover {
+  background: rgba(0, 113, 227, 0.035);
+}
+
+/* Inline code inside tables */
+.prose td code,
+.prose th code {
+  font-size: 0.83em;
+}
+
 /* Inline code */
 .prose :not(pre) > code {
   font-family: "SF Mono", ui-monospace, "Cascadia Code", monospace;
