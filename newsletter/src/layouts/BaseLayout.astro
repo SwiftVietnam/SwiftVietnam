@@ -20,15 +20,17 @@ const {
       <div class="container topbar-inner">
         <div class="brand">
           <img src="/logo.png" alt="SwiftVietnam" class="brand-logo" />
-          SwiftVietnam News
-          <small>Tin Apple cho iOS/macOS Developers Việt Nam</small>
+          <div class="brand-text">
+            <span class="brand-name">SwiftVietnam News</span>
+            <span class="brand-sub">Tin Apple cho iOS/macOS Developers Việt Nam</span>
+          </div>
         </div>
         <nav>
           <a href="/news/">News</a>
         </nav>
       </div>
     </header>
-    <main class="container" style="padding-top: 24px;">
+    <main class="container">
       <slot />
     </main>
     <footer class="container footer">

@@ -9,18 +9,25 @@ const date = new Date(item.publishedAt).toLocaleDateString('vi-VN', {
 ---
 
 <article class="card">
-  <h2><a href={item.url}>{item.title}</a></h2>
-  <div class="meta">
-    <span>{date}</span>
-    <span>{item.platform.toUpperCase()}</span>
-    <span><a href={item.issueUrl} target="_blank" rel="noreferrer">Issue #{item.githubNumber}</a></span>
-  </div>
-  <p class="summary">{item.summaryVi || item.summaryEn}</p>
-  {item.tags.length > 0 && (
-    <div class="tags">
-      {item.tags.map((tag) => (
-        <span class="tag">{tag}</span>
-      ))}
-    </div>
+  {item.coverImage && (
+    <a href={item.url} class="card-image-link">
+      <img src={item.coverImage} alt={item.title} class="card-image" loading="lazy" />
+    </a>
   )}
+  <div class="card-body">
+    <div class="meta">
+      <span>{date}</span>
+      <span class="meta-dot">·</span>
+      <span>{item.platform.toUpperCase()}</span>
+    </div>
+    <h2><a href={item.url}>{item.title}</a></h2>
+    <p class="summary">{item.summaryVi || item.summaryEn}</p>
+    {item.tags.length > 0 && (
+      <div class="tags">
+        {item.tags.map((tag) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    )}
+  </div>
 </article>
