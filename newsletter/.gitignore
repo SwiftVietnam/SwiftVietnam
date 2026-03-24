@@ -1,9 +1,12 @@
 node_modules/
 .DS_Store
 site/dist/
+.astro/
 
 # generated data
 data/
 
 # generated build output
 site-dist/
+dist/
+firebase-debug.log

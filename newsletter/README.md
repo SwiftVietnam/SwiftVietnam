@@ -1,68 +1,73 @@
-# SwiftVietnam Digest (newsletter tooling)
+# SwiftVietnam News (Astro + GitHub Issues)
 
-This folder will hold the content + scripts + site generator for **SwiftVietnam Digest**.
+Static website hiển thị tin tức Apple cho cộng đồng iOS/macOS developers Việt Nam.
 
-## Content
+- Framework: Astro (`newsletter/`)
+- CMS/Database: GitHub Issues (`SwiftVietnam/SwiftVietnam`)
+- Publish rule: issue có đủ label `news` + `published`
+- URL bài viết: `/news/{issue-number}/`
 
-Daily markdown files live under:
-
-- `newsletter/content/YYYY/MM/DD/content.md`
-
-Dates are based on **Asia/Singapore** timezone.
-
-## Scripts
-
-### Fetch iOSDevDirectory sources
-
-Downloads the upstream directory JSON and writes a normalized list of RSS sources.
+## Setup
 
 ```bash
 cd newsletter
-npm run fetch:sources
+npm install
 ```
 
-Outputs:
-- `newsletter/data/iosdevdirectory/blogs.json` (raw)
-- `newsletter/data/iosdevdirectory/sources.json` (normalized)
+## Content commands (GitHub Issues)
 
-### Sync RSS feeds from iosfeeds.com
-
-This pulls RSS feed URLs from https://iosfeeds.com/feeds, validates them, and appends valid feeds to `newsletter/config/feeds.yml`.
+### Tạo draft issue
 
 ```bash
-cd newsletter
-MAX_CHECK=250 CONCURRENCY=12 npm run sync:iosfeeds
+npm run news:create -- --title "Xcode 18 beta cập nhật SwiftUI" --summary_vi "Tóm tắt VI" --summary_en "EN summary"
 ```
 
-### Collect daily candidates from RSS feeds
-
-Fetches RSS feeds and extracts items published on a given day (default: today in SGT).
+### Publish / Unpublish
 
 ```bash
-cd newsletter
-DATE=2026-02-04 \
-  TZ=Asia/Singapore \
-  MAX_SOURCES=200 \
-  CONCURRENCY=8 \
-  MAX_ITEMS_PER_FEED=20 \
-  node scripts/collect-from-iosdevdirectory.mjs
+npm run news:publish -- --number 123
+npm run news:unpublish -- --number 123
 ```
 
-Configuration (committed for review):
-- `newsletter/config/feeds.yml`: explicit RSS allowlist. If any `enabled: true`, crawler uses ONLY those.
-- `newsletter/config/content-sources.yml`: iOSDevDirectory import settings + filters (used when allowlist is empty).
+### Danh sách issues
 
-Environment variables (optional overrides):
-- `CONFIG`: path to a different YAML config file
-- `DATE`: `YYYY-MM-DD` in SGT
-- `TZ`: timezone (defaults to config / `Asia/Singapore`)
-- `LANGUAGE`: override language
-- `CATEGORY_SLUGS`: override category slug filter
-- `MAX_SOURCES`: override max sources cap
-- `CONCURRENCY`: parallel feed fetches (default 8)
-- `MAX_ITEMS_PER_FEED`: limit items scanned per feed (default 20)
+```bash
+npm run news:list -- --state all --label news
+```
 
-Output:
-- `newsletter/data/daily/YYYY-MM-DD-iosdevdirectory.json`
+### Đồng bộ issue -> data JSON
 
-Note: this is a **candidate list**; human-written summaries still go into `content.md`.
+```bash
+npm run news:sync
+```
+
+## Run website
+
+```bash
+npm run dev
+```
+
+Build production:
+
+```bash
+npm run build
+```
+
+## Required front matter in issue body
+
+```yaml
+---
+title: ""
+summary_vi: ""
+summary_en: ""
+published_at: "2026-03-23T10:00:00.000Z"
+source_url: "https://developer.apple.com/news/"
+cover_image: ""
+author_name: "SwiftVietnam"
+platform: "ios" # ios|macos|both
+lang: "vi"
+tags:
+  - "ios"
+  - "macos"
+---
+```
