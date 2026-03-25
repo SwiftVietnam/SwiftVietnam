@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="vi"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Swift 6.3 ra mắt ngày 24/03/2026 với nhiều cải tiến thiết thực: Swift Testing mạnh hơn, khả năng gọi Swift từ C, SPM được tối ưu và lần đầu tiên có SDK chính thức cho Android."><title>Swift 6.3 chính thức ra mắt — Testing, C Interop và Android SDK | SwiftVietnam News</title><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:site_name" content="SwiftVietnam News"><meta property="og:title" content="Swift 6.3 chính thức ra mắt — Testing, C Interop và Android SDK | SwiftVietnam News"><meta property="og:description" content="Swift 6.3 ra mắt ngày 24/03/2026 với nhiều cải tiến thiết thực: Swift Testing mạnh hơn, khả năng gọi Swift từ C, SPM được tối ưu và lần đầu tiên có SDK chính thức cho Android."><meta property="og:url" content="https://swiftvietnam.dev/news/18/"><meta property="og:image" content="https://www.swift.org/assets/images/swift-6.3-released/blog-hero@2x.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Swift 6.3 chính thức ra mắt — Testing, C Interop và Android SDK | SwiftVietnam News"><meta name="twitter:description" content="Swift 6.3 ra mắt ngày 24/03/2026 với nhiều cải tiến thiết thực: Swift Testing mạnh hơn, khả năng gọi Swift từ C, SPM được tối ưu và lần đầu tiên có SDK chính thức cho Android."><meta name="twitter:image" content="https://www.swift.org/assets/images/swift-6.3-released/blog-hero@2x.jpg"><link rel="canonical" href="https://swiftvietnam.dev/news/18/"><link rel="stylesheet" href="/_astro/news.CjXMP7Rl.css"></head> <body> <header class="topbar"> <div class="container topbar-inner"> <a href="/news/" class="brand"> <img src="/logo.png" alt="SwiftVietnam" class="brand-logo"> <div class="brand-text"> <span class="brand-name">SwiftVietnam News</span> <span class="brand-sub">Tin Apple cho iOS/macOS Developers Việt Nam</span> </div> </a> <nav> <a href="/news/">News</a> </nav> </div> </header> <main class="container">  <article class="article"> <a href="/news/">← Quay lại danh sách</a> <h1>Swift 6.3 chính thức ra mắt — Testing, C Interop và Android SDK</h1> <div class="meta"> <span>25 tháng 3, 2026</span> <span class="meta-dot">·</span> <span>SwiftVietnam</span> <span class="meta-dot">·</span> <span>IOS</span> <span class="meta-dot">·</span> <span><a href="https://swift.org/blog/swift-6.3-released/" target="_blank" rel="noreferrer">Nguồn</a></span> <span><a href="https://github.com/SwiftVietnam/SwiftVietnam/issues/18" target="_blank" rel="noreferrer">GitHub Issue</a></span> </div> <p class="summary">Swift 6.3 ra mắt ngày 24/03/2026 với nhiều cải tiến thiết thực: Swift Testing mạnh hơn, khả năng gọi Swift từ C, SPM được tối ưu và lần đầu tiên có SDK chính thức cho Android.</p> <img src="https://www.swift.org/assets/images/swift-6.3-released/blog-hero@2x.jpg" alt="Swift 6.3 chính thức ra mắt — Testing, C Interop và Android SDK" class="article-cover" loading="lazy"> <div class="prose"><h2>Bối cảnh</h2>
+<p>Ngày 24 tháng 3 năm 2026, Apple và cộng đồng Swift chính thức phát hành <strong>Swift 6.3</strong> — bản cập nhật tiếp theo sau Swift 6.0, tập trung vào khả năng tương tác với C, cải tiến Swift Testing, tối ưu hóa Swift Package Manager và mở rộng hỗ trợ nền tảng mới, đặc biệt là Android.</p>
+<p>Đây là bản release tập hợp nhiều đề xuất từ cộng đồng Swift Evolution và đánh dấu bước tiến quan trọng trong việc đưa Swift ra ngoài hệ sinh thái Apple.</p>
+<h2>Tại sao quan trọng</h2>
+<ul>
+<li><strong>Swift Testing được nâng cấp đáng kể</strong> — Thêm cảnh báo không gây crash, huỷ test có kiểm soát và đính kèm ảnh trong test report, giúp workflow kiểm thử trở nên chuyên nghiệp hơn</li>
+<li><strong>Swift có thể gọi từ C</strong> — Attribute <code>@c</code> mới cho phép expose hàm và enum Swift sang C header, mở ra khả năng tích hợp với các SDK và thư viện C truyền thống</li>
+<li><strong>SPM cải tiến thực chất</strong> — Hỗ trợ macro được prebuilt (không cần build lại), câu lệnh khám phá traits mới và flexible documentation kế thừa cho command plugin</li>
+<li><strong>Android SDK chính thức đầu tiên</strong> — Swift có thể viết app Android native với khả năng tương tác Kotlin/Java qua Swift Java và Swift Java JNI Core</li>
+</ul>
+<h2>Chi tiết kỹ thuật</h2>
+<h3>Swift Testing — Cải tiến quy trình kiểm thử</h3>
+<p><strong>Warning issue</strong> — Ghi log không gây fail test:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">// Trước: chỉ có Issue.record() gây fail test</span></span>
+<span class="line"><span style="color:#6A737D">// Swift 6.3: thêm severity .warning để log cảnh báo</span></span>
+<span class="line"><span style="color:#24292E">Issue.</span><span style="color:#005CC5">record</span><span style="color:#24292E">(</span><span style="color:#032F62">"Giá trị ngoài kỳ vọng nhưng chấp nhận được"</span><span style="color:#24292E">, </span><span style="color:#005CC5">severity</span><span style="color:#24292E">: .warning)</span></span></code></pre><p><strong>Huỷ test có kiểm soát</strong> — Bỏ qua test hoặc từng argument trong parameterized test:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">@Test</span><span style="color:#24292E">(arguments</span><span style="color:#D73A49">:</span><span style="color:#24292E"> [</span><span style="color:#005CC5">1</span><span style="color:#24292E">, </span><span style="color:#005CC5">2</span><span style="color:#24292E">, </span><span style="color:#005CC5">3</span><span style="color:#24292E">, </span><span style="color:#005CC5">4</span><span style="color:#24292E">, </span><span style="color:#005CC5">5</span><span style="color:#24292E">])</span></span>
+<span class="line"><span style="color:#D73A49">func</span><span style="color:#6F42C1"> kiemTraSoPham</span><span style="color:#24292E">(</span><span style="color:#6F42C1">so</span><span style="color:#24292E">: </span><span style="color:#005CC5">Int</span><span style="color:#24292E">) </span><span style="color:#D73A49">throws</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> so </span><span style="color:#D73A49">==</span><span style="color:#005CC5"> 3</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">        try</span><span style="color:#24292E"> Test.</span><span style="color:#005CC5">cancel</span><span style="color:#24292E">() </span><span style="color:#6A737D">// bỏ qua argument này, không fail</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#005CC5">    #expect</span><span style="color:#24292E">(so </span><span style="color:#D73A49">!=</span><span style="color:#005CC5"> 0</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre><p><strong>Image attachment</strong> — Đính kèm ảnh vào test result (iOS, macOS, Windows):</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">// Chụp ảnh UI và đính kèm vào test report</span></span>
+<span class="line"><span style="color:#D73A49">let</span><span style="color:#24292E"> attachment </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> Attachment</span><span style="color:#24292E">(</span><span style="color:#005CC5">image</span><span style="color:#24292E">: myUIImage, </span><span style="color:#005CC5">named</span><span style="color:#24292E">: </span><span style="color:#032F62">"trang-chu.png"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">Issue.</span><span style="color:#005CC5">record</span><span style="color:#24292E">(attachment)</span></span></code></pre><hr>
+<h3>C Interoperability — Expose Swift sang C</h3>
+<p>Swift 6.3 giới thiệu attribute <code>@c</code> để tạo C header từ code Swift, hữu ích khi tích hợp với SDK C hoặc viết thư viện dùng chung:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">// Swift function có thể gọi từ C</span></span>
+<span class="line"><span style="color:#D73A49">@c</span></span>
+<span class="line"><span style="color:#D73A49">func</span><span style="color:#6F42C1"> xuLyDuLieu</span><span style="color:#24292E">(</span><span style="color:#6F42C1">_</span><span style="color:#24292E"> input: </span><span style="color:#005CC5">Int32</span><span style="color:#24292E">) </span><span style="color:#D73A49">-></span><span style="color:#005CC5"> Int32</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> input </span><span style="color:#D73A49">*</span><span style="color:#005CC5"> 2</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Đổi tên trong C header</span></span>
+<span class="line"><span style="color:#D73A49">@c</span><span style="color:#24292E">(</span><span style="color:#032F62">"process_data"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">func</span><span style="color:#6F42C1"> xuLyDuLieu</span><span style="color:#24292E">(</span><span style="color:#6F42C1">_</span><span style="color:#24292E"> input: </span><span style="color:#005CC5">Int32</span><span style="color:#24292E">) </span><span style="color:#D73A49">-></span><span style="color:#005CC5"> Int32</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> input </span><span style="color:#D73A49">*</span><span style="color:#005CC5"> 2</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre><p>Attribute này kết hợp với <code>@implementation</code> để viết Swift implementation cho function đã khai báo trong C header.</p>
+<hr>
+<h3>Module Name Selector — Tránh xung đột tên</h3>
+<p>Khi import nhiều framework có API trùng tên, dùng cú pháp <code>ModuleName::API()</code> để chỉ định rõ:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#6F42C1"> FrameworkA</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#6F42C1"> FrameworkB</span></span>
+<span class="line"><span style="color:#6A737D">// Thay vì gọi mơ hồ:</span></span>
+<span class="line"><span style="color:#6A737D">// doSomething() // lỗi: ambiguous</span></span>
+<span class="line"><span style="color:#6A737D">// Chỉ định rõ module:</span></span>
+<span class="line"><span style="color:#24292E">FrameworkA</span><span style="color:#D73A49">::</span><span style="color:#005CC5">doSomething</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">FrameworkB</span><span style="color:#D73A49">::</span><span style="color:#005CC5">doSomething</span><span style="color:#24292E">()</span></span></code></pre><hr>
+<h3>Swift Package Manager — Nhanh hơn, mạnh hơn</h3>
+<p><strong>Prebuilt Swift Syntax cho macro</strong> — Macro packages không cần build lại <code>SwiftSyntax</code> từ nguồn mỗi lần, giảm đáng kể thời gian build:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D"># Tích hợp Swift Build preview (unified build engine)</span></span>
+<span class="line"><span style="color:#6F42C1">swift</span><span style="color:#032F62"> build</span><span style="color:#005CC5"> --use-swift-build</span></span>
+<span class="line"><span style="color:#6A737D"># Khám phá traits trong package</span></span>
+<span class="line"><span style="color:#6F42C1">swift</span><span style="color:#032F62"> package</span><span style="color:#032F62"> show-traits</span></span></code></pre><p><strong>Swift Build</strong> thống nhất engine build trên tất cả nền tảng (macOS, Linux, Windows), cho trải nghiệm nhất quán hơn trong môi trường CI/CD đa nền tảng.</p>
+<hr>
+<h3>DocC — Tối ưu tài liệu kỹ thuật</h3>
+<p>Annotation mới cho code block trong tài liệu DocC:</p>
+<pre class="shiki-fallback"><code>```swift nocopy
+// Đoạn code này chỉ để đọc, không copy được
+let example = "Chỉ minh hoạ"
+` ``
+```swift highlight=[2,3]
+let a = 1
+let b = 2  // dòng này được highlight
+let c = a + b  // dòng này cũng được highlight
+` ``</code></pre><p>Ngoài ra, DocC có thể xuất tài liệu dạng Markdown (<code>--enable-experimental-markdown-output</code>) và thêm static HTML vào <code>index.html</code> để tối ưu SEO.</p>
+<hr>
+<h3>Android SDK — Swift ra ngoài hệ sinh thái Apple</h3>
+<p>Đây là lần đầu tiên có <strong>SDK Android chính thức cho Swift</strong>, cho phép viết app Android hoàn toàn bằng Swift và tương tác với Kotlin/Java qua hai thư viện:</p>
+<ul>
+<li><strong>Swift Java</strong> — Tích hợp với hệ sinh thái JVM</li>
+<li><strong>Swift Java JNI Core</strong> — Tương tác trực tiếp với Android runtime qua JNI</li>
+</ul>
+<p>Tính năng này đặc biệt hữu ích cho team đang dùng Swift/Kotlin multiplatform hoặc muốn chia sẻ business logic giữa iOS và Android mà không cần Kotlin Multiplatform.</p>
+<hr>
+<h2>Cập nhật</h2>
+<p>Swift 6.3 được tích hợp trong Xcode 26. Để cập nhật Swift toolchain độc lập:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D"># Kiểm tra phiên bản hiện tại</span></span>
+<span class="line"><span style="color:#6F42C1">swift</span><span style="color:#005CC5"> --version</span></span>
+<span class="line"><span style="color:#6A737D"># Tải toolchain Swift 6.3 tại:</span></span>
+<span class="line"><span style="color:#6A737D"># https://swift.org/download/</span></span></code></pre><p>Chi tiết đầy đủ về tất cả thay đổi xem tại <a href="https://github.com/swiftlang/swift/blob/swift-6.3-RELEASE/CHANGELOG.md">Swift 6.3 Release Notes</a>.</p>
+</div> </article>  </main> <footer class="container footer"> <div>© SwiftVietnam</div> </footer> </body></html>
