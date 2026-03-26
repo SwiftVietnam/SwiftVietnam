@@ -35,6 +35,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://swiftvietnam.dev').hre
     <meta name="twitter:image" content={ogImage} />
 
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" type="application/rss+xml" title="SwiftVietnam News" href="https://swiftvietnam.dev/rss.xml" />
   </head>
   <body>
     <header class="topbar">
@@ -55,7 +56,10 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://swiftvietnam.dev').hre
       <slot />
     </main>
     <footer class="container footer">
-      <div>© SwiftVietnam</div>
+      <div class="footer-inner">
+        <div>© SwiftVietnam</div>
+        <a href="/rss.xml" class="rss-link">RSS Feed</a>
+      </div>
     </footer>
   </body>
 </html>
