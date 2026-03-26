@@ -13,6 +13,21 @@
     </image>
     
     <item>
+      <title><![CDATA[Công cụ AI nào nên dùng cho iOS Development?]]></title>
+      <link>https://swiftvietnam.dev/news/19/</link>
+      <guid isPermaLink="true">https://swiftvietnam.dev/news/19/</guid>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Tổng hợp công cụ AI thực tiễn cho iOS developer: Agent Skills từ Antoine van der Lee, Thomas Ricouard và Paul Hudson; MCP servers kết nối AI với Xcode và Apple docs; CLI tự động hóa App Store.]]></description>
+      <enclosure url="https://picsum.photos/id/1020/800/400" type="image/jpeg" />
+      <category>ai</category>
+      <category>ios</category>
+      <category>swift</category>
+      <category>claude-code</category>
+      <category>mcp</category>
+      <category>agent-skills</category>
+      <category>xcode</category>
+    </item>
+    <item>
       <title><![CDATA[Swift 6.3 chính thức ra mắt — Testing, C Interop và Android SDK]]></title>
       <link>https://swiftvietnam.dev/news/18/</link>
       <guid isPermaLink="true">https://swiftvietnam.dev/news/18/</guid>

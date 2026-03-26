@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="vi"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Tổng hợp công cụ AI thực tiễn cho iOS developer: Agent Skills từ Antoine van der Lee, Thomas Ricouard và Paul Hudson; MCP servers kết nối AI với Xcode và Apple docs; CLI tự động hóa App Store."><title>Công cụ AI nào nên dùng cho iOS Development? | SwiftVietnam News</title><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:site_name" content="SwiftVietnam News"><meta property="og:title" content="Công cụ AI nào nên dùng cho iOS Development? | SwiftVietnam News"><meta property="og:description" content="Tổng hợp công cụ AI thực tiễn cho iOS developer: Agent Skills từ Antoine van der Lee, Thomas Ricouard và Paul Hudson; MCP servers kết nối AI với Xcode và Apple docs; CLI tự động hóa App Store."><meta property="og:url" content="https://swiftvietnam.dev/news/19/"><meta property="og:image" content="https://picsum.photos/id/1020/800/400"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Công cụ AI nào nên dùng cho iOS Development? | SwiftVietnam News"><meta name="twitter:description" content="Tổng hợp công cụ AI thực tiễn cho iOS developer: Agent Skills từ Antoine van der Lee, Thomas Ricouard và Paul Hudson; MCP servers kết nối AI với Xcode và Apple docs; CLI tự động hóa App Store."><meta name="twitter:image" content="https://picsum.photos/id/1020/800/400"><link rel="canonical" href="https://swiftvietnam.dev/news/19/"><link rel="alternate" type="application/rss+xml" title="SwiftVietnam News" href="https://swiftvietnam.dev/rss.xml"><link rel="stylesheet" href="/_astro/BaseLayout.Cs2ChyZp.css"></head> <body> <header class="topbar"> <div class="container topbar-inner"> <a href="/news/" class="brand"> <img src="/logo.png" alt="SwiftVietnam" class="brand-logo"> <div class="brand-text"> <span class="brand-name">SwiftVietnam News</span> <span class="brand-sub">Tin Apple cho iOS/macOS Developers Việt Nam</span> </div> </a> <nav> <a href="/news/">News</a> </nav> </div> </header> <main class="container">  <article class="article"> <a href="/news/">← Quay lại danh sách</a> <h1>Công cụ AI nào nên dùng cho iOS Development?</h1> <div class="meta"> <span>26 tháng 3, 2026</span> <span class="meta-dot">·</span> <span>Khoa Pham</span> <span class="meta-dot">·</span> <span>IOS</span> <span class="meta-dot">·</span> <span><a href="https://onmyway133.com/posts/what-ai-tools-to-use-for-ios-development/" target="_blank" rel="noreferrer">Nguồn</a></span> <span><a href="https://github.com/SwiftVietnam/SwiftVietnam/issues/19" target="_blank" rel="noreferrer">GitHub Issue</a></span> </div> <p class="summary">Tổng hợp công cụ AI thực tiễn cho iOS developer: Agent Skills từ Antoine van der Lee, Thomas Ricouard và Paul Hudson; MCP servers kết nối AI với Xcode và Apple docs; CLI tự động hóa App Store.</p> <img src="https://picsum.photos/id/1020/800/400" alt="Công cụ AI nào nên dùng cho iOS Development?" class="article-cover" loading="lazy"> <div class="prose"><h2>Bối cảnh</h2>
+<p>AI coding assistants đang gặp khó khăn với Swift — chúng hay đề xuất API đã bị deprecated, bỏ sót các vấn đề hiệu năng trong SwiftUI, và viết code concurrency có thể crash lúc runtime. Cộng đồng iOS đã xây dựng các công cụ để khắc phục những điểm này: <strong>Agent Skills</strong> nạp kiến thức chuyên biệt vào AI, <strong>MCP Servers</strong> kết nối AI với Xcode và Apple docs, <strong>CLI tools</strong> tự động hóa việc phân phối app.</p>
+<h2>Tại sao quan trọng</h2>
+<ul>
+<li><strong>Agent Skills</strong> giúp AI hiểu đúng pattern hiện đại của Swift/SwiftUI thay vì đề xuất API cũ</li>
+<li><strong>MCP Servers</strong> cho phép AI thực sự build, test và đọc docs Apple — không chỉ đoán mò</li>
+<li><strong>CLI Tools</strong> tự động hóa toàn bộ quy trình từ TestFlight đến App Store submission</li>
+</ul>
+<h2>Chi tiết</h2>
+<h3>Agent Skills — Nạp kiến thức chuyên biệt vào AI</h3>
+<p>Agent Skills nạp kiến thức chuyên biệt vào AI assistant. Khi bạn nhờ Claude Code review code SwiftUI, skill cung cấp context về best practices và lỗi thường gặp. Skills chỉ được nạp khi cần, nên không tốn token không cần thiết.</p>
+<h4>Antoine van der Lee</h4>
+<p>Antoine van der Lee (từ kinh nghiệm thực tế tại WeTransfer) duy trì các skills:</p>
+<ul>
+<li><strong>SwiftUI Agent Skill</strong> — quản lý state, composition và performance</li>
+<li><strong>Swift Concurrency Agent Skill</strong> — async/await, actors và migration sang Swift 6</li>
+<li><strong>Core Data Agent Skill</strong> — persistence, thread safety và migrations</li>
+<li><strong>Swift Testing Agent Skill</strong> — testing macros và migration từ XCTest</li>
+</ul>
+<h4>Thomas Ricouard</h4>
+<p>Thomas Ricouard xuất bản một bộ skills cho các tác vụ engineering thường gặp:</p>
+<ul>
+<li><strong>iOS Debugger Agent</strong> — quy trình build và debug</li>
+<li><strong>SwiftUI Performance Audit</strong> — phát hiện invalidation storms</li>
+<li><strong>SwiftUI View Refactor</strong> — tách views thành components</li>
+<li><strong>SwiftUI UI Patterns</strong> — ví dụ về navigation</li>
+<li><strong>SwiftUI Liquid Glass</strong> — hiệu ứng iOS 26+</li>
+<li><strong>Swift Concurrency Expert</strong> — xử lý vấn đề actor isolation</li>
+<li><strong>App Store Changelog</strong> — tự động tạo release notes</li>
+</ul>
+<h4>Paul Hudson</h4>
+<p>Paul Hudson duy trì các skills tập trung vào lỗi AI hay mắc phải:</p>
+<ul>
+<li><strong>SwiftUI Agent Skill</strong> — deprecated APIs, accessibility và edge cases</li>
+<li><strong>SwiftData Agent Skill</strong> — models, queries và iCloud sync</li>
+<li><strong>Swift Concurrency Agent Skill</strong> — async/await, actors và Sendable</li>
+<li><strong>Swift Testing Agent Skill</strong> — test macros và parameterized tests</li>
+</ul>
+<hr>
+<h3>CLI Tools</h3>
+<p><strong>App Store Connect CLI</strong> — Tự động hóa việc phân phối app, TestFlight, submit review và cập nhật metadata mà không cần mở App Store Connect trên trình duyệt.</p>
+<hr>
+<h3>MCP Servers — Kết nối AI với công cụ bên ngoài</h3>
+<p>MCP (Model Context Protocol) servers mở rộng khả năng của AI assistant bằng cách kết nối với các công cụ thực tế:</p>
+<ul>
+<li><strong>GitHub MCP Server</strong> — duyệt code, quản lý issues và PRs, theo dõi Actions workflows</li>
+<li><strong>XcodeBuildMCP</strong> — biên dịch cho simulator và device, phân tích build output, capture logs</li>
+<li><strong>String Catalog MCP</strong> — quản lý file localization, tìm missing translations, dịch hàng loạt</li>
+</ul>
+<hr>
+<h3>Documentation</h3>
+<p><strong>Sosumi AI</strong> — Chuyển đổi Apple docs sang Markdown để AI có thể đọc được, bao gồm APIs, Human Interface Guidelines và WWDC transcripts.</p>
+<hr>
+<h3>Tìm thêm Skills</h3>
+<p><strong>skills.sh</strong> — Thư mục để khám phá agent skills, hỗ trợ Claude Code, Cursor và Copilot.</p>
+<p>Cài bất kỳ skill nào với:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6F42C1">npx</span><span style="color:#032F62"> skills</span><span style="color:#032F62"> add</span><span style="color:#D73A49"> &#x3C;</span><span style="color:#032F62">owner/rep</span><span style="color:#24292E">o</span><span style="color:#D73A49">></span></span></code></pre></div> </article>  </main> <footer class="container footer"> <div class="footer-inner"> <div>© SwiftVietnam</div> <a href="/rss.xml" class="rss-link">RSS Feed</a> </div> </footer> </body></html>
