@@ -1,0 +1,21 @@
+{
+  "name": "SwiftVietnam News",
+  "short_name": "SwiftVN",
+  "description": "Tin tuc Apple cho lap trinh vien iOS/macOS Viet Nam.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#DA251D",
+  "background_color": "#DA251D",
+  "display": "standalone",
+  "start_url": "/news/"
+}
