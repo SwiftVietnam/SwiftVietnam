@@ -55,6 +55,18 @@
       <category>c-interop</category>
     </item>
     <item>
+      <title><![CDATA[AttributeGraph — Cỗ máy vận hành đằng sau mọi SwiftUI View]]></title>
+      <link>https://swiftvietnam.dev/news/21/</link>
+      <guid isPermaLink="true">https://swiftvietnam.dev/news/21/</guid>
+      <pubDate>Tue, 24 Mar 2026 14:19:05 GMT</pubDate>
+      <description><![CDATA[AttributeGraph là runtime engine của SwiftUI — hệ thống đồ thị phụ thuộc quyết định khi nào view được cập nhật, dữ liệu nào được lưu trữ và khi nào chúng bị giải phóng. Hiểu được model này giúp SwiftUI trở nên dự đoán được thay vì 'phép màu'.]]></description>
+      <enclosure url="https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/newsletter/public/images/news/21/cover.webp" type="image/jpeg" />
+      <category>swiftui</category>
+      <category>swift</category>
+      <category>performance</category>
+      <category>ios</category>
+    </item>
+    <item>
       <title><![CDATA[Visualizing Your App's Data: Vẽ biểu đồ tương tác với Swift Charts]]></title>
       <link>https://swiftvietnam.dev/news/17/</link>
       <guid isPermaLink="true">https://swiftvietnam.dev/news/17/</guid>

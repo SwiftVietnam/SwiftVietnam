@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="vi"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="AttributeGraph là runtime engine của SwiftUI — hệ thống đồ thị phụ thuộc quyết định khi nào view được cập nhật, dữ liệu nào được lưu trữ và khi nào chúng bị giải phóng. Hiểu được model này giúp SwiftUI trở nên dự đoán được thay vì 'phép màu'."><meta name="theme-color" content="#DA251D"><title>AttributeGraph — Cỗ máy vận hành đằng sau mọi SwiftUI View | SwiftVietnam News</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="manifest" href="/site.webmanifest"><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:site_name" content="SwiftVietnam News"><meta property="og:title" content="AttributeGraph — Cỗ máy vận hành đằng sau mọi SwiftUI View | SwiftVietnam News"><meta property="og:description" content="AttributeGraph là runtime engine của SwiftUI — hệ thống đồ thị phụ thuộc quyết định khi nào view được cập nhật, dữ liệu nào được lưu trữ và khi nào chúng bị giải phóng. Hiểu được model này giúp SwiftUI trở nên dự đoán được thay vì 'phép màu'."><meta property="og:url" content="https://swiftvietnam.dev/news/21/"><meta property="og:image" content="https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/newsletter/public/images/news/21/cover.webp"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="AttributeGraph — Cỗ máy vận hành đằng sau mọi SwiftUI View | SwiftVietnam News"><meta name="twitter:description" content="AttributeGraph là runtime engine của SwiftUI — hệ thống đồ thị phụ thuộc quyết định khi nào view được cập nhật, dữ liệu nào được lưu trữ và khi nào chúng bị giải phóng. Hiểu được model này giúp SwiftUI trở nên dự đoán được thay vì 'phép màu'."><meta name="twitter:image" content="https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/newsletter/public/images/news/21/cover.webp"><link rel="canonical" href="https://swiftvietnam.dev/news/21/"><link rel="alternate" type="application/rss+xml" title="SwiftVietnam News" href="https://swiftvietnam.dev/rss.xml"><link rel="stylesheet" href="/_astro/BaseLayout.DiowhiK-.css"></head> <body> <header class="topbar"> <div class="container topbar-inner"> <a href="/news/" class="brand"> <img src="/logo.png" alt="SwiftVietnam" class="brand-logo"> <div class="brand-text"> <span class="brand-name">SwiftVietnam News</span> <span class="brand-sub">Tin Apple cho iOS/macOS Developers Việt Nam</span> </div> </a> <nav> <a href="/news/">News</a> </nav> </div> </header> <main class="container">  <article class="article"> <a href="/news/">← Quay lại danh sách</a> <h1>AttributeGraph — Cỗ máy vận hành đằng sau mọi SwiftUI View</h1> <div class="meta"> <span>24 tháng 3, 2026</span> <span class="meta-dot">·</span> <span>SwiftyPlace</span> <span class="meta-dot">·</span> <span>IOS</span> <span class="meta-dot">·</span> <span><a href="https://www.swiftyplace.com/blog/the-attributegraph-the-engine-behind-every-swiftui-view" target="_blank" rel="noreferrer">Nguồn</a></span> <span><a href="https://github.com/SwiftVietnam/SwiftVietnam/issues/21" target="_blank" rel="noreferrer">GitHub Issue</a></span> </div> <p class="summary">AttributeGraph là runtime engine của SwiftUI — hệ thống đồ thị phụ thuộc quyết định khi nào view được cập nhật, dữ liệu nào được lưu trữ và khi nào chúng bị giải phóng. Hiểu được model này giúp SwiftUI trở nên dự đoán được thay vì &#39;phép màu&#39;.</p> <img src="https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/newsletter/public/images/news/21/cover.webp" alt="AttributeGraph — Cỗ máy vận hành đằng sau mọi SwiftUI View" class="article-cover" loading="lazy">  <div class="article-content" id="article-content" data-lang="vi"> <div class="prose lang-vi"><h2>Bối cảnh</h2>
+<p>SwiftUI tồn tại từ năm 2019. Apple đã có hàng chục buổi WWDC nói về nó. Vậy mà hầu hết developer — kể cả người có kinh nghiệm — vẫn gặp phải những vấn đề lặp đi lặp lại: tại sao <code>@State</code> initializer bị bỏ qua? Tại sao state của view reset khi không mong đợi? Tại sao toàn bộ list re-render khi chỉ thay đổi một item?</p>
+<p>Những vấn đề này không phải edge case. Chúng là behavior cơ bản, và tất cả đều bắt nguồn từ một thứ mà Apple gần như không đề cập: <strong>AttributeGraph</strong> — runtime engine của SwiftUI.</p>
+<h2>Tại sao quan trọng với dev Việt Nam</h2>
+<p>AttributeGraph quyết định toàn bộ cách SwiftUI hoạt động: khi nào view được cập nhật, dữ liệu tồn tại ở đâu, và khi nào bị giải phóng. Nắm được model này là chìa khóa để:</p>
+<ul>
+<li>Debug các bug state khó hiểu (view không update, state bị reset không mong muốn)</li>
+<li>Tối ưu performance — tránh re-render không cần thiết</li>
+<li>Chọn đúng property wrapper: <code>@State</code>, <code>@Binding</code>, <code>@StateObject</code>, <code>@ObservedObject</code>, hay <code>@Observable</code></li>
+<li>Hiểu tại sao SwiftUI hoạt động khác hoàn toàn UIKit</li>
+</ul>
+<h2>Chi tiết kỹ thuật</h2>
+<h3>AttributeGraph là gì?</h3>
+<p>Hãy hình dung một bảng tính (spreadsheet): ô A3 = A1 + A2. Khi A1 thay đổi, chỉ A3 được tính lại — A2 không bị ảnh hưởng. AttributeGraph hoạt động theo nguyên lý tương tự.</p>
+<p>Graph được tạo thành từ:</p>
+<ul>
+<li><strong>Nodes (attributes)</strong> — mỗi node lưu một thông tin cụ thể: giá trị <code>@State</code>, một custom view, các SwiftUI view như <code>VStack</code>, <code>Text</code>, <code>Button</code></li>
+<li><strong>Edges (dependencies)</strong> — kết nối giữa các node, nói lên &quot;node này đọc dữ liệu từ node kia&quot;</li>
+</ul>
+<p>Khi một state node thay đổi, graph đi theo các edge và đánh dấu mọi node phụ thuộc là <em>dirty</em> — cần tính lại. Các node không phụ thuộc vào giá trị thay đổi không bao giờ bị đụng tới.</p>
+<h3>View struct không phải là UI</h3>
+<p>Đây là sự thay đổi tư duy quan trọng nhất khi chuyển từ UIKit sang SwiftUI.</p>
+<p>Trong UIKit, <code>UIViewController</code> chứa data, chứa views, có vòng đời rõ ràng. Trong SwiftUI, <strong>view struct chỉ là một bản mô tả</strong> — một blueprint. SwiftUI đọc nó, trích xuất thông tin, đưa vào AttributeGraph, rồi vứt struct đi.</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> CounterView</span><span style="color:#24292E">: </span><span style="color:#6F42C1">View </span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">    @State</span><span style="color:#D73A49"> var</span><span style="color:#24292E"> count </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> body: </span><span style="color:#D73A49">some</span><span style="color:#24292E"> View {</span></span>
+<span class="line"><span style="color:#005CC5">        VStack</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#005CC5">            Text</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#032F62">\(count)</span><span style="color:#032F62">"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#005CC5">            Button</span><span style="color:#24292E">(</span><span style="color:#032F62">"+1"</span><span style="color:#24292E">) { count </span><span style="color:#D73A49">+=</span><span style="color:#005CC5"> 1</span><span style="color:#24292E"> }</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre><p>Khi <code>count</code> thay đổi:</p>
+<ol>
+<li>Attribute <code>count</code> được đánh dấu <em>dirty</em></li>
+<li><code>CounterView.body</code> được gọi và so sánh (diff) với giá trị cũ</li>
+<li><code>Text</code> phụ thuộc vào output của body → ghi nhận thay đổi</li>
+<li><code>Button</code> — input có thay đổi không? Không → bỏ qua</li>
+<li><strong>Commit phase</strong>: chỉ các thay đổi thực sự mới được truyền xuống UIKit bên dưới</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/newsletter/public/images/news/21/data-flow-tree-6.webp" alt="Sơ đồ AttributeGraph với các nodes và dependency edges"></p>
+<h3>@State thực sự sống ở đâu?</h3>
+<p><code>@State</code> là một property wrapper. Bên trong nó có một reference — Apple gọi là <code>_location</code> — trỏ tới một attribute trong graph. Giá trị thực sự sống ở đó, không phải trong struct.</p>
+<p>Khi SwiftUI gặp view lần đầu tiên:</p>
+<ol>
+<li>Parent&#39;s body chạy và mention <code>YourView(...)</code></li>
+<li>SwiftUI gọi <code>YourView.init()</code> — struct tạm thời được tạo trên stack; <code>@State</code> chứa <code>State&lt;String&gt;(initialValue: &quot;&quot;)</code> — chỉ là MÔ TẢ, chưa có storage</li>
+<li>SwiftUI kiểm tra vị trí của view trong cây (Structural Identity)</li>
+<li>Lần đầu → allocate một attribute mới trong graph, lưu initial value, kết nối <code>@State</code> handle với attribute này</li>
+<li>SwiftUI gọi <code>body</code> trên struct → <code>body</code> ĐỌC <code>name</code> → Graph ghi lại dependency: &quot;body phụ thuộc vào name&quot;</li>
+<li>SwiftUI <strong>vứt struct đi</strong> → struct biến mất, attribute trong graph vẫn còn</li>
+</ol>
+<p><strong>Struct là disposable. Attribute trong graph mới là source of truth.</strong></p>
+<h3>Single Source of Truth — Topology của Graph</h3>
+<p><strong>Vấn đề: Hai @State = Hai Attribute</strong></p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> ParentView</span><span style="color:#24292E">: </span><span style="color:#6F42C1">View </span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">    @State</span><span style="color:#D73A49"> var</span><span style="color:#24292E"> count </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> body: </span><span style="color:#D73A49">some</span><span style="color:#24292E"> View {</span></span>
+<span class="line"><span style="color:#005CC5">        VStack</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#005CC5">            Button</span><span style="color:#24292E">(</span><span style="color:#032F62">"+1"</span><span style="color:#24292E">) { count </span><span style="color:#D73A49">+=</span><span style="color:#005CC5"> 1</span><span style="color:#24292E"> }</span></span>
+<span class="line"><span style="color:#005CC5">            ChildView</span><span style="color:#24292E">(</span><span style="color:#005CC5">name</span><span style="color:#24292E">: </span><span style="color:#032F62">"Updated: </span><span style="color:#032F62">\(count)</span><span style="color:#032F62">"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> ChildView</span><span style="color:#24292E">: </span><span style="color:#6F42C1">View </span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">    @State</span><span style="color:#D73A49"> var</span><span style="color:#24292E"> name: </span><span style="color:#005CC5">String</span><span style="color:#6A737D">  // Luôn hiển thị "Updated: 0"</span></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> body: </span><span style="color:#D73A49">some</span><span style="color:#24292E"> View { </span><span style="color:#005CC5">Text</span><span style="color:#24292E">(name) }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre><p>Graph tạo hai attribute riêng biệt. Khi <code>count</code> thay đổi, <code>ChildView.name</code> không được cập nhật vì không có edge nối chúng sau lần init đầu tiên.</p>
+<p><strong>Fix: Một @State + let = Một Attribute</strong></p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> ChildView</span><span style="color:#24292E">: </span><span style="color:#6F42C1">View </span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">    let</span><span style="color:#24292E"> name: </span><span style="color:#005CC5">String</span><span style="color:#6A737D">  // Nhận giá trị mới mỗi khi parent re-render</span></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> body: </span><span style="color:#D73A49">some</span><span style="color:#24292E"> View { </span><span style="color:#005CC5">Text</span><span style="color:#24292E">(name) }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre><p>Chỉ có một <code>@State</code> declaration → graph tạo một attribute duy nhất → cả ParentView lẫn ChildView đều phản ánh đúng giá trị.</p>
+<p><img src="https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/newsletter/public/images/news/21/data-flow-tree-1.webp" alt="Topology của AttributeGraph: một @State duy nhất so với hai @State riêng biệt"></p>
+<h3>Dependencies — Graph biết cập nhật gì</h3>
+<p><strong>Value types với @State và @Binding:</strong></p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> MyView</span><span style="color:#24292E">: </span><span style="color:#6F42C1">View </span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">    @State</span><span style="color:#D73A49"> var</span><span style="color:#24292E"> name </span><span style="color:#D73A49">=</span><span style="color:#032F62"> ""</span><span style="color:#6A737D">         // tạo node và edge/dependency</span></span>
+<span class="line"><span style="color:#D73A49">    @Binding</span><span style="color:#D73A49"> var</span><span style="color:#24292E"> title: </span><span style="color:#005CC5">String</span><span style="color:#6A737D">   // không có edge riêng, được phát hiện khi walk view tree</span></span>
+<span class="line"><span style="color:#D73A49">    let</span><span style="color:#24292E"> age: </span><span style="color:#005CC5">Int</span><span style="color:#6A737D">                 // không có edge, được phát hiện khi walk view tree</span></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> body: </span><span style="color:#D73A49">some</span><span style="color:#24292E"> View {</span></span>
+<span class="line"><span style="color:#005CC5">        Text</span><span style="color:#24292E">(name)  </span><span style="color:#6A737D">// body ĐỌC `name` nhưng KHÔNG ĐỌC `age`</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre><p><strong>ObservableObject</strong> — <code>@StateObject</code> tạo và sở hữu storage trong graph; <code>@ObservedObject</code> gắn vào node đã tồn tại:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> ParentView</span><span style="color:#24292E">: </span><span style="color:#6F42C1">View </span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">    @StateObject</span><span style="color:#D73A49"> var</span><span style="color:#24292E"> myObject </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> MyObject</span><span style="color:#24292E">()    </span><span style="color:#6A737D">// tạo node + edge, graph sở hữu storage</span></span>
+<span class="line"><span style="color:#D73A49">    @StateObject</span><span style="color:#D73A49"> var</span><span style="color:#24292E"> otherObject </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> OtherObject</span><span style="color:#24292E">() </span><span style="color:#6A737D">// tạo node + edge, graph sở hữu storage</span></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> body: </span><span style="color:#D73A49">some</span><span style="color:#24292E"> View {</span></span>
+<span class="line"><span style="color:#005CC5">        MyView</span><span style="color:#24292E">(</span><span style="color:#005CC5">myObject</span><span style="color:#24292E">: myObject, </span><span style="color:#005CC5">otherObject</span><span style="color:#24292E">: otherObject)</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> MyView</span><span style="color:#24292E">: </span><span style="color:#6F42C1">View </span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">    @ObservedObject</span><span style="color:#D73A49"> var</span><span style="color:#24292E"> myObject: MyObject   </span><span style="color:#6A737D">// edge tới existing node</span></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> otherObject: OtherObject             </span><span style="color:#6A737D">// không có edge → changes không được track</span></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> body: </span><span style="color:#D73A49">some</span><span style="color:#24292E"> View {</span></span>
+<span class="line"><span style="color:#005CC5">        Text</span><span style="color:#24292E">(myObject.name)      </span><span style="color:#6A737D">// được update</span></span>
+<span class="line"><span style="color:#005CC5">        Text</span><span style="color:#24292E">(otherObject.</span><span style="color:#005CC5">count</span><span style="color:#24292E">)  </span><span style="color:#6A737D">// KHÔNG được update</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre><p><code>@StateObject</code> nói với graph: &quot;Allocate persistent attribute cho object này và giữ nó sống chừng nào identity của view còn tồn tại.&quot; <code>@ObservedObject</code> chỉ tạo edge tới node đã có — không allocate storage mới. Nếu không dùng property wrappers, graph không có pointer/edge và không biết phải update view này.</p>
+<p><strong>@Observable (macro mới)</strong> — edges được tạo theo từng property được truy cập trong <code>body</code>:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> MyView</span><span style="color:#24292E">: </span><span style="color:#6F42C1">View </span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> myObject: MyObject  </span><span style="color:#6A737D">// không cần wrapper</span></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> body: </span><span style="color:#D73A49">some</span><span style="color:#24292E"> View {</span></span>
+<span class="line"><span style="color:#005CC5">        Text</span><span style="color:#24292E">(myObject.name)  </span><span style="color:#6A737D">// read access → edge tới node "myObject.name"</span></span>
+<span class="line"><span style="color:#6A737D">        // chỉ khi myObject.name thay đổi, view này mới update</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre><p><img src="https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/newsletter/public/images/news/21/data-flow-tree-tree.webp" alt="Luồng dữ liệu từ trên xuống trong SwiftUI view tree với AttributeGraph"></p>
+<h3>Khi nào State &quot;chết&quot;?</h3>
+<p>Trong SwiftUI không có <code>deinit</code> trên view struct (value type). State bị giải phóng khi <strong>identity của view bị xóa khỏi cây</strong>.</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> ParentView</span><span style="color:#24292E">: </span><span style="color:#6F42C1">View </span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">    @State</span><span style="color:#D73A49"> var</span><span style="color:#24292E"> showChild </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> true</span></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> body: </span><span style="color:#D73A49">some</span><span style="color:#24292E"> View {</span></span>
+<span class="line"><span style="color:#005CC5">        VStack</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#005CC5">            Toggle</span><span style="color:#24292E">(</span><span style="color:#032F62">"Show"</span><span style="color:#24292E">, </span><span style="color:#005CC5">isOn</span><span style="color:#24292E">: $showChild)</span></span>
+<span class="line"><span style="color:#D73A49">            if</span><span style="color:#24292E"> showChild { </span><span style="color:#005CC5">ChildView</span><span style="color:#24292E">() }</span></span>
+<span class="line"><span style="color:#24292E">        }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> ChildView</span><span style="color:#24292E">: </span><span style="color:#6F42C1">View </span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#D73A49">    @State</span><span style="color:#D73A49"> var</span><span style="color:#24292E"> count </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> 0</span></span>
+<span class="line"><span style="color:#D73A49">    var</span><span style="color:#24292E"> body: </span><span style="color:#D73A49">some</span><span style="color:#24292E"> View {</span></span>
+<span class="line"><span style="color:#005CC5">        Button</span><span style="color:#24292E">(</span><span style="color:#032F62">"Count: </span><span style="color:#032F62">\(count)</span><span style="color:#032F62">"</span><span style="color:#24292E">) { count </span><span style="color:#D73A49">+=</span><span style="color:#005CC5"> 1</span><span style="color:#24292E"> }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre><ul>
+<li>Toggle <code>showChild</code> thành <code>false</code> → <code>ChildView</code> bị xóa khỏi cây → graph hủy attribute <code>count</code> (dù đang là 5)</li>
+<li>Toggle lại thành <code>true</code> → graph tạo attribute mới với <code>count = 0</code></li>
+</ul>
+<p><code>count = 5</code> biến mất mãi mãi. Đây là &quot;deinit&quot; của SwiftUI.</p>
+<h3>Identity — Graph biết &quot;View nào&quot; qua cơ chế nào?</h3>
+<p><strong>Structural Identity</strong> (mặc định): SwiftUI dùng vị trí trong code để xác định view.</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">var</span><span style="color:#24292E"> body: </span><span style="color:#D73A49">some</span><span style="color:#24292E"> View {</span></span>
+<span class="line"><span style="color:#005CC5">    VStack</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#005CC5">        Text</span><span style="color:#24292E">(</span><span style="color:#032F62">"Hello"</span><span style="color:#24292E">) </span><span style="color:#6A737D">// identity: VStack/child-0</span></span>
+<span class="line"><span style="color:#005CC5">        Text</span><span style="color:#24292E">(</span><span style="color:#032F62">"World"</span><span style="color:#24292E">) </span><span style="color:#6A737D">// identity: VStack/child-1</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre><p>If/else tạo identity khác nhau hoàn toàn:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">var</span><span style="color:#24292E"> body: </span><span style="color:#D73A49">some</span><span style="color:#24292E"> View {</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> isLoggedIn {</span></span>
+<span class="line"><span style="color:#005CC5">        HomeView</span><span style="color:#24292E">()   </span><span style="color:#6A737D">// identity: if-true-branch</span></span>
+<span class="line"><span style="color:#24292E">    } </span><span style="color:#D73A49">else</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#005CC5">        LoginView</span><span style="color:#24292E">()  </span><span style="color:#6A737D">// identity: if-false-branch</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre><p>Khi <code>isLoggedIn</code> flip, graph hủy toàn bộ attributes của <code>LoginView</code> và tạo mới cho <code>HomeView</code>.</p>
+<p><strong>Explicit Identity</strong> — bạn cung cấp qua <code>.id()</code> hoặc <code>ForEach</code>:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#005CC5">ForEach</span><span style="color:#24292E">(items, </span><span style="color:#005CC5">id</span><span style="color:#24292E">: \.id) { item </span><span style="color:#D73A49">in</span></span>
+<span class="line"><span style="color:#005CC5">    RowView</span><span style="color:#24292E">(</span><span style="color:#005CC5">item</span><span style="color:#24292E">: item)</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre><p>Mỗi <code>RowView</code> được định danh bởi <code>item.id</code>. Nếu xóa một item khỏi array, graph hủy attributes của identity đó. Nếu thêm item mới, graph tạo attributes mới.</p>
+<p><code>.id()</code> còn cho phép reset state thủ công:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#005CC5">ChildView</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">    .</span><span style="color:#005CC5">id</span><span style="color:#24292E">(someValue)  </span><span style="color:#6A737D">// khi someValue thay đổi → view cũ bị hủy, view mới với state mới được tạo</span></span></code></pre><h3>Chu kỳ Update đầy đủ</h3>
+<ol>
+<li>Set <code>count = 5</code> → <code>@State</code> handle ghi vào attribute trong graph</li>
+<li>Attribute tự đánh dấu DIRTY</li>
+<li>Graph đi xuống qua dependency edges → mọi attribute phụ thuộc vào <code>count</code> được đánh dấu dirty</li>
+<li>SwiftUI lên lịch re-evaluation (batch — không tức thì)</li>
+<li>Trong render pass tiếp theo: gọi <code>body</code> cho các view dirty → diffing → đánh dấu custom views invalid nếu input thay đổi → tiếp tục gọi <code>body</code> cho subviews bị invalidate</li>
+<li><strong>Commit phase</strong>: chuyển các thay đổi xuống rendering engine</li>
+<li>Frame tiếp theo: UI hiển thị state mới</li>
+</ol>
+<h3>Bảng đối chiếu UIKit ↔ SwiftUI</h3>
+<table>
+<thead>
+<tr>
+<th>Khái niệm</th>
+<th>UIKit</th>
+<th>SwiftUI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Dữ liệu sống ở đâu</td>
+<td>Trong object của bạn</td>
+<td>Trong AttributeGraph</td>
+</tr>
+<tr>
+<td>Ai tạo UI</td>
+<td>Bạn (<code>addSubview</code>, <code>NSLayoutConstraint</code>)</td>
+<td>Graph (từ <code>body</code> description)</td>
+</tr>
+<tr>
+<td>Ai cập nhật UI</td>
+<td>Bạn (<code>label.text = ...</code>)</td>
+<td>Graph (dependency tracking)</td>
+</tr>
+<tr>
+<td>Data được tạo khi nào</td>
+<td><code>init</code> / <code>viewDidLoad</code></td>
+<td>Lần đầu identity xuất hiện trong cây</td>
+</tr>
+<tr>
+<td>Data chết khi nào</td>
+<td><code>deinit</code></td>
+<td>Identity bị xóa khỏi cây</td>
+</tr>
+<tr>
+<td>Cập nhật lan truyền thế nào</td>
+<td>Bạn gọi methods thủ công</td>
+<td>Graph đi theo dependency edges tự động</td>
+</tr>
+<tr>
+<td>Code của bạn là gì</td>
+<td>Cỗ máy</td>
+<td>Blueprint</td>
+</tr>
+</tbody></table>
+<h3>Các quy tắc thực tiễn</h3>
+<p>Những điều sau không phải gợi ý — chúng là <strong>hệ quả tất yếu</strong> từ cách graph hoạt động:</p>
+<ul>
+<li><strong>Không dùng <code>@State</code> cho data truyền từ parent</strong> — graph allocate attribute một lần và bỏ qua các init value sau đó. Dùng <code>@Binding</code> hoặc <code>let</code></li>
+<li><strong>Không sync hai <code>@State</code> thủ công</strong> — hai <code>@State</code> = hai attribute. Dùng một <code>@State</code> và truyền <code>@Binding</code> xuống</li>
+<li><strong>Đặt source of truth thấp nhất có thể</strong> nhưng đủ cao để các view cần có thể truy cập. <code>@State</code> ở root → thay đổi có thể trigger re-evaluation toàn bộ cây bên dưới</li>
+<li><strong><code>@StateObject</code></strong> cho object bạn tạo. <strong><code>@ObservedObject</code></strong> cho object bạn nhận. Tương ứng trực tiếp với việc graph có allocate storage hay chỉ observe</li>
+<li><strong><code>init()</code> không phải điểm setup</strong> — nó chạy mỗi lần parent re-evaluate. Graph quyết định có dùng initial values hay không</li>
+</ul>
+<h2>Kết luận</h2>
+<p>Khi bạn hiểu AttributeGraph — rằng view struct chỉ là blueprint, rằng state sống trong graph chứ không phải struct, rằng identity quyết định vòng đời của data — SwiftUI ngừng cảm giác như phép màu và trở nên hoàn toàn dự đoán được. Mọi behavior &quot;lạ&quot; đều có một lý giải rõ ràng trong graph: attribute nào tồn tại, nó kết nối với gì, và identity của nó có còn trong cây hay không.</p>
+</div>  </div>  </article>  </main> <footer class="container footer"> <div class="footer-inner"> <div>© SwiftVietnam</div> <a href="/rss.xml" class="rss-link">RSS Feed</a> </div> </footer> </body></html>
