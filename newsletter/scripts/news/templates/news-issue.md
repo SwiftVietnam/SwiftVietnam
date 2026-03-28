@@ -25,3 +25,19 @@ Phân tích ngắn gọn vì sao thông tin này quan trọng với cộng đồ
 - Điểm chính 1
 - Điểm chính 2
 - Điểm chính 3
+
+<!-- EN -->
+
+## Context
+
+Brief description of the Apple news or technical update for iOS/macOS developers.
+
+## Why it matters
+
+Short analysis of why this is important for the community.
+
+## Technical details
+
+- Key point 1
+- Key point 2
+- Key point 3

@@ -98,6 +98,21 @@ export function issueHasRequiredLabels(issue, requiredLabels = REQUIRED_LABELS) 
 export function normalizeIssue(issue) {
   const parsed = matter(issue.body || '');
   const fm = normalizeFrontMatter(issue, parsed.data || {});
+  const rawContent = String(parsed.content || '').trim();
+  const EN_DELIMITER = /^[ \t]*<!--[ \t]*EN[ \t]*-->[ \t]*$/im;
+  const delimiterMatch = EN_DELIMITER.exec(rawContent);
+
+  let contentMarkdownVi, contentMarkdownEn, bilingual;
+  if (delimiterMatch) {
+    contentMarkdownVi = rawContent.slice(0, delimiterMatch.index).trim();
+    contentMarkdownEn = rawContent.slice(delimiterMatch.index + delimiterMatch[0].length).trim();
+    bilingual = true;
+  } else {
+    contentMarkdownVi = rawContent;
+    contentMarkdownEn = null;
+    bilingual = false;
+  }
+
   return {
     id: issue.number,
     url: `/news/${issue.number}/`,
@@ -105,7 +120,10 @@ export function normalizeIssue(issue) {
     githubNumber: issue.number,
     githubTitle: issue.title,
     ...fm,
-    contentMarkdown: String(parsed.content || '').trim()
+    bilingual,
+    contentMarkdownVi,
+    contentMarkdownEn,
+    contentMarkdown: contentMarkdownVi
   };
 }
 

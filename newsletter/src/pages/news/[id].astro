@@ -49,7 +49,10 @@ renderer.code = function ({ text, lang }) {
   }
 };
 
-const html = marked.parse(item.contentMarkdown || '', { renderer, async: false });
+const htmlVi = marked.parse(item.contentMarkdownVi || item.contentMarkdown || '', { renderer, async: false });
+const htmlEn = item.bilingual
+  ? marked.parse(item.contentMarkdownEn || '', { renderer, async: false })
+  : null;
 
 const date = new Date(item.publishedAt).toLocaleDateString('vi-VN', {
   year: 'numeric',
@@ -76,6 +79,43 @@ const date = new Date(item.publishedAt).toLocaleDateString('vi-VN', {
 
     {item.coverImage && <img src={item.coverImage} alt={item.title} class="article-cover" loading="lazy" />}
 
-    <div class="prose" set:html={html}></div>
+    {item.bilingual && (
+      <div class="lang-switcher" id="lang-switcher">
+        <button class="lang-btn" data-lang="vi" aria-pressed="true">Tiếng Việt</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">English</button>
+      </div>
+    )}
+
+    <div class="article-content" id="article-content" data-lang="vi">
+      <div class="prose lang-vi" set:html={htmlVi}></div>
+      {item.bilingual && <div class="prose lang-en" set:html={htmlEn}></div>}
+    </div>
+
+    {item.bilingual && (
+      <script is:inline>
+        (function () {
+          const STORAGE_KEY = 'swiftvietnam-lang';
+          const wrapper = document.getElementById('article-content');
+          const switcher = document.getElementById('lang-switcher');
+          if (!wrapper || !switcher) return;
+          const stored = localStorage.getItem(STORAGE_KEY);
+          const initial = stored === 'en' ? 'en' : 'vi';
+          setLang(initial);
+          switcher.querySelectorAll('.lang-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              const lang = btn.dataset.lang;
+              localStorage.setItem(STORAGE_KEY, lang);
+              setLang(lang);
+            });
+          });
+          function setLang(lang) {
+            wrapper.dataset.lang = lang;
+            switcher.querySelectorAll('.lang-btn').forEach(function (btn) {
+              btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang));
+            });
+          }
+        })();
+      </script>
+    )}
   </article>
 </BaseLayout>

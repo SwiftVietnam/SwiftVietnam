@@ -538,6 +538,39 @@ a:hover {
   }
 }
 
+/* ── Language switcher ── */
+
+.lang-switcher {
+  display: flex;
+  gap: 4px;
+  margin: 20px 0 0;
+  padding: 3px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.lang-btn {
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 5px 14px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.lang-btn[aria-pressed="true"] {
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+.article-content[data-lang="vi"] .lang-en { display: none; }
+.article-content[data-lang="en"] .lang-vi { display: none; }
+
 /* ── Responsive: mobile ── */
 
 @media (max-width: 480px) {
