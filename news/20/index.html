@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="vi"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="OpenAI chia sẻ hướng dẫn sử dụng Codex để scaffold, build và iterate ứng dụng SwiftUI cho iOS/macOS theo hướng CLI-first, kết hợp XcodeBuildMCP để duy trì vòng lặp agentic hoàn chỉnh."><meta name="theme-color" content="#DA251D"><title>Dùng OpenAI Codex để xây dựng ứng dụng iOS và macOS với SwiftUI | SwiftVietnam News</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="manifest" href="/site.webmanifest"><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:site_name" content="SwiftVietnam News"><meta property="og:title" content="Dùng OpenAI Codex để xây dựng ứng dụng iOS và macOS với SwiftUI | SwiftVietnam News"><meta property="og:description" content="OpenAI chia sẻ hướng dẫn sử dụng Codex để scaffold, build và iterate ứng dụng SwiftUI cho iOS/macOS theo hướng CLI-first, kết hợp XcodeBuildMCP để duy trì vòng lặp agentic hoàn chỉnh."><meta property="og:url" content="https://swiftvietnam.dev/news/20/"><meta property="og:image" content="https://developers.openai.com/codex/use-cases/native-ios-macos-apps.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Dùng OpenAI Codex để xây dựng ứng dụng iOS và macOS với SwiftUI | SwiftVietnam News"><meta name="twitter:description" content="OpenAI chia sẻ hướng dẫn sử dụng Codex để scaffold, build và iterate ứng dụng SwiftUI cho iOS/macOS theo hướng CLI-first, kết hợp XcodeBuildMCP để duy trì vòng lặp agentic hoàn chỉnh."><meta name="twitter:image" content="https://developers.openai.com/codex/use-cases/native-ios-macos-apps.png"><link rel="canonical" href="https://swiftvietnam.dev/news/20/"><link rel="alternate" type="application/rss+xml" title="SwiftVietnam News" href="https://swiftvietnam.dev/rss.xml"><link rel="stylesheet" href="/_astro/BaseLayout.Cs2ChyZp.css"></head> <body> <header class="topbar"> <div class="container topbar-inner"> <a href="/news/" class="brand"> <img src="/logo.png" alt="SwiftVietnam" class="brand-logo"> <div class="brand-text"> <span class="brand-name">SwiftVietnam News</span> <span class="brand-sub">Tin Apple cho iOS/macOS Developers Việt Nam</span> </div> </a> <nav> <a href="/news/">News</a> </nav> </div> </header> <main class="container">  <article class="article"> <a href="/news/">← Quay lại danh sách</a> <h1>Dùng OpenAI Codex để xây dựng ứng dụng iOS và macOS với SwiftUI</h1> <div class="meta"> <span>28 tháng 3, 2026</span> <span class="meta-dot">·</span> <span>OpenAI</span> <span class="meta-dot">·</span> <span>BOTH</span> <span class="meta-dot">·</span> <span><a href="https://developers.openai.com/codex/use-cases/native-ios-macos-apps" target="_blank" rel="noreferrer">Nguồn</a></span> <span><a href="https://github.com/SwiftVietnam/SwiftVietnam/issues/20" target="_blank" rel="noreferrer">GitHub Issue</a></span> </div> <p class="summary">OpenAI chia sẻ hướng dẫn sử dụng Codex để scaffold, build và iterate ứng dụng SwiftUI cho iOS/macOS theo hướng CLI-first, kết hợp XcodeBuildMCP để duy trì vòng lặp agentic hoàn chỉnh.</p> <img src="https://developers.openai.com/codex/use-cases/native-ios-macos-apps.png" alt="Dùng OpenAI Codex để xây dựng ứng dụng iOS và macOS với SwiftUI" class="article-cover" loading="lazy"> <div class="prose"><h2>Bối cảnh</h2>
+<p>OpenAI vừa công bố hướng dẫn thực tế trong tài liệu Codex, mô tả cách dùng Codex — AI coding agent của họ — để xây dựng ứng dụng SwiftUI cho iOS và macOS theo hướng hoàn toàn agentic. Thay vì chỉ gợi ý code, Codex có thể tự scaffold, build, chạy simulator và iterate mà không cần developer can thiệp thủ công vào Xcode GUI.</p>
+<p>Trọng tâm của workflow này là giữ vòng lặp build luôn <strong>CLI-first</strong>: ưu tiên <code>xcodebuild</code> và Tuist thay vì mở Xcode IDE, đồng thời tích hợp XcodeBuildMCP để Codex có thể tự inspect schemes, launch simulator và chụp screenshot trong cùng một agentic loop.</p>
+<h2>Tại sao quan trọng với dev Việt Nam</h2>
+<p>Với cộng đồng iOS/macOS developer Việt Nam đang ngày càng tích hợp AI vào quy trình làm việc, workflow này mở ra hướng tiếp cận khác biệt: thay vì dùng AI để gợi ý từng dòng code, bạn có thể để Codex đảm nhận toàn bộ vòng lặp scaffold → build → chạy simulator → chụp screenshot → iterate. Điều này đặc biệt hữu ích cho các dự án greenfield hoặc khi cần refactor UI phức tạp.</p>
+<p>Các skills được đề cập như <strong>SwiftUI view refactor</strong> và <strong>SwiftUI patterns</strong> giúp enforce kiến trúc <code>@Observable</code> và <code>@Environment</code> nhất quán — điều nhiều team đang tìm cách chuẩn hóa khi chuyển từ UIKit sang SwiftUI.</p>
+<h2>Chi tiết kỹ thuật</h2>
+<h3>Workflow ba giai đoạn</h3>
+<ol>
+<li><strong>Scaffold</strong>: Yêu cầu Codex tạo starter SwiftUI app và viết build-and-launch script</li>
+<li><strong>Thiết lập build loop</strong>: Giữ CLI-first với <code>xcodebuild</code> hoặc Tuist; bổ sung XcodeBuildMCP khi cần inspect schemes và UI automation</li>
+<li><strong>Iterate</strong>: Khai báo rõ context (greenfield hay existing project), dùng validation loop nhỏ nhất trước khi mở rộng ra full build</li>
+</ol>
+<h3>Starter prompt mẫu</h3>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span>Scaffold a starter SwiftUI app and add a build-and-launch script I can wire to a `Build` action in my local environment.</span></span>
+<span class="line"><span>Constraints:</span></span>
+<span class="line"><span>- Stay CLI-first. Prefer Apple's `xcodebuild`; if a cleaner setup helps, it's okay to use Tuist.</span></span>
+<span class="line"><span>- If this repo already contains a full Xcode project, use XcodeBuildMCP to list targets, pick the right scheme, build, launch, and capture screenshots while you iterate.</span></span>
+<span class="line"><span>- Reuse existing models, navigation patterns, and shared utilities when they already exist.</span></span>
+<span class="line"><span>- Keep iOS and macOS compatibility intact unless I explicitly scope the work to one platform.</span></span>
+<span class="line"><span>- Use a small trustworthy validation loop after each change, then expand to broader builds only when the narrower check passes.</span></span>
+<span class="line"><span>- Tell me whether you treated this as a greenfield scaffold or an existing-project change.</span></span></code></pre><h3>Skills được đề xuất</h3>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>Mục đích</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Build iOS Apps</strong></td>
+<td>Scaffold/refactor SwiftUI UI, adopt Liquid Glass, debug trên simulator với XcodeBuildMCP</td>
+</tr>
+<tr>
+<td><strong>SwiftUI view refactor</strong></td>
+<td>Giữ file nhỏ và code nhất quán trong cả repo</td>
+</tr>
+<tr>
+<td><strong>SwiftUI patterns</strong></td>
+<td>Áp dụng <code>@Observable</code> và <code>@Environment</code> khi app scale lên</td>
+</tr>
+</tbody></table>
+<h3>XcodeBuildMCP</h3>
+<p>XcodeBuildMCP là lựa chọn mạnh khi Codex cần inspect schemes và targets, launch app trên simulator, capture screenshots, và iterate mà không rời khỏi agentic loop.</p>
+<h3>Prompt iterate mẫu</h3>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span>Add [feature] to the onboarding flow for this SwiftUI app.</span></span>
+<span class="line"><span>Constraints:</span></span>
+<span class="line"><span>- Reuse existing models, navigation patterns, and shared utilities.</span></span>
+<span class="line"><span>- Use XcodeBuildMCP to list the right targets or schemes, build the app, launch it, and capture screenshots if you need visual verification.</span></span>
+<span class="line"><span>- Keep iOS and macOS compatibility intact unless I explicitly scope the work to one platform.</span></span>
+<span class="line"><span>- Tell me exactly which scheme, simulator, and checks you used.</span></span>
+<span class="line"><span>Implement the slice, verify it with the smallest relevant build or run loop, and summarize what changed.</span></span></code></pre><h3>Practical tips</h3>
+<ul>
+<li><strong>Bắt đầu đơn giản</strong>: Với greenfield project, plain prompting là đủ — không cần skill hay MCP server ngay từ đầu</li>
+<li><strong>Validation loop nhỏ</strong>: Sau mỗi thay đổi, chạy lệnh hẹp nhất để kiểm chứng trước, mở rộng ra full build sau</li>
+<li><strong>Context rõ ràng</strong>: Luôn cho Codex biết đây là greenfield hay existing project, và platform nào cần giữ tương thích</li>
+</ul>
+<h2>Kết luận</h2>
+<p>Hướng dẫn này từ OpenAI cho thấy một hướng đi thực tế: dùng Codex như một agent độc lập có thể build và chạy app thực sự, không chỉ gợi ý code. Với <code>xcodebuild</code>, Tuist và XcodeBuildMCP, vòng lặp phát triển iOS/macOS có thể tự động hóa hoàn toàn trong môi trường agentic — mở ra cơ hội tăng tốc đáng kể cho các team phát triển ứng dụng Apple.</p>
+</div> </article>  </main> <footer class="container footer"> <div class="footer-inner"> <div>© SwiftVietnam</div> <a href="/rss.xml" class="rss-link">RSS Feed</a> </div> </footer> </body></html>

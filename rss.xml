@@ -13,6 +13,19 @@
     </image>
     
     <item>
+      <title><![CDATA[Dùng OpenAI Codex để xây dựng ứng dụng iOS và macOS với SwiftUI]]></title>
+      <link>https://swiftvietnam.dev/news/20/</link>
+      <guid isPermaLink="true">https://swiftvietnam.dev/news/20/</guid>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[OpenAI chia sẻ hướng dẫn sử dụng Codex để scaffold, build và iterate ứng dụng SwiftUI cho iOS/macOS theo hướng CLI-first, kết hợp XcodeBuildMCP để duy trì vòng lặp agentic hoàn chỉnh.]]></description>
+      <enclosure url="https://developers.openai.com/codex/use-cases/native-ios-macos-apps.png" type="image/jpeg" />
+      <category>swift</category>
+      <category>swiftui</category>
+      <category>xcode</category>
+      <category>ios</category>
+      <category>macos</category>
+    </item>
+    <item>
       <title><![CDATA[Công cụ AI nào nên dùng cho iOS Development?]]></title>
       <link>https://swiftvietnam.dev/news/19/</link>
       <guid isPermaLink="true">https://swiftvietnam.dev/news/19/</guid>
