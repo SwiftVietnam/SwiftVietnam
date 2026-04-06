@@ -458,12 +458,9 @@ a:hover {
   line-height: inherit;
 }
 
-.prose .shiki .line {
-  display: block;
-}
-
-.prose .shiki .line:empty {
-  min-height: 0.6em;
+.prose .shiki .line:empty::after {
+  content: '\a';
+  white-space: pre;
 }
 
 @media (max-width: 720px) {
