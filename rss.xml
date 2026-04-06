@@ -105,5 +105,18 @@
       <category>macos</category>
       <category>apple</category>
     </item>
+    <item>
+      <title><![CDATA[Khám phá các framework Machine Learning & AI trên nền tảng Apple (WWDC 2025)]]></title>
+      <link>https://swiftvietnam.dev/news/22/</link>
+      <guid isPermaLink="true">https://swiftvietnam.dev/news/22/</guid>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Bài tổng quan từ WWDC 2025 giới thiệu toàn bộ hệ sinh thái ML & AI trên Apple Silicon: Foundation Models framework mới với Guided Generation và Tool Calling, bộ API hệ thống như Vision, SpeechAnalyzer, Natural Language, cùng Core ML và MLX cho nghiên cứu tiên tiến.]]></description>
+      <enclosure url="https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/newsletter/public/images/news/wwdc2025-360/cover.jpg" type="image/jpeg" />
+      <category>swift</category>
+      <category>ios</category>
+      <category>macos</category>
+      <category>wwdc</category>
+      <category>apple</category>
+    </item>
   </channel>
 </rss>

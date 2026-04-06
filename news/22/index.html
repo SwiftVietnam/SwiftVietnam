@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="vi"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Bài tổng quan từ WWDC 2025 giới thiệu toàn bộ hệ sinh thái ML &#38; AI trên Apple Silicon: Foundation Models framework mới với Guided Generation và Tool Calling, bộ API hệ thống như Vision, SpeechAnalyzer, Natural Language, cùng Core ML và MLX cho nghiên cứu tiên tiến."><meta name="theme-color" content="#DA251D"><title>Khám phá các framework Machine Learning &amp; AI trên nền tảng Apple (WWDC 2025) | SwiftVietnam News</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="manifest" href="/site.webmanifest"><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:site_name" content="SwiftVietnam News"><meta property="og:title" content="Khám phá các framework Machine Learning &#38; AI trên nền tảng Apple (WWDC 2025) | SwiftVietnam News"><meta property="og:description" content="Bài tổng quan từ WWDC 2025 giới thiệu toàn bộ hệ sinh thái ML &#38; AI trên Apple Silicon: Foundation Models framework mới với Guided Generation và Tool Calling, bộ API hệ thống như Vision, SpeechAnalyzer, Natural Language, cùng Core ML và MLX cho nghiên cứu tiên tiến."><meta property="og:url" content="https://swiftvietnam.dev/news/22/"><meta property="og:image" content="https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/newsletter/public/images/news/wwdc2025-360/cover.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Khám phá các framework Machine Learning &#38; AI trên nền tảng Apple (WWDC 2025) | SwiftVietnam News"><meta name="twitter:description" content="Bài tổng quan từ WWDC 2025 giới thiệu toàn bộ hệ sinh thái ML &#38; AI trên Apple Silicon: Foundation Models framework mới với Guided Generation và Tool Calling, bộ API hệ thống như Vision, SpeechAnalyzer, Natural Language, cùng Core ML và MLX cho nghiên cứu tiên tiến."><meta name="twitter:image" content="https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/newsletter/public/images/news/wwdc2025-360/cover.jpg"><link rel="canonical" href="https://swiftvietnam.dev/news/22/"><link rel="alternate" type="application/rss+xml" title="SwiftVietnam News" href="https://swiftvietnam.dev/rss.xml"><link rel="stylesheet" href="/_astro/BaseLayout.DiowhiK-.css"></head> <body> <header class="topbar"> <div class="container topbar-inner"> <a href="/news/" class="brand"> <img src="/logo.png" alt="SwiftVietnam" class="brand-logo"> <div class="brand-text"> <span class="brand-name">SwiftVietnam News</span> <span class="brand-sub">Tin Apple cho iOS/macOS Developers Việt Nam</span> </div> </a> <nav> <a href="/news/">News</a> </nav> </div> </header> <main class="container">  <article class="article"> <a href="/news/">← Quay lại danh sách</a> <h1>Khám phá các framework Machine Learning &amp; AI trên nền tảng Apple (WWDC 2025)</h1> <div class="meta"> <span>10 tháng 6, 2025</span> <span class="meta-dot">·</span> <span>Jaimin Upadhyay</span> <span class="meta-dot">·</span> <span>BOTH</span> <span class="meta-dot">·</span> <span><a href="https://developer.apple.com/videos/play/wwdc2025/360/" target="_blank" rel="noreferrer">Nguồn</a></span> <span><a href="https://github.com/SwiftVietnam/SwiftVietnam/issues/22" target="_blank" rel="noreferrer">GitHub Issue</a></span> </div> <p class="summary">Bài tổng quan từ WWDC 2025 giới thiệu toàn bộ hệ sinh thái ML &amp; AI trên Apple Silicon: Foundation Models framework mới với Guided Generation và Tool Calling, bộ API hệ thống như Vision, SpeechAnalyzer, Natural Language, cùng Core ML và MLX cho nghiên cứu tiên tiến.</p> <img src="https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/newsletter/public/images/news/wwdc2025-360/cover.jpg" alt="Khám phá các framework Machine Learning &#38; AI trên nền tảng Apple (WWDC 2025)" class="article-cover" loading="lazy">  <div class="article-content" id="article-content" data-lang="vi"> <div class="prose lang-vi"><h2>Bối cảnh</h2>
+<p>Tại WWDC 2025, Jaimin Upadhyay — Engineering Manager của nhóm On-Device Machine Learning tại Apple — đã trình bày một bức tranh toàn cảnh về hệ sinh thái Machine Learning và AI mà Apple cung cấp cho developer. Session này không đi sâu vào một API đơn lẻ mà cho thấy cả một &quot;bản đồ&quot; từ tích hợp UI đơn giản đến triển khai mô hình tùy chỉnh, và từ sử dụng framework hệ thống đến nghiên cứu tiên tiến trên Apple Silicon.</p>
+<p>Apple phân chia rõ ràng bốn lớp: (1) Platform Intelligence — các tính năng tích hợp sẵn như Writing Tools, Genmoji, Image Playground; (2) ML-powered APIs — cho phép truy cập lập trình vào các model hệ thống; (3) Core ML — để đưa bất kỳ mô hình nào lên thiết bị; (4) MLX — cho nghiên cứu và thử nghiệm mô hình frontier.</p>
+<h2>Tại sao quan trọng với dev Việt Nam</h2>
+<p>Với developer iOS/macOS người Việt, đây là session cần xem trước khi bắt đầu bất kỳ tính năng AI nào. Apple đã xây dựng sẵn nhiều khả năng mạnh mẽ hoạt động <strong>hoàn toàn on-device</strong>, không cần API key, không tốn chi phí gọi API, và bảo vệ quyền riêng tư người dùng. Foundation Models framework mới trong iOS 26 cho phép gọi mô hình ngôn ngữ ngay trong app với ba dòng code. Đây là lợi thế cạnh tranh thực sự mà developer Apple platform có so với các nền tảng khác.</p>
+<h2>Chi tiết kỹ thuật</h2>
+<h3>Chọn framework nào?</h3>
+<p>Trước khi bắt đầu, hãy xác định nhu cầu thực tế để chọn đúng framework:</p>
+<table>
+<thead>
+<tr>
+<th>Nhu cầu</th>
+<th>Framework phù hợp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Tích hợp UI hệ thống (Writing Tools, Genmoji...)</td>
+<td>Apple Intelligence APIs</td>
+</tr>
+<tr>
+<td>Summarization, classification, extraction trong app</td>
+<td>Foundation Models</td>
+</tr>
+<tr>
+<td>Triển khai mô hình tùy chỉnh, performance-critical</td>
+<td>Core ML</td>
+</tr>
+<tr>
+<td>Nghiên cứu, fine-tuning, chạy LLM lớn</td>
+<td>MLX</td>
+</tr>
+</tbody></table>
+<hr>
+<h3>Foundation Models Framework (iOS 26)</h3>
+<p>Framework mới cung cấp quyền truy cập lập trình vào mô hình ngôn ngữ on-device, tối ưu hóa cho các tác vụ thường ngày: tóm tắt, trích xuất, phân loại, tạo nội dung động. Hoàn toàn miễn phí, không cần account, hoạt động offline.</p>
+<p><strong>Sử dụng cơ bản</strong> (3 dòng code):</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#6F42C1"> FoundationModels</span></span>
+<span class="line"><span style="color:#D73A49">let</span><span style="color:#24292E"> session </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> LanguageModelSession</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#D73A49">let</span><span style="color:#24292E"> response </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> try</span><span style="color:#D73A49"> await</span><span style="color:#24292E"> session.</span><span style="color:#005CC5">respond</span><span style="color:#24292E">(</span><span style="color:#005CC5">to</span><span style="color:#24292E">: </span><span style="color:#032F62">"Tóm tắt bài viết này..."</span><span style="color:#24292E">)</span></span></code></pre><p><strong>Guided Generation</strong> — Tạo response có cấu trúc trực tiếp vào kiểu Swift của bạn:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">@Generable</span></span>
+<span class="line"><span style="color:#D73A49">struct</span><span style="color:#6F42C1"> TravelItinerary</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#6A737D">    /// Tên điểm đến</span></span>
+<span class="line"><span style="color:#D73A49">    let</span><span style="color:#24292E"> destination: </span><span style="color:#005CC5">String</span></span>
+<span class="line"><span style="color:#6A737D">    /// Danh sách hoạt động gợi ý</span></span>
+<span class="line"><span style="color:#D73A49">    let</span><span style="color:#24292E"> activities: [</span><span style="color:#005CC5">String</span><span style="color:#24292E">]</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">let</span><span style="color:#24292E"> itinerary </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> try</span><span style="color:#D73A49"> await</span><span style="color:#24292E"> session.</span><span style="color:#005CC5">respond</span><span style="color:#24292E">(</span></span>
+<span class="line"><span style="color:#005CC5">    to</span><span style="color:#24292E">: </span><span style="color:#032F62">"Gợi ý lịch trình 3 ngày ở Đà Nẵng"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    generating</span><span style="color:#24292E">: TravelItinerary.</span><span style="color:#D73A49">self</span></span>
+<span class="line"><span style="color:#24292E">)</span></span></code></pre><p>Framework tự tùy chỉnh vòng decoding để đảm bảo output luôn hợp lệ về mặt cấu trúc — không cần xử lý JSON schema thủ công.</p>
+<p><strong>Tool Calling</strong> — Cho phép mô hình truy cập dữ liệu thực tế (calendar, weather, app data), trích dẫn nguồn để người dùng fact-check, và thực hiện hành động trong app.</p>
+<hr>
+<h3>Các API hệ thống mới</h3>
+<p><strong>ImageCreator &amp; Image Playground (iOS 18.4)</strong></p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">let</span><span style="color:#24292E"> creator </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> ImageCreator</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#D73A49">let</span><span style="color:#24292E"> images </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> try</span><span style="color:#D73A49"> await</span><span style="color:#24292E"> creator.</span><span style="color:#005CC5">images</span><span style="color:#24292E">(</span><span style="color:#005CC5">for</span><span style="color:#24292E">: [</span></span>
+<span class="line"><span style="color:#24292E">    .</span><span style="color:#005CC5">text</span><span style="color:#24292E">(</span><span style="color:#032F62">"Con mèo đang lướt ván"</span><span style="color:#24292E">),</span></span>
+<span class="line"><span style="color:#24292E">    .</span><span style="color:#005CC5">style</span><span style="color:#24292E">(.watercolor)</span></span>
+<span class="line"><span style="color:#24292E">])</span></span></code></pre><p><strong>Smart Reply (iOS 18.4)</strong> — Gợi ý phản hồi thông minh trong messaging và email, hoạt động on-device:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">let</span><span style="color:#24292E"> context </span><span style="color:#D73A49">=</span><span style="color:#24292E"> UIMessage.</span><span style="color:#005CC5">ConversationContext</span><span style="color:#24292E">(</span><span style="color:#005CC5">messages</span><span style="color:#24292E">: messages)</span></span>
+<span class="line"><span style="color:#24292E">entryView.conversationContext </span><span style="color:#D73A49">=</span><span style="color:#24292E"> context</span></span>
+<span class="line"><span style="color:#6A737D">// Keyboard tự hiển thị smart reply suggestions</span></span></code></pre><hr>
+<h3>Vision Framework — Các bổ sung mới</h3>
+<p>Vision có hơn 30 API phân tích ảnh và video. WWDC 2025 bổ sung thêm:</p>
+<ul>
+<li><strong>Document Recognition</strong>: Nhóm các cấu trúc văn bản trong tài liệu thay vì chỉ đọc từng dòng riêng lẻ, phù hợp để xử lý hóa đơn, biểu mẫu, tài liệu scan</li>
+<li><strong>Lens Smudge Detection</strong>: Phát hiện vết bẩn trên ống kính camera trước khi chụp</li>
+</ul>
+<p>Xem chi tiết tại session <a href="https://developer.apple.com/videos/play/wwdc2025/">&quot;Reading documents using the Vision Framework&quot;</a>.</p>
+<hr>
+<h3>SpeechAnalyzer (iOS 26)</h3>
+<p>API mới thay thế <code>SFSpeechRecognizer</code>, tối ưu cho audio dài hơn như bài giảng, cuộc họp, hội thoại. Hoàn toàn on-device với mô hình mới nhanh hơn và linh hoạt hơn:</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">let</span><span style="color:#24292E"> analyzer </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> SpeechAnalyzer</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#D73A49">for</span><span style="color:#D73A49"> await</span><span style="color:#24292E"> result </span><span style="color:#D73A49">in</span><span style="color:#24292E"> analyzer.results {</span></span>
+<span class="line"><span style="color:#005CC5">    print</span><span style="color:#24292E">(result.transcription)</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre><p>Xem chi tiết tại session <a href="https://developer.apple.com/videos/play/wwdc2025/">&quot;Bring advanced speech-to-text to your app with SpeechAnalyzer&quot;</a>.</p>
+<hr>
+<h3>Create ML — Mở rộng và tùy chỉnh</h3>
+<p>Create ML cho phép fine-tune các model hệ thống với dữ liệu riêng của bạn:</p>
+<ul>
+<li><strong>Image Classifier</strong> tùy chỉnh dùng với Vision framework</li>
+<li><strong>Word Tagger</strong> dùng với Natural Language framework</li>
+<li><strong>Spatial Object Recognition</strong> cho Apple Vision Pro — nhận diện và tracking vật thể tùy chỉnh với <strong>6 degrees of freedom (6DOF)</strong> trong môi trường spatial, mở ra khả năng tương tác AR/VR chính xác cao</li>
+</ul>
+<hr>
+<h3>Core ML — Model Architecture Visualizer (Xcode mới)</h3>
+<p>Xcode năm nay bổ sung <strong>hiển thị toàn bộ kiến trúc mô hình</strong> dưới dạng đồ thị: xem chi tiết từng operation, debug bottleneck và tìm cơ hội tối ưu performance trực tiếp trong IDE. Ngoài ra, <code>BNNSGraph</code> thêm <strong>Graph Builder API</strong> mới để viết preprocessing/postprocessing pipelines chạy real-time trên CPU.</p>
+<p>Core ML tự động phân phối tính toán trên CPU, GPU và Neural Engine. Models có thể tải từ <a href="https://developer.apple.com/machine-learning/models/">developer.apple.com</a> hoặc <a href="https://huggingface.co/apple">Apple&#39;s Hugging Face space</a>.</p>
+<hr>
+<h3>MLX — Nghiên cứu tiên tiến trên Apple Silicon</h3>
+<p>MLX là framework mã nguồn mở do Apple ML researchers phát triển, tận dụng <strong>Unified Memory Architecture</strong> — CPU và GPU chia sẻ cùng vùng nhớ vật lý, không cần copy dữ liệu giữa các thiết bị.</p>
+<pre class="shiki github-light" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D"># Chạy LLM lớn trực tiếp từ command line</span></span>
+<span class="line"><span style="color:#6F42C1">mlx_lm.generate</span><span style="color:#005CC5"> --model</span><span style="color:#032F62"> mistralai/Mistral-7B-v0.1</span><span style="color:#005CC5"> --max-tokens</span><span style="color:#005CC5"> 1024</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#005CC5">  --prompt</span><span style="color:#032F62"> "Viết quicksort bằng Swift"</span></span></code></pre><p>Hỗ trợ: Python, Swift, C++, C và nhiều binding khác do cộng đồng đóng góp. Có thể chạy DeepSeek-R1 trực tiếp trên máy Mac Apple Silicon. Xem session <a href="https://developer.apple.com/videos/play/wwdc2025/">&quot;Explore large language models on Apple silicon with MLX&quot;</a>.</p>
+<h2>Kết luận</h2>
+<p>WWDC 2025 đánh dấu thời điểm Apple Platform thực sự trở thành nền tảng AI hàng đầu cho developer: Foundation Models framework mang intelligence trực tiếp vào mọi app với chi phí bằng không, trong khi Core ML và MLX đáp ứng nhu cầu từ triển khai mô hình tùy chỉnh đến nghiên cứu tiên tiến. Bất kể bạn là app developer, ML engineer hay AI enthusiast, Apple đều có công cụ phù hợp — tất cả tối ưu cho Apple Silicon.</p>
+</div>  </div>  </article>  </main> <footer class="container footer"> <div class="footer-inner"> <div>© SwiftVietnam</div> <a href="/rss.xml" class="rss-link">RSS Feed</a> </div> </footer> </body></html>
