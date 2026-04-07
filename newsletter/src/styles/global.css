@@ -341,6 +341,14 @@ a:hover {
   display: block;
 }
 
+.prose img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-img);
+  margin: 1.2em auto;
+}
+
 /* ── Prose ── */
 
 .prose {
