@@ -13,6 +13,21 @@
     </image>
     
     <item>
+      <title><![CDATA[Hello Developer: Tháng 4 năm 2026]]></title>
+      <link>https://swiftvietnam.dev/news/23/</link>
+      <guid isPermaLink="true">https://swiftvietnam.dev/news/23/</guid>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Bản tin tháng 4/2026 từ Apple Developer: event Swift Concurrency ngày 23/4, chuẩn bị cho WWDC26, SwiftUI Wishlist sample app, cập nhật lớn cho App Store Connect Analytics với 100+ metrics mới, và nhiều tài liệu mới về Metal 4, GPU ML, bảo mật nâng cao.]]></description>
+      <enclosure url="https://media.licdn.com/dms/image/v2/D5612AQH6PX5llGlxcw/article-cover_image-shrink_720_1280/B56Z1oyQcwKkAI-/0/1775579498738?e=2147483647&v=beta&t=dA22nBtxF3fSO4-eOIA4KDVEC574sLGEV2TlSWJyRI8" type="image/jpeg" />
+      <category>swift</category>
+      <category>swiftui</category>
+      <category>uikit</category>
+      <category>ios</category>
+      <category>macos</category>
+      <category>apple</category>
+      <category>wwdc</category>
+    </item>
+    <item>
       <title><![CDATA[Khám phá các framework Machine Learning & AI trên nền tảng Apple (WWDC 2025)]]></title>
       <link>https://swiftvietnam.dev/news/22/</link>
       <guid isPermaLink="true">https://swiftvietnam.dev/news/22/</guid>
