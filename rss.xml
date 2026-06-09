@@ -13,6 +13,20 @@
     </image>
     
     <item>
+      <title><![CDATA[WWDC26 Platforms State of the Union: Tóm tắt những thay đổi lớn nhất]]></title>
+      <link>https://swiftvietnam.dev/news/25/</link>
+      <guid isPermaLink="true">https://swiftvietnam.dev/news/25/</guid>
+      <pubDate>Mon, 08 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Apple công bố ba trụ cột lớn tại WWDC26: Apple Intelligence được tái thiết hoàn toàn với sự hợp tác của Google, thiết kế Liquid Glass trên toàn nền tảng, và Xcode 27 với Agentic Coding từ Anthropic, OpenAI, và Google.]]></description>
+      <enclosure url="https://raw.githubusercontent.com/SwiftVietnam/SwiftVietnam/master/newsletter/public/images/news/25/wwdc26-platforms-state-of-the-union-recap.jpg" type="image/jpeg" />
+      <category>wwdc</category>
+      <category>xcode</category>
+      <category>swiftui</category>
+      <category>apple</category>
+      <category>ios</category>
+      <category>macos</category>
+    </item>
+    <item>
       <title><![CDATA[Những Điều Mới Trong Swift - Tổng Hợp Tháng 5/2026]]></title>
       <link>https://swiftvietnam.dev/news/24/</link>
       <guid isPermaLink="true">https://swiftvietnam.dev/news/24/</guid>
