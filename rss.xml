@@ -13,6 +13,19 @@
     </image>
     
     <item>
+      <title><![CDATA[Những Điều Mới Trong Swift - Tổng Hợp Tháng 5/2026]]></title>
+      <link>https://swiftvietnam.dev/news/24/</link>
+      <guid isPermaLink="true">https://swiftvietnam.dev/news/24/</guid>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Bản tổng hợp tháng 5/2026 điểm qua các buổi meetup Swift toàn cầu, video kỹ thuật nổi bật, Swift WebAssembly, LLM training bằng Swift, package mới và các đề xuất Swift Evolution quan trọng vừa được chấp thuận.]]></description>
+      <enclosure url="https://developer.apple.com/assets/elements/icons/swift/swift-256x256_2x.png" type="image/jpeg" />
+      <category>swift</category>
+      <category>ios</category>
+      <category>macos</category>
+      <category>concurrency</category>
+      <category>testing</category>
+    </item>
+    <item>
       <title><![CDATA[Hello Developer: Tháng 4 năm 2026]]></title>
       <link>https://swiftvietnam.dev/news/23/</link>
       <guid isPermaLink="true">https://swiftvietnam.dev/news/23/</guid>
